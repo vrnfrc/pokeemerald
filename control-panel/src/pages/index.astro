@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import SearchableSelect from '../components/SearchableSelect.astro';
+import PokemonList from '../components/PokemonList.svelte';
 
 const typeOptions = [
   { value: 'TYPE_NORMAL', label: 'Normal', color: '#A8A878' },
@@ -86,9 +87,8 @@ const abilityOptions = [
     <div class="sidebar">
       <div class="sidebar-header">
         <h1>Pokémon</h1>
-        <input type="text" id="search-input" class="search-input" placeholder="Search..." />
       </div>
-      <div id="pokemon-list" class="pokemon-list"></div>
+      <PokemonList client:load />
     </div>
 
     <div class="main-content">
@@ -96,6 +96,7 @@ const abilityOptions = [
       
       <div id="editor" class="editor" style="display: none;">
         <div class="editor-header">
+          <img id="pokemon-sprite" class="editor-sprite" alt="" />
           <h2 id="pokemon-name"></h2>
         </div>
 
@@ -220,72 +221,8 @@ const abilityOptions = [
 
   .sidebar-header h1 {
     font-size: 1.5rem;
-    margin: 0 0 1rem 0;
+    margin: 0;
     color: var(--accent);
-  }
-
-  .search-input {
-    width: 100%;
-    background: var(--panel-2);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 0.6rem 0.8rem;
-    color: var(--text);
-  }
-
-  .search-input:focus {
-    outline: none;
-    border-color: var(--accent);
-  }
-
-  .pokemon-list {
-    flex: 1;
-    overflow-y: auto;
-    padding: 1rem;
-  }
-
-  .pokemon-item {
-    padding: 0.9rem 1.2rem;
-    cursor: pointer;
-    border-radius: 8px;
-    transition: background 0.2s, transform 0.2s, color 0.2s;
-    margin-bottom: 0.3rem;
-    font-weight: 500;
-    font-size: 1rem;
-    display: flex;
-    align-items: center;
-    user-select: none;
-  }
-
-  .pokemon-item:nth-child(even) {
-    background: rgba(255, 255, 255, 0.025);
-  }
-
-  .pokemon-item:hover {
-    background: var(--panel-2);
-    transform: translateX(4px);
-  }
-
-  .pokemon-item.active {
-    background: var(--accent);
-    color: var(--bg);
-  }
-
-  .pokemon-item.hidden {
-    display: none;
-  }
-
-  .dex-num {
-    color: var(--muted);
-    font-size: 0.9rem;
-    margin-right: 0.8rem;
-    font-weight: 600;
-    min-width: 40px;
-  }
-
-  .pokemon-item.active .dex-num {
-    color: var(--bg);
-    opacity: 0.8;
   }
 
   .main-content {
@@ -328,12 +265,24 @@ const abilityOptions = [
     margin-bottom: 2rem;
     padding-bottom: 1rem;
     border-bottom: 1px solid var(--border);
+    display: flex;
+    align-items: center;
+    gap: 1rem;
   }
 
   .editor-header h2 {
     margin: 0;
     color: var(--accent);
     font-size: 2rem;
+  }
+
+  .editor-sprite {
+    width: 72px;
+    height: 72px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+    object-fit: cover;
+    object-position: top;
   }
 
   .editor-layout {
@@ -521,6 +470,9 @@ const abilityOptions = [
 </style>
 
 <script>
+  import { get } from 'svelte/store';
+  import { speciesData, selectedPokemon } from '../lib/speciesState';
+
   interface PokemonData {
     label: string;
     types: [string, string];
@@ -555,41 +507,6 @@ const abilityOptions = [
     { value: 'TYPE_DARK', label: 'Dark', color: '#705848' },
   ];
 
-  let speciesData: any = null;
-  let currentPokemon: string | null = null;
-
-  const hoennDexOrder = [
-    'TREECKO', 'GROVYLE', 'SCEPTILE', 'TORCHIC', 'COMBUSKEN', 'BLAZIKEN',
-    'MUDKIP', 'MARSHTOMP', 'SWAMPERT', 'POOCHYENA', 'MIGHTYENA', 'ZIGZAGOON',
-    'LINOONE', 'WURMPLE', 'SILCOON', 'BEAUTIFLY', 'CASCOON', 'DUSTOX', 'LOTAD',
-    'LOMBRE', 'LUDICOLO', 'SEEDOT', 'NUZLEAF', 'SHIFTRY', 'TAILLOW', 'SWELLOW',
-    'WINGULL', 'PELIPPER', 'RALTS', 'KIRLIA', 'GARDEVOIR', 'SURSKIT', 'MASQUERAIN',
-    'SHROOMISH', 'BRELOOM', 'SLAKOTH', 'VIGOROTH', 'SLAKING', 'ABRA', 'KADABRA',
-    'ALAKAZAM', 'NINCADA', 'NINJASK', 'SHEDINJA', 'WHISMUR', 'LOUDRED', 'EXPLOUD',
-    'MAKUHITA', 'HARIYAMA', 'GOLDEEN', 'SEAKING', 'MAGIKARP', 'GYARADOS', 'AZURILL',
-    'MARILL', 'AZUMARILL', 'GEODUDE', 'GRAVELER', 'GOLEM', 'NOSEPASS', 'SKITTY',
-    'DELCATTY', 'ZUBAT', 'GOLBAT', 'CROBAT', 'TENTACOOL', 'TENTACRUEL', 'SABLEYE',
-    'MAWILE', 'ARON', 'LAIRON', 'AGGRON', 'MACHOP', 'MACHOKE', 'MACHAMP', 'MEDITITE',
-    'MEDICHAM', 'ELECTRIKE', 'MANECTRIC', 'PLUSLE', 'MINUN', 'MAGNEMITE', 'MAGNETON',
-    'VOLTORB', 'ELECTRODE', 'VOLBEAT', 'ILLUMISE', 'ODDISH', 'GLOOM', 'VILEPLUME',
-    'BELLOSSOM', 'DODUO', 'DODRIO', 'ROSELIA', 'GULPIN', 'SWALOT', 'CARVANHA',
-    'SHARPEDO', 'WAILMER', 'WAILORD', 'NUMEL', 'CAMERUPT', 'SLUGMA', 'MAGCARGO',
-    'TORKOAL', 'GRIMER', 'MUK', 'KOFFING', 'WEEZING', 'SPOINK', 'GRUMPIG', 'SANDSHREW',
-    'SANDSLASH', 'SPINDA', 'SKARMORY', 'TRAPINCH', 'VIBRAVA', 'FLYGON', 'CACNEA',
-    'CACTURNE', 'SWABLU', 'ALTARIA', 'ZANGOOSE', 'SEVIPER', 'LUNATONE', 'SOLROCK',
-    'BARBOACH', 'WHISCASH', 'CORPHISH', 'CRAWDAUNT', 'BALTOY', 'CLAYDOL', 'LILEEP',
-    'CRADILY', 'ANORITH', 'ARMALDO', 'IGGLYBUFF', 'JIGGLYPUFF', 'WIGGLYTUFF', 'FEEBAS',
-    'MILOTIC', 'CASTFORM', 'STARYU', 'STARMIE', 'KECLEON', 'SHUPPET', 'BANETTE',
-    'DUSKULL', 'DUSCLOPS', 'TROPIUS', 'CHIMECHO', 'ABSOL', 'VULPIX', 'NINETALES',
-    'PICHU', 'PIKACHU', 'RAICHU', 'PSYDUCK', 'GOLDUCK', 'WYNAUT', 'WOBBUFFET', 'NATU',
-    'XATU', 'GIRAFARIG', 'PHANPY', 'DONPHAN', 'PINSIR', 'HERACROSS', 'RHYHORN',
-    'RHYDON', 'SNORUNT', 'GLALIE', 'SPHEAL', 'SEALEO', 'WALREIN', 'CLAMPERL', 'HUNTAIL',
-    'GOREBYSS', 'RELICANTH', 'CORSOLA', 'CHINCHOU', 'LANTURN', 'LUVDISC', 'HORSEA',
-    'SEADRA', 'KINGDRA', 'BAGON', 'SHELGON', 'SALAMENCE', 'BELDUM', 'METANG', 'METAGROSS',
-    'REGIROCK', 'REGICE', 'REGISTEEL', 'LATIAS', 'LATIOS', 'KYOGRE', 'GROUDON',
-    'RAYQUAZA', 'JIRACHI', 'DEOXYS',
-  ];
-
   function showStatus(message: string, type: 'success' | 'error') {
     const status = document.getElementById('status')!;
     status.textContent = message;
@@ -599,52 +516,24 @@ const abilityOptions = [
     }, 3000);
   }
 
-  function renderPokemonList() {
-    const list = document.getElementById('pokemon-list')!;
-    list.innerHTML = '';
-
-    if (!speciesData || !speciesData.species) return;
-
-    const hoennPokemon = speciesData.species.filter((p: PokemonData) => 
-      hoennDexOrder.includes(p.label)
-    );
-
-    hoennPokemon.sort((a: PokemonData, b: PokemonData) => {
-      return hoennDexOrder.indexOf(a.label) - hoennDexOrder.indexOf(b.label);
-    });
-
-    hoennPokemon.forEach((pokemon: PokemonData, index: number) => {
-      const item = document.createElement('div');
-      item.className = 'pokemon-item';
-      item.dataset.label = pokemon.label;
-      item.innerHTML = `<span class="dex-num">#${index + 1}</span> ${pokemon.label.replace('_', ' ')}`;
-      item.addEventListener('click', () => loadPokemon(pokemon.label));
-      list.appendChild(item);
-    });
-  }
-
   function loadPokemon(label: string) {
-    if (!speciesData || !speciesData.species) return;
+    const data = get(speciesData);
+    if (!data) return;
 
-    const pokemon = speciesData.species.find((p: PokemonData) => p.label === label);
+    const pokemon = data.species.find((p: PokemonData) => p.label === label);
     if (!pokemon) return;
 
-    currentPokemon = label;
-
-    document.querySelectorAll('.pokemon-item').forEach(item => {
-      item.classList.toggle('active', item.dataset.label === label);
-    });
-
     document.getElementById('pokemon-name')!.textContent = label.replace('_', ' ');
+    (document.getElementById('pokemon-sprite') as HTMLImageElement).src = `/api/sprite/${label.toLowerCase()}`;
 
     // Update type dropdowns
     (document.getElementById('type1') as HTMLSelectElement).value = pokemon.types[0];
     (document.getElementById('type2') as HTMLSelectElement).value = pokemon.types[1];
-    
+
     // Update type chips
     updateTypeChip('type1-chip', pokemon.types[0]);
     updateTypeChip('type2-chip', pokemon.types[1]);
-    
+
     // Update ability dropdowns
     (document.getElementById('ability1') as HTMLSelectElement).value = pokemon.abilities[0];
     (document.getElementById('ability2') as HTMLSelectElement).value = pokemon.abilities[1];
@@ -679,11 +568,18 @@ const abilityOptions = [
     }
   }
 
+  // React to Pokémon selection from the Svelte list
+  selectedPokemon.subscribe((label) => {
+    if (label) loadPokemon(label);
+  });
+
   document.getElementById('pokemon-form')!.addEventListener('submit', async (e) => {
     e.preventDefault();
-    if (!speciesData || !currentPokemon) return;
+    const data = get(speciesData);
+    const label = get(selectedPokemon);
+    if (!data || !label) return;
 
-    const pokemon = speciesData.species.find((p: PokemonData) => p.label === currentPokemon);
+    const pokemon = data.species.find((p: PokemonData) => p.label === label);
     if (!pokemon) return;
 
     pokemon.types[0] = (document.getElementById('type1') as HTMLSelectElement).value;
@@ -702,25 +598,20 @@ const abilityOptions = [
       const response = await fetch('/api/species', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(speciesData),
+        body: JSON.stringify(data),
       });
 
       if (response.ok) {
         showStatus('Changes saved to species_info.json!', 'success');
       } else {
-        showStatus('Failed to save changes', 'error');
+        const body = await response.json().catch(() => ({}));
+        console.error('Save failed', response.status, body);
+        showStatus(`Failed to save: ${body.error ?? response.statusText}`, 'error');
       }
     } catch (error) {
-      showStatus('Error saving changes', 'error');
+      console.error('Save threw', error);
+      showStatus(`Error saving: ${error instanceof Error ? error.message : String(error)}`, 'error');
     }
-  });
-
-  document.getElementById('search-input')!.addEventListener('input', (e) => {
-    const query = (e.target as HTMLInputElement).value.toLowerCase();
-    document.querySelectorAll('.pokemon-item').forEach(item => {
-      const text = item.textContent?.toLowerCase() || '';
-      item.classList.toggle('hidden', !text.includes(query));
-    });
   });
 
   // Update stat values when sliders change
@@ -741,20 +632,4 @@ const abilityOptions = [
   document.getElementById('type2')!.addEventListener('change', (e) => {
     updateTypeChip('type2-chip', (e.target as HTMLSelectElement).value);
   });
-
-  async function loadData() {
-    try {
-      const response = await fetch('/api/species');
-      if (response.ok) {
-        speciesData = await response.json();
-        renderPokemonList();
-      } else {
-        showStatus('Failed to load species data', 'error');
-      }
-    } catch (error) {
-      showStatus('Error loading species data', 'error');
-    }
-  }
-
-  loadData();
 </script>

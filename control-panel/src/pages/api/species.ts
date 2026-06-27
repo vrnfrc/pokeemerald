@@ -1,6 +1,8 @@
 import type { APIRoute } from 'astro';
 import { readJsonFile, writeJsonFile, FILES } from '../../lib/files';
 
+export const prerender = false;
+
 export const GET: APIRoute = async () => {
   try {
     const data = readJsonFile(FILES.species);
@@ -8,7 +10,9 @@ export const GET: APIRoute = async () => {
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (error) {
-    return new Response(JSON.stringify({ error: 'Failed to read species_info.json' }), {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error('[GET /api/species]', error);
+    return new Response(JSON.stringify({ error: `Failed to read species_info.json: ${message}` }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });
@@ -23,7 +27,9 @@ export const POST: APIRoute = async ({ request }) => {
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (error) {
-    return new Response(JSON.stringify({ error: 'Failed to write species_info.json' }), {
+    const message = error instanceof Error ? error.message : String(error);
+    console.error('[POST /api/species]', error);
+    return new Response(JSON.stringify({ error: `Failed to write species_info.json: ${message}` }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },
     });

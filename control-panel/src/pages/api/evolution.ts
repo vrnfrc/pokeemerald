@@ -1,6 +1,8 @@
 import type { APIRoute } from 'astro';
 import { readJsonFile, writeJsonFile, FILES } from '../../lib/files';
 
+export const prerender = false;
+
 export const GET: APIRoute = async () => {
   try {
     const data = readJsonFile(FILES.evolution);
