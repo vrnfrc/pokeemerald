@@ -36,6 +36,20 @@ Related tables elsewhere: `src/data/items.h`, `src/data/battle_moves.h`, `src/da
 
 The `.json.txt` / `.constants.json.txt` files alongside each source JSON are Inja templates — only touch them if you change the JSON schema.
 
+### Experimental: hand-regenerated JSON-driven datasets
+
+These files are JSON-driven but the Makefile rule that would regenerate them on `make`/`make generated` is **intentionally not** in `json_data_rules.mk` while the conversion is being validated. Regenerate by hand after editing the JSON, then commit the regenerated `.h` alongside the JSON:
+
+```bash
+make tools
+tools/jsonproc/jsonproc <source.json> <source.json.txt> <output.h>
+```
+
+Once the flow is verified, the rule and `c_dep` line will be added to `json_data_rules.mk` and these notes removed.
+
+- **`src/data/pokemon/species_info.h`** — from `src/data/pokemon/species_info.json` + `src/data/pokemon/species_info.json.txt`. Contains the `OLD_UNOWN_SPECIES_INFO` macro, the `PERCENT_FEMALE(percent)` helper, and the `gSpeciesInfo[]` array (base stats, types, abilities, catch rate, EXP yield, EV yields, held items, gender ratio, egg cycles, friendship, growth rate, egg groups, safari flee rate, body color, `noFlip`). The `_widths` object at the top of the JSON controls column alignment of the field names.
+- **`src/data/pokemon/evolution.h`** — from `src/data/pokemon/evolution.json` + `src/data/pokemon/evolution.json.txt`. Contains the `gEvolutionTable[NUM_SPECIES][EVOS_PER_MON]` array of `struct Evolution` entries (method, param, target species). `param` is a JSON number for levels/beauty/friendship and a JSON string for item/enum constants; the template emits the value as-is.
+
 ## Maps and layouts
 
 - Map properties (header, events, connections): edit `data/maps/<MapName>/map.json`.
