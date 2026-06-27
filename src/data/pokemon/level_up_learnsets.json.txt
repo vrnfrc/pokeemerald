@@ -1,0 +1,10 @@
+#define LEVEL_UP_MOVE(lvl, move) ((lvl << 9) | move)
+## for learnset in learnsets
+
+static const u16 s{{ learnset.name }}LevelUpLearnset[] = {
+## for move in learnset.moves
+    LEVEL_UP_MOVE({% if move.level < 10 %} {% endif %}{{ move.level }}, {{ move.move }}),
+## endfor
+    LEVEL_UP_END
+};
+## endfor
