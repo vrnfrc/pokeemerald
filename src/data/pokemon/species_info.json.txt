@@ -36,13 +36,12 @@
 const struct SpeciesInfo gSpeciesInfo[] =
 {
     [SPECIES_NONE] = {0},
-
 ## for species in species
 
 
-    {% if existsIn(species, "reuse") %}
+{% if existsIn(species, "reuse") %}
     [SPECIES_{{ species.label }}] = {{ species.reuse }},
-    {% else %}
+{% else %}
     [SPECIES_{{ species.label }}] =
     {
         .baseHP = {{ species.baseHP }},
@@ -74,4 +73,5 @@ const struct SpeciesInfo gSpeciesInfo[] =
     }{% if not loop.is_last %},{% endif %}
 {% endif %}
 ## endfor
+
 };
