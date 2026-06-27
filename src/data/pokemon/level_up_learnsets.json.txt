@@ -3,7 +3,7 @@
 
 static const u16 s{{ learnset.name }}LevelUpLearnset[] = {
 ## for move in learnset.moves
-    LEVEL_UP_MOVE({% if move.level < 10 %} {% endif %}{{ move.level }}, {{ move.move }}),
+    LEVEL_UP_MOVE({{ move.level_padded }}, {{ move.move }}),
 ## endfor
     LEVEL_UP_END
 };

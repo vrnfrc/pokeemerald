@@ -105,6 +105,22 @@ int main(int argc, char *argv[])
         return s;
     });
 
+    env.add_callback("padLeft", 2, [](Arguments& args) {
+        string s;
+        if (args.at(0)->is_number()) {
+            if (args.at(0)->is_number_integer())
+                s = std::to_string(args.at(0)->get<int>());
+            else
+                s = std::to_string(args.at(0)->get<double>());
+        } else {
+            s = args.at(0)->get<string>();
+        }
+        int width = args.at(1)->get<int>();
+        if ((int)s.length() < width)
+            s = string(width - s.length(), ' ') + s;
+        return s;
+    });
+
     // single argument is a json object
     env.add_callback("isEmpty", 1, [](Arguments& args) {
         return args.at(0)->empty();
