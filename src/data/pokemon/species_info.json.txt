@@ -5,32 +5,32 @@
 
 #define OLD_UNOWN_SPECIES_INFO \
     { \
-        .baseHP = {{ old_unown_species_info.baseHP }}, \
-        .baseAttack = {{ old_unown_species_info.baseAttack }}, \
-        .baseDefense = {{ old_unown_species_info.baseDefense }}, \
-        .baseSpeed = {{ old_unown_species_info.baseSpeed }}, \
-        .baseSpAttack = {{ old_unown_species_info.baseSpAttack }}, \
-        .baseSpDefense = {{ old_unown_species_info.baseSpDefense }}, \
-        .types = { {{ at(old_unown_species_info.types, 0) }}, {{ at(old_unown_species_info.types, 1) }} }, \
-        .catchRate = {{ old_unown_species_info.catchRate }}, \
-        .expYield = {{ old_unown_species_info.expYield }}, \
-        .evYield_HP = {{ old_unown_species_info.evYield_HP }}, \
-        .evYield_Attack = {{ old_unown_species_info.evYield_Attack }}, \
-        .evYield_Defense = {{ old_unown_species_info.evYield_Defense }}, \
-        .evYield_Speed = {{ old_unown_species_info.evYield_Speed }}, \
-        .evYield_SpAttack = {{ old_unown_species_info.evYield_SpAttack }}, \
-        .evYield_SpDefense = {{ old_unown_species_info.evYield_SpDefense }}, \
-        .itemCommon = {{ old_unown_species_info.itemCommon }}, \
-        .itemRare = {{ old_unown_species_info.itemRare }}, \
-        .genderRatio = {{ old_unown_species_info.genderRatio }}, \
-        .eggCycles = {{ old_unown_species_info.eggCycles }}, \
-        .friendship = {{ old_unown_species_info.friendship }}, \
-        .growthRate = {{ old_unown_species_info.growthRate }}, \
-        .eggGroups = { {{ at(old_unown_species_info.eggGroups, 0) }}, {{ at(old_unown_species_info.eggGroups, 1) }} }, \
-        .abilities = { {{ at(old_unown_species_info.abilities, 0) }}, {{ at(old_unown_species_info.abilities, 1) }} }, \
-        .safariZoneFleeRate = {{ old_unown_species_info.safariZoneFleeRate }}, \
-        .bodyColor = {{ old_unown_species_info.bodyColor }}, \
-        .noFlip = {{ old_unown_species_info.noFlip }}, \
+        .{{ padRight("baseHP", _widths.baseHP) }} = {{ old_unown_species_info.baseHP }}, \
+        .{{ padRight("baseAttack", _widths.baseAttack) }} = {{ old_unown_species_info.baseAttack }}, \
+        .{{ padRight("baseDefense", _widths.baseDefense) }} = {{ old_unown_species_info.baseDefense }}, \
+        .{{ padRight("baseSpeed", _widths.baseSpeed) }} = {{ old_unown_species_info.baseSpeed }}, \
+        .{{ padRight("baseSpAttack", _widths.baseSpAttack) }} = {{ old_unown_species_info.baseSpAttack }}, \
+        .{{ padRight("baseSpDefense", _widths.baseSpDefense) }} = {{ old_unown_species_info.baseSpDefense }}, \
+        .{{ padRight("types", _widths.types) }} = { {{ at(old_unown_species_info.types, 0) }}, {{ at(old_unown_species_info.types, 1) }}}, \
+        .{{ padRight("catchRate", _widths.catchRate) }} = {{ old_unown_species_info.catchRate }}, \
+        .{{ padRight("expYield", _widths.expYield) }} = {{ old_unown_species_info.expYield }}, \
+        .{{ padRight("evYield_HP", _widths.evYield_HP) }} = {{ old_unown_species_info.evYield_HP }}, \
+        .{{ padRight("evYield_Attack", _widths.evYield_Attack) }} = {{ old_unown_species_info.evYield_Attack }}, \
+        .{{ padRight("evYield_Defense", _widths.evYield_Defense) }} = {{ old_unown_species_info.evYield_Defense }}, \
+        .{{ padRight("evYield_Speed", _widths.evYield_Speed) }} = {{ old_unown_species_info.evYield_Speed }}, \
+        .{{ padRight("evYield_SpAttack", _widths.evYield_SpAttack) }} = {{ old_unown_species_info.evYield_SpAttack }}, \
+        .{{ padRight("evYield_SpDefense", _widths.evYield_SpDefense) }} = {{ old_unown_species_info.evYield_SpDefense }}, \
+        .{{ padRight("itemCommon", _widths.itemCommon) }} = {{ old_unown_species_info.itemCommon }}, \
+        .{{ padRight("itemRare", _widths.itemRare) }} = {{ old_unown_species_info.itemRare }}, \
+        .{{ padRight("genderRatio", _widths.genderRatio) }} = {{ old_unown_species_info.genderRatio }}, \
+        .{{ padRight("eggCycles", _widths.eggCycles) }} = {{ old_unown_species_info.eggCycles }}, \
+        .{{ padRight("friendship", _widths.friendship) }} = {{ old_unown_species_info.friendship }}, \
+        .{{ padRight("growthRate", _widths.growthRate) }} = {{ old_unown_species_info.growthRate }}, \
+        .{{ padRight("eggGroups", _widths.eggGroups) }} = { {{ at(old_unown_species_info.eggGroups, 0) }}, {{ at(old_unown_species_info.eggGroups, 1) }}, }, \
+        .{{ padRight("abilities", _widths.abilities) }} = {{ "{" }}{{ at(old_unown_species_info.abilities, 0) }}, {{ at(old_unown_species_info.abilities, 1) }}{{ "}" }}}, \
+        .{{ padRight("safariZoneFleeRate", _widths.safariZoneFleeRate) }} = {{ old_unown_species_info.safariZoneFleeRate }}, \
+        .{{ padRight("bodyColor", _widths.bodyColor) }} = {{ old_unown_species_info.bodyColor }}, \
+        .{{ padRight("noFlip", _widths.noFlip) }} = {{ old_unown_species_info.noFlip }}, \
     }
 
 const struct SpeciesInfo gSpeciesInfo[] =
@@ -44,32 +44,32 @@ const struct SpeciesInfo gSpeciesInfo[] =
 {% else %}
     [SPECIES_{{ species.label }}] =
     {
-        .baseHP = {{ species.baseHP }},
-        .baseAttack = {{ species.baseAttack }},
-        .baseDefense = {{ species.baseDefense }},
-        .baseSpeed = {{ species.baseSpeed }},
-        .baseSpAttack = {{ species.baseSpAttack }},
-        .baseSpDefense = {{ species.baseSpDefense }},
-        .types = { {{ at(species.types, 0) }}, {{ at(species.types, 1) }} },
-        .catchRate = {{ species.catchRate }},
-        .expYield = {{ species.expYield }},
-        .evYield_HP = {{ species.evYield_HP }},
-        .evYield_Attack = {{ species.evYield_Attack }},
-        .evYield_Defense = {{ species.evYield_Defense }},
-        .evYield_Speed = {{ species.evYield_Speed }},
-        .evYield_SpAttack = {{ species.evYield_SpAttack }},
-        .evYield_SpDefense = {{ species.evYield_SpDefense }},
-        .itemCommon = {{ species.itemCommon }},
-        .itemRare = {{ species.itemRare }},
-        .genderRatio = {{ species.genderRatio }},
-        .eggCycles = {{ species.eggCycles }},
-        .friendship = {{ species.friendship }},
-        .growthRate = {{ species.growthRate }},
-        .eggGroups = { {{ at(species.eggGroups, 0) }}, {{ at(species.eggGroups, 1) }} },
-        .abilities = { {{ at(species.abilities, 0) }}, {{ at(species.abilities, 1) }} },
-        .safariZoneFleeRate = {{ species.safariZoneFleeRate }},
-        .bodyColor = {{ species.bodyColor }},
-        .noFlip = {{ species.noFlip }},
+        .{{ padRight("baseHP", _widths.baseHP) }} = {{ species.baseHP }},
+        .{{ padRight("baseAttack", _widths.baseAttack) }} = {{ species.baseAttack }},
+        .{{ padRight("baseDefense", _widths.baseDefense) }} = {{ species.baseDefense }},
+        .{{ padRight("baseSpeed", _widths.baseSpeed) }} = {{ species.baseSpeed }},
+        .{{ padRight("baseSpAttack", _widths.baseSpAttack) }} = {{ species.baseSpAttack }},
+        .{{ padRight("baseSpDefense", _widths.baseSpDefense) }} = {{ species.baseSpDefense }},
+        .{{ padRight("types", _widths.types) }} = { {{ at(species.types, 0) }}, {{ at(species.types, 1) }} },
+        .{{ padRight("catchRate", _widths.catchRate) }} = {{ species.catchRate }},
+        .{{ padRight("expYield", _widths.expYield) }} = {{ species.expYield }},
+        .{{ padRight("evYield_HP", _widths.evYield_HP) }} = {{ species.evYield_HP }},
+        .{{ padRight("evYield_Attack", _widths.evYield_Attack) }} = {{ species.evYield_Attack }},
+        .{{ padRight("evYield_Defense", _widths.evYield_Defense) }} = {{ species.evYield_Defense }},
+        .{{ padRight("evYield_Speed", _widths.evYield_Speed) }} = {{ species.evYield_Speed }},
+        .{{ padRight("evYield_SpAttack", _widths.evYield_SpAttack) }} = {{ species.evYield_SpAttack }},
+        .{{ padRight("evYield_SpDefense", _widths.evYield_SpDefense) }} = {{ species.evYield_SpDefense }},
+        .{{ padRight("itemCommon", _widths.itemCommon) }} = {{ species.itemCommon }},
+        .{{ padRight("itemRare", _widths.itemRare) }} = {{ species.itemRare }},
+        .{{ padRight("genderRatio", _widths.genderRatio) }} = {{ species.genderRatio }},
+        .{{ padRight("eggCycles", _widths.eggCycles) }} = {{ species.eggCycles }},
+        .{{ padRight("friendship", _widths.friendship) }} = {{ species.friendship }},
+        .{{ padRight("growthRate", _widths.growthRate) }} = {{ species.growthRate }},
+        .{{ padRight("eggGroups", _widths.eggGroups) }} = { {{ at(species.eggGroups, 0) }}, {{ at(species.eggGroups, 1) }} },
+        .{{ padRight("abilities", _widths.abilities) }} = {{ "{" }}{{ at(species.abilities, 0) }}, {{ at(species.abilities, 1) }}{{ "}" }}},
+        .{{ padRight("safariZoneFleeRate", _widths.safariZoneFleeRate) }} = {{ species.safariZoneFleeRate }},
+        .{{ padRight("bodyColor", _widths.bodyColor) }} = {{ species.bodyColor }},
+        .{{ padRight("noFlip", _widths.noFlip) }} = {{ species.noFlip }},
     }{% if not loop.is_last %},{% endif %}
 {% endif %}
 ## endfor

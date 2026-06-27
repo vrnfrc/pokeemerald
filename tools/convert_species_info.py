@@ -196,6 +196,23 @@ def main():
           f"= {len(species)} total (expected 411: 412 - SPECIES_NONE).")
 
     out = {
+        "_widths": {
+            # Per-field column-alignment widths for `padRight` in the template.
+            # The value is the length of the field name itself (without the leading
+            # dot); the template renders `.` + padRight(name, w) + " = value," so
+            # the `=` lands at the same column as the original hand-written file.
+            "baseHP": 13, "baseAttack": 13, "baseDefense": 13,
+            "baseSpeed": 13, "baseSpAttack": 13, "baseSpDefense": 13,
+            "types": 5,
+            "catchRate": 9, "expYield": 8,
+            "evYield_HP": 17, "evYield_Attack": 17, "evYield_Defense": 17,
+            "evYield_Speed": 17, "evYield_SpAttack": 17, "evYield_SpDefense": 17,
+            "itemCommon": 10, "itemRare": 10,
+            "genderRatio": 11, "eggCycles": 9,
+            "friendship": 10, "growthRate": 10,
+            "eggGroups": 9, "abilities": 9,
+            "safariZoneFleeRate": 17, "bodyColor": 9, "noFlip": 6,
+        },
         "old_unown_species_info": old_unown,
         "species": species,
     }

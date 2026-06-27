@@ -1,5 +1,7 @@
 # AGENTS.md — pokeemerald
 
+> **Sandbox note:** the agent (opencode) runs in a sandbox where every command has to be executed from the outside. If a tool fails (e.g. wrong-arch binaries like `tools/jsonproc/jsonproc`, missing host compilers like `g++`, or any build step), do not try to fix it in-sandbox — ask the user to re-run the command on their machine. Don't waste time retrying.
+
 Decompilation of Pokémon Emerald. The build target is a Game Boy Advance ROM (`pokeemerald.gba`) assembled from C, ARM/Thumb assembly, and JSON-driven data. There is no unit test suite, linter, or formatter — verification is byte-equivalence with the original ROM.
 
 ## Build modes

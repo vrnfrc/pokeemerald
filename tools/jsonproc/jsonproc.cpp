@@ -97,6 +97,14 @@ int main(int argc, char *argv[])
         return rawValue.substr(0, i);
     });
 
+    env.add_callback("padRight", 2, [](Arguments& args) {
+        string s = args.at(0)->get<string>();
+        int width = args.at(1)->get<int>();
+        if ((int)s.length() < width)
+            s.append(width - s.length(), ' ');
+        return s;
+    });
+
     // single argument is a json object
     env.add_callback("isEmpty", 1, [](Arguments& args) {
         return args.at(0)->empty();
