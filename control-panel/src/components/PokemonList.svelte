@@ -83,7 +83,20 @@
     color: var(--text);
   }
   .search-input:focus { outline: none; border-color: var(--accent); }
-  .pokemon-list-items { flex: 1; overflow-y: auto; padding: 0.5rem 1rem 1rem; }
+  .pokemon-list-items {
+    flex: 1;
+    overflow-y: auto;
+    padding: 0.5rem 1rem 1rem;
+    scrollbar-width: thin;
+    scrollbar-color: var(--border) transparent;
+  }
+  .pokemon-list-items::-webkit-scrollbar { width: 8px; }
+  .pokemon-list-items::-webkit-scrollbar-track { background: transparent; }
+  .pokemon-list-items::-webkit-scrollbar-thumb {
+    background: var(--border);
+    border-radius: 4px;
+  }
+  .pokemon-list-items::-webkit-scrollbar-thumb:hover { background: var(--muted); }
   .loading, .empty { color: var(--muted); padding: 1rem; }
 
   .pokemon-item {
