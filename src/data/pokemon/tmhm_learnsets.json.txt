@@ -1,0 +1,31 @@
+/* Expands to:
+ * struct TMHMLearnset
+ * {
+ *     u32 FOCUS_PUNCH:1;
+ *     ...
+ *     u32 CUT:1;
+ *     ...
+ * }; */
+#define TMHM_LEARN(id) u32 id:1;
+struct TMHMLearnset
+{
+    FOREACH_TMHM(TMHM_LEARN)
+};
+#undef TMHM_LEARN
+
+const union {
+    struct TMHMLearnset learnset;
+    u32 as_u32s[sizeof(struct TMHMLearnset) / sizeof(u32)];
+} gTMHMLearnsets[NUM_SPECIES] =
+{
+    [SPECIES_NONE] = {},
+## for learnset in learnsets
+
+    [SPECIES_{{ learnset.species }}] = { .learnset = {
+## for move in learnset.moves
+        .{{ move }} = TRUE,
+## endfor
+    } },
+## endfor
+
+};
