@@ -1,0 +1,19 @@
+{
+  "name": "control-panel",
+  "version": "1.0.0",
+  "description": "PokéEmerald Control Panel",
+  "type": "module",
+  "scripts": {
+    "dev": "astro dev",
+    "start": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "astro": "^7.0.3"
+  }
+}
