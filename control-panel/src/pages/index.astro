@@ -1,6 +1,5 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import SearchableSelect from '../components/SearchableSelect.astro';
 import PokemonList from '../components/PokemonList.svelte';
 
 const typeOptions = [
@@ -78,6 +77,31 @@ const abilityOptions = [
   { value: 'ABILITY_HUSTLE', label: 'Hustle' },
   { value: 'ABILITY_HUGE_POWER_2', label: 'Huge Power (2)' },
   { value: 'ABILITY_POISON_HEAL', label: 'Poison Heal' },
+  { value: 'ABILITY_OVERGROW', label: 'Overgrow' },
+  { value: 'ABILITY_BLAZE', label: 'Blaze' },
+  { value: 'ABILITY_TORRENT', label: 'Torrent' },
+  { value: 'ABILITY_SHED_SKIN', label: 'Shed Skin' },
+  { value: 'ABILITY_SWARM', label: 'Swarm' },
+  { value: 'ABILITY_GUTS', label: 'Guts' },
+  { value: 'ABILITY_CUTE_CHARM', label: 'Cute Charm' },
+  { value: 'ABILITY_EFFECT_SPORE', label: 'Effect Spore' },
+  { value: 'ABILITY_ARENA_TRAP', label: 'Arena Trap' },
+  { value: 'ABILITY_VITAL_SPIRIT', label: 'Vital Spirit' },
+  { value: 'ABILITY_SYNCHRONIZE', label: 'Synchronize' },
+  { value: 'ABILITY_LIQUID_OOZE', label: 'Liquid Ooze' },
+  { value: 'ABILITY_ROCK_HEAD', label: 'Rock Head' },
+  { value: 'ABILITY_STICKY_HOLD', label: 'Sticky Hold' },
+  { value: 'ABILITY_SHELL_ARMOR', label: 'Shell Armor' },
+  { value: 'ABILITY_SHADOW_TAG', label: 'Shadow Tag' },
+  { value: 'ABILITY_WONDER_GUARD', label: 'Wonder Guard' },
+  { value: 'ABILITY_WHITE_SMOKE', label: 'White Smoke' },
+  { value: 'ABILITY_ROUGH_SKIN', label: 'Rough Skin' },
+  { value: 'ABILITY_PLUS', label: 'Plus' },
+  { value: 'ABILITY_MINUS', label: 'Minus' },
+  { value: 'ABILITY_PURE_POWER', label: 'Pure Power' },
+  { value: 'ABILITY_FORECAST', label: 'Forecast' },
+  { value: 'ABILITY_DROUGHT', label: 'Drought' },
+  { value: 'ABILITY_AIR_LOCK', label: 'Air Lock' },
   { value: 'ABILITY_MARVEL_SCALE', label: 'Marvel Scale' },
 ];
 ---
@@ -106,40 +130,25 @@ const abilityOptions = [
               <div class="form-section">
                 <h3>Types</h3>
                 <div class="type-chips-container">
-                  <div id="type1-chip" class="type-chip"></div>
-                  <div id="type2-chip" class="type-chip"></div>
+                  <button type="button" id="type1-chip" class="type-chip" data-type=""></button>
+                  <button type="button" id="type2-chip" class="type-chip" data-type=""></button>
                 </div>
-                <div class="form-row">
-                  <SearchableSelect
-                    id="type1"
-                    label="Type #1"
-                    value="TYPE_NORMAL"
-                    options={typeOptions}
-                  />
-                  <SearchableSelect
-                    id="type2"
-                    label="Type #2"
-                    value="TYPE_NORMAL"
-                    options={typeOptions}
-                  />
-                </div>
+                <div id="type-picker" class="type-picker" hidden></div>
               </div>
 
               <div class="form-section">
                 <h3>Abilities</h3>
                 <div class="form-row">
-                  <SearchableSelect
-                    id="ability1"
-                    label="Ability #1"
-                    value="ABILITY_NONE"
-                    options={abilityOptions}
-                  />
-                  <SearchableSelect
-                    id="ability2"
-                    label="Ability #2"
-                    value="ABILITY_NONE"
-                    options={abilityOptions}
-                  />
+                  <select id="ability1" name="ability1" class="ability-select">
+                    {abilityOptions.map(opt => (
+                      <option value={opt.value} selected={opt.value === 'ABILITY_NONE'}>{opt.label}</option>
+                    ))}
+                  </select>
+                  <select id="ability2" name="ability2" class="ability-select">
+                    {abilityOptions.map(opt => (
+                      <option value={opt.value} selected={opt.value === 'ABILITY_NONE'}>{opt.label}</option>
+                    ))}
+                  </select>
                 </div>
               </div>
             </div>
@@ -321,19 +330,53 @@ const abilityOptions = [
   .type-chips-container {
     display: flex;
     gap: 0.8rem;
-    margin-bottom: 1rem;
   }
 
   .type-chip {
     padding: 0.5rem 1.2rem;
     border-radius: 20px;
+    border: none;
+    font: inherit;
     font-weight: 600;
     font-size: 0.9rem;
     color: white;
     text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     min-width: 80px;
     text-align: center;
+    cursor: pointer;
   }
+
+  .type-chip:hover {
+    filter: brightness(1.1);
+  }
+
+  .type-picker {
+    position: fixed;
+    z-index: 100;
+    margin-top: 0.4rem;
+    padding: 0.6rem;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+  }
+
+  .type-picker[hidden] { display: none; }
+
+  .ability-select {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.5rem 0.6rem;
+    color: var(--text);
+    width: 100%;
+    cursor: pointer;
+  }
+
+  .ability-select:focus { outline: none; border-color: var(--accent); }
 
   .stats-container {
     display: flex;
@@ -526,11 +569,7 @@ const abilityOptions = [
     document.getElementById('pokemon-name')!.textContent = label.replace('_', ' ');
     (document.getElementById('pokemon-sprite') as HTMLImageElement).src = `/api/sprite/${label.toLowerCase()}`;
 
-    // Update type dropdowns
-    (document.getElementById('type1') as HTMLSelectElement).value = pokemon.types[0];
-    (document.getElementById('type2') as HTMLSelectElement).value = pokemon.types[1];
-
-    // Update type chips
+    // Update type chips (chips are the type selector)
     updateTypeChip('type1-chip', pokemon.types[0]);
     updateTypeChip('type2-chip', pokemon.types[1]);
 
@@ -550,13 +589,6 @@ const abilityOptions = [
 
     document.getElementById('editor')!.style.display = 'block';
     document.getElementById('empty-state')!.style.display = 'none';
-
-    // Update searchable select inputs
-    document.querySelectorAll('.searchable-select input').forEach(input => {
-      const select = input.nextElementSibling as HTMLSelectElement;
-      const selected = select.options[select.selectedIndex];
-      if (selected) input.value = selected.textContent || '';
-    });
   }
 
   function updateTypeChip(chipId: string, typeValue: string) {
@@ -565,8 +597,52 @@ const abilityOptions = [
     if (typeInfo) {
       chip.textContent = typeInfo.label;
       chip.style.backgroundColor = typeInfo.color;
+      chip.dataset.type = typeValue;
     }
   }
+
+  // Type picker: clicking a type chip opens a popover with all type options as chips
+  const typePicker = document.getElementById('type-picker')!;
+  let pickerTarget: string | null = null;
+
+  function openTypePicker(chipId: string) {
+    pickerTarget = chipId;
+    typePicker.innerHTML = '';
+    for (const t of typeOptions) {
+      const opt = document.createElement('button');
+      opt.type = 'button';
+      opt.className = 'type-chip type-picker-option';
+      opt.textContent = t.label;
+      opt.style.backgroundColor = t.color;
+      opt.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (pickerTarget) updateTypeChip(pickerTarget, t.value);
+        closeTypePicker();
+      });
+      typePicker.appendChild(opt);
+    }
+    const anchor = document.getElementById(chipId)!.getBoundingClientRect();
+    typePicker.style.top = `${anchor.bottom + 4}px`;
+    typePicker.style.left = `${anchor.left}px`;
+    typePicker.hidden = false;
+  }
+
+  function closeTypePicker() {
+    typePicker.hidden = true;
+    pickerTarget = null;
+  }
+
+  document.getElementById('type1-chip')!.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openTypePicker('type1-chip');
+  });
+  document.getElementById('type2-chip')!.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openTypePicker('type2-chip');
+  });
+  document.addEventListener('click', () => {
+    if (!typePicker.hidden) closeTypePicker();
+  });
 
   // React to Pokémon selection from the Svelte list
   selectedPokemon.subscribe((label) => {
@@ -582,8 +658,8 @@ const abilityOptions = [
     const pokemon = data.species.find((p: PokemonData) => p.label === label);
     if (!pokemon) return;
 
-    pokemon.types[0] = (document.getElementById('type1') as HTMLSelectElement).value;
-    pokemon.types[1] = (document.getElementById('type2') as HTMLSelectElement).value;
+    pokemon.types[0] = document.getElementById('type1-chip')!.dataset.type!;
+    pokemon.types[1] = document.getElementById('type2-chip')!.dataset.type!;
     pokemon.abilities[0] = (document.getElementById('ability1') as HTMLSelectElement).value;
     pokemon.abilities[1] = (document.getElementById('ability2') as HTMLSelectElement).value;
 
@@ -622,14 +698,5 @@ const abilityOptions = [
     slider.addEventListener('input', () => {
       valueDisplay.textContent = slider.value;
     });
-  });
-
-  // Update type chips when type dropdowns change
-  document.getElementById('type1')!.addEventListener('change', (e) => {
-    updateTypeChip('type1-chip', (e.target as HTMLSelectElement).value);
-  });
-
-  document.getElementById('type2')!.addEventListener('change', (e) => {
-    updateTypeChip('type2-chip', (e.target as HTMLSelectElement).value);
   });
 </script>
