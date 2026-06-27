@@ -27,7 +27,7 @@
         .{{ padRight("friendship", _widths.friendship) }} = {{ old_unown_species_info.friendship }}, \
         .{{ padRight("growthRate", _widths.growthRate) }} = {{ old_unown_species_info.growthRate }}, \
         .{{ padRight("eggGroups", _widths.eggGroups) }} = { {{ at(old_unown_species_info.eggGroups, 0) }}, {{ at(old_unown_species_info.eggGroups, 1) }}, }, \
-        .{{ padRight("abilities", _widths.abilities) }} = {{ "{" }}{{ at(old_unown_species_info.abilities, 0) }}, {{ at(old_unown_species_info.abilities, 1) }}{{ "}" }}}, \
+        .{{ padRight("abilities", _widths.abilities) }} = {{ "{" }}{{ at(old_unown_species_info.abilities, 0) }}, {{ at(old_unown_species_info.abilities, 1) }}{{ "}" }}, \
         .{{ padRight("safariZoneFleeRate", _widths.safariZoneFleeRate) }} = {{ old_unown_species_info.safariZoneFleeRate }}, \
         .{{ padRight("bodyColor", _widths.bodyColor) }} = {{ old_unown_species_info.bodyColor }}, \
         .{{ padRight("noFlip", _widths.noFlip) }} = {{ old_unown_species_info.noFlip }}, \
@@ -66,7 +66,7 @@ const struct SpeciesInfo gSpeciesInfo[] =
         .{{ padRight("friendship", _widths.friendship) }} = {{ species.friendship }},
         .{{ padRight("growthRate", _widths.growthRate) }} = {{ species.growthRate }},
         .{{ padRight("eggGroups", _widths.eggGroups) }} = { {{ at(species.eggGroups, 0) }}, {{ at(species.eggGroups, 1) }} },
-        .{{ padRight("abilities", _widths.abilities) }} = {{ "{" }}{{ at(species.abilities, 0) }}, {{ at(species.abilities, 1) }}{{ "}" }}},
+        .{{ padRight("abilities", _widths.abilities) }} = {{ "{" }}{{ at(species.abilities, 0) }}, {{ at(species.abilities, 1) }}{{ "}" }},
         .{{ padRight("safariZoneFleeRate", _widths.safariZoneFleeRate) }} = {{ species.safariZoneFleeRate }},
         .{{ padRight("bodyColor", _widths.bodyColor) }} = {{ species.bodyColor }},
         .{{ padRight("noFlip", _widths.noFlip) }} = {{ species.noFlip }},
