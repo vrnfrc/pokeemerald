@@ -1,10 +1,9 @@
 const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
 {
 ## for evo in evolutions
-    {{ padRight(concat(concat("[SPECIES_", evo.from), "]"), _widths.label) }} = {
-{% for target in evo.to %}
-        {{ "{" }}{{ target.method }}, {{ target.param }}, SPECIES_{{ target.target }}}{% if not loop.is_last %},{% endif %}
-{% endfor %}
-    },
+    {{ padRight(concat(concat("[SPECIES_", evo.from), "]"), _widths.label) }} = {{ "{{" }}{% for target in evo.to %}{% if not loop.is_first %}
+                            {{ "{" }}{% endif %}{{ target.method }}, {{ target.param }}, SPECIES_{{ target.target }}{% if loop.is_last %}{{ "}}" }}{% else %},{% endif %}
+{% endfor %}},
 ## endfor
+
 };
