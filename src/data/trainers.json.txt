@@ -12,7 +12,7 @@ const struct Trainer gTrainers[] = {
 {% if length(trainer.items) == 0 %}
         .items = {},
 {% else %}
-        .items = { {{ join(trainer.items, ", ") }} },
+        .items = {{ "{" }}{{ join(trainer.items, ", ") }}{{ "}" }},
 {% endif %}
         .doubleBattle = {% if trainer.doubleBattle %}TRUE{% else %}FALSE{% endif %},
 {% if length(trainer.aiFlags) == 0 %}
@@ -29,5 +29,6 @@ const struct Trainer gTrainers[] = {
         .party = {{ trainer.party.type }}({{ trainer.party.name }}),
 {% endif %}
     },
+
 ## endfor
 };
