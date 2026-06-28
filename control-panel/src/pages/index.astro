@@ -437,33 +437,21 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     background: rgba(122, 162, 247, 0.12);
   }
 
-  /* Evolution tree (rooted at the base of the current line, full subtree) */
-  .evolution-chain { /* block container */ }
-  .evo-tree, .evo-tree ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  .evo-tree ul {
-    margin-left: 1.4rem;
-    padding-left: 0.8rem;
-    border-left: 1px solid var(--border);
-  }
-  .evo-tree li {
-    padding: 0.15rem 0;
-  }
-  .evo-add { list-style: none; }
-  .evo-add button { margin: 0.25rem 0; }
+  /* Evolution tree (horizontal: root on the left, children to the right) */
+  .evolution-chain { position: relative; }
   .evo-tile {
+    position: absolute;
+    width: 100px;
+    height: 90px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 0.3rem;
-    padding: 0.5rem 0.7rem;
+    justify-content: center;
+    gap: 0.25rem;
+    padding: 0.4rem;
     background: var(--panel-2);
     border: 1px solid var(--border);
     border-radius: 8px;
-    min-width: 72px;
   }
   .evo-tile.is-current {
     border-color: var(--accent);
@@ -477,12 +465,16 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     image-rendering: crisp-edges;
   }
   .evo-tile .evo-name {
-    font-size: 0.78rem;
+    font-size: 0.7rem;
     font-weight: 600;
     text-align: center;
     color: var(--text);
+    line-height: 1.1;
   }
   .evo-connector {
+    position: absolute;
+    width: 160px;
+    height: 90px;
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
@@ -490,18 +482,18 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     background: var(--panel-2);
     border: 1px solid var(--border);
     border-radius: 6px;
-    min-width: 130px;
+    justify-content: center;
   }
   .evo-connector select,
   .evo-connector input {
-    height: 28px;
+    height: 24px;
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 4px;
     padding: 0 0.4rem;
     color: var(--text);
     font: inherit;
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     width: 100%;
   }
   .evo-connector select { padding-right: 1.4rem; }
@@ -513,6 +505,26 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   .evo-connector select:focus,
   .evo-connector input:focus { outline: none; border-color: var(--accent); }
   .evo-connector .evo-target { font-weight: 600; }
+  .evo-add-btn {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 34px;
+    background: transparent;
+    border: 1px dashed var(--border);
+    border-radius: 6px;
+    color: var(--muted);
+    font: inherit;
+    font-size: 0.78rem;
+    cursor: pointer;
+  }
+  .evo-add-btn:hover {
+    color: var(--accent);
+    border-color: var(--accent);
+    background: rgba(122, 162, 247, 0.06);
+  }
   .evo-empty {
     color: var(--muted);
     font-size: 0.88rem;
@@ -1095,12 +1107,21 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     renderMoves(currentLabel);
   });
 
-  // ===== Evolution tree =====
-  // Renders the full evolutionary tree rooted at the base of the line containing
-  // the current species. All descendants are shown recursively, with branching
-  // wherever a Pokémon has multiple evolutions. The current species is highlighted.
-  // Each non-root node has an editable connector (method, param, target) above
-  // its tile that maps back to the right entry in evolutionData via (from, toIndex).
+  // ===== Evolution tree (horizontal layout) =====
+  // buildEvolutionTree algorithm:
+  //   1. Find the root of the line containing the current species by walking
+  //      back through evoToParent until a species has no pre-evolution.
+  //   2. Recursively layout the full subtree from the root: each node is
+  //      placed at (x, y) and its children stack vertically to the right
+  //      (x + TILE_W + CONN_W), with the parent vertically centered among
+  //      its children. For a linear chain this produces a straight horizontal
+  //      row; for branching nodes children spread vertically.
+  //   3. Edges (connectors with method/param/target) are placed in the gap
+  //      between each parent and child, vertically centered on the child.
+  const TILE_W = 100, TILE_H = 90, CONN_W = 160, CONN_H = 90, V_GAP = 16, H_GAP = 16;
+  type Pos = { label: string; x: number; y: number; isCurrent: boolean };
+  type Edge = { from: string; toIndex: number; method: string; param: number; target: string; x: number; y: number };
+
   let evoFromMap = new Map<string, { method: string; param: number; target: string }[]>();
   let evoToParent = new Map<string, { from: string; toIndex: number }>();
   let speciesOptionsHtml = '';
@@ -1138,30 +1159,55 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     return 'none';
   }
 
-  function buildEvoTile(label: string, isCurrent: boolean): HTMLDivElement {
+  function layoutTree(label: string, x: number, y: number, currentLabel: string, nodes: Pos[]): { width: number; height: number } {
+    const outgoing = evoFromMap.get(label) || [];
+    const isCurrent = label === currentLabel;
+    if (outgoing.length === 0) {
+      nodes.push({ label, x, y, isCurrent });
+      return { width: TILE_W, height: TILE_H };
+    }
+    let childY = y;
+    const bounds: { w: number; h: number }[] = [];
+    for (const edge of outgoing) {
+      const r = layoutTree(edge.target, x + TILE_W + CONN_W, childY, currentLabel, nodes);
+      bounds.push({ w: r.width, h: r.height });
+      childY += r.height + V_GAP;
+    }
+    const totalChildH = bounds.reduce((s, b) => s + b.h, 0) + (outgoing.length - 1) * V_GAP;
+    const nodeY = y + (totalChildH - TILE_H) / 2;
+    nodes.push({ label, x, y: nodeY, isCurrent });
+    const maxChildW = Math.max(...bounds.map(b => b.w));
+    return { width: TILE_W + CONN_W + maxChildW, height: Math.max(TILE_H, totalChildH) };
+  }
+
+  function buildEvoTile(label: string, isCurrent: boolean, x: number, y: number): HTMLDivElement {
     const tile = document.createElement('div');
     tile.className = 'evo-tile' + (isCurrent ? ' is-current' : '');
+    tile.style.left = x + 'px';
+    tile.style.top = y + 'px';
     tile.innerHTML = `<img class="evo-sprite" src="/api/sprite/${label.toLowerCase()}" alt=""><span class="evo-name">${label.replace(/_/g, ' ')}</span>`;
     return tile;
   }
 
-  function buildEvoConnector(from: string, toIndex: number, entry: { method: string; param: number; target: string }): HTMLDivElement {
+  function buildEvoConnector(edge: Edge): HTMLDivElement {
     const conn = document.createElement('div');
     conn.className = 'evo-connector';
+    conn.style.left = edge.x + 'px';
+    conn.style.top = edge.y + 'px';
     const methodSel = document.createElement('select');
     methodSel.className = 'evo-method';
     methodSel.innerHTML = evoOptionsHtml;
-    methodSel.value = entry.method;
+    methodSel.value = edge.method;
     const paramWrap = document.createElement('div');
     paramWrap.className = 'evo-param-wrap';
     const targetSel = document.createElement('select');
     targetSel.className = 'evo-target';
     targetSel.innerHTML = speciesOptionsHtml;
-    targetSel.value = entry.target;
+    targetSel.value = edge.target;
     conn.append(methodSel, paramWrap, targetSel);
 
     const data = get(evolutionData)!;
-    const entryRef = data.evolutions.find(e => e.from === from);
+    const entryRef = data.evolutions.find(e => e.from === edge.from);
     if (!entryRef) return conn;
 
     const buildParam = (method: string, current: number) => {
@@ -1174,66 +1220,22 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
       else if (t === 'beauty') { inp.min = '0'; inp.max = '255'; }
       inp.value = String(current);
       inp.addEventListener('input', () => {
-        entryRef.to[toIndex].param = parseInt(inp.value) || 0;
+        entryRef.to[edge.toIndex].param = parseInt(inp.value) || 0;
       });
       paramWrap.appendChild(inp);
     };
-    buildParam(entry.method, entry.param);
+    buildParam(edge.method, edge.param);
 
     methodSel.addEventListener('change', () => {
-      entryRef.to[toIndex].method = methodSel.value;
-      entryRef.to[toIndex].param = paramType(methodSel.value) === 'none' ? 0 : entryRef.to[toIndex].param;
-      buildParam(methodSel.value, entryRef.to[toIndex].param);
+      entryRef.to[edge.toIndex].method = methodSel.value;
+      entryRef.to[edge.toIndex].param = paramType(methodSel.value) === 'none' ? 0 : entryRef.to[edge.toIndex].param;
+      buildParam(methodSel.value, entryRef.to[edge.toIndex].param);
     });
     targetSel.addEventListener('change', () => {
-      entryRef.to[toIndex].target = targetSel.value;
+      entryRef.to[edge.toIndex].target = targetSel.value;
       if (currentLabel) renderEvolution(currentLabel);
     });
-
     return conn;
-  }
-
-  function buildEvoNode(label: string, currentLabel: string, isRoot: boolean): HTMLLIElement {
-    const li = document.createElement('li');
-    if (!isRoot) {
-      const p = evoToParent.get(label)!;
-      const entry = evoFromMap.get(p.from)![p.toIndex];
-      li.appendChild(buildEvoConnector(p.from, p.toIndex, entry));
-    }
-    li.appendChild(buildEvoTile(label, label === currentLabel));
-
-    const outgoing = evoFromMap.get(label) || [];
-    if (outgoing.length > 0) {
-      const childUl = document.createElement('ul');
-      outgoing.forEach(edge => {
-        childUl.appendChild(buildEvoNode(edge.target, currentLabel, false));
-      });
-      li.appendChild(childUl);
-    } else if (label === currentLabel) {
-      const childUl = document.createElement('ul');
-      const addLi = document.createElement('li');
-      addLi.className = 'evo-add';
-      const add = document.createElement('button');
-      add.type = 'button';
-      add.className = 'btn-add-move';
-      add.textContent = '+ Add Evolution';
-      add.style.minWidth = '120px';
-      add.style.width = 'auto';
-      add.style.padding = '0.5rem 0.8rem';
-      add.addEventListener('click', () => {
-        const evo = get(evolutionData);
-        if (!evo) return;
-        let entry = evo.evolutions.find(e => e.from === currentLabel);
-        if (!entry) { entry = { from: currentLabel, to: [] }; evo.evolutions.push(entry); }
-        const firstSpecies = get(speciesData)?.species?.[0]?.label ?? currentLabel;
-        entry.to.push({ method: 'EVO_LEVEL', param: 1, target: firstSpecies });
-        renderEvolution(currentLabel);
-      });
-      addLi.appendChild(add);
-      childUl.appendChild(addLi);
-      li.appendChild(childUl);
-    }
-    return li;
   }
 
   function renderEvolution(label: string) {
@@ -1252,10 +1254,58 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
         .join('');
     }
     const root = findEvoRoot(label);
-    const tree = document.createElement('ul');
-    tree.className = 'evo-tree';
-    tree.appendChild(buildEvoNode(root, label, true));
-    container.appendChild(tree);
+    const nodes: Pos[] = [];
+    const bounds = layoutTree(root, 0, 0, label, nodes);
+
+    const nodeMap = new Map(nodes.map(n => [n.label, n]));
+    const edges: Edge[] = [];
+    for (const [from, toList] of evoFromMap) {
+      const pNode = nodeMap.get(from);
+      if (!pNode) continue;
+      toList.forEach((edge, toIndex) => {
+        const cNode = nodeMap.get(edge.target);
+        if (!cNode) return;
+        edges.push({
+          from, toIndex,
+          method: edge.method, param: edge.param, target: edge.target,
+          x: pNode.x + TILE_W,
+          y: cNode.y + (TILE_H - CONN_H) / 2,
+        });
+      });
+    }
+
+    container.style.width = bounds.width + 'px';
+    container.style.height = bounds.height + 'px';
+
+    for (const n of nodes) {
+      container.appendChild(buildEvoTile(n.label, n.isCurrent, n.x, n.y));
+    }
+    for (const e of edges) {
+      container.appendChild(buildEvoConnector(e));
+    }
+
+    // "+ Add Evolution" next to the current leaf
+    const currentNode = nodeMap.get(label);
+    if (currentNode && (evoFromMap.get(label) || []).length === 0) {
+      const add = document.createElement('button');
+      add.type = 'button';
+      add.className = 'evo-add-btn';
+      add.textContent = '+ Add Evolution';
+      add.style.left = (currentNode.x + TILE_W + H_GAP) + 'px';
+      add.style.top = (currentNode.y + TILE_H / 2 - 17) + 'px';
+      add.addEventListener('click', () => {
+        const evo = get(evolutionData);
+        if (!evo) return;
+        let entry = evo.evolutions.find(e => e.from === label);
+        if (!entry) { entry = { from: label, to: [] }; evo.evolutions.push(entry); }
+        const firstSpecies = get(speciesData)?.species?.[0]?.label ?? label;
+        entry.to.push({ method: 'EVO_LEVEL', param: 1, target: firstSpecies });
+        renderEvolution(label);
+      });
+      container.appendChild(add);
+      const addRight = currentNode.x + TILE_W + H_GAP + 120;
+      if (addRight > bounds.width) container.style.width = addRight + 'px';
+    }
   }
 
   // TM/HM search: filter rows by name/tag substring (case-insensitive)
