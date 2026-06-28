@@ -437,13 +437,23 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     background: rgba(122, 162, 247, 0.12);
   }
 
-  /* Evolution chain */
-  .evolution-chain {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 0.6rem;
+  /* Evolution tree (rooted at the base of the current line, full subtree) */
+  .evolution-chain { /* block container */ }
+  .evo-tree, .evo-tree ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
   }
+  .evo-tree ul {
+    margin-left: 1.4rem;
+    padding-left: 0.8rem;
+    border-left: 1px solid var(--border);
+  }
+  .evo-tree li {
+    padding: 0.15rem 0;
+  }
+  .evo-add { list-style: none; }
+  .evo-add button { margin: 0.25rem 0; }
   .evo-tile {
     display: flex;
     flex-direction: column;
@@ -1085,13 +1095,39 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     renderMoves(currentLabel);
   });
 
-  // ===== Evolution chain =====
-  // Build the chain items for a given species: ancestors (root → current) plus
-  // the current species's outgoing evolutions (branches). Each transition carries
-  // {from, toIndex} so edits map back to evolutionData.
-  type EvoItem =
-    | { kind: 'tile'; label: string; isCurrent: boolean }
-    | { kind: 'transition'; from: string; toIndex: number };
+  // ===== Evolution tree =====
+  // Renders the full evolutionary tree rooted at the base of the line containing
+  // the current species. All descendants are shown recursively, with branching
+  // wherever a Pokémon has multiple evolutions. The current species is highlighted.
+  // Each non-root node has an editable connector (method, param, target) above
+  // its tile that maps back to the right entry in evolutionData via (from, toIndex).
+  let evoFromMap = new Map<string, { method: string; param: number; target: string }[]>();
+  let evoToParent = new Map<string, { from: string; toIndex: number }>();
+  let speciesOptionsHtml = '';
+
+  function rebuildEvoMaps() {
+    evoFromMap = new Map();
+    evoToParent = new Map();
+    const data = get(evolutionData);
+    if (!data) return;
+    for (const e of data.evolutions) {
+      evoFromMap.set(e.from, e.to);
+      e.to.forEach((t, i) => evoToParent.set(t.target, { from: e.from, toIndex: i }));
+    }
+  }
+
+  function findEvoRoot(label: string): string {
+    let cur = label;
+    const seen = new Set<string>();
+    while (true) {
+      if (seen.has(cur)) break;
+      seen.add(cur);
+      const p = evoToParent.get(cur);
+      if (!p) break;
+      cur = p.from;
+    }
+    return cur;
+  }
 
   function paramType(method: string): 'level' | 'item' | 'beauty' | 'none' {
     if (method === 'EVO_LEVEL' || method === 'EVO_LEVEL_ATK_GT_DEF' || method === 'EVO_LEVEL_ATK_EQ_DEF' ||
@@ -1102,124 +1138,31 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     return 'none';
   }
 
-  function buildChain(label: string): EvoItem[] {
-    const data = get(evolutionData);
-    if (!data) return [];
-    const fromMap = new Map<string, { method: string; param: number; target: string }[]>();
-    const toParent = new Map<string, { from: string; toIndex: number; method: string; param: number }>();
-    for (const entry of data.evolutions) {
-      fromMap.set(entry.from, entry.to);
-      entry.to.forEach((t, i) => toParent.set(t.target, { from: entry.from, toIndex: i, method: t.method, param: t.param }));
-    }
-    // Walk back to root
-    const ancestors: string[] = [];
-    let cur = label;
-    const seen = new Set<string>();
-    while (true) {
-      if (seen.has(cur)) break;
-      seen.add(cur);
-      ancestors.unshift(cur);
-      const p = toParent.get(cur);
-      if (!p) break;
-      cur = p.from;
-    }
-    const items: EvoItem[] = [];
-    for (let i = 0; i < ancestors.length; i++) {
-      const isCurrent = ancestors[i] === label;
-      items.push({ kind: 'tile', label: ancestors[i], isCurrent });
-      if (i < ancestors.length - 1) {
-        const p = toParent.get(ancestors[i + 1])!;
-        items.push({ kind: 'transition', from: ancestors[i], toIndex: p.toIndex });
-      }
-    }
-    // Outgoing branches of the current species
-    const outgoing = fromMap.get(label) || [];
-    outgoing.forEach((t, i) => {
-      items.push({ kind: 'transition', from: label, toIndex: i });
-      items.push({ kind: 'tile', label: t.target, isCurrent: false });
-    });
-    return items;
-  }
-
-  function renderEvolution(label: string) {
-    const container = document.getElementById('evolution-chain')!;
-    container.innerHTML = '';
-    const data = get(evolutionData);
-    if (!data) {
-      container.innerHTML = '<div class="evo-empty">Loading…</div>';
-      return;
-    }
-    const items = buildChain(label);
-    if (items.length === 0) {
-      container.innerHTML = '<div class="evo-empty">No evolution data</div>';
-      return;
-    }
-    const fromMap = new Map<string, { method: string; param: number; target: string }[]>();
-    for (const e of data.evolutions) fromMap.set(e.from, e.to);
-
-    const speciesOptions = (get(speciesData)?.species ?? [])
-      .map((s: any) => `<option value="${s.label}">${s.label.replace(/_/g, ' ')}</option>`)
-      .join('');
-
-    for (const item of items) {
-      if (item.kind === 'tile') {
-        container.appendChild(buildEvoTile(item.label, item.isCurrent));
-      } else {
-        const toEntry = fromMap.get(item.from)![item.toIndex];
-        container.appendChild(buildEvoConnector(item.from, item.toIndex, toEntry, speciesOptions));
-      }
-    }
-    // If current has no outgoing, optionally add an "add evolution" button
-    const hasOutgoing = (fromMap.get(label) || []).length > 0;
-    if (!hasOutgoing) {
-      const add = document.createElement('button');
-      add.type = 'button';
-      add.className = 'btn-add-move';
-      add.textContent = '+ Add Evolution';
-      add.style.minWidth = '120px';
-      add.style.width = 'auto';
-      add.style.padding = '0.5rem 0.8rem';
-      add.addEventListener('click', () => {
-        const evo = get(evolutionData);
-        if (!evo) return;
-        let entry = evo.evolutions.find(e => e.from === label);
-        if (!entry) { entry = { from: label, to: [] }; evo.evolutions.push(entry); }
-        const firstSpecies = get(speciesData)?.species?.[0]?.label ?? label;
-        entry.to.push({ method: 'EVO_LEVEL', param: 1, target: firstSpecies });
-        renderEvolution(label);
-      });
-      container.appendChild(add);
-    }
-  }
-
-  function buildEvoTile(label: string, isCurrent: boolean) {
+  function buildEvoTile(label: string, isCurrent: boolean): HTMLDivElement {
     const tile = document.createElement('div');
     tile.className = 'evo-tile' + (isCurrent ? ' is-current' : '');
-    tile.innerHTML = `
-      <img class="evo-sprite" src="/api/sprite/${label.toLowerCase()}" alt="">
-      <span class="evo-name">${label.replace(/_/g, ' ')}</span>
-    `;
+    tile.innerHTML = `<img class="evo-sprite" src="/api/sprite/${label.toLowerCase()}" alt=""><span class="evo-name">${label.replace(/_/g, ' ')}</span>`;
     return tile;
   }
 
-  function buildEvoConnector(from: string, toIndex: number, entry: { method: string; param: number; target: string }, speciesOptions: string) {
+  function buildEvoConnector(from: string, toIndex: number, entry: { method: string; param: number; target: string }): HTMLDivElement {
     const conn = document.createElement('div');
     conn.className = 'evo-connector';
     const methodSel = document.createElement('select');
     methodSel.className = 'evo-method';
     methodSel.innerHTML = evoOptionsHtml;
     methodSel.value = entry.method;
-    conn.appendChild(methodSel);
-
     const paramWrap = document.createElement('div');
     paramWrap.className = 'evo-param-wrap';
-    conn.appendChild(paramWrap);
-
     const targetSel = document.createElement('select');
     targetSel.className = 'evo-target';
-    targetSel.innerHTML = speciesOptions;
+    targetSel.innerHTML = speciesOptionsHtml;
     targetSel.value = entry.target;
-    conn.appendChild(targetSel);
+    conn.append(methodSel, paramWrap, targetSel);
+
+    const data = get(evolutionData)!;
+    const entryRef = data.evolutions.find(e => e.from === from);
+    if (!entryRef) return conn;
 
     const buildParam = (method: string, current: number) => {
       paramWrap.innerHTML = '';
@@ -1230,34 +1173,89 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
       if (t === 'level') { inp.min = '1'; inp.max = '100'; }
       else if (t === 'beauty') { inp.min = '0'; inp.max = '255'; }
       inp.value = String(current);
+      inp.addEventListener('input', () => {
+        entryRef.to[toIndex].param = parseInt(inp.value) || 0;
+      });
       paramWrap.appendChild(inp);
     };
     buildParam(entry.method, entry.param);
-
-    const evo = get(evolutionData)!;
-    const entryRef = evo.evolutions.find(e => e.from === from);
-    if (!entryRef) return conn;
 
     methodSel.addEventListener('change', () => {
       entryRef.to[toIndex].method = methodSel.value;
       entryRef.to[toIndex].param = paramType(methodSel.value) === 'none' ? 0 : entryRef.to[toIndex].param;
       buildParam(methodSel.value, entryRef.to[toIndex].param);
-      attachParamListener();
     });
-    const attachParamListener = () => {
-      const inp = paramWrap.querySelector('input');
-      if (!inp) return;
-      inp.addEventListener('input', () => {
-        entryRef.to[toIndex].param = parseInt((inp as HTMLInputElement).value) || 0;
-      });
-    };
-    attachParamListener();
     targetSel.addEventListener('change', () => {
       entryRef.to[toIndex].target = targetSel.value;
-      renderEvolution(currentLabel!);
+      if (currentLabel) renderEvolution(currentLabel);
     });
 
     return conn;
+  }
+
+  function buildEvoNode(label: string, currentLabel: string, isRoot: boolean): HTMLLIElement {
+    const li = document.createElement('li');
+    if (!isRoot) {
+      const p = evoToParent.get(label)!;
+      const entry = evoFromMap.get(p.from)![p.toIndex];
+      li.appendChild(buildEvoConnector(p.from, p.toIndex, entry));
+    }
+    li.appendChild(buildEvoTile(label, label === currentLabel));
+
+    const outgoing = evoFromMap.get(label) || [];
+    if (outgoing.length > 0) {
+      const childUl = document.createElement('ul');
+      outgoing.forEach(edge => {
+        childUl.appendChild(buildEvoNode(edge.target, currentLabel, false));
+      });
+      li.appendChild(childUl);
+    } else if (label === currentLabel) {
+      const childUl = document.createElement('ul');
+      const addLi = document.createElement('li');
+      addLi.className = 'evo-add';
+      const add = document.createElement('button');
+      add.type = 'button';
+      add.className = 'btn-add-move';
+      add.textContent = '+ Add Evolution';
+      add.style.minWidth = '120px';
+      add.style.width = 'auto';
+      add.style.padding = '0.5rem 0.8rem';
+      add.addEventListener('click', () => {
+        const evo = get(evolutionData);
+        if (!evo) return;
+        let entry = evo.evolutions.find(e => e.from === currentLabel);
+        if (!entry) { entry = { from: currentLabel, to: [] }; evo.evolutions.push(entry); }
+        const firstSpecies = get(speciesData)?.species?.[0]?.label ?? currentLabel;
+        entry.to.push({ method: 'EVO_LEVEL', param: 1, target: firstSpecies });
+        renderEvolution(currentLabel);
+      });
+      addLi.appendChild(add);
+      childUl.appendChild(addLi);
+      li.appendChild(childUl);
+    }
+    return li;
+  }
+
+  function renderEvolution(label: string) {
+    const container = document.getElementById('evolution-chain')!;
+    container.innerHTML = '';
+    const data = get(evolutionData);
+    if (!data) {
+      container.innerHTML = '<div class="evo-empty">Loading…</div>';
+      return;
+    }
+    rebuildEvoMaps();
+    const sp = get(speciesData);
+    if (sp) {
+      speciesOptionsHtml = sp.species
+        .map((s: any) => `<option value="${s.label}">${s.label.replace(/_/g, ' ')}</option>`)
+        .join('');
+    }
+    const root = findEvoRoot(label);
+    const tree = document.createElement('ul');
+    tree.className = 'evo-tree';
+    tree.appendChild(buildEvoNode(root, label, true));
+    container.appendChild(tree);
   }
 
   // TM/HM search: filter rows by name/tag substring (case-insensitive)
