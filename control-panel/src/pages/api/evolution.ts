@@ -14,29 +14,56 @@ function prettyLabel(ident: string): string {
     .join(' ');
 }
 
+// Friendly labels for evolution methods. "Evo Level Silcoon" is a developer
+// identifier; in the editor we want plain English ("Level (Silcoon)").
+const METHOD_LABELS: Record<string, string> = {
+  EVO_FRIENDSHIP: 'Friendship',
+  EVO_FRIENDSHIP_DAY: 'Friendship (Day)',
+  EVO_FRIENDSHIP_NIGHT: 'Friendship (Night)',
+  EVO_LEVEL: 'Level',
+  EVO_TRADE: 'Trade',
+  EVO_TRADE_ITEM: 'Trade (holding item)',
+  EVO_ITEM: 'Item',
+  EVO_LEVEL_ATK_GT_DEF: 'Level (Atk > Def)',
+  EVO_LEVEL_ATK_EQ_DEF: 'Level (Atk = Def)',
+  EVO_LEVEL_ATK_LT_DEF: 'Level (Atk < Def)',
+  EVO_LEVEL_SILCOON: 'Level (Silcoon)',
+  EVO_LEVEL_CASCOON: 'Level (Cascoon)',
+  EVO_LEVEL_NINJASK: 'Level (Ninjask)',
+  EVO_LEVEL_SHEDINJA: 'Level (Shedinja)',
+  EVO_BEAUTY: 'Beauty',
+};
+
 function parseMethods(): { value: string; label: string }[] {
   const src = fs.readFileSync(path.join(POKEEMERALD_ROOT, 'include/constants/pokemon.h'), 'utf8');
   const re = /^#define\s+(EVO_[A-Z0-9_]+)\s+(\d+)/gm;
   const entries: { value: string; label: string; order: number }[] = [];
   let m;
   while ((m = re.exec(src))) {
-    entries.push({ value: m[1], label: prettyLabel(m[1]), order: parseInt(m[2]) });
+    const name = m[1];
+    // EVO_MODE_* are evolution scene modes (NORMAL / TRADE / ITEM_USE /
+    // ITEM_CHECK), not evolution methods. Exclude them from the dropdown.
+    if (name.startsWith('EVO_MODE_')) continue;
+    const label = METHOD_LABELS[name] ?? prettyLabel(name);
+    entries.push({ value: name, label, order: parseInt(m[2]) });
   }
   return entries.sort((a, b) => a.order - b.order).map(({ value, label }) => ({ value, label }));
 }
 
-function parseItems(): { value: string; label: string }[] {
+function parseItems(): { value: string; label: string; number: number }[] {
   const src = fs.readFileSync(path.join(POKEEMERALD_ROOT, 'include/constants/items.h'), 'utf8');
   const re = /^#define\s+(ITEM_[A-Z0-9_]+)\s+(\d+)/gm;
-  const items: string[] = [];
+  const items: { value: string; label: string; number: number }[] = [];
   let m;
-  while ((m = re.exec(src))) items.push(m[1]);
-  return items
-    .filter(i => i !== 'ITEM_NONE' && i !== 'ITEM_LIST_END')
-    .filter(i => !/^ITEM_[0-9A-F]+$/.test(i))
-    .map(i => ({ value: i, label: prettyLabel(i.replace(/^ITEM_/, '')) }))
-    .filter(o => !/^[0-9a-f]{2,4}$/i.test(o.label))
-    .sort((a, b) => a.label.localeCompare(b.label));
+  while ((m = re.exec(src))) {
+    const name = m[1];
+    if (name === 'ITEM_NONE' || name === 'ITEM_LIST_END') continue;
+    if (/^ITEM_[0-9A-F]+$/.test(name)) continue;
+    const label = prettyLabel(name.replace(/^ITEM_/, ''));
+    if (/^[0-9a-f]{2,4}$/i.test(label)) continue;
+    items.push({ value: name, label, number: parseInt(m[2]) });
+  }
+  return items.sort((a, b) => a.label.localeCompare(b.label));
 }
 
 export const GET: APIRoute = async () => {

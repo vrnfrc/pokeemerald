@@ -440,7 +440,6 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   /* Evolution tree (horizontal: root on the left, children to the right) */
   .evolution-chain { position: relative; margin: 0 auto; }
   .evolution-section-wrap { margin-top: 2rem; overflow-x: auto; }
-  .evolution-section-wrap h3 { text-align: center; }
   .evo-tile {
     position: absolute;
     width: 220px;
@@ -545,8 +544,8 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   /* "X" button on the connector to remove the evolution */
   .evo-connector .evo-delete {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 14px;
+    right: 14px;
     width: 32px;
     height: 32px;
     border-radius: 50%;
@@ -1229,7 +1228,7 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   //      row; for branching nodes children spread vertically.
   //   3. Edges (connectors with method/param/target) are placed in the gap
   //      between each parent and child, vertically centered on the child.
-  const TILE_W = 220, TILE_H = 235, CONN_W = 220, CONN_H = 235, ARROW_W = 28, TAIL_W = 20, V_GAP = 16, H_GAP = 16;
+  const TILE_W = 220, TILE_H = 235, CONN_W = 220, CONN_H = 235, ARROW_W = 28, TAIL_W = 20, ARROW_GAP = 20, V_GAP = 16, H_GAP = 16;
   // The connector and tile share the same height, so the connector sits flush
   // with the top of the child tile (TOP_PAD = 0). For branching nodes the
   // parent tile expands vertically to embrace all its children, and the
@@ -1291,7 +1290,7 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     let childY = y;
     const bounds: { w: number; h: number }[] = [];
     for (const edge of outgoing) {
-      const r = layoutTree(edge.target, x + TILE_W + 2 * ARROW_W + CONN_W + TAIL_W, childY, false, currentLabel, nodes);
+      const r = layoutTree(edge.target, x + TILE_W + 2 * ARROW_W + CONN_W + TAIL_W + ARROW_GAP, childY, false, currentLabel, nodes);
       bounds.push({ w: r.width, h: r.height });
       childY += r.height + V_GAP;
     }
@@ -1307,7 +1306,7 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     const nodeY = isRoot ? y : y + (totalChildH - parentHeight) / 2;
     nodes.push({ label, x, y: nodeY, height: parentHeight, isCurrent });
     const maxChildW = Math.max(...bounds.map(b => b.w));
-    return { width: TILE_W + 2 * ARROW_W + CONN_W + TAIL_W + maxChildW, height: Math.max(ROW_H, totalChildH) };
+    return { width: TILE_W + 2 * ARROW_W + CONN_W + TAIL_W + ARROW_GAP + maxChildW, height: Math.max(ROW_H, totalChildH) };
   }
 
   function buildEvoTile(label: string, isCurrent: boolean, x: number, y: number, height: number): HTMLDivElement {
@@ -1387,6 +1386,23 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
       paramWrap.innerHTML = '';
       const t = paramType(method);
       if (t === 'none') return;
+      if (t === 'item') {
+        // EVO_ITEM / EVO_TRADE_ITEM: show a real item dropdown. The stored
+        // param is the item's numeric constant; we look it up by number and
+        // write back the number on change.
+        const match = evoItems.find(i => i.number === current);
+        const sel = document.createElement('select');
+        sel.className = 'evo-item-select';
+        sel.innerHTML = evoItemOptionsHtml;
+        sel.value = match?.value ?? evoItems[0]?.value ?? '';
+        sel.addEventListener('change', () => {
+          const picked = evoItems.find(i => i.value === sel.value);
+          draftParam = picked ? picked.number : 0;
+          refreshSaveState();
+        });
+        paramWrap.appendChild(sel);
+        return;
+      }
       const inp = document.createElement('input');
       inp.type = 'number';
       if (t === 'level') { inp.min = '1'; inp.max = '100'; }
