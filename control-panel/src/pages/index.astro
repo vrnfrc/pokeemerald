@@ -438,17 +438,19 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   }
 
   /* Evolution tree (horizontal: root on the left, children to the right) */
-  .evolution-chain { position: relative; }
+  .evolution-chain { position: relative; margin: 0 auto; }
+  .evolution-section-wrap { margin-top: 2rem; overflow-x: auto; }
+  .evolution-section-wrap h3 { text-align: center; }
   .evo-tile {
     position: absolute;
-    width: 100px;
-    height: 90px;
+    width: 160px;
+    height: 130px;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0.25rem;
-    padding: 0.4rem;
+    gap: 0.4rem;
+    padding: 0.6rem;
     background: var(--panel-2);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -459,44 +461,75 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     box-shadow: 0 0 0 2px rgba(122, 162, 247, 0.2);
   }
   .evo-tile .evo-sprite {
-    width: 48px;
-    height: 48px;
+    width: 80px;
+    height: 80px;
     image-rendering: pixelated;
     image-rendering: crisp-edges;
+    object-fit: cover;
+    object-position: top;
   }
   .evo-tile .evo-name {
-    font-size: 0.7rem;
+    font-size: 0.88rem;
     font-weight: 600;
     text-align: center;
     color: var(--text);
-    line-height: 1.1;
+    line-height: 1.15;
   }
   .evo-connector {
     position: absolute;
     width: 160px;
-    height: 90px;
+    height: 130px;
     display: flex;
     flex-direction: column;
     gap: 0.3rem;
-    padding: 0.4rem 0.5rem;
+    padding: 0.5rem;
     background: var(--panel-2);
     border: 1px solid var(--border);
     border-radius: 6px;
     justify-content: center;
   }
+  .evo-line {
+    position: absolute;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    pointer-events: none;
+  }
+  .evo-line::before {
+    content: '';
+    width: 100%;
+    height: 2px;
+    background: var(--accent);
+  }
+  .evo-arrow {
+    position: absolute;
+    width: 28px;
+    height: 130px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    pointer-events: none;
+  }
+  .evo-arrow::before {
+    content: '';
+    width: 0; height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    border-left: 16px solid var(--accent);
+  }
   .evo-connector select,
   .evo-connector input {
-    height: 24px;
+    height: 34px;
     background: var(--bg);
     border: 1px solid var(--border);
-    border-radius: 4px;
-    padding: 0 0.4rem;
+    border-radius: 6px;
+    padding: 0 0.6rem;
     color: var(--text);
     font: inherit;
-    font-size: 0.72rem;
+    font-size: 0.9rem;
     width: 100%;
   }
-  .evo-connector select { padding-right: 1.4rem; }
+  .evo-connector select { padding-right: 1.8rem; }
   .evo-connector input { text-align: center; -moz-appearance: textfield; }
   .evo-connector input::-webkit-outer-spin-button,
   .evo-connector input::-webkit-inner-spin-button {
@@ -510,14 +543,14 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 120px;
-    height: 34px;
+    width: 130px;
+    height: 36px;
     background: transparent;
     border: 1px dashed var(--border);
     border-radius: 6px;
     color: var(--muted);
     font: inherit;
-    font-size: 0.78rem;
+    font-size: 0.85rem;
     cursor: pointer;
   }
   .evo-add-btn:hover {
@@ -1118,7 +1151,15 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   //      row; for branching nodes children spread vertically.
   //   3. Edges (connectors with method/param/target) are placed in the gap
   //      between each parent and child, vertically centered on the child.
-  const TILE_W = 100, TILE_H = 90, CONN_W = 160, CONN_H = 90, V_GAP = 16, H_GAP = 16;
+  const TILE_W = 160, TILE_H = 130, CONN_W = 160, CONN_H = 130, ARROW_W = 28, TAIL_W = 20, V_GAP = 16, H_GAP = 16;
+  // The connector is taller than the tile; it's centered on the child, so it
+  // extends (CONN_H - TILE_H) / 2 above and below the tile. The layout accounts
+  // for this overhang so the container doesn't clip the connector/line/arrow.
+  const TOP_PAD = (CONN_H - TILE_H) / 2;
+  // Effective vertical space a child takes, from the top of its incoming
+  // connector to the bottom of its own (or its descendants') connector.
+  // Used as the step between siblings so their connectors don't overlap.
+  const ROW_H = CONN_H + TOP_PAD;
   type Pos = { label: string; x: number; y: number; isCurrent: boolean };
   type Edge = { from: string; toIndex: number; method: string; param: number; target: string; x: number; y: number };
 
@@ -1159,25 +1200,30 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     return 'none';
   }
 
-  function layoutTree(label: string, x: number, y: number, currentLabel: string, nodes: Pos[]): { width: number; height: number } {
+  function layoutTree(label: string, x: number, y: number, isRoot: boolean, currentLabel: string, nodes: Pos[]): { width: number; height: number } {
     const outgoing = evoFromMap.get(label) || [];
     const isCurrent = label === currentLabel;
     if (outgoing.length === 0) {
       nodes.push({ label, x, y, isCurrent });
-      return { width: TILE_W, height: TILE_H };
+      // Effective row height: from the top of the incoming connector
+      // (y - TOP_PAD) to the bottom of the outgoing side (y + CONN_H).
+      return { width: TILE_W, height: ROW_H };
     }
     let childY = y;
     const bounds: { w: number; h: number }[] = [];
     for (const edge of outgoing) {
-      const r = layoutTree(edge.target, x + TILE_W + CONN_W, childY, currentLabel, nodes);
+      const r = layoutTree(edge.target, x + TILE_W + 2 * ARROW_W + CONN_W + TAIL_W, childY, false, currentLabel, nodes);
       bounds.push({ w: r.width, h: r.height });
       childY += r.height + V_GAP;
     }
     const totalChildH = bounds.reduce((s, b) => s + b.h, 0) + (outgoing.length - 1) * V_GAP;
-    const nodeY = y + (totalChildH - TILE_H) / 2;
+    // The root is placed at the top (not centered) so the topmost connector
+    // (centered on the first child) is flush at y=0. Non-root nodes are
+    // centered vertically among their children for a balanced look.
+    const nodeY = isRoot ? y : y + (totalChildH - TILE_H) / 2;
     nodes.push({ label, x, y: nodeY, isCurrent });
     const maxChildW = Math.max(...bounds.map(b => b.w));
-    return { width: TILE_W + CONN_W + maxChildW, height: Math.max(TILE_H, totalChildH) };
+    return { width: TILE_W + 2 * ARROW_W + CONN_W + TAIL_W + maxChildW, height: Math.max(ROW_H, totalChildH) };
   }
 
   function buildEvoTile(label: string, isCurrent: boolean, x: number, y: number): HTMLDivElement {
@@ -1254,8 +1300,18 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
         .join('');
     }
     const root = findEvoRoot(label);
+    const rootChildren = evoFromMap.get(root) || [];
     const nodes: Pos[] = [];
-    const bounds = layoutTree(root, 0, 0, label, nodes);
+    // If the root has children, shift it down by TOP_PAD so the topmost
+    // connector/line (centered on the first child) starts at y=0.
+    const startY = rootChildren.length > 0 ? TOP_PAD : 0;
+    const bounds = layoutTree(root, 0, startY, true, label, nodes);
+
+    // Height must cover the connector/line/arrow overhang on the deepest node,
+    // not just the tile heights.
+    const boundsHeight = rootChildren.length > 0
+      ? Math.max(TILE_H, ...nodes.map(n => n.y + CONN_H))
+      : TILE_H;
 
     const nodeMap = new Map(nodes.map(n => [n.label, n]));
     const edges: Edge[] = [];
@@ -1268,20 +1324,43 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
         edges.push({
           from, toIndex,
           method: edge.method, param: edge.param, target: edge.target,
-          x: pNode.x + TILE_W,
-          y: cNode.y + (TILE_H - CONN_H) / 2,
+          x: pNode.x + TILE_W + ARROW_W,  // connector sits after the first arrow
+          y: cNode.y,                       // arrows + connector share the child's vertical top
         });
       });
     }
 
     container.style.width = bounds.width + 'px';
-    container.style.height = bounds.height + 'px';
+    container.style.height = boundsHeight + 'px';
 
     for (const n of nodes) {
       container.appendChild(buildEvoTile(n.label, n.isCurrent, n.x, n.y));
     }
-    for (const e of edges) {
+    for (let i = 0; i < edges.length; i++) {
+      const e = edges[i];
+      const lineTop = e.y + (TILE_H - CONN_H) / 2;
+      // Line from parent tile to connector
+      const ln = document.createElement('div');
+      ln.className = 'evo-line';
+      ln.style.left = (e.x - ARROW_W) + 'px';
+      ln.style.top = lineTop + 'px';
+      ln.style.width = ARROW_W + 'px';
+      container.appendChild(ln);
+      // Connector
       container.appendChild(buildEvoConnector(e));
+      // Arrow tail (line) from connector to child
+      const tl = document.createElement('div');
+      tl.className = 'evo-line';
+      tl.style.left = (e.x + CONN_W) + 'px';
+      tl.style.top = lineTop + 'px';
+      tl.style.width = TAIL_W + 'px';
+      container.appendChild(tl);
+      // Arrow head from tail to child tile
+      const ah = document.createElement('div');
+      ah.className = 'evo-arrow';
+      ah.style.left = (e.x + CONN_W + TAIL_W) + 'px';
+      ah.style.top = lineTop + 'px';
+      container.appendChild(ah);
     }
 
     // "+ Add Evolution" next to the current leaf
@@ -1291,8 +1370,9 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
       add.type = 'button';
       add.className = 'evo-add-btn';
       add.textContent = '+ Add Evolution';
-      add.style.left = (currentNode.x + TILE_W + H_GAP) + 'px';
-      add.style.top = (currentNode.y + TILE_H / 2 - 17) + 'px';
+      const addX = currentNode.x + TILE_W + 2 * ARROW_W + CONN_W + TAIL_W;
+      add.style.left = (addX + H_GAP) + 'px';
+      add.style.top = (currentNode.y + TILE_H / 2 - 18) + 'px';
       add.addEventListener('click', () => {
         const evo = get(evolutionData);
         if (!evo) return;
@@ -1303,7 +1383,7 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
         renderEvolution(label);
       });
       container.appendChild(add);
-      const addRight = currentNode.x + TILE_W + H_GAP + 120;
+      const addRight = addX + H_GAP + 130;
       if (addRight > bounds.width) container.style.width = addRight + 'px';
     }
   }
