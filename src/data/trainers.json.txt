@@ -1,0 +1,33 @@
+const struct Trainer gTrainers[] = {
+## for trainer in trainers
+    [{{ trainer.id }}] =
+    {
+{% if existsIn(trainer, "partyFlags") %}
+        .partyFlags = {{ trainer.partyFlags }},
+{% endif %}
+        .trainerClass = {{ trainer.trainerClass }},
+        .encounterMusic_gender = {{ trainer.encounterMusic_gender }},
+        .trainerPic = {{ trainer.trainerPic }},
+        .trainerName = _("{{ trainer.trainerName }}"),
+{% if length(trainer.items) == 0 %}
+        .items = {},
+{% else %}
+        .items = { {{ join(trainer.items, ", ") }} },
+{% endif %}
+        .doubleBattle = {% if trainer.doubleBattle %}TRUE{% else %}FALSE{% endif %},
+{% if length(trainer.aiFlags) == 0 %}
+        .aiFlags = 0,
+{% else %}
+        .aiFlags = {{ join(trainer.aiFlags, " | ") }},
+{% endif %}
+{% if existsIn(trainer, "partySize") %}
+        .partySize = {{ trainer.partySize }},
+{% endif %}
+{% if existsIn(trainer, "party") and trainer.party == null %}
+        .party = {.NoItemDefaultMoves = NULL},
+{% else %}
+        .party = {{ trainer.party.type }}({{ trainer.party.name }}),
+{% endif %}
+    },
+## endfor
+};
