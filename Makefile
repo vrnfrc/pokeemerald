@@ -159,7 +159,7 @@ MAKEFLAGS += --no-print-directory
 # Delete files that weren't built properly
 .DELETE_ON_ERROR:
 
-RULES_NO_SCAN += libagbsyscall clean clean-assets tidy tidymodern tidynonmodern generated clean-generated
+RULES_NO_SCAN += libagbsyscall clean clean-assets tidy tidymodern tidynonmodern generated clean-generated experimental_json_files
 .PHONY: all rom modern compare
 .PHONY: $(RULES_NO_SCAN)
 
@@ -190,6 +190,11 @@ ifeq ($(SETUP_PREREQS),1)
   $(foreach line, $(shell $(MAKE) generated | sed "s/ /__SPACE__/g"), $(info $(subst __SPACE__, ,$(line))))
   ifneq ($(.SHELLSTATUS),0)
     $(error Errors occurred while generating map-related sources. See error messages above for more details)
+  endif
+  # Regenerate experimental JSON-driven Pokemon data files
+  $(foreach line, $(shell $(MAKE) experimental_json_files | sed "s/ /__SPACE__/g"), $(info $(subst __SPACE__, ,$(line))))
+  ifneq ($(.SHELLSTATUS),0)
+    $(error Errors occurred while regenerating experimental JSON files. See error messages above for more details)
   endif
 endif
 
@@ -260,6 +265,14 @@ include audio_rules.mk
 # so you can't really call this rule directly
 generated: $(AUTO_GEN_TARGETS)
 	@: # Silence the "Nothing to be done for `generated'" message, which some people were confusing for an error.
+
+# Experimental JSON-to-H regeneration for Pokemon data files
+# These are manually regenerated until the conversion is fully validated
+experimental_json_files:
+	$(JSONPROC) $(DATA_SRC_SUBDIR)/pokemon/species_info.json $(DATA_SRC_SUBDIR)/pokemon/species_info.json.txt $(DATA_SRC_SUBDIR)/pokemon/species_info.h
+	$(JSONPROC) $(DATA_SRC_SUBDIR)/pokemon/evolution.json $(DATA_SRC_SUBDIR)/pokemon/evolution.json.txt $(DATA_SRC_SUBDIR)/pokemon/evolution.h
+	$(JSONPROC) $(DATA_SRC_SUBDIR)/pokemon/level_up_learnsets.json $(DATA_SRC_SUBDIR)/pokemon/level_up_learnsets.json.txt $(DATA_SRC_SUBDIR)/pokemon/level_up_learnsets.h
+	$(JSONPROC) $(DATA_SRC_SUBDIR)/pokemon/tmhm_learnsets.json $(DATA_SRC_SUBDIR)/pokemon/tmhm_learnsets.json.txt $(DATA_SRC_SUBDIR)/pokemon/tmhm_learnsets.h
 
 
 %.s:   ;
