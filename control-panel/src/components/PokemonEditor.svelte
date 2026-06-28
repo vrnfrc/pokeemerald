@@ -353,12 +353,15 @@
     tile.style.left = x + 'px';
     tile.style.top = y + 'px';
     tile.style.height = height + 'px';
-    tile.innerHTML = `<img class="evo-sprite" src="/api/sprite/${label.toLowerCase()}" alt=""><span class="evo-name">${label.replace(/_/g, ' ')}</span>`;
+    const labelWrap = document.createElement('div');
+    labelWrap.className = 'evo-tile-label';
+    labelWrap.innerHTML = `<img class="evo-sprite" src="/api/sprite/${label.toLowerCase()}" alt=""><span class="evo-name">${label.replace(/_/g, ' ')}</span>`;
+    tile.appendChild(labelWrap);
     if (isCurrent) {
       const add = document.createElement('button');
       add.type = 'button';
       add.className = 'evo-add';
-      add.textContent = '+';
+      add.textContent = 'Add';
       add.title = 'Add evolution';
       add.addEventListener('click', () => {
         if (!evolutionData) return;
@@ -394,7 +397,7 @@
     const deleteBtn = document.createElement('button');
     deleteBtn.type = 'button';
     deleteBtn.className = 'evo-delete';
-    deleteBtn.textContent = '×';
+    deleteBtn.textContent = 'Delete';
     deleteBtn.title = 'Remove evolution';
     conn.append(methodSel, paramWrap, targetSel, saveBtn, deleteBtn);
 

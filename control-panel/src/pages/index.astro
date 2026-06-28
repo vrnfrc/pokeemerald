@@ -221,12 +221,20 @@ import PokemonEditor from '../components/PokemonEditor.svelte';
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    gap: 0.4rem;
     padding: 1.2rem;
     background: var(--panel-2);
     border: 1px solid var(--border);
     border-radius: 8px;
+  }
+  .evo-tile-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    flex: 1;
+    text-align: center;
+    width: 100%;
   }
   .evo-tile.is-current {
     border-color: var(--accent);
@@ -249,46 +257,7 @@ import PokemonEditor from '../components/PokemonEditor.svelte';
     line-height: 1.15;
   }
   .evo-tile .evo-add {
-    position: absolute;
-    bottom: 14px;
-    right: 14px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    background: var(--accent);
-    color: var(--bg);
-    border: none;
-    font-size: 1.2rem;
-    font-weight: 700;
-    cursor: pointer;
-    line-height: 32px;
-    text-align: center;
-    transition: background 0.15s, transform 0.1s;
-  }
-  .evo-tile .evo-add::before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -1px;
-  }
-  .evo-tile .evo-add:hover { background: #6b91e6; }
-  .evo-tile .evo-add:active { transform: scale(0.92); }
-  .evo-connector {
-    position: absolute;
-    width: 220px;
-    height: 235px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.4rem;
-    padding: 1rem;
-    padding-top: 3.5rem;
-    background: var(--panel-2);
-    border: 1px solid var(--border);
-    border-radius: 6px;
-    justify-content: center;
-  }
-  .evo-connector .evo-save {
+    align-self: stretch;
     height: 34px;
     padding: 0 0.7rem;
     background: var(--accent);
@@ -300,7 +269,39 @@ import PokemonEditor from '../components/PokemonEditor.svelte';
     font-weight: 600;
     cursor: pointer;
     white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s;
+    margin-top: 0.6rem;
+  }
+  .evo-tile .evo-add:hover { background: #6b91e6; border-color: #6b91e6; }
+  .evo-connector {
+    position: absolute;
+    width: 220px;
+    height: 235px;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    padding: 1rem;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    justify-content: center;
+  }
+  .evo-connector .evo-save,
+  .evo-connector .evo-delete {
+    height: 34px;
+    padding: 0 0.7rem;
+    border-radius: 6px;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
     transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+  }
+  .evo-connector .evo-save {
+    background: var(--accent);
+    color: var(--bg);
+    border: 1px solid var(--accent);
   }
   .evo-connector .evo-save:hover:not(:disabled) { background: #6b91e6; border-color: #6b91e6; }
   .evo-connector .evo-save:disabled {
@@ -311,31 +312,11 @@ import PokemonEditor from '../components/PokemonEditor.svelte';
     opacity: 0.55;
   }
   .evo-connector .evo-delete {
-    position: absolute;
-    top: 14px;
-    right: 14px;
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
     background: var(--danger);
     color: white;
-    border: none;
-    font-size: 1.2rem;
-    font-weight: 700;
-    cursor: pointer;
-    line-height: 32px;
-    text-align: center;
-    transition: background 0.15s, transform 0.1s;
+    border: 1px solid var(--danger);
   }
-  .evo-connector .evo-delete::before {
-    content: '';
-    display: inline-block;
-    height: 100%;
-    vertical-align: middle;
-    margin-right: -1px;
-  }
-  .evo-connector .evo-delete:hover { background: #e0607a; }
-  .evo-connector .evo-delete:active { transform: scale(0.92); }
+  .evo-connector .evo-delete:hover { background: #e0607a; border-color: #e0607a; }
   .evo-line {
     position: absolute;
     height: 235px;
