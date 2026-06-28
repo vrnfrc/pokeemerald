@@ -1,22 +1,14 @@
 import type { APIRoute } from 'astro';
-import { readJsonFile, writeJsonFile, FILES } from '../../lib/files';
+import { createFsRepository } from '../../lib/repository';
+import { createNodeFs, REPO_PATHS } from '../../lib/files';
 
 export const prerender = false;
 
+const repo = createFsRepository(createNodeFs(), REPO_PATHS);
+
 export const GET: APIRoute = async () => {
   try {
-    const levelup = readJsonFile(FILES.levelup);
-    const tmhm = readJsonFile(FILES.tmhm);
-
-    const learnsets: Record<string, { levelup: { level: number; move: string }[]; tmhm: string[] }> = {};
-    for (const e of levelup.learnsets) {
-      learnsets[e.species] = { levelup: e.moves, tmhm: [] };
-    }
-    for (const e of tmhm.learnsets) {
-      if (!learnsets[e.species]) learnsets[e.species] = { levelup: [], tmhm: e.moves };
-      else learnsets[e.species].tmhm = e.moves;
-    }
-
+    const learnsets = repo.loadLearnsets();
     return new Response(JSON.stringify({ learnsets }), {
       headers: { 'Content-Type': 'application/json' },
     });
@@ -32,11 +24,14 @@ export const GET: APIRoute = async () => {
 
 export const POST: APIRoute = async ({ request }) => {
   try {
-    const { learnsets } = await request.json() as { learnsets: Record<string, { levelup: any[]; tmhm: string[] }> };
-    const levelupArr = Object.entries(learnsets).map(([species, e]) => ({ species, moves: e.levelup }));
-    const tmhmArr = Object.entries(learnsets).map(([species, e]) => ({ species, moves: e.tmhm }));
-    writeJsonFile(FILES.levelup, { learnsets: levelupArr });
-    writeJsonFile(FILES.tmhm, { learnsets: tmhmArr });
+    const body = (await request.json()) as { learnsets?: unknown };
+    if (!body.learnsets || typeof body.learnsets !== 'object') {
+      return new Response(JSON.stringify({ error: 'Missing learnsets payload' }), {
+        status: 400,
+        headers: { 'Content-Type': 'application/json' },
+      });
+    }
+    repo.saveLearnsets(body.learnsets as Parameters<typeof repo.saveLearnsets>[0]);
     return new Response(JSON.stringify({ success: true }), {
       headers: { 'Content-Type': 'application/json' },
     });

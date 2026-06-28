@@ -1,11 +1,14 @@
 import type { APIRoute } from 'astro';
-import { readJsonFile, writeJsonFile, FILES } from '../../lib/files';
+import { createFsRepository } from '../../lib/repository';
+import { createNodeFs, REPO_PATHS } from '../../lib/files';
 
 export const prerender = false;
 
+const repo = createFsRepository(createNodeFs(), REPO_PATHS);
+
 export const GET: APIRoute = async () => {
   try {
-    const data = readJsonFile(FILES.species);
+    const data = repo.loadSpecies();
     return new Response(JSON.stringify(data), {
       headers: { 'Content-Type': 'application/json' },
     });
@@ -22,7 +25,7 @@ export const GET: APIRoute = async () => {
 export const POST: APIRoute = async ({ request }) => {
   try {
     const data = await request.json();
-    writeJsonFile(FILES.species, data);
+    repo.saveSpecies(data);
     return new Response(JSON.stringify({ success: true }), {
       headers: { 'Content-Type': 'application/json' },
     });

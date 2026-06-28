@@ -8,7 +8,9 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "test": "node --experimental-strip-types --test src/lib/__tests__/*.test.ts",
+    "test:watch": "node --experimental-strip-types --test --watch src/lib/__tests__/*.test.ts"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +19,8 @@
     "@astrojs/svelte": "latest",
     "astro": "latest",
     "svelte": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "^26.0.1"
   }
 }
