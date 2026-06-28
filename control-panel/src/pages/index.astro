@@ -444,7 +444,7 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   .evo-tile {
     position: absolute;
     width: 160px;
-    height: 130px;
+    height: 185px;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -475,22 +475,89 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     color: var(--text);
     line-height: 1.15;
   }
+  /* "+" button on the current Pokemon's tile */
+  .evo-tile .evo-add {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--accent);
+    color: var(--bg);
+    border: none;
+    font-size: 1.2rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    line-height: 1;
+    padding: 0;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .evo-tile .evo-add:hover { background: #6b91e6; }
+  .evo-tile .evo-add:active { transform: scale(0.92); }
   .evo-connector {
     position: absolute;
     width: 160px;
-    height: 130px;
+    height: 185px;
     display: flex;
     flex-direction: column;
-    gap: 0.3rem;
+    gap: 0.25rem;
     padding: 0.5rem;
+    padding-top: 2rem; /* room for the delete button at top */
     background: var(--panel-2);
     border: 1px solid var(--border);
     border-radius: 6px;
     justify-content: center;
   }
+  .evo-connector .evo-save {
+    height: 32px;
+    padding: 0 0.7rem;
+    background: var(--accent);
+    color: var(--bg);
+    border: 1px solid var(--accent);
+    border-radius: 6px;
+    font: inherit;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.15s, border-color 0.15s, opacity 0.15s;
+  }
+  .evo-connector .evo-save:hover:not(:disabled) { background: #6b91e6; border-color: #6b91e6; }
+  .evo-connector .evo-save:disabled {
+    background: var(--panel);
+    color: var(--muted);
+    border-color: var(--border);
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+  /* "X" button on the connector to remove the evolution */
+  .evo-connector .evo-delete {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: var(--danger);
+    color: white;
+    border: none;
+    font-size: 1.05rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+    line-height: 1;
+    padding: 0;
+    transition: background 0.15s, transform 0.1s;
+  }
+  .evo-connector .evo-delete:hover { background: #e0607a; }
+  .evo-connector .evo-delete:active { transform: scale(0.92); }
   .evo-line {
     position: absolute;
-    height: 130px;
+    height: 185px;
     display: flex;
     align-items: center;
     pointer-events: none;
@@ -504,22 +571,22 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   .evo-arrow {
     position: absolute;
     width: 28px;
-    height: 130px;
+    height: 185px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start; /* triangle flush to the left edge */
     pointer-events: none;
   }
   .evo-arrow::before {
     content: '';
     width: 0; height: 0;
-    border-top: 12px solid transparent;
-    border-bottom: 12px solid transparent;
-    border-left: 16px solid var(--accent);
+    border-top: 16px solid transparent;
+    border-bottom: 16px solid transparent;
+    border-left: 24px solid var(--accent); /* bigger, fully fills the arrow box */
   }
   .evo-connector select,
   .evo-connector input {
-    height: 34px;
+    height: 32px;
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 6px;
@@ -538,26 +605,6 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   .evo-connector select:focus,
   .evo-connector input:focus { outline: none; border-color: var(--accent); }
   .evo-connector .evo-target { font-weight: 600; }
-  .evo-add-btn {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 130px;
-    height: 36px;
-    background: transparent;
-    border: 1px dashed var(--border);
-    border-radius: 6px;
-    color: var(--muted);
-    font: inherit;
-    font-size: 0.85rem;
-    cursor: pointer;
-  }
-  .evo-add-btn:hover {
-    color: var(--accent);
-    border-color: var(--accent);
-    background: rgba(122, 162, 247, 0.06);
-  }
   .evo-empty {
     color: var(--muted);
     font-size: 0.88rem;
@@ -1151,16 +1198,17 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   //      row; for branching nodes children spread vertically.
   //   3. Edges (connectors with method/param/target) are placed in the gap
   //      between each parent and child, vertically centered on the child.
-  const TILE_W = 160, TILE_H = 130, CONN_W = 160, CONN_H = 130, ARROW_W = 28, TAIL_W = 20, V_GAP = 16, H_GAP = 16;
-  // The connector is taller than the tile; it's centered on the child, so it
-  // extends (CONN_H - TILE_H) / 2 above and below the tile. The layout accounts
-  // for this overhang so the container doesn't clip the connector/line/arrow.
+  const TILE_W = 160, TILE_H = 185, CONN_W = 160, CONN_H = 185, ARROW_W = 28, TAIL_W = 20, V_GAP = 16, H_GAP = 16;
+  // The connector and tile share the same height, so the connector sits flush
+  // with the top of the child tile (TOP_PAD = 0). For branching nodes the
+  // parent tile expands vertically to embrace all its children, and the
+  // connector is centered on the child's vertical axis.
   const TOP_PAD = (CONN_H - TILE_H) / 2;
   // Effective vertical space a child takes, from the top of its incoming
   // connector to the bottom of its own (or its descendants') connector.
   // Used as the step between siblings so their connectors don't overlap.
   const ROW_H = CONN_H + TOP_PAD;
-  type Pos = { label: string; x: number; y: number; isCurrent: boolean };
+  type Pos = { label: string; x: number; y: number; height: number; isCurrent: boolean };
   type Edge = { from: string; toIndex: number; method: string; param: number; target: string; x: number; y: number };
 
   let evoFromMap = new Map<string, { method: string; param: number; target: string }[]>();
@@ -1204,7 +1252,7 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     const outgoing = evoFromMap.get(label) || [];
     const isCurrent = label === currentLabel;
     if (outgoing.length === 0) {
-      nodes.push({ label, x, y, isCurrent });
+      nodes.push({ label, x, y, height: TILE_H, isCurrent });
       // Effective row height: from the top of the incoming connector
       // (y - TOP_PAD) to the bottom of the outgoing side (y + CONN_H).
       return { width: TILE_W, height: ROW_H };
@@ -1217,21 +1265,44 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
       childY += r.height + V_GAP;
     }
     const totalChildH = bounds.reduce((s, b) => s + b.h, 0) + (outgoing.length - 1) * V_GAP;
+    // The parent tile expands vertically to embrace the full extent of its
+    // children (with a minimum of TILE_H for leaf-sized fallback). This makes
+    // branching nodes like Wurmple render as a tall card that visually
+    // contains both evolutions.
+    const parentHeight = Math.max(TILE_H, totalChildH);
     // The root is placed at the top (not centered) so the topmost connector
     // (centered on the first child) is flush at y=0. Non-root nodes are
     // centered vertically among their children for a balanced look.
-    const nodeY = isRoot ? y : y + (totalChildH - TILE_H) / 2;
-    nodes.push({ label, x, y: nodeY, isCurrent });
+    const nodeY = isRoot ? y : y + (totalChildH - parentHeight) / 2;
+    nodes.push({ label, x, y: nodeY, height: parentHeight, isCurrent });
     const maxChildW = Math.max(...bounds.map(b => b.w));
     return { width: TILE_W + 2 * ARROW_W + CONN_W + TAIL_W + maxChildW, height: Math.max(ROW_H, totalChildH) };
   }
 
-  function buildEvoTile(label: string, isCurrent: boolean, x: number, y: number): HTMLDivElement {
+  function buildEvoTile(label: string, isCurrent: boolean, x: number, y: number, height: number): HTMLDivElement {
     const tile = document.createElement('div');
     tile.className = 'evo-tile' + (isCurrent ? ' is-current' : '');
     tile.style.left = x + 'px';
     tile.style.top = y + 'px';
+    tile.style.height = height + 'px';
     tile.innerHTML = `<img class="evo-sprite" src="/api/sprite/${label.toLowerCase()}" alt=""><span class="evo-name">${label.replace(/_/g, ' ')}</span>`;
+    if (isCurrent) {
+      const add = document.createElement('button');
+      add.type = 'button';
+      add.className = 'evo-add';
+      add.textContent = '+';
+      add.title = 'Add evolution';
+      add.addEventListener('click', () => {
+        const evo = get(evolutionData);
+        if (!evo) return;
+        let entry = evo.evolutions.find(e => e.from === label);
+        if (!entry) { entry = { from: label, to: [] }; evo.evolutions.push(entry); }
+        const firstSpecies = get(speciesData)?.species?.[0]?.label ?? label;
+        entry.to.push({ method: 'EVO_LEVEL', param: 1, target: firstSpecies });
+        if (currentLabel) renderEvolution(currentLabel);
+      });
+      tile.appendChild(add);
+    }
     return tile;
   }
 
@@ -1250,11 +1321,36 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     targetSel.className = 'evo-target';
     targetSel.innerHTML = speciesOptionsHtml;
     targetSel.value = edge.target;
-    conn.append(methodSel, paramWrap, targetSel);
+    const saveBtn = document.createElement('button');
+    saveBtn.type = 'button';
+    saveBtn.className = 'evo-save';
+    saveBtn.textContent = 'Save';
+    const deleteBtn = document.createElement('button');
+    deleteBtn.type = 'button';
+    deleteBtn.className = 'evo-delete';
+    deleteBtn.textContent = '×';
+    deleteBtn.title = 'Remove evolution';
+    conn.append(methodSel, paramWrap, targetSel, saveBtn, deleteBtn);
 
-    const data = get(evolutionData)!;
-    const entryRef = data.evolutions.find(e => e.from === edge.from);
-    if (!entryRef) return conn;
+    const data = get(evolutionData);
+    const entryRef = data?.evolutions.find(e => e.from === edge.from);
+
+    // Draft state: edits to method/param/target stay local until "Save" is
+    // pressed, so the user can finish filling in the details before the
+    // tree is recomputed.
+    let draftMethod = edge.method;
+    let draftParam = edge.param;
+    let draftTarget = edge.target;
+
+    // Save is disabled until the user actually changes something; the tree
+    // only needs to be recomputed when there's something new to commit.
+    const refreshSaveState = () => {
+      const dirty = draftMethod !== edge.method
+        || draftParam !== edge.param
+        || draftTarget !== edge.target;
+      saveBtn.disabled = !dirty;
+    };
+    refreshSaveState();
 
     const buildParam = (method: string, current: number) => {
       paramWrap.innerHTML = '';
@@ -1266,19 +1362,38 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
       else if (t === 'beauty') { inp.min = '0'; inp.max = '255'; }
       inp.value = String(current);
       inp.addEventListener('input', () => {
-        entryRef.to[edge.toIndex].param = parseInt(inp.value) || 0;
+        draftParam = parseInt(inp.value) || 0;
+        refreshSaveState();
       });
       paramWrap.appendChild(inp);
     };
-    buildParam(edge.method, edge.param);
+    buildParam(draftMethod, draftParam);
 
     methodSel.addEventListener('change', () => {
-      entryRef.to[edge.toIndex].method = methodSel.value;
-      entryRef.to[edge.toIndex].param = paramType(methodSel.value) === 'none' ? 0 : entryRef.to[edge.toIndex].param;
-      buildParam(methodSel.value, entryRef.to[edge.toIndex].param);
+      draftMethod = methodSel.value;
+      if (paramType(draftMethod) === 'none') draftParam = 0;
+      buildParam(draftMethod, draftParam);
+      refreshSaveState();
     });
     targetSel.addEventListener('change', () => {
-      entryRef.to[edge.toIndex].target = targetSel.value;
+      draftTarget = targetSel.value;
+      refreshSaveState();
+    });
+    saveBtn.addEventListener('click', () => {
+      if (entryRef) {
+        entryRef.to[edge.toIndex].method = draftMethod;
+        entryRef.to[edge.toIndex].param = draftParam;
+        entryRef.to[edge.toIndex].target = draftTarget;
+      }
+      if (currentLabel) renderEvolution(currentLabel);
+    });
+    deleteBtn.addEventListener('click', () => {
+      if (entryRef && data) {
+        entryRef.to.splice(edge.toIndex, 1);
+        if (entryRef.to.length === 0) {
+          data.evolutions = data.evolutions.filter(e => e.from !== edge.from);
+        }
+      }
       if (currentLabel) renderEvolution(currentLabel);
     });
     return conn;
@@ -1307,10 +1422,10 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     const startY = rootChildren.length > 0 ? TOP_PAD : 0;
     const bounds = layoutTree(root, 0, startY, true, label, nodes);
 
-    // Height must cover the connector/line/arrow overhang on the deepest node,
-    // not just the tile heights.
+    // Height must cover the bottom of the deepest node (tile or expanded
+    // branching tile), not just the connector height.
     const boundsHeight = rootChildren.length > 0
-      ? Math.max(TILE_H, ...nodes.map(n => n.y + CONN_H))
+      ? Math.max(...nodes.map(n => n.y + n.height))
       : TILE_H;
 
     const nodeMap = new Map(nodes.map(n => [n.label, n]));
@@ -1324,8 +1439,8 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
         edges.push({
           from, toIndex,
           method: edge.method, param: edge.param, target: edge.target,
-          x: pNode.x + TILE_W + ARROW_W,  // connector sits after the first arrow
-          y: cNode.y,                       // arrows + connector share the child's vertical top
+          x: pNode.x + TILE_W + ARROW_W,            // connector sits after the first arrow
+          y: cNode.y + (cNode.height - CONN_H) / 2, // center the connector on the child's vertical axis
         });
       });
     }
@@ -1334,11 +1449,13 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     container.style.height = boundsHeight + 'px';
 
     for (const n of nodes) {
-      container.appendChild(buildEvoTile(n.label, n.isCurrent, n.x, n.y));
+      container.appendChild(buildEvoTile(n.label, n.isCurrent, n.x, n.y, n.height));
     }
     for (let i = 0; i < edges.length; i++) {
       const e = edges[i];
-      const lineTop = e.y + (TILE_H - CONN_H) / 2;
+      // Lines and arrow head sit at e.y; their CONN_H container is centered
+      // on the connector (which is centered on the child's vertical axis).
+      const lineTop = e.y;
       // Line from parent tile to connector
       const ln = document.createElement('div');
       ln.className = 'evo-line';
@@ -1361,30 +1478,6 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
       ah.style.left = (e.x + CONN_W + TAIL_W) + 'px';
       ah.style.top = lineTop + 'px';
       container.appendChild(ah);
-    }
-
-    // "+ Add Evolution" next to the current leaf
-    const currentNode = nodeMap.get(label);
-    if (currentNode && (evoFromMap.get(label) || []).length === 0) {
-      const add = document.createElement('button');
-      add.type = 'button';
-      add.className = 'evo-add-btn';
-      add.textContent = '+ Add Evolution';
-      const addX = currentNode.x + TILE_W + 2 * ARROW_W + CONN_W + TAIL_W;
-      add.style.left = (addX + H_GAP) + 'px';
-      add.style.top = (currentNode.y + TILE_H / 2 - 18) + 'px';
-      add.addEventListener('click', () => {
-        const evo = get(evolutionData);
-        if (!evo) return;
-        let entry = evo.evolutions.find(e => e.from === label);
-        if (!entry) { entry = { from: label, to: [] }; evo.evolutions.push(entry); }
-        const firstSpecies = get(speciesData)?.species?.[0]?.label ?? label;
-        entry.to.push({ method: 'EVO_LEVEL', param: 1, target: firstSpecies });
-        renderEvolution(label);
-      });
-      container.appendChild(add);
-      const addRight = addX + H_GAP + 130;
-      if (addRight > bounds.width) container.style.width = addRight + 'px';
     }
   }
 
