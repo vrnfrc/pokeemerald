@@ -3,7 +3,7 @@ import type {
   EvolutionEntry,
   EvolutionTarget,
   ItemOption,
-  LearnsetsRawFile,
+  LevelUpLearnsetsRawFile,
   LearnsetsView,
   LearnsetsViewEntry,
   LevelupMove,
@@ -11,6 +11,7 @@ import type {
   ParamType,
   SpeciesEntry,
   SpeciesFile,
+  TmhmLearnsetsRawFile,
 } from './types';
 
 export interface RepoFs {
@@ -37,8 +38,8 @@ export interface Repository {
 export interface InitialRepoState {
   species?: SpeciesFile;
   evolution?: EvolutionFile;
-  levelup?: LearnsetsRawFile;
-  tmhm?: LearnsetsRawFile;
+  levelup?: LevelUpLearnsetsRawFile;
+  tmhm?: TmhmLearnsetsRawFile;
 }
 
 const STAT_FIELDS = [
@@ -73,8 +74,8 @@ export function createFsRepository(fs: RepoFs, paths: RepoPaths): Repository {
       fs.writeJson(paths.evolution, file);
     },
     loadLearnsets() {
-      const levelup = fs.readJson(paths.levelup) as LearnsetsRawFile;
-      const tmhm = fs.readJson(paths.tmhm) as LearnsetsRawFile;
+      const levelup = fs.readJson(paths.levelup) as LevelUpLearnsetsRawFile;
+      const tmhm = fs.readJson(paths.tmhm) as TmhmLearnsetsRawFile;
       return mergeLearnsets(levelup, tmhm);
     },
     saveLearnsets(view) {
@@ -104,8 +105,8 @@ export function createInMemoryRepository(initial: InitialRepoState = {}): Reposi
     writeJson: (p, data) => {
       if (p === 'species') state.species = data as SpeciesFile;
       else if (p === 'evolution') state.evolution = data as EvolutionFile;
-      else if (p === 'levelup') state.levelup = data as LearnsetsRawFile;
-      else if (p === 'tmhm') state.tmhm = data as LearnsetsRawFile;
+      else if (p === 'levelup') state.levelup = data as LevelUpLearnsetsRawFile;
+      else if (p === 'tmhm') state.tmhm = data as TmhmLearnsetsRawFile;
       else throw new Error(`Unknown path: ${p}`);
     },
   };
@@ -120,26 +121,38 @@ export function createInMemoryRepository(initial: InitialRepoState = {}): Reposi
   };
 }
 
-export function mergeLearnsets(levelup: LearnsetsRawFile, tmhm: LearnsetsRawFile): LearnsetsView {
+export function mergeLearnsets(levelup: LevelUpLearnsetsRawFile, tmhm: TmhmLearnsetsRawFile): LearnsetsView {
   const view: LearnsetsView = {};
   for (const e of levelup.learnsets) {
-    view[e.species] = { levelup: e.moves as LevelupMove[], tmhm: [] };
+    const entry: LearnsetsViewEntry = { levelup: e.moves, tmhm: [] };
+    if (e.name != null) entry.name = e.name;
+    view[e.species] = entry;
   }
   for (const e of tmhm.learnsets) {
-    const moves = e.moves as string[];
-    if (!view[e.species]) view[e.species] = { levelup: [], tmhm: moves };
-    else view[e.species].tmhm = moves;
+    if (!view[e.species]) {
+      const entry: LearnsetsViewEntry = { levelup: [], tmhm: e.moves };
+      view[e.species] = entry;
+    } else {
+      view[e.species].tmhm = e.moves;
+    }
   }
   return view;
 }
 
-export function splitLearnsetsLevelup(view: LearnsetsView): LearnsetsRawFile {
+export function splitLearnsetsLevelup(view: LearnsetsView): LevelUpLearnsetsRawFile {
   return {
-    learnsets: Object.entries(view).map(([species, e]) => ({ species, moves: e.levelup })),
+    learnsets: Object.entries(view).map(([species, e]) => {
+      const entry: LevelUpLearnsetsRawEntry = {
+        name: e.name ?? speciesToDisplayName(species),
+        species,
+        moves: e.levelup,
+      };
+      return entry;
+    }),
   };
 }
 
-export function splitLearnsetsTmhm(view: LearnsetsView): LearnsetsRawFile {
+export function splitLearnsetsTmhm(view: LearnsetsView): TmhmLearnsetsRawFile {
   return {
     learnsets: Object.entries(view).map(([species, e]) => ({ species, moves: e.tmhm })),
   };
@@ -158,10 +171,12 @@ export function computeLevelPadded(level: number): string {
 }
 
 function cloneViewEntry(entry: LearnsetsViewEntry): LearnsetsViewEntry {
-  return {
+  const cloned: LearnsetsViewEntry = {
     levelup: entry.levelup.map((m) => ({ ...m })),
     tmhm: [...entry.tmhm],
   };
+  if (entry.name != null) cloned.name = entry.name;
+  return cloned;
 }
 
 function ensureSpecies(view: LearnsetsView, species: string): LearnsetsViewEntry {

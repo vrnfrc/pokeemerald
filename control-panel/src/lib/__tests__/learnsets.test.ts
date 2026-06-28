@@ -12,7 +12,7 @@ import {
   splitLearnsetsTmhm,
   toggleTmhm,
 } from '../repository.ts';
-import type { LearnsetsRawFile, LearnsetsView, LevelupMove } from '../types.ts';
+import type { LevelUpLearnsetsRawFile, LearnsetsView, LevelupMove, TmhmLearnsetsRawFile } from '../types.ts';
 
 function lu(level: number, move: string): LevelupMove {
   return { level, level_padded: computeLevelPadded(level), move };
@@ -20,17 +20,17 @@ function lu(level: number, move: string): LevelupMove {
 
 describe('mergeLearnsets', () => {
   it('species only in levelup gets tmhm: []', () => {
-    const levelup: LearnsetsRawFile = { learnsets: [{ species: 'A', moves: [lu(1, 'MOVE_X')] }] };
-    const tmhm: LearnsetsRawFile = { learnsets: [] };
+    const levelup: LevelUpLearnsetsRawFile = { learnsets: [{ name: 'Bulbasaur', species: 'BULBASAUR', moves: [lu(1, 'MOVE_X')] }] };
+    const tmhm: TmhmLearnsetsRawFile = { learnsets: [] };
     const view = mergeLearnsets(levelup, tmhm);
     assert.deepEqual(view, {
-      A: { levelup: [lu(1, 'MOVE_X')], tmhm: [] },
+      BULBASAUR: { name: 'Bulbasaur', levelup: [lu(1, 'MOVE_X')], tmhm: [] },
     });
   });
 
   it('species only in tmhm gets levelup: []', () => {
-    const levelup: LearnsetsRawFile = { learnsets: [] };
-    const tmhm: LearnsetsRawFile = { learnsets: [{ species: 'A', moves: ['TOXIC'] }] };
+    const levelup: LevelUpLearnsetsRawFile = { learnsets: [] };
+    const tmhm: TmhmLearnsetsRawFile = { learnsets: [{ species: 'A', moves: ['TOXIC'] }] };
     const view = mergeLearnsets(levelup, tmhm);
     assert.deepEqual(view, {
       A: { levelup: [], tmhm: ['TOXIC'] },
@@ -38,17 +38,17 @@ describe('mergeLearnsets', () => {
   });
 
   it('species in both gets both arrays', () => {
-    const levelup: LearnsetsRawFile = { learnsets: [{ species: 'A', moves: [lu(1, 'MOVE_X')] }] };
-    const tmhm: LearnsetsRawFile = { learnsets: [{ species: 'A', moves: ['TOXIC'] }] };
+    const levelup: LevelUpLearnsetsRawFile = { learnsets: [{ name: 'A', species: 'A', moves: [lu(1, 'MOVE_X')] }] };
+    const tmhm: TmhmLearnsetsRawFile = { learnsets: [{ species: 'A', moves: ['TOXIC'] }] };
     const view = mergeLearnsets(levelup, tmhm);
     assert.deepEqual(view, {
-      A: { levelup: [lu(1, 'MOVE_X')], tmhm: ['TOXIC'] },
+      A: { name: 'A', levelup: [lu(1, 'MOVE_X')], tmhm: ['TOXIC'] },
     });
   });
 
   it('species appearing in both files has tmhm value from the tmhm file (overwriting initial [] from levelup file)', () => {
-    const levelup: LearnsetsRawFile = { learnsets: [{ species: 'A', moves: [] }] };
-    const tmhm: LearnsetsRawFile = { learnsets: [{ species: 'A', moves: ['TOXIC', 'CUT'] }] };
+    const levelup: LevelUpLearnsetsRawFile = { learnsets: [{ name: 'A', species: 'A', moves: [] }] };
+    const tmhm: TmhmLearnsetsRawFile = { learnsets: [{ species: 'A', moves: ['TOXIC', 'CUT'] }] };
     const view = mergeLearnsets(levelup, tmhm);
     assert.deepEqual(view.A.tmhm, ['TOXIC', 'CUT']);
     assert.deepEqual(view.A.levelup, []);
@@ -58,8 +58,8 @@ describe('mergeLearnsets', () => {
 describe('splitLearnsetsLevelup / splitLearnsetsTmhm', () => {
   it('split then merge is the identity', () => {
     const view: LearnsetsView = {
-      A: { levelup: [lu(1, 'MOVE_X'), lu(2, 'MOVE_Y')], tmhm: ['TOXIC'] },
-      B: { levelup: [], tmhm: ['CUT'] },
+      A: { name: 'A', levelup: [lu(1, 'MOVE_X'), lu(2, 'MOVE_Y')], tmhm: ['TOXIC'] },
+      B: { name: 'B', levelup: [], tmhm: ['CUT'] },
     };
     const merged = mergeLearnsets(splitLearnsetsLevelup(view), splitLearnsetsTmhm(view));
     assert.deepEqual(merged, view);
@@ -67,11 +67,11 @@ describe('splitLearnsetsLevelup / splitLearnsetsTmhm', () => {
 
   it('split writes every species to both files (with empty arrays for missing slots)', () => {
     const view: LearnsetsView = {
-      A: { levelup: [lu(1, 'MOVE_X')], tmhm: [] },
+      A: { name: 'A', levelup: [lu(1, 'MOVE_X')], tmhm: [] },
     };
     const levelupSplit = splitLearnsetsLevelup(view);
     const tmhmSplit = splitLearnsetsTmhm(view);
-    assert.deepEqual(levelupSplit.learnsets, [{ species: 'A', moves: [lu(1, 'MOVE_X')] }]);
+    assert.deepEqual(levelupSplit.learnsets, [{ name: 'A', species: 'A', moves: [lu(1, 'MOVE_X')] }]);
     assert.deepEqual(tmhmSplit.learnsets, [{ species: 'A', moves: [] }]);
   });
 });

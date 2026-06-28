@@ -1,17 +1,17 @@
 import { describe, it } from 'node:test';
 import assert from 'node:assert/strict';
 import { createInMemoryRepository, speciesToDisplayName } from '../repository.ts';
-import type { EvolutionFile, LearnsetsRawFile, SpeciesFile } from '../types.ts';
+import type { EvolutionFile, LevelUpLearnsetsRawFile, SpeciesFile, TmhmLearnsetsRawFile } from '../types.ts';
 
 describe('API serialization - exact JSON structure preservation', () => {
-  it('learnsets: property order is preserved (species, moves)', () => {
-    const levelup: LearnsetsRawFile = {
+  it('levelup learnsets: property order is preserved (name, species, moves)', () => {
+    const levelup: LevelUpLearnsetsRawFile = {
       learnsets: [
-        { species: 'BULBASAUR', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }] },
-        { species: 'IVYSAUR', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }] },
+        { name: 'Bulbasaur', species: 'BULBASAUR', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }] },
+        { name: 'Ivysaur', species: 'IVYSAUR', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }] },
       ],
     };
-    const tmhm: LearnsetsRawFile = {
+    const tmhm: TmhmLearnsetsRawFile = {
       learnsets: [
         { species: 'BULBASAUR', moves: ['TOXIC'] },
         { species: 'IVYSAUR', moves: [] },
@@ -25,19 +25,52 @@ describe('API serialization - exact JSON structure preservation', () => {
     const savedLevelup = repo.state.levelup!;
     const savedTmhm = repo.state.tmhm!;
     
+    assert.equal(savedLevelup.learnsets[0].name, 'Bulbasaur');
     assert.equal(savedLevelup.learnsets[0].species, 'BULBASAUR');
     assert.deepEqual(savedLevelup.learnsets[0].moves, [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }]);
     
+    assert.equal(savedLevelup.learnsets[1].name, 'Ivysaur');
     assert.equal(savedLevelup.learnsets[1].species, 'IVYSAUR');
     
     assert.equal(savedTmhm.learnsets[0].species, 'BULBASAUR');
     assert.equal(savedTmhm.learnsets[1].species, 'IVYSAUR');
     
     const levelupJson = JSON.stringify(savedLevelup, null, 2);
+    const nameIndex = levelupJson.indexOf('"name"');
     const speciesIndex = levelupJson.indexOf('"species"');
     const movesIndex = levelupJson.indexOf('"moves"');
     
+    assert.ok(nameIndex < speciesIndex, 'name should come before species in JSON');
     assert.ok(speciesIndex < movesIndex, 'species should come before moves in JSON');
+  });
+
+  it('tmhm learnsets: property order is preserved (species, moves)', () => {
+    const levelup: LevelUpLearnsetsRawFile = {
+      learnsets: [
+        { name: 'Bulbasaur', species: 'BULBASAUR', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }] },
+      ],
+    };
+    const tmhm: TmhmLearnsetsRawFile = {
+      learnsets: [
+        { species: 'BULBASAUR', moves: ['TOXIC'] },
+      ],
+    };
+    const repo = createInMemoryRepository({ levelup, tmhm });
+    
+    const view = repo.loadLearnsets();
+    repo.saveLearnsets(view);
+    
+    const savedTmhm = repo.state.tmhm!;
+    
+    assert.equal(savedTmhm.learnsets[0].species, 'BULBASAUR');
+    assert.deepEqual(savedTmhm.learnsets[0].moves, ['TOXIC']);
+    
+    const tmhmJson = JSON.stringify(savedTmhm, null, 2);
+    const speciesIndex = tmhmJson.indexOf('"species"');
+    const movesIndex = tmhmJson.indexOf('"moves"');
+    
+    assert.ok(speciesIndex < movesIndex, 'species should come before moves in JSON');
+    assert.ok(!tmhmJson.includes('"name"'), 'tmhm should not have name field');
   });
 
   it('species: full round-trip preserves all fields', () => {
@@ -157,15 +190,15 @@ describe('API serialization - exact JSON structure preservation', () => {
   });
 
   it('learnsets: multiple species maintain order and structure', () => {
-    const levelup: LearnsetsRawFile = {
+    const levelup: LevelUpLearnsetsRawFile = {
       learnsets: [
-        { species: 'BULBASAUR', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }] },
-        { species: 'IVYSAUR', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }] },
-        { species: 'VENUSAUR', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }] },
-        { species: 'CHARMANDER', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_SCRATCH' }] },
+        { name: 'Bulbasaur', species: 'BULBASAUR', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }] },
+        { name: 'Ivysaur', species: 'IVYSAUR', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }] },
+        { name: 'Venusaur', species: 'VENUSAUR', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }] },
+        { name: 'Charmander', species: 'CHARMANDER', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_SCRATCH' }] },
       ],
     };
-    const tmhm: LearnsetsRawFile = {
+    const tmhm: TmhmLearnsetsRawFile = {
       learnsets: [
         { species: 'BULBASAUR', moves: ['TOXIC'] },
         { species: 'IVYSAUR', moves: ['TOXIC'] },
@@ -180,10 +213,21 @@ describe('API serialization - exact JSON structure preservation', () => {
     
     const savedLevelup = repo.state.levelup!;
     assert.equal(savedLevelup.learnsets.length, 4);
+    assert.equal(savedLevelup.learnsets[0].name, 'Bulbasaur');
     assert.equal(savedLevelup.learnsets[0].species, 'BULBASAUR');
+    assert.equal(savedLevelup.learnsets[1].name, 'Ivysaur');
     assert.equal(savedLevelup.learnsets[1].species, 'IVYSAUR');
+    assert.equal(savedLevelup.learnsets[2].name, 'Venusaur');
     assert.equal(savedLevelup.learnsets[2].species, 'VENUSAUR');
+    assert.equal(savedLevelup.learnsets[3].name, 'Charmander');
     assert.equal(savedLevelup.learnsets[3].species, 'CHARMANDER');
+    
+    const savedTmhm = repo.state.tmhm!;
+    assert.equal(savedTmhm.learnsets.length, 4);
+    assert.equal(savedTmhm.learnsets[0].species, 'BULBASAUR');
+    assert.equal(savedTmhm.learnsets[1].species, 'IVYSAUR');
+    assert.equal(savedTmhm.learnsets[2].species, 'VENUSAUR');
+    assert.equal(savedTmhm.learnsets[3].species, 'CHARMANDER');
   });
 });
 

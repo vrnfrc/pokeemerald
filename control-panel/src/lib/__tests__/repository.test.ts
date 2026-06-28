@@ -6,7 +6,7 @@ import {
   setSpeciesType,
   updateSpeciesStat,
 } from '../repository.ts';
-import type { EvolutionFile, LearnsetsRawFile, SpeciesFile } from '../types.ts';
+import type { EvolutionFile, LevelUpLearnsetsRawFile, SpeciesFile, TmhmLearnsetsRawFile } from '../types.ts';
 
 function makeSpecies(): SpeciesFile {
   return {
@@ -74,10 +74,11 @@ function makeSpecies(): SpeciesFile {
   };
 }
 
-function makeLevelup(): LearnsetsRawFile {
+function makeLevelup(): LevelUpLearnsetsRawFile {
   return {
     learnsets: [
       {
+        name: 'Bulbasaur',
         species: 'BULBASAUR',
         moves: [
           { level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' },
@@ -88,7 +89,7 @@ function makeLevelup(): LearnsetsRawFile {
   };
 }
 
-function makeTmhm(): LearnsetsRawFile {
+function makeTmhm(): TmhmLearnsetsRawFile {
   return {
     learnsets: [
       { species: 'BULBASAUR', moves: ['TOXIC', 'CUT'] },

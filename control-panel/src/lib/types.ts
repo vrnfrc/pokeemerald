@@ -42,19 +42,30 @@ export interface LevelupMove {
 }
 
 export interface LearnsetsViewEntry {
+  name?: string;
   levelup: LevelupMove[];
   tmhm: string[];
 }
 
 export type LearnsetsView = Record<string, LearnsetsViewEntry>;
 
-export interface LearnsetsRawEntry {
+export interface LevelUpLearnsetsRawEntry {
+  name: string;
   species: string;
-  moves: LevelupMove[] | string[];
+  moves: LevelupMove[];
 }
 
-export interface LearnsetsRawFile {
-  learnsets: LearnsetsRawEntry[];
+export interface LevelUpLearnsetsRawFile {
+  learnsets: LevelUpLearnsetsRawEntry[];
+}
+
+export interface TmhmLearnsetsRawEntry {
+  species: string;
+  moves: string[];
+}
+
+export interface TmhmLearnsetsRawFile {
+  learnsets: TmhmLearnsetsRawEntry[];
 }
 
 export interface EvolutionTarget {
