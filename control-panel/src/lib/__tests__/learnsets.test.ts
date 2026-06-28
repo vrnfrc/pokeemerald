@@ -74,6 +74,14 @@ describe('splitLearnsetsLevelup / splitLearnsetsTmhm', () => {
     assert.deepEqual(levelupSplit.learnsets, [{ name: 'A', species: 'A', moves: [lu(1, 'MOVE_X')] }]);
     assert.deepEqual(tmhmSplit.learnsets, [{ species: 'A', moves: [] }]);
   });
+
+  it('TM/HM moves are sorted in canonical order (TM_LIST then HM_LIST)', () => {
+    const view: LearnsetsView = {
+      A: { name: 'A', levelup: [], tmhm: ['ROAR', 'FOCUS_PUNCH', 'CUT', 'FLY'] },
+    };
+    const tmhmSplit = splitLearnsetsTmhm(view);
+    assert.deepEqual(tmhmSplit.learnsets[0].moves, ['FOCUS_PUNCH', 'ROAR', 'CUT', 'FLY']);
+  });
 });
 
 describe('computeLevelPadded', () => {

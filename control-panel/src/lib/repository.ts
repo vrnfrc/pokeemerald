@@ -13,6 +13,7 @@ import type {
   SpeciesFile,
   TmhmLearnsetsRawFile,
 } from './types';
+import { TM_LIST, HM_LIST } from './movesData';
 
 export interface RepoFs {
   readJson(path: string): unknown;
@@ -153,8 +154,16 @@ export function splitLearnsetsLevelup(view: LearnsetsView): LevelUpLearnsetsRawF
 }
 
 export function splitLearnsetsTmhm(view: LearnsetsView): TmhmLearnsetsRawFile {
+  const canonicalOrder = [...TM_LIST, ...HM_LIST];
   return {
-    learnsets: Object.entries(view).map(([species, e]) => ({ species, moves: e.tmhm })),
+    learnsets: Object.entries(view).map(([species, e]) => {
+      const sortedMoves = [...e.tmhm].sort((a, b) => {
+        const indexA = canonicalOrder.indexOf(a);
+        const indexB = canonicalOrder.indexOf(b);
+        return indexA - indexB;
+      });
+      return { species, moves: sortedMoves };
+    }),
   };
 }
 
