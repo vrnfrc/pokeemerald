@@ -53,44 +53,6 @@ describe('mergeLearnsets', () => {
     assert.deepEqual(view.A.tmhm, ['TOXIC', 'CUT']);
     assert.deepEqual(view.A.levelup, []);
   });
-
-  it('preserves the name field from the levelup file', () => {
-    const levelup: LearnsetsRawFile = {
-      learnsets: [{ name: 'Bulbasaur', species: 'BULBASAUR', moves: [lu(1, 'MOVE_TACKLE')] }],
-    };
-    const tmhm: LearnsetsRawFile = { learnsets: [] };
-    const view = mergeLearnsets(levelup, tmhm);
-    assert.equal(view.BULBASAUR.name, 'Bulbasaur');
-  });
-
-  it('picks up name from the tmhm file when species is absent from levelup', () => {
-    const levelup: LearnsetsRawFile = { learnsets: [] };
-    const tmhm: LearnsetsRawFile = {
-      learnsets: [{ name: 'Bulbasaur', species: 'BULBASAUR', moves: ['TOXIC'] }],
-    };
-    const view = mergeLearnsets(levelup, tmhm);
-    assert.equal(view.BULBASAUR.name, 'Bulbasaur');
-  });
-
-  it('prefers the levelup name when species appears in both files', () => {
-    const levelup: LearnsetsRawFile = {
-      learnsets: [{ name: 'Bulbasaur', species: 'BULBASAUR', moves: [lu(1, 'MOVE_TACKLE')] }],
-    };
-    const tmhm: LearnsetsRawFile = {
-      learnsets: [{ name: 'Bulbasaur', species: 'BULBASAUR', moves: ['TOXIC'] }],
-    };
-    const view = mergeLearnsets(levelup, tmhm);
-    assert.equal(view.BULBASAUR.name, 'Bulbasaur');
-  });
-
-  it('does not add a name key when raw entries have no name', () => {
-    const levelup: LearnsetsRawFile = {
-      learnsets: [{ species: 'A', moves: [lu(1, 'MOVE_X')] }],
-    };
-    const tmhm: LearnsetsRawFile = { learnsets: [] };
-    const view = mergeLearnsets(levelup, tmhm);
-    assert.equal('name' in view.A, false);
-  });
 });
 
 describe('splitLearnsetsLevelup / splitLearnsetsTmhm', () => {
@@ -111,46 +73,6 @@ describe('splitLearnsetsLevelup / splitLearnsetsTmhm', () => {
     const tmhmSplit = splitLearnsetsTmhm(view);
     assert.deepEqual(levelupSplit.learnsets, [{ species: 'A', moves: [lu(1, 'MOVE_X')] }]);
     assert.deepEqual(tmhmSplit.learnsets, [{ species: 'A', moves: [] }]);
-  });
-
-  it('preserves the name field in both output files', () => {
-    const view: LearnsetsView = {
-      BULBASAUR: { name: 'Bulbasaur', levelup: [lu(1, 'MOVE_TACKLE')], tmhm: ['TOXIC'] },
-    };
-    const levelupSplit = splitLearnsetsLevelup(view);
-    const tmhmSplit = splitLearnsetsTmhm(view);
-    assert.equal(levelupSplit.learnsets[0].name, 'Bulbasaur');
-    assert.equal(tmhmSplit.learnsets[0].name, 'Bulbasaur');
-  });
-
-  it('omits the name key when name is not set', () => {
-    const view: LearnsetsView = {
-      A: { levelup: [lu(1, 'MOVE_X')], tmhm: [] },
-    };
-    const levelupSplit = splitLearnsetsLevelup(view);
-    assert.equal('name' in levelupSplit.learnsets[0], false);
-  });
-
-  it('merge → split → merge round-trips names correctly', () => {
-    const levelup: LearnsetsRawFile = {
-      learnsets: [
-        { name: 'Bulbasaur', species: 'BULBASAUR', moves: [lu(1, 'MOVE_TACKLE')] },
-        { name: 'Ledyba', species: 'LEDYBA', moves: [lu(1, 'MOVE_TACKLE')] },
-      ],
-    };
-    const tmhm: LearnsetsRawFile = {
-      learnsets: [
-        { name: 'Bulbasaur', species: 'BULBASAUR', moves: ['TOXIC'] },
-        { name: 'Ledyba', species: 'LEDYBA', moves: [] },
-      ],
-    };
-    const view = mergeLearnsets(levelup, tmhm);
-    const rawLevelup = splitLearnsetsLevelup(view);
-    const rawTmhm = splitLearnsetsTmhm(view);
-    assert.equal(rawLevelup.learnsets[0].name, 'Bulbasaur');
-    assert.equal(rawLevelup.learnsets[1].name, 'Ledyba');
-    assert.equal(rawTmhm.learnsets[0].name, 'Bulbasaur');
-    assert.equal(rawTmhm.learnsets[1].name, 'Ledyba');
   });
 });
 
