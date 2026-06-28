@@ -199,17 +199,11 @@ function withEntry(
 export function sortLevelup(
   view: LearnsetsView,
   species: string,
-  moveNames: Record<string, string>,
 ): { changed: boolean; view: LearnsetsView } {
   const entry = view[species];
   if (!entry) return { changed: false, view };
   const before = entry.levelup.map((e) => `${e.level}:${e.move}`).join('|');
-  const sorted = [...entry.levelup].sort((a, b) => {
-    if (a.level !== b.level) return a.level - b.level;
-    const an = moveNames[a.move] ?? a.move;
-    const bn = moveNames[b.move] ?? b.move;
-    return an.localeCompare(bn);
-  });
+  const sorted = [...entry.levelup].sort((a, b) => a.level - b.level);
   const after = sorted.map((e) => `${e.level}:${e.move}`).join('|');
   const next: LearnsetsView = {};
   for (const [k, v] of Object.entries(view)) next[k] = cloneViewEntry(v);
@@ -222,17 +216,18 @@ export function addLevelupMove(
   species: string,
   level: number,
   move: string,
-  moveNames: Record<string, string> = {},
 ): LearnsetsView {
   const next = withEntry(view, species, (entry) => {
     const newMove: LevelupMove = { level, level_padded: computeLevelPadded(level), move };
-    const levelup = [...entry.levelup, newMove];
-    levelup.sort((a, b) => {
-      if (a.level !== b.level) return a.level - b.level;
-      const an = moveNames[a.move] ?? a.move;
-      const bn = moveNames[b.move] ?? b.move;
-      return an.localeCompare(bn);
-    });
+    const levelup = [...entry.levelup];
+    let insertIndex = levelup.length;
+    for (let i = 0; i < levelup.length; i++) {
+      if (levelup[i].level >= level) {
+        insertIndex = i;
+        break;
+      }
+    }
+    levelup.splice(insertIndex, 0, newMove);
     return { ...entry, levelup };
   });
   return next;

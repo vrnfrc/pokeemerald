@@ -234,7 +234,7 @@
       if (entry) oldRects.set(entry, row.getBoundingClientRect());
     }
 
-    const result = sortLevelup(learnsetsData, currentLabel, { ...movesInfo.names });
+    const result = sortLevelup(learnsetsData, currentLabel);
     learnsetsData = result.view;
 
     renderMoves(currentLabel);
@@ -633,9 +633,7 @@
 
   function onAddLevelup() {
     if (!currentLabel || !learnsetsData) return;
-    learnsetsData = addLevelupMove(learnsetsData, currentLabel, 1, movesInfo.moves[0], {
-      ...movesInfo.names,
-    });
+    learnsetsData = addLevelupMove(learnsetsData, currentLabel, 1, movesInfo.moves[0]);
     renderMoves(currentLabel);
   }
 

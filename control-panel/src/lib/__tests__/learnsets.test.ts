@@ -98,12 +98,12 @@ describe('sortLevelup', () => {
     const view: LearnsetsView = {
       A: { levelup: [lu(5, 'MOVE_B'), lu(1, 'MOVE_A'), lu(3, 'MOVE_C')], tmhm: [] },
     };
-    const { view: sorted, changed } = sortLevelup(view, 'A', {});
+    const { view: sorted, changed } = sortLevelup(view, 'A');
     assert.equal(changed, true);
     assert.deepEqual(sorted.A.levelup, [lu(1, 'MOVE_A'), lu(3, 'MOVE_C'), lu(5, 'MOVE_B')]);
   });
 
-  it('breaks ties by display name (alphabetical) when moveNames provided', () => {
+  it('preserves original order when levels are equal (stable sort)', () => {
     const view: LearnsetsView = {
       A: {
         levelup: [
@@ -114,10 +114,10 @@ describe('sortLevelup', () => {
         tmhm: [],
       },
     };
-    const { view: sorted } = sortLevelup(view, 'A', { MOVE_A: 'Aaa', MOVE_B: 'Bbb', MOVE_C: 'Ccc' });
+    const { view: sorted } = sortLevelup(view, 'A');
     assert.deepEqual(
       sorted.A.levelup.map((m) => m.move),
-      ['MOVE_A', 'MOVE_B', 'MOVE_C'],
+      ['MOVE_B', 'MOVE_A', 'MOVE_C'],
     );
   });
 
@@ -125,13 +125,13 @@ describe('sortLevelup', () => {
     const view: LearnsetsView = {
       A: { levelup: [lu(1, 'MOVE_A'), lu(2, 'MOVE_B')], tmhm: [] },
     };
-    const { changed } = sortLevelup(view, 'A', {});
+    const { changed } = sortLevelup(view, 'A');
     assert.equal(changed, false);
   });
 
   it('is a no-op for unknown species (does not throw)', () => {
     const view: LearnsetsView = {};
-    const result = sortLevelup(view, 'NOT_A_SPECIES', {});
+    const result = sortLevelup(view, 'NOT_A_SPECIES');
     assert.equal(result.changed, false);
     assert.deepEqual(result.view, {});
   });
@@ -141,15 +141,15 @@ describe('sortLevelup', () => {
       A: { levelup: [lu(5, 'MOVE_X'), lu(1, 'MOVE_Y')], tmhm: [] },
     };
     const snapshot = JSON.parse(JSON.stringify(original));
-    sortLevelup(original, 'A', {});
+    sortLevelup(original, 'A');
     assert.deepEqual(original, snapshot);
   });
 });
 
 describe('addLevelupMove', () => {
-  it('inserts and re-sorts so list stays in level order', () => {
+  it('inserts at the correct position to maintain level order', () => {
     const view: LearnsetsView = { A: { levelup: [lu(1, 'MOVE_X'), lu(10, 'MOVE_Z')], tmhm: [] } };
-    const next = addLevelupMove(view, 'A', 5, 'MOVE_M', {});
+    const next = addLevelupMove(view, 'A', 5, 'MOVE_M');
     assert.deepEqual(
       next.A.levelup.map((m) => m.level),
       [1, 5, 10],
@@ -157,13 +157,24 @@ describe('addLevelupMove', () => {
   });
 
   it('inserts into a brand-new species', () => {
-    const next = addLevelupMove({}, 'A', 1, 'MOVE_X', {});
+    const next = addLevelupMove({}, 'A', 1, 'MOVE_X');
     assert.deepEqual(next.A.levelup, [lu(1, 'MOVE_X')]);
   });
 
   it('updates level_padded to match the inserted level', () => {
-    const next = addLevelupMove({}, 'A', 1, 'MOVE_X', {});
+    const next = addLevelupMove({}, 'A', 1, 'MOVE_X');
     assert.equal(next.A.levelup[0].level_padded, ' 1');
+  });
+
+  it('inserts before existing moves at the same level', () => {
+    const view: LearnsetsView = {
+      A: { levelup: [lu(5, 'MOVE_A'), lu(5, 'MOVE_B')], tmhm: [] },
+    };
+    const next = addLevelupMove(view, 'A', 5, 'MOVE_NEW');
+    assert.deepEqual(
+      next.A.levelup.map((m) => m.move),
+      ['MOVE_NEW', 'MOVE_A', 'MOVE_B'],
+    );
   });
 });
 
