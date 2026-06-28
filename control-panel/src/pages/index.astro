@@ -201,6 +201,11 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
             </div>
           </div>
 
+          <div class="form-section evolution-section-wrap">
+            <h3>Evolution</h3>
+            <div id="evolution-chain" class="evolution-chain"></div>
+          </div>
+
           <div class="form-section moves-section-wrap">
             <h3>Moves</h3>
             <div class="moves-grid">
@@ -430,6 +435,78 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     color: var(--accent);
     border-color: rgba(122, 162, 247, 0.4);
     background: rgba(122, 162, 247, 0.12);
+  }
+
+  /* Evolution chain */
+  .evolution-chain {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.6rem;
+  }
+  .evo-tile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.3rem;
+    padding: 0.5rem 0.7rem;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    min-width: 72px;
+  }
+  .evo-tile.is-current {
+    border-color: var(--accent);
+    background: rgba(122, 162, 247, 0.08);
+    box-shadow: 0 0 0 2px rgba(122, 162, 247, 0.2);
+  }
+  .evo-tile .evo-sprite {
+    width: 48px;
+    height: 48px;
+    image-rendering: pixelated;
+    image-rendering: crisp-edges;
+  }
+  .evo-tile .evo-name {
+    font-size: 0.78rem;
+    font-weight: 600;
+    text-align: center;
+    color: var(--text);
+  }
+  .evo-connector {
+    display: flex;
+    flex-direction: column;
+    gap: 0.3rem;
+    padding: 0.4rem 0.5rem;
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    min-width: 130px;
+  }
+  .evo-connector select,
+  .evo-connector input {
+    height: 28px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0 0.4rem;
+    color: var(--text);
+    font: inherit;
+    font-size: 0.78rem;
+    width: 100%;
+  }
+  .evo-connector select { padding-right: 1.4rem; }
+  .evo-connector input { text-align: center; -moz-appearance: textfield; }
+  .evo-connector input::-webkit-outer-spin-button,
+  .evo-connector input::-webkit-inner-spin-button {
+    -webkit-appearance: none; margin: 0;
+  }
+  .evo-connector select:focus,
+  .evo-connector input:focus { outline: none; border-color: var(--accent); }
+  .evo-connector .evo-target { font-weight: 600; }
+  .evo-empty {
+    color: var(--muted);
+    font-size: 0.88rem;
+    padding: 0.4rem 0;
   }
 </style>
 
@@ -771,7 +848,7 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
 
 <script>
   import { get } from 'svelte/store';
-  import { speciesData, selectedPokemon } from '../lib/speciesState';
+  import { speciesData, selectedPokemon, evolutionData } from '../lib/speciesState';
 
   interface PokemonData {
     label: string;
@@ -848,6 +925,9 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
 
     // Update moves
     renderMoves(label);
+
+    // Update evolution chain
+    renderEvolution(label);
 
     document.getElementById('editor')!.style.display = 'block';
     document.getElementById('empty-state')!.style.display = 'none';
@@ -1005,6 +1085,181 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     renderMoves(currentLabel);
   });
 
+  // ===== Evolution chain =====
+  // Build the chain items for a given species: ancestors (root → current) plus
+  // the current species's outgoing evolutions (branches). Each transition carries
+  // {from, toIndex} so edits map back to evolutionData.
+  type EvoItem =
+    | { kind: 'tile'; label: string; isCurrent: boolean }
+    | { kind: 'transition'; from: string; toIndex: number };
+
+  function paramType(method: string): 'level' | 'item' | 'beauty' | 'none' {
+    if (method === 'EVO_LEVEL' || method === 'EVO_LEVEL_ATK_GT_DEF' || method === 'EVO_LEVEL_ATK_EQ_DEF' ||
+        method === 'EVO_LEVEL_ATK_LT_DEF' || method === 'EVO_LEVEL_SILCOON' || method === 'EVO_LEVEL_CASCOON' ||
+        method === 'EVO_LEVEL_NINJASK' || method === 'EVO_LEVEL_SHEDINJA') return 'level';
+    if (method === 'EVO_ITEM' || method === 'EVO_TRADE_ITEM') return 'item';
+    if (method === 'EVO_BEAUTY') return 'beauty';
+    return 'none';
+  }
+
+  function buildChain(label: string): EvoItem[] {
+    const data = get(evolutionData);
+    if (!data) return [];
+    const fromMap = new Map<string, { method: string; param: number; target: string }[]>();
+    const toParent = new Map<string, { from: string; toIndex: number; method: string; param: number }>();
+    for (const entry of data.evolutions) {
+      fromMap.set(entry.from, entry.to);
+      entry.to.forEach((t, i) => toParent.set(t.target, { from: entry.from, toIndex: i, method: t.method, param: t.param }));
+    }
+    // Walk back to root
+    const ancestors: string[] = [];
+    let cur = label;
+    const seen = new Set<string>();
+    while (true) {
+      if (seen.has(cur)) break;
+      seen.add(cur);
+      ancestors.unshift(cur);
+      const p = toParent.get(cur);
+      if (!p) break;
+      cur = p.from;
+    }
+    const items: EvoItem[] = [];
+    for (let i = 0; i < ancestors.length; i++) {
+      const isCurrent = ancestors[i] === label;
+      items.push({ kind: 'tile', label: ancestors[i], isCurrent });
+      if (i < ancestors.length - 1) {
+        const p = toParent.get(ancestors[i + 1])!;
+        items.push({ kind: 'transition', from: ancestors[i], toIndex: p.toIndex });
+      }
+    }
+    // Outgoing branches of the current species
+    const outgoing = fromMap.get(label) || [];
+    outgoing.forEach((t, i) => {
+      items.push({ kind: 'transition', from: label, toIndex: i });
+      items.push({ kind: 'tile', label: t.target, isCurrent: false });
+    });
+    return items;
+  }
+
+  function renderEvolution(label: string) {
+    const container = document.getElementById('evolution-chain')!;
+    container.innerHTML = '';
+    const data = get(evolutionData);
+    if (!data) {
+      container.innerHTML = '<div class="evo-empty">Loading…</div>';
+      return;
+    }
+    const items = buildChain(label);
+    if (items.length === 0) {
+      container.innerHTML = '<div class="evo-empty">No evolution data</div>';
+      return;
+    }
+    const fromMap = new Map<string, { method: string; param: number; target: string }[]>();
+    for (const e of data.evolutions) fromMap.set(e.from, e.to);
+
+    const speciesOptions = (get(speciesData)?.species ?? [])
+      .map((s: any) => `<option value="${s.label}">${s.label.replace(/_/g, ' ')}</option>`)
+      .join('');
+
+    for (const item of items) {
+      if (item.kind === 'tile') {
+        container.appendChild(buildEvoTile(item.label, item.isCurrent));
+      } else {
+        const toEntry = fromMap.get(item.from)![item.toIndex];
+        container.appendChild(buildEvoConnector(item.from, item.toIndex, toEntry, speciesOptions));
+      }
+    }
+    // If current has no outgoing, optionally add an "add evolution" button
+    const hasOutgoing = (fromMap.get(label) || []).length > 0;
+    if (!hasOutgoing) {
+      const add = document.createElement('button');
+      add.type = 'button';
+      add.className = 'btn-add-move';
+      add.textContent = '+ Add Evolution';
+      add.style.minWidth = '120px';
+      add.style.width = 'auto';
+      add.style.padding = '0.5rem 0.8rem';
+      add.addEventListener('click', () => {
+        const evo = get(evolutionData);
+        if (!evo) return;
+        let entry = evo.evolutions.find(e => e.from === label);
+        if (!entry) { entry = { from: label, to: [] }; evo.evolutions.push(entry); }
+        const firstSpecies = get(speciesData)?.species?.[0]?.label ?? label;
+        entry.to.push({ method: 'EVO_LEVEL', param: 1, target: firstSpecies });
+        renderEvolution(label);
+      });
+      container.appendChild(add);
+    }
+  }
+
+  function buildEvoTile(label: string, isCurrent: boolean) {
+    const tile = document.createElement('div');
+    tile.className = 'evo-tile' + (isCurrent ? ' is-current' : '');
+    tile.innerHTML = `
+      <img class="evo-sprite" src="/api/sprite/${label.toLowerCase()}" alt="">
+      <span class="evo-name">${label.replace(/_/g, ' ')}</span>
+    `;
+    return tile;
+  }
+
+  function buildEvoConnector(from: string, toIndex: number, entry: { method: string; param: number; target: string }, speciesOptions: string) {
+    const conn = document.createElement('div');
+    conn.className = 'evo-connector';
+    const methodSel = document.createElement('select');
+    methodSel.className = 'evo-method';
+    methodSel.innerHTML = evoOptionsHtml;
+    methodSel.value = entry.method;
+    conn.appendChild(methodSel);
+
+    const paramWrap = document.createElement('div');
+    paramWrap.className = 'evo-param-wrap';
+    conn.appendChild(paramWrap);
+
+    const targetSel = document.createElement('select');
+    targetSel.className = 'evo-target';
+    targetSel.innerHTML = speciesOptions;
+    targetSel.value = entry.target;
+    conn.appendChild(targetSel);
+
+    const buildParam = (method: string, current: number) => {
+      paramWrap.innerHTML = '';
+      const t = paramType(method);
+      if (t === 'none') return;
+      const inp = document.createElement('input');
+      inp.type = 'number';
+      if (t === 'level') { inp.min = '1'; inp.max = '100'; }
+      else if (t === 'beauty') { inp.min = '0'; inp.max = '255'; }
+      inp.value = String(current);
+      paramWrap.appendChild(inp);
+    };
+    buildParam(entry.method, entry.param);
+
+    const evo = get(evolutionData)!;
+    const entryRef = evo.evolutions.find(e => e.from === from);
+    if (!entryRef) return conn;
+
+    methodSel.addEventListener('change', () => {
+      entryRef.to[toIndex].method = methodSel.value;
+      entryRef.to[toIndex].param = paramType(methodSel.value) === 'none' ? 0 : entryRef.to[toIndex].param;
+      buildParam(methodSel.value, entryRef.to[toIndex].param);
+      attachParamListener();
+    });
+    const attachParamListener = () => {
+      const inp = paramWrap.querySelector('input');
+      if (!inp) return;
+      inp.addEventListener('input', () => {
+        entryRef.to[toIndex].param = parseInt((inp as HTMLInputElement).value) || 0;
+      });
+    };
+    attachParamListener();
+    targetSel.addEventListener('change', () => {
+      entryRef.to[toIndex].target = targetSel.value;
+      renderEvolution(currentLabel!);
+    });
+
+    return conn;
+  }
+
   // TM/HM search: filter rows by name/tag substring (case-insensitive)
   document.getElementById('tmhm-search')!.addEventListener('input', (e) => {
     const q = (e.target as HTMLInputElement).value.toLowerCase().trim();
@@ -1022,6 +1277,26 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
       if (res.ok) {
         learnsetsData = await res.json();
         if (currentLabel) renderMoves(currentLabel);
+      }
+    } catch {}
+  })();
+
+  // Load evolution data (methods, items, evolutions)
+  let evoMethods: { value: string; label: string }[] = [];
+  let evoItems: { value: string; label: string }[] = [];
+  let evoOptionsHtml = '';
+  let evoItemOptionsHtml = '';
+  (async () => {
+    try {
+      const res = await fetch('/api/evolution');
+      if (res.ok) {
+        const d = await res.json();
+        evolutionData.set(d);
+        evoMethods = d.methods;
+        evoItems = d.items;
+        evoOptionsHtml = evoMethods.map(m => `<option value="${m.value}">${m.label}</option>`).join('');
+        evoItemOptionsHtml = evoItems.map(i => `<option value="${i.value}">${i.label}</option>`).join('');
+        if (currentLabel) renderEvolution(currentLabel);
       }
     } catch {}
   })();
@@ -1106,7 +1381,8 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     });
 
     try {
-      const [speciesRes, learnsetsRes] = await Promise.all([
+      const evo = get(evolutionData);
+      const [speciesRes, learnsetsRes, evoRes] = await Promise.all([
         fetch('/api/species', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
@@ -1117,6 +1393,11 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ learnsets: learnsetsData.learnsets }),
         }),
+        fetch('/api/evolution', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(evo),
+        }),
       ]);
 
       const showErr = async (res: Response, kind: string) => {
@@ -1125,11 +1406,12 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
         showStatus(`Failed to save ${kind}: ${body.error ?? res.statusText}`, 'error');
       };
 
-      if (speciesRes.ok && learnsetsRes.ok) {
-        showStatus('Changes saved (species + moves)!', 'success');
+      if (speciesRes.ok && learnsetsRes.ok && evoRes.ok) {
+        showStatus('Changes saved (species + moves + evolution)!', 'success');
       } else {
         if (!speciesRes.ok) await showErr(speciesRes, 'species');
         else if (!learnsetsRes.ok) await showErr(learnsetsRes, 'moves');
+        else if (!evoRes.ok) await showErr(evoRes, 'evolution');
       }
     } catch (error) {
       console.error('Save threw', error);
