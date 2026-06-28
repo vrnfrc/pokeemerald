@@ -443,14 +443,15 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   .evolution-section-wrap h3 { text-align: center; }
   .evo-tile {
     position: absolute;
-    width: 160px;
-    height: 185px;
+    width: 220px;
+    height: 235px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: center; /* sprite+name centered in the space above the + button */
     gap: 0.4rem;
-    padding: 0.6rem;
+    padding: 1.2rem;
+    padding-bottom: 4.5rem; /* dedicated room for the + button at the bottom */
     background: var(--panel-2);
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -478,10 +479,10 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   /* "+" button on the current Pokemon's tile */
   .evo-tile .evo-add {
     position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 30px;
-    height: 30px;
+    bottom: 14px;
+    right: 14px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: var(--accent);
     color: var(--bg);
@@ -489,30 +490,38 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     font-size: 1.2rem;
     font-weight: 700;
     cursor: pointer;
-    display: grid;
-    place-items: center;
-    line-height: 1;
-    padding: 0;
+    /* Perfectly center the glyph: line-height matches the button height,
+       text-align centers horizontally, vertical-align:middle on an inline-block
+       ::before baseline-aligns the character to the visual center. */
+    line-height: 32px;
+    text-align: center;
     transition: background 0.15s, transform 0.1s;
+  }
+  .evo-tile .evo-add::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -1px; /* absorb the trailing inline-block whitespace */
   }
   .evo-tile .evo-add:hover { background: #6b91e6; }
   .evo-tile .evo-add:active { transform: scale(0.92); }
   .evo-connector {
     position: absolute;
-    width: 160px;
-    height: 185px;
+    width: 220px;
+    height: 235px;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
-    padding: 0.5rem;
-    padding-top: 2rem; /* room for the delete button at top */
+    gap: 0.4rem;
+    padding: 1rem;
+    padding-top: 3.5rem; /* room for the delete button at top */
     background: var(--panel-2);
     border: 1px solid var(--border);
     border-radius: 6px;
     justify-content: center;
   }
   .evo-connector .evo-save {
-    height: 32px;
+    height: 34px;
     padding: 0 0.7rem;
     background: var(--accent);
     color: var(--bg);
@@ -536,28 +545,35 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   /* "X" button on the connector to remove the evolution */
   .evo-connector .evo-delete {
     position: absolute;
-    top: 8px;
-    right: 8px;
-    width: 24px;
-    height: 24px;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     background: var(--danger);
     color: white;
     border: none;
-    font-size: 1.05rem;
+    font-size: 1.2rem;
     font-weight: 700;
     cursor: pointer;
-    display: grid;
-    place-items: center;
-    line-height: 1;
-    padding: 0;
+    /* Same perfect-center technique as .evo-add: line-height = button height,
+       ::before vertical-align:middle gives true baseline-centered glyphs. */
+    line-height: 32px;
+    text-align: center;
     transition: background 0.15s, transform 0.1s;
+  }
+  .evo-connector .evo-delete::before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -1px;
   }
   .evo-connector .evo-delete:hover { background: #e0607a; }
   .evo-connector .evo-delete:active { transform: scale(0.92); }
   .evo-line {
     position: absolute;
-    height: 185px;
+    height: 235px;
     display: flex;
     align-items: center;
     pointer-events: none;
@@ -571,7 +587,7 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   .evo-arrow {
     position: absolute;
     width: 28px;
-    height: 185px;
+    height: 235px;
     display: flex;
     align-items: center;
     justify-content: flex-start; /* triangle flush to the left edge */
@@ -586,7 +602,7 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   }
   .evo-connector select,
   .evo-connector input {
-    height: 32px;
+    height: 34px;
     background: var(--bg);
     border: 1px solid var(--border);
     border-radius: 6px;
@@ -595,15 +611,30 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     font: inherit;
     font-size: 0.9rem;
     width: 100%;
+    transition: border-color 0.15s, box-shadow 0.15s;
   }
-  .evo-connector select { padding-right: 1.8rem; }
+  /* Match .levelup-row .move-select exactly: same custom arrow, same
+     right padding so the chevron doesn't crowd the text. */
+  .evo-connector select {
+    appearance: none;
+    -webkit-appearance: none;
+    min-width: 0;
+    padding-right: 1.8rem;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa3b2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.6rem center;
+    background-size: 14px;
+  }
+  .evo-connector select:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(122, 162, 247, 0.2);
+  }
   .evo-connector input { text-align: center; -moz-appearance: textfield; }
   .evo-connector input::-webkit-outer-spin-button,
   .evo-connector input::-webkit-inner-spin-button {
     -webkit-appearance: none; margin: 0;
   }
-  .evo-connector select:focus,
-  .evo-connector input:focus { outline: none; border-color: var(--accent); }
   .evo-connector .evo-target { font-weight: 600; }
   .evo-empty {
     color: var(--muted);
@@ -715,11 +746,11 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
     background: var(--panel-2);
     border: 1px solid var(--border);
     border-radius: 6px;
-    padding: 1.2rem;
+    padding: 2.5rem;
   }
 
   .form-section h3 {
-    margin: 0 0 1rem 0;
+    margin: 0 0 1.5rem 0;
     font-size: 1rem;
     color: var(--muted);
     text-transform: uppercase;
@@ -1198,7 +1229,7 @@ const movesDataJson = JSON.stringify({ names: moveNameMap, moves: moveList, tms:
   //      row; for branching nodes children spread vertically.
   //   3. Edges (connectors with method/param/target) are placed in the gap
   //      between each parent and child, vertically centered on the child.
-  const TILE_W = 160, TILE_H = 185, CONN_W = 160, CONN_H = 185, ARROW_W = 28, TAIL_W = 20, V_GAP = 16, H_GAP = 16;
+  const TILE_W = 220, TILE_H = 235, CONN_W = 220, CONN_H = 235, ARROW_W = 28, TAIL_W = 20, V_GAP = 16, H_GAP = 16;
   // The connector and tile share the same height, so the connector sits flush
   // with the top of the child tile (TOP_PAD = 0). For branching nodes the
   // parent tile expands vertically to embrace all its children, and the
