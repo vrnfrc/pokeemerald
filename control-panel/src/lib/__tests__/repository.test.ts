@@ -136,6 +136,26 @@ describe('createInMemoryRepository — round-trip', () => {
     assert.deepEqual(viewAgain, view);
   });
 
+  it('save + load learnsets preserves the name field in raw files', () => {
+    const levelup: LearnsetsRawFile = {
+      learnsets: [
+        { name: 'Bulbasaur', species: 'BULBASAUR', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }] },
+        { name: 'Ledyba', species: 'LEDYBA', moves: [{ level: 1, level_padded: ' 1', move: 'MOVE_TACKLE' }] },
+      ],
+    };
+    const tmhm: LearnsetsRawFile = {
+      learnsets: [
+        { name: 'Bulbasaur', species: 'BULBASAUR', moves: ['TOXIC'] },
+        { name: 'Ledyba', species: 'LEDYBA', moves: [] },
+      ],
+    };
+    const repo = createInMemoryRepository({ levelup, tmhm });
+    const view = repo.loadLearnsets();
+    repo.saveLearnsets(view);
+    assert.deepEqual(repo.state.levelup, levelup);
+    assert.deepEqual(repo.state.tmhm, tmhm);
+  });
+
   it('saveEvolution preserves _widths exactly as provided', () => {
     const repo = createInMemoryRepository();
     const file: EvolutionFile = {

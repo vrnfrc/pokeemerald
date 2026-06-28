@@ -42,6 +42,7 @@ export interface LevelupMove {
 }
 
 export interface LearnsetsViewEntry {
+  name?: string;
   levelup: LevelupMove[];
   tmhm: string[];
 }

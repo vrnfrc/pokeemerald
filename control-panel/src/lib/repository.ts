@@ -3,6 +3,7 @@ import type {
   EvolutionEntry,
   EvolutionTarget,
   ItemOption,
+  LearnsetsRawEntry,
   LearnsetsRawFile,
   LearnsetsView,
   LearnsetsViewEntry,
@@ -123,25 +124,40 @@ export function createInMemoryRepository(initial: InitialRepoState = {}): Reposi
 export function mergeLearnsets(levelup: LearnsetsRawFile, tmhm: LearnsetsRawFile): LearnsetsView {
   const view: LearnsetsView = {};
   for (const e of levelup.learnsets) {
-    view[e.species] = { levelup: e.moves as LevelupMove[], tmhm: [] };
+    const entry: LearnsetsViewEntry = { levelup: e.moves as LevelupMove[], tmhm: [] };
+    if (e.name != null) entry.name = e.name;
+    view[e.species] = entry;
   }
   for (const e of tmhm.learnsets) {
     const moves = e.moves as string[];
-    if (!view[e.species]) view[e.species] = { levelup: [], tmhm: moves };
-    else view[e.species].tmhm = moves;
+    if (!view[e.species]) {
+      const entry: LearnsetsViewEntry = { levelup: [], tmhm: moves };
+      if (e.name != null) entry.name = e.name;
+      view[e.species] = entry;
+    } else {
+      view[e.species].tmhm = moves;
+    }
   }
   return view;
 }
 
 export function splitLearnsetsLevelup(view: LearnsetsView): LearnsetsRawFile {
   return {
-    learnsets: Object.entries(view).map(([species, e]) => ({ species, moves: e.levelup })),
+    learnsets: Object.entries(view).map(([species, e]) => {
+      const entry: LearnsetsRawEntry = { species, moves: e.levelup };
+      if (e.name != null) entry.name = e.name;
+      return entry;
+    }),
   };
 }
 
 export function splitLearnsetsTmhm(view: LearnsetsView): LearnsetsRawFile {
   return {
-    learnsets: Object.entries(view).map(([species, e]) => ({ species, moves: e.tmhm })),
+    learnsets: Object.entries(view).map(([species, e]) => {
+      const entry: LearnsetsRawEntry = { species, moves: e.tmhm };
+      if (e.name != null) entry.name = e.name;
+      return entry;
+    }),
   };
 }
 
@@ -150,10 +166,12 @@ export function computeLevelPadded(level: number): string {
 }
 
 function cloneViewEntry(entry: LearnsetsViewEntry): LearnsetsViewEntry {
-  return {
+  const cloned: LearnsetsViewEntry = {
     levelup: entry.levelup.map((m) => ({ ...m })),
     tmhm: [...entry.tmhm],
   };
+  if (entry.name != null) cloned.name = entry.name;
+  return cloned;
 }
 
 function ensureSpecies(view: LearnsetsView, species: string): LearnsetsViewEntry {

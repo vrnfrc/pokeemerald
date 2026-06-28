@@ -675,7 +675,7 @@
             methods: { value: string; label: string }[];
             items: ItemOption[];
           };
-          evolutionData = d;
+          evolutionData = { _widths: d._widths, evolutions: d.evolutions };
           evoMethods = d.methods;
           evoItems = d.items;
           evoOptionsHtml = evoMethods
