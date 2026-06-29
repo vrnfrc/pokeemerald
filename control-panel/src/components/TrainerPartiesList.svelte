@@ -123,7 +123,8 @@
           <div class="part-header">
             <span class="part-number">Part {part.part}</span>
             <span class="part-difficulty">{part.difficulty}</span>
-          </div>          {#if part.unlockedBy}
+          </div>
+          {#if part.unlockedBy}
             <span class="part-unlocked-by">Unlocked by: {part.unlockedBy.join(', ')}</span>
           {/if}
           <div class="part-maps">
