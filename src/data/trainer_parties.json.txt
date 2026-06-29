@@ -1,0 +1,20 @@
+## for party in parties
+static const struct {{ party.type }} sParty_{{ party.name }}[] = {
+## for mon in party.pokemon
+    {
+    .iv = {{ mon.iv }},
+    .lvl = {{ mon.lvl }},
+    .species = SPECIES_{{ mon.species }},
+{%- if existsIn(mon, "heldItem") %}
+    .heldItem = ITEM_{{ mon.heldItem }}{% if existsIn(mon, "moves") %},{% endif %}
+
+{%- endif %}
+{%- if existsIn(mon, "moves") %}
+    .moves = {MOVE_{{ at(mon.moves, 0) }}, MOVE_{{ at(mon.moves, 1) }}, MOVE_{{ at(mon.moves, 2) }}, MOVE_{{ at(mon.moves, 3) }}}
+{%- endif %}
+    }{% if not loop.is_last %},{% endif %}
+
+## endfor
+};
+
+## endfor
