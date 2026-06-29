@@ -94,7 +94,7 @@
         "maps": ["LavaridgeTown"],
         "difficulty": 23,
         "challenges": ["Flannery"],
-        "unlocks": ["HM4 Strength", "Go-Googles"]
+        "unlocks": ["HM04 Strength", "Go-Googles"]
     },
     {
         "maps": ["Route111"],

@@ -120,8 +120,10 @@
           type="button"
           class="trainer-part-item"
         >
-          <span class="part-number">Part {part.part}</span>
-          {#if part.unlockedBy}
+          <div class="part-header">
+            <span class="part-number">Part {part.part}</span>
+            <span class="part-difficulty">{part.difficulty}</span>
+          </div>          {#if part.unlockedBy}
             <span class="part-unlocked-by">Unlocked by: {part.unlockedBy.join(', ')}</span>
           {/if}
           <div class="part-maps">
@@ -198,7 +200,17 @@
   .trainer-part-item:hover { background: var(--panel-2); transform: translateX(4px); }
   .trainer-part-item:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
 
+  .part-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   .part-number {
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--accent);
+  }
+  .part-difficulty {
     font-weight: 600;
     font-size: 1rem;
     color: var(--accent);
