@@ -1,0 +1,58 @@
+---
+import Layout from '../layouts/Layout.astro';
+import PageNav from '../components/PageNav.svelte';
+import TrainerPartiesList from '../components/TrainerPartiesList.svelte';
+---
+
+<Layout title="Trainers - PokéEmerald Control Panel">
+  <div class="app-container">
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <PageNav client:load current="/trainers" />
+      </div>
+      <TrainerPartiesList client:load />
+    </div>
+
+    <div class="main-content">
+      <div class="empty-state">
+        <p>Select a part to edit trainers</p>
+      </div>
+    </div>
+  </div>
+</Layout>
+
+<style>
+  .app-container {
+    display: flex;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .sidebar {
+    width: 320px;
+    background: var(--panel);
+    border-right: 1px solid var(--border);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+
+  .sidebar-header {
+    padding: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .main-content {
+    flex: 1;
+    overflow-y: auto;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .empty-state {
+    color: var(--muted);
+    font-size: 1.1rem;
+  }
+</style>

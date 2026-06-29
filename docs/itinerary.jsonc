@@ -105,7 +105,7 @@
         "maps": ["PetalburgCity"],
         "difficulty": 25,
         "challenges": ["Norman"],
-        "unlocks": ["Surf"]
+        "unlocks": ["HM03 Surf"]
     },
     {
         "maps": ["PetalburgCity", "Route102", "Route103", "Route110", "NewMauville_Entrance", "NewMauville_Inside", "Route117", "Route111", "Route114"],
