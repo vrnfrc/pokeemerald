@@ -1,0 +1,270 @@
+[
+    {
+        "maps": ["Route101", "Route102"],
+        "difficulty": 1,
+        "challenges": ["May/Brendan"]
+    },
+    {
+        "maps": ["Route103"],
+        "difficulty": 2
+    },
+    {
+        "maps": ["Route104"],
+        "difficulty": 3
+    },
+    {
+        "maps": ["PetalburgWoods"],
+        "difficulty": 4
+    },
+    {
+        "maps": ["Route116", "RusturfTunnel"],
+        "difficulty": 5
+    },
+    {
+        "maps": ["RustboroCity"],
+        "difficulty": 7,
+        "challenges": ["Roxanne", "May/Brendan"],
+        "unlocks": ["HM01 Cut"]
+    },
+    {
+        "maps": ["PetalburgWoods"],
+        "difficulty": 8,
+        "unlockedBy": "HM01 Cut"
+    },
+    {
+        "maps": ["GranityCave_1F", "GranityCave_B1F", "GranityCave_B2F", "GranityCave_StevensRoom"],
+        "difficulty": 9
+    },
+    {
+        "maps": ["DewfordTown"],
+        "difficulty": 10,
+        "challenges": ["Brawly"],
+        "unlocks": ["HM05 Flash"]
+    },
+    {
+        "maps": ["Route109", "SlateportCity_OceanicMuseum_1F", "SlateportCity_OceanicMuseum_2F"],
+        "difficulty": 12
+    },
+    {
+        "maps": ["Route110", "Route103"],
+        "difficulty": 13,
+        "challenges": ["May/Brendan"]
+    },
+    {
+        "maps": ["MauvilleCity", "Route117", "Route118", "RusturfTunnel"],
+        "difficulty": 15,
+        "challenges": ["Wally"]
+    },
+    {
+        "maps": ["MauvilleCity"],
+        "difficulty": 17,
+        "challenges": ["Wattson"],
+        "unlocks": ["HM06 Rock Smash"]
+    },
+    {
+        "maps": ["Route110", "Route111", "Route112", "FieryPath"],
+        "difficulty": 19
+    },
+    {
+        "maps": ["Route114"],
+        "difficulty": 20
+    },
+    {
+        "maps": ["MeteorFalls_1F_1R"],
+        "difficulty": 20
+    },
+    {
+        "maps": ["Route115"],
+        "difficulty": 21
+    },
+    {
+        "maps": ["MtChimney"],
+        "difficulty": 23,
+        "challenges": ["Maxie"]
+    },
+    {
+        "maps": ["JaggedPass"],
+        "difficulty": 24
+    },
+    {
+        "maps": ["Route115"],
+        "difficulty": 21
+    },
+    {
+        "maps": ["LavaridgeTown"],
+        "difficulty": 23,
+        "challenges": ["Flannery"],
+        "unlocks": ["HM4 Strength", "Go-Googles"]
+    },
+    {
+        "maps": ["Route111"],
+        "difficulty": 24,
+        "unlockedBy": "Go-Googles"
+    },
+    {
+        "maps": ["PetalburgCity"],
+        "difficulty": 25,
+        "challenges": ["Norman"],
+        "unlocks": ["Surf"]
+    },
+    {
+        "maps": ["PetalburgCity", "Route102", "Route103", "Route110", "NewMauville_Entrance", "NewMauville_Inside", "Route117", "Route111", "Route114"],
+        "difficulty": 26,
+        "unlockedBy": "HM03 Surf"
+    },
+    {
+        "maps": ["Route114", "Route104", "Route105", "Route106"],
+        "difficulty": 27,
+        "unlockedBy": "HM03 Surf"
+    },
+    {
+        "maps": ["Route107", "Route108", "AbandonedShip_Corridors_1F", "AbandonedShip_Rooms_1F", "AbandonedShip_Rooms2_1F", "AbandonedShip_Corridors_B1F", "AbandonedShip_Rooms_B1F", "AbandonedShip_Rooms2_B1F", "Route109", "SlateportCity"],
+        "difficulty": 28,
+        "unlockedBy": "HM03 Surf"
+    },
+    {
+        "maps": ["Route118", "Route123"],
+        "difficulty": 29
+    },
+    {
+        "maps": ["Route119"],
+        "difficulty": 30
+    },
+    {
+        "maps": ["Route119_WeatherInstitute_1F", "Route119_WeatherInstitute_2F"],
+        "difficulty": 31
+    },
+    {
+        "maps": ["Route119", "FortreeCity"],
+        "difficulty": 33,
+        "challenges": ["May/Brendan", "Winona"]
+    },
+    {
+        "maps": ["Route120", "ScorchedSlab"],
+        "difficulty": 34
+    },
+    {
+        "maps": ["Route121", "Route122", "Route123"],
+        "difficulty": 35
+    },
+    {
+        "maps": ["MtPyre_1F", "MtPyre_2F", "MtPyre_3F", "MtPyre_4F", "MtPyre_5F", "MtPyre_6F", "MtPyre_Exterior"],
+        "difficulty": 36
+    },
+    {
+        "maps": ["MtPyre_Summit"],
+        "difficulty": 38
+    },
+    {
+        "maps": ["MagmaHideout_1F", "MagmaHideout_2F_1R", "MagmaHideout_2F_2R", "MagmaHideout_3F_1R", "MagmaHideout_3F_2R", "MagmaHideout_4F"],
+        "difficulty": 39
+    },
+    {
+        "maps": ["MagmaHideout_4F"],
+        "difficulty": 41,
+        "challenges": ["Maxie"]
+    },
+    {
+        "maps": ["LilycoveCity"],
+        "difficulty": 42,
+        "challenges": ["May/Brendan"]
+    },
+    {
+        "maps": ["AquaHideout_1F", "AquaHideout_B1F"],
+        "difficulty": 43,
+        "challenges": ["Matt"]
+    },
+    {
+        "maps": ["Route124, Route125"],
+        "difficulty": 44
+    },
+    {
+        "maps": ["Route124, Route125"],
+        "difficulty": 44
+    },
+    {
+        "maps": ["ShoalCave_LowTideEntranceRoom", "ShoalCave_LowTideInnerRoom", "ShoalCave_LowTideStairsRoom", "ShoalCave_LowTideIceRoom", "ShoalCave_HighTide_EntranceRoom", "ShoalCave_HighTideInnerRoom"],
+        "difficulty": 45
+    },
+    {
+        "maps": ["MossdeepCity"],
+        "difficulty": 47,
+        "challenges": ["Tate and Liza"],
+        "unlocks": ["HM08 Dive"]
+    },
+    {
+        "maps": ["MossdeepCity_SpaceCenter_1F", "MossdeepCity_SpaceCenter_2F"],
+        "difficulty": 49,
+        "challenges": ["Maxie"]
+    },
+    {
+        "maps": ["Underwater_Route124"],
+        "difficulty": 49,
+        "unlockedBy": ["HM08 Dive"]
+    },
+    {
+        "maps": ["Route127", "Underwater_Route127", "Route128", "Underwater_Route128", "Underwater_Route126"],
+        "difficulty": 50
+    },
+    {
+        "maps": ["SeafloorCavern_Entrance", "SeafloorCavern_Room1", "SeafloorCavern_Room2", "SeafloorCavern_Room3", "SeafloorCavern_Room4", "SeafloorCavern_Room5", "SeafloorCavern_Room6", "SeafloorCavern_Room7", "SeafloorCavern_Room8", "SeafloorCavern_Room9"],
+        "difficulty": 51
+    },
+    {
+        "maps": ["SootopolisCity", "CaveOfOrigin_Entrance", "CaveOfOrigin_1F", "CaveOfOrigin_B1F"],
+        "difficulty": 52
+    },
+    {
+        "maps": ["Route_129", "Route130", "Route131"],
+        "difficulty": 53
+    },
+    {
+        "maps": ["Route132", "Route133", "Route134"],
+        "difficulty": 54
+    },
+    {
+        "maps": ["SkyPillar_1F", "SkyPillar_2F", "SkyPillar_3F", "SkyPillar_4F", "SkyPillar_5F"],
+        "difficulty": 55
+    },
+    {
+        "maps": ["SootopolisCity"],
+        "difficulty": 57,
+        "challenges": ["Juan"],
+        "unlocks": ["HM07 Waterfall"]
+    },
+    {
+        "maps": ["MeteorFalls_1F_2R", "MeteorFalls_B1F_1R", "MeteorFalls_B1F_2R", "EverGrandeCity"],
+        "difficulty": 58,
+        "unlockedBy": ["HM07 Waterfall"]
+    },
+    {
+        "maps": ["VictoryRoad_1F", "VictoryRoad_B1F", "VictoryRoad_B2F"],
+        "difficulty": 60,
+        "challenges": ["Wally"]
+    },
+    {
+        "maps": ["EverGrandeCity_SidneysRoom"],
+        "difficulty": 61,
+        "challenges": ["Sidney"]
+    },
+    {
+        "maps": ["EverGrandeCity_PhoebesRoom"],
+        "difficulty": 63,
+        "challenges": ["Phoebe"]
+    },
+    {
+        "maps": ["EverGrandeCity_GlaciasRoom"],
+        "difficulty": 65,
+        "challenges": ["Glacia"]
+    },
+    {
+        "maps": ["EverGrandeCity_DrakesRoom"],
+        "difficulty": 67,
+        "challenges": ["Drake"]
+    },
+    {
+        "maps": ["EverGrandeCity_ChampionsRoom"],
+        "difficulty": 70,
+        "challenges": ["Wallace"]
+    }
+]
