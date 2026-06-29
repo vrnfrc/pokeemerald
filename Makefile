@@ -159,7 +159,7 @@ MAKEFLAGS += --no-print-directory
 # Delete files that weren't built properly
 .DELETE_ON_ERROR:
 
-RULES_NO_SCAN += libagbsyscall clean clean-assets tidy tidymodern tidynonmodern generated clean-generated experimental_json_files trainers_json_to_h
+RULES_NO_SCAN += libagbsyscall clean clean-assets tidy tidymodern tidynonmodern generated clean-generated experimental_json_files
 .PHONY: all rom modern compare
 .PHONY: $(RULES_NO_SCAN)
 
@@ -273,10 +273,6 @@ experimental_json_files:
 	$(JSONPROC) $(DATA_SRC_SUBDIR)/pokemon/evolution.json $(DATA_SRC_SUBDIR)/pokemon/evolution.json.txt $(DATA_SRC_SUBDIR)/pokemon/evolution.h
 	$(JSONPROC) $(DATA_SRC_SUBDIR)/pokemon/level_up_learnsets.json $(DATA_SRC_SUBDIR)/pokemon/level_up_learnsets.json.txt $(DATA_SRC_SUBDIR)/pokemon/level_up_learnsets.h
 	$(JSONPROC) $(DATA_SRC_SUBDIR)/pokemon/tmhm_learnsets.json $(DATA_SRC_SUBDIR)/pokemon/tmhm_learnsets.json.txt $(DATA_SRC_SUBDIR)/pokemon/tmhm_learnsets.h
-	$(JSONPROC) $(DATA_SRC_SUBDIR)/trainers.json $(DATA_SRC_SUBDIR)/trainers.json.txt $(DATA_SRC_SUBDIR)/trainers.h
-
-# Custom rule for trainers conversion (temporary, will be merged into experimental_json_files later)
-trainers_json_to_h:
 	$(JSONPROC) $(DATA_SRC_SUBDIR)/trainers.json $(DATA_SRC_SUBDIR)/trainers.json.txt $(DATA_SRC_SUBDIR)/trainers.h
 
 
