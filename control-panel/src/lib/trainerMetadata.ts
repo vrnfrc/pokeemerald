@@ -101,8 +101,9 @@ export function trainerIdToPartyName(trainerId: string): string {
 
   const lastPart = parts[parts.length - 1];
   if (/^\d+$/.test(lastPart)) {
-    const baseName = parts.slice(0, -1).join('');
+    const baseParts = parts.slice(0, -1);
+    const baseName = baseParts.map(p => p.charAt(0) + p.slice(1).toLowerCase()).join('');
     return baseName + lastPart;
   }
-  return name;
+  return parts.map(p => p.charAt(0) + p.slice(1).toLowerCase()).join('');
 }

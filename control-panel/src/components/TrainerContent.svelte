@@ -12,8 +12,13 @@
     label: string;
   }
 
+  interface MapTrainers {
+    mapName: string;
+    trainers: TrainerGroup[];
+  }
+
   let selectedPartIndex = $state<number | null>(null);
-  let trainerGroups = $state<TrainerGroup[]>([]);
+  let mapsWithTrainers = $state<MapTrainers[]>([]);
   let speciesOptions = $state<SpeciesOption[]>([]);
   let itemOptions = $state<ItemOption[]>([]);
   let loading = $state(false);
@@ -28,7 +33,8 @@
     if (partParam) {
       const partIndex = parseInt(partParam);
       if (!isNaN(partIndex)) {
-        selectPart(partIndex);
+        selectedPartIndex = partIndex;
+        loadTrainers(partIndex - 1);
       }
     }
 
@@ -70,7 +76,7 @@
     const url = new URL(window.location.href);
     url.searchParams.set('part', partIndex.toString());
     window.history.pushState({}, '', url.toString());
-    loadTrainers(partIndex);
+    loadTrainers(partIndex - 1);
   }
 
   async function loadTrainers(partIndex: number) {
@@ -80,10 +86,10 @@
       const res = await fetch(`/api/trainers?part=${partIndex}`);
       if (!res.ok) throw new Error('Failed to load trainers');
       const data = await res.json();
-      trainerGroups = data.groups;
+      mapsWithTrainers = data.maps;
     } catch (err) {
       error = err instanceof Error ? err.message : 'Failed to load trainers';
-      trainerGroups = [];
+      mapsWithTrainers = [];
     } finally {
       loading = false;
     }
@@ -100,8 +106,16 @@
       throw new Error(data.error || 'Failed to save');
     }
     if (selectedPartIndex !== null) {
-      await loadTrainers(selectedPartIndex);
+      await loadTrainers(selectedPartIndex - 1);
     }
+  }
+
+  function formatMapName(name: string): string {
+    return name
+      .replace(/_/g, ' ')
+      .replace(/(\d+)/g, ' $1')
+      .replace(/\b\w/g, (c) => c.toUpperCase())
+      .trim();
   }
 </script>
 
@@ -118,21 +132,26 @@
     <div class="error-state">
       <p>{error}</p>
     </div>
-  {:else if trainerGroups.length === 0}
+  {:else if mapsWithTrainers.length === 0}
     <div class="empty-state">
       <p>No trainers found for this part</p>
     </div>
   {:else}
-    <div class="trainers-list">
-      {#each trainerGroups as group}
-        <TrainerDetail
-          {group}
-          {speciesOptions}
-          {itemOptions}
-          onSave={handleSave}
-        />
-      {/each}
-    </div>
+    {#each mapsWithTrainers as mapData}
+      <div class="form-section">
+        <h3>{formatMapName(mapData.mapName)}</h3>
+        <div class="trainers-list">
+          {#each mapData.trainers as group}
+            <TrainerDetail
+              {group}
+              {speciesOptions}
+              {itemOptions}
+              onSave={handleSave}
+            />
+          {/each}
+        </div>
+      </div>
+    {/each}
   {/if}
 </div>
 
@@ -156,6 +175,21 @@
 
   .error-state {
     color: var(--danger);
+  }
+
+  .form-section {
+    background: var(--panel-2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    padding: 2.5rem;
+  }
+
+  .form-section h3 {
+    margin: 0 0 1.5rem 0;
+    font-size: 1rem;
+    color: var(--muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
   }
 
   .trainers-list {

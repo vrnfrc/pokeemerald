@@ -174,10 +174,9 @@
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    padding: 1.5rem;
-    background: var(--panel-2);
-    border: 1px solid var(--border);
-    border-radius: 8px;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1rem;
   }
 
   .trainer-sprite {

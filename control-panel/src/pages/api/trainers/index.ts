@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { getTrainersForPart } from '../../../lib/itineraryTrainerLoader';
+import { getPart } from '../../../lib/itineraryTrainerLoader';
 import { getTrainersForIds, groupTrainersByBaseName } from '../../../lib/trainerRepository';
 
 export const prerender = false;
@@ -15,11 +15,30 @@ export const GET: APIRoute = async ({ url }) => {
     return new Response('Invalid part parameter', { status: 400 });
   }
 
-  const { trainers, challenges } = getTrainersForPart(part);
-  const trainerDisplays = getTrainersForIds(trainers, challenges);
-  const groups = groupTrainersByBaseName(trainerDisplays);
+  const itineraryPart = getPart(part);
+  if (!itineraryPart) {
+    return new Response('Part not found', { status: 404 });
+  }
 
-  return new Response(JSON.stringify({ groups }), {
+  const challenges = itineraryPart.challenges || [];
+  const mapsWithTrainers: { mapName: string; trainers: any[] }[] = [];
+
+  for (const map of itineraryPart.maps) {
+    if (typeof map === 'string') continue;
+    if (!map.trainers || map.trainers.length === 0) continue;
+
+    const trainerDisplays = getTrainersForIds(map.trainers, challenges);
+    const groups = groupTrainersByBaseName(trainerDisplays);
+
+    if (groups.length > 0) {
+      mapsWithTrainers.push({
+        mapName: map.name,
+        trainers: groups,
+      });
+    }
+  }
+
+  return new Response(JSON.stringify({ maps: mapsWithTrainers }), {
     headers: { 'Content-Type': 'application/json' },
   });
 };
