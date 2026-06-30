@@ -71,12 +71,12 @@ export interface TrainerGroup {
 export interface ItineraryMap {
   name: string;
   trainers: string[];
+  challenges?: string[];
 }
 
 export interface ItineraryPart {
   maps: ItineraryMap[];
   difficulty: number;
-  challenges?: string[];
   unlocks?: string[];
   unlockedBy?: string | string[];
 }

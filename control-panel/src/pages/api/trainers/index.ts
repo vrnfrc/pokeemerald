@@ -20,20 +20,34 @@ export const GET: APIRoute = async ({ url }) => {
     return new Response('Part not found', { status: 404 });
   }
 
-  const challenges = itineraryPart.challenges || [];
-  const mapsWithTrainers: { mapName: string; trainers: any[] }[] = [];
+  const mapsWithTrainers: { mapName: string; trainers: any[]; challenges: any[] }[] = [];
 
   for (const map of itineraryPart.maps) {
     if (typeof map === 'string') continue;
-    if (!map.trainers || map.trainers.length === 0) continue;
+    
+    const hasTrainers = map.trainers && map.trainers.length > 0;
+    const hasChallenges = map.challenges && map.challenges.length > 0;
+    
+    if (!hasTrainers && !hasChallenges) continue;
 
-    const trainerDisplays = getTrainersForIds(map.trainers, challenges);
-    const groups = groupTrainersByBaseName(trainerDisplays);
+    let trainerGroups: any[] = [];
+    let challengeGroups: any[] = [];
 
-    if (groups.length > 0) {
+    if (hasTrainers) {
+      const trainerDisplays = getTrainersForIds(map.trainers, []);
+      trainerGroups = groupTrainersByBaseName(trainerDisplays);
+    }
+
+    if (hasChallenges) {
+      const challengeDisplays = getTrainersForIds(map.challenges!, map.challenges!);
+      challengeGroups = groupTrainersByBaseName(challengeDisplays);
+    }
+
+    if (trainerGroups.length > 0 || challengeGroups.length > 0) {
       mapsWithTrainers.push({
         mapName: map.name,
-        trainers: groups,
+        trainers: trainerGroups,
+        challenges: challengeGroups,
       });
     }
   }

@@ -39,7 +39,7 @@ export function getTrainersForPart(partIndex: number): { trainers: string[]; cha
   if (!part) return { trainers: [], challenges: [] };
 
   const allTrainers: string[] = [];
-  const challenges = part.challenges || [];
+  const allChallenges: string[] = [];
 
   for (const map of part.maps) {
     if (typeof map === 'string') {
@@ -48,33 +48,34 @@ export function getTrainersForPart(partIndex: number): { trainers: string[]; cha
     if (map.trainers) {
       allTrainers.push(...map.trainers);
     }
+    if (map.challenges) {
+      allChallenges.push(...map.challenges);
+    }
   }
 
-  return { trainers: allTrainers, challenges };
+  return { trainers: allTrainers, challenges: allChallenges };
 }
 
 export function getTrainersForMap(mapName: string): { trainers: string[]; challenges: string[] } {
   const itinerary = loadItinerary();
   const allTrainers: string[] = [];
-  const challenges: string[] = [];
+  const allChallenges: string[] = [];
 
   for (const part of itinerary.parts) {
     for (const map of part.maps) {
       if (typeof map === 'string') continue;
-      if (map.name === mapName && map.trainers) {
-        allTrainers.push(...map.trainers);
-        if (part.challenges) {
-          for (const trainerId of map.trainers) {
-            if (part.challenges.includes(trainerId)) {
-              challenges.push(trainerId);
-            }
-          }
+      if (map.name === mapName) {
+        if (map.trainers) {
+          allTrainers.push(...map.trainers);
+        }
+        if (map.challenges) {
+          allChallenges.push(...map.challenges);
         }
       }
     }
   }
 
-  return { trainers: allTrainers, challenges };
+  return { trainers: allTrainers, challenges: allChallenges };
 }
 
 export function getAllMaps(): string[] {

@@ -15,6 +15,7 @@
   interface MapTrainers {
     mapName: string;
     trainers: TrainerGroup[];
+    challenges: TrainerGroup[];
   }
 
   let selectedPartIndex = $state<number | null>(null);
@@ -140,16 +141,33 @@
     {#each mapsWithTrainers as mapData}
       <div class="form-section">
         <h3>{formatMapName(mapData.mapName)}</h3>
-        <div class="trainers-list">
-          {#each mapData.trainers as group}
-            <TrainerDetail
-              {group}
-              {speciesOptions}
-              {itemOptions}
-              onSave={handleSave}
-            />
-          {/each}
-        </div>
+        {#if mapData.trainers.length > 0}
+          <div class="trainers-list">
+            {#each mapData.trainers as group}
+              <TrainerDetail
+                {group}
+                {speciesOptions}
+                {itemOptions}
+                onSave={handleSave}
+              />
+            {/each}
+          </div>
+        {/if}
+        {#if mapData.challenges.length > 0}
+          <div class="challenges-section">
+            <h4>Challenges</h4>
+            <div class="challenges-list">
+              {#each mapData.challenges as group}
+                <TrainerDetail
+                  {group}
+                  {speciesOptions}
+                  {itemOptions}
+                  onSave={handleSave}
+                />
+              {/each}
+            </div>
+          </div>
+        {/if}
       </div>
     {/each}
   {/if}
@@ -196,5 +214,31 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+  }
+
+  .challenges-section {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 2px solid var(--danger);
+  }
+
+  .challenges-section h4 {
+    margin: 0 0 1.5rem 0;
+    font-size: 0.9rem;
+    color: var(--danger);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+  }
+
+  .challenges-list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  .challenges-list :global(.trainer-detail) {
+    background: rgba(255, 85, 85, 0.05);
+    border: 1px solid rgba(255, 85, 85, 0.2);
   }
 </style>
