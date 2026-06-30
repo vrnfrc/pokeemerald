@@ -3,28 +3,22 @@
         "maps": [
             {
                 "name": "Route101",
-                "trainers": []
+                "trainers": [],
+                "challenges": [],
+                "rematches": []
             },
             {
                 "name": "Route103",
-                "trainers": [
-                    "TRAINER_AMY_AND_LIV_1",
-                    "TRAINER_ANDREW",
-                    "TRAINER_DAISY",
-                    "TRAINER_ISABELLE",
-                    "TRAINER_MARCOS",
-                    "TRAINER_MIGUEL_1",
-                    "TRAINER_PETE",
-                    "TRAINER_RHETT"
-                ],
+                "trainers": [],
                 "challenges": [
-                    "TRAINER_BRENDAN_ROUTE_103_MUDKIP",
-                    "TRAINER_BRENDAN_ROUTE_103_TORCHIC",
-                    "TRAINER_BRENDAN_ROUTE_103_TREECKO",
-                    "TRAINER_MAY_ROUTE_103_MUDKIP",
-                    "TRAINER_MAY_ROUTE_103_TORCHIC",
-                    "TRAINER_MAY_ROUTE_103_TREECKO"
-                ]
+                    { "id": "TRAINER_BRENDAN_ROUTE_103_MUDKIP", "party": "sParty_BrendanRoute103Mudkip" },
+                    { "id": "TRAINER_BRENDAN_ROUTE_103_TORCHIC", "party": "sParty_BrendanRoute103Torchic" },
+                    { "id": "TRAINER_BRENDAN_ROUTE_103_TREECKO", "party": "sParty_BrendanRoute103Treecko" },
+                    { "id": "TRAINER_MAY_ROUTE_103_MUDKIP", "party": "sParty_MayRoute103Mudkip" },
+                    { "id": "TRAINER_MAY_ROUTE_103_TORCHIC", "party": "sParty_MayRoute103Torchic" },
+                    { "id": "TRAINER_MAY_ROUTE_103_TREECKO", "party": "sParty_MayRoute103Treecko" }
+                ],
+                "rematches": []
             }
         ],
         "difficulty": 1
