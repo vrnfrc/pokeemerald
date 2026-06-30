@@ -106,18 +106,24 @@
             {
                 "name": "RustboroCity",
                 "trainers": [
-                    "TRAINER_BRENDAN_RUSTBORO_MUDKIP",
-                    "TRAINER_BRENDAN_RUSTBORO_TORCHIC",
-                    "TRAINER_BRENDAN_RUSTBORO_TREECKO",
-                    "TRAINER_JOSH",
-                    "TRAINER_MARC",
-                    "TRAINER_MAY_RUSTBORO_MUDKIP",
-                    "TRAINER_MAY_RUSTBORO_TORCHIC",
-                    "TRAINER_MAY_RUSTBORO_TREECKO",
-                    "TRAINER_TOMMY"
+                    { "id": "TRAINER_BRENDAN_RUSTBORO_MUDKIP", "party": "sParty_BrendanRustboroMudkip" },
+                    { "id": "TRAINER_BRENDAN_RUSTBORO_TORCHIC", "party": "sParty_BrendanRustboroTorchic" },
+                    { "id": "TRAINER_BRENDAN_RUSTBORO_TREECKO", "party": "sParty_BrendanRustboroTreecko" },
+                    { "id": "TRAINER_JOSH", "party": "sParty_Josh" },
+                    { "id": "TRAINER_MARC", "party": "sParty_Marc" },
+                    { "id": "TRAINER_MAY_RUSTBORO_MUDKIP", "party": "sParty_MayRustboroMudkip" },
+                    { "id": "TRAINER_MAY_RUSTBORO_TORCHIC", "party": "sParty_MayRustboroTorchic" },
+                    { "id": "TRAINER_MAY_RUSTBORO_TREECKO", "party": "sParty_MayRustboroTreecko" },
+                    { "id": "TRAINER_TOMMY", "party": "sParty_Tommy" }
                 ],
                 "challenges": [
-                    "TRAINER_ROXANNE_1"
+                    { "id": "TRAINER_ROXANNE_1", "party": "sParty_Roxanne1" }
+                ],
+                "rematches": [
+                    { "id": "TRAINER_ROXANNE_2", "party": "sParty_Roxanne2" },
+                    { "id": "TRAINER_ROXANNE_3", "party": "sParty_Roxanne3" },
+                    { "id": "TRAINER_ROXANNE_4", "party": "sParty_Roxanne4" },
+                    { "id": "TRAINER_ROXANNE_5", "party": "sParty_Roxanne5" }
                 ]
             }
         ],
