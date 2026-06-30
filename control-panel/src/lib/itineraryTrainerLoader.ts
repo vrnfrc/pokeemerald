@@ -34,48 +34,56 @@ export function getPart(partIndex: number): ItineraryPart | null {
   return itinerary.parts[partIndex];
 }
 
-export function getTrainersForPart(partIndex: number): { trainers: string[]; challenges: string[] } {
+export function getTrainersForPart(partIndex: number): { trainers: string[]; challenges: string[]; rematches: string[] } {
   const part = getPart(partIndex);
-  if (!part) return { trainers: [], challenges: [] };
+  if (!part) return { trainers: [], challenges: [], rematches: [] };
 
   const allTrainers: string[] = [];
   const allChallenges: string[] = [];
+  const allRematches: string[] = [];
 
   for (const map of part.maps) {
     if (typeof map === 'string') {
       continue;
     }
     if (map.trainers) {
-      allTrainers.push(...map.trainers);
+      allTrainers.push(...map.trainers.map(t => t.id));
     }
     if (map.challenges) {
-      allChallenges.push(...map.challenges);
+      allChallenges.push(...map.challenges.map(t => t.id));
+    }
+    if (map.rematches) {
+      allRematches.push(...map.rematches.map(t => t.id));
     }
   }
 
-  return { trainers: allTrainers, challenges: allChallenges };
+  return { trainers: allTrainers, challenges: allChallenges, rematches: allRematches };
 }
 
-export function getTrainersForMap(mapName: string): { trainers: string[]; challenges: string[] } {
+export function getTrainersForMap(mapName: string): { trainers: string[]; challenges: string[]; rematches: string[] } {
   const itinerary = loadItinerary();
   const allTrainers: string[] = [];
   const allChallenges: string[] = [];
+  const allRematches: string[] = [];
 
   for (const part of itinerary.parts) {
     for (const map of part.maps) {
       if (typeof map === 'string') continue;
       if (map.name === mapName) {
         if (map.trainers) {
-          allTrainers.push(...map.trainers);
+          allTrainers.push(...map.trainers.map(t => t.id));
         }
         if (map.challenges) {
-          allChallenges.push(...map.challenges);
+          allChallenges.push(...map.challenges.map(t => t.id));
+        }
+        if (map.rematches) {
+          allRematches.push(...map.rematches.map(t => t.id));
         }
       }
     }
   }
 
-  return { trainers: allTrainers, challenges: allChallenges };
+  return { trainers: allTrainers, challenges: allChallenges, rematches: allRematches };
 }
 
 export function getAllMaps(): string[] {

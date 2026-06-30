@@ -70,10 +70,16 @@ export interface TrainerGroup {
   starter?: 'MUDKIP' | 'TREECKO' | 'TORCHIC';
 }
 
+export interface ItineraryTrainerEntry {
+  id: string;
+  party: string;
+}
+
 export interface ItineraryMap {
   name: string;
-  trainers: string[];
-  challenges?: string[];
+  trainers: ItineraryTrainerEntry[];
+  challenges: ItineraryTrainerEntry[];
+  rematches: ItineraryTrainerEntry[];
 }
 
 export interface ItineraryPart {

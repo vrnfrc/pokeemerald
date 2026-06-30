@@ -1,6 +1,7 @@
 import type { APIRoute } from 'astro';
 import { getPart } from '../../../lib/itineraryTrainerLoader';
 import { getTrainersForIds, groupTrainersByBaseName, groupRivalTrainers, isRivalTrainer } from '../../../lib/trainerRepository';
+import { trainerIdToPartyName, parseTrainerName } from '../../../lib/trainerTypes';
 
 export const prerender = false;
 
@@ -27,14 +28,50 @@ export const GET: APIRoute = async ({ url }) => {
     
     const hasTrainers = map.trainers && map.trainers.length > 0;
     const hasChallenges = map.challenges && map.challenges.length > 0;
+    const hasRematches = map.rematches && map.rematches.length > 0;
     
     if (!hasTrainers && !hasChallenges) continue;
 
     let trainerGroups: any[] = [];
     let challengeGroups: any[] = [];
 
-    if (hasTrainers) {
-      const trainerDisplays = getTrainersForIds(map.trainers, []);
+    if (hasTrainers || hasChallenges) {
+      // Extract trainer and challenge IDs
+      const trainerIds = hasTrainers ? map.trainers.map(t => t.id) : [];
+      const challengeIds = hasChallenges ? map.challenges.map(t => t.id) : [];
+      
+      // Get base names for trainers and challenges
+      const trainerBaseNames = new Set(trainerIds.map(id => {
+        const partyName = trainerIdToPartyName(id);
+        return parseTrainerName(partyName).baseName;
+      }));
+      
+      const challengeBaseNames = new Set(challengeIds.map(id => {
+        const partyName = trainerIdToPartyName(id);
+        return parseTrainerName(partyName).baseName;
+      }));
+      
+      // Separate rematches into trainer rematches and challenge rematches
+      const trainerRematchIds: string[] = [];
+      const challengeRematchIds: string[] = [];
+      
+      if (hasRematches) {
+        for (const rematch of map.rematches) {
+          const partyName = trainerIdToPartyName(rematch.id);
+          const { baseName } = parseTrainerName(partyName);
+          
+          if (trainerBaseNames.has(baseName)) {
+            trainerRematchIds.push(rematch.id);
+          } else if (challengeBaseNames.has(baseName)) {
+            challengeRematchIds.push(rematch.id);
+          }
+        }
+      }
+      
+      // Combine trainers with their rematches
+      const allTrainerIds = [...trainerIds, ...trainerRematchIds];
+      const trainerDisplays = getTrainersForIds(allTrainerIds, []);
+      
       const rivalTrainers = trainerDisplays.filter(t => isRivalTrainer(t.baseName));
       const regularTrainers = trainerDisplays.filter(t => !isRivalTrainer(t.baseName));
       
@@ -42,10 +79,11 @@ export const GET: APIRoute = async ({ url }) => {
       const rivalGroups = groupRivalTrainers(rivalTrainers);
       
       trainerGroups = [...regularGroups, ...rivalGroups];
-    }
-
-    if (hasChallenges) {
-      const challengeDisplays = getTrainersForIds(map.challenges!, map.challenges!);
+      
+      // Combine challenges with their rematches
+      const allChallengeIds = [...challengeIds, ...challengeRematchIds];
+      const challengeDisplays = getTrainersForIds(allChallengeIds, allChallengeIds);
+      
       const rivalChallenges = challengeDisplays.filter(t => isRivalTrainer(t.baseName));
       const regularChallenges = challengeDisplays.filter(t => !isRivalTrainer(t.baseName));
       
