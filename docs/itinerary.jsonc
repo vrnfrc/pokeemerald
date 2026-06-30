@@ -1,473 +1,1741 @@
 [
     {
         "maps": [
-            { "name": "Route101", "trainers": [] },
-            { "name": "Route102", "trainers": ["TRAINER_CALVIN_1", "TRAINER_RICK_1", "TRAINER_TIANA_1"] }
+            {
+                "name": "Route101",
+                "trainers": []
+            },
+            {
+                "name": "Route102",
+                "trainers": [
+                    "TRAINER_ALLEN",
+                    "TRAINER_CALVIN_1",
+                    "TRAINER_RICK",
+                    "TRAINER_TIANA"
+                ]
+            }
         ],
         "difficulty": 1,
         "challenges": []
     },
     {
         "maps": [
-            { "name": "Route103", "trainers": ["TRAINER_BRENDAN_ROUTE_103_MUDKIP", "TRAINER_MAY_ROUTE_103_MUDKIP"] }
+            {
+                "name": "Route103",
+                "trainers": [
+                    "TRAINER_AMY_AND_LIV_1",
+                    "TRAINER_ANDREW",
+                    "TRAINER_BRENDAN_ROUTE_103_MUDKIP",
+                    "TRAINER_BRENDAN_ROUTE_103_TORCHIC",
+                    "TRAINER_BRENDAN_ROUTE_103_TREECKO",
+                    "TRAINER_DAISY",
+                    "TRAINER_ISABELLE",
+                    "TRAINER_MARCOS",
+                    "TRAINER_MAY_ROUTE_103_MUDKIP",
+                    "TRAINER_MAY_ROUTE_103_TORCHIC",
+                    "TRAINER_MAY_ROUTE_103_TREECKO",
+                    "TRAINER_MIGUEL_1",
+                    "TRAINER_PETE",
+                    "TRAINER_RHETT"
+                ]
+            }
         ],
         "difficulty": 2
     },
     {
         "maps": [
-            { "name": "Route104", "trainers": [] }
+            {
+                "name": "Route104",
+                "trainers": [
+                    "TRAINER_BILLY",
+                    "TRAINER_BRENDAN_RUSTBORO_MUDKIP",
+                    "TRAINER_BRENDAN_RUSTBORO_TORCHIC",
+                    "TRAINER_BRENDAN_RUSTBORO_TREECKO",
+                    "TRAINER_CINDY_1",
+                    "TRAINER_DARIAN",
+                    "TRAINER_GINA_AND_MIA_1",
+                    "TRAINER_HALEY_1",
+                    "TRAINER_IVAN",
+                    "TRAINER_MAY_RUSTBORO_MUDKIP",
+                    "TRAINER_MAY_RUSTBORO_TORCHIC",
+                    "TRAINER_MAY_RUSTBORO_TREECKO",
+                    "TRAINER_WINSTON_1"
+                ]
+            }
         ],
         "difficulty": 3
     },
     {
         "maps": [
-            { "name": "PetalburgWoods", "trainers": [] }
+            {
+                "name": "PetalburgWoods",
+                "trainers": [
+                    "TRAINER_GRUNT_PETALBURG_WOODS",
+                    "TRAINER_JAMES_1",
+                    "TRAINER_LYLE"
+                ]
+            }
         ],
         "difficulty": 4
     },
     {
         "maps": [
-            { "name": "Route116", "trainers": [] },
-            { "name": "RusturfTunnel", "trainers": [] }
+            {
+                "name": "Route116",
+                "trainers": [
+                    "TRAINER_CLARK",
+                    "TRAINER_DAWSON",
+                    "TRAINER_DEVAN",
+                    "TRAINER_JANICE",
+                    "TRAINER_JERRY_1",
+                    "TRAINER_JOEY",
+                    "TRAINER_JOHNSON",
+                    "TRAINER_JOSE",
+                    "TRAINER_KAREN_1",
+                    "TRAINER_SARAH"
+                ]
+            },
+            {
+                "name": "RusturfTunnel",
+                "trainers": [
+                    "TRAINER_GRUNT_RUSTURF_TUNNEL",
+                    "TRAINER_MIKE_2"
+                ]
+            }
         ],
         "difficulty": 5
     },
     {
         "maps": [
-            { "name": "RustboroCity", "trainers": ["TRAINER_ROXANNE_1"] }
+            {
+                "name": "RustboroCity",
+                "trainers": [
+                    "TRAINER_BRENDAN_RUSTBORO_MUDKIP",
+                    "TRAINER_BRENDAN_RUSTBORO_TORCHIC",
+                    "TRAINER_BRENDAN_RUSTBORO_TREECKO",
+                    "TRAINER_MAY_RUSTBORO_MUDKIP",
+                    "TRAINER_MAY_RUSTBORO_TORCHIC",
+                    "TRAINER_MAY_RUSTBORO_TREECKO"
+                ]
+            }
         ],
         "difficulty": 7,
-        "challenges": ["TRAINER_ROXANNE_1"],
-        "unlocks": ["HM01 Cut"]
+        "challenges": [
+            "TRAINER_ROXANNE_1"
+        ],
+        "unlocks": [
+            "HM01 Cut"
+        ]
     },
     {
         "maps": [
-            { "name": "PetalburgWoods", "trainers": [] }
+            {
+                "name": "PetalburgWoods",
+                "trainers": [
+                    "TRAINER_GRUNT_PETALBURG_WOODS",
+                    "TRAINER_JAMES_1",
+                    "TRAINER_LYLE"
+                ]
+            }
         ],
         "difficulty": 8,
         "unlockedBy": "HM01 Cut"
     },
     {
         "maps": [
-            { "name": "GraniteCave_1F", "trainers": [] },
-            { "name": "GraniteCave_B1F", "trainers": [] },
-            { "name": "GraniteCave_B2F", "trainers": [] },
-            { "name": "GraniteCave_StevensRoom", "trainers": [] }
+            {
+                "name": "GraniteCave_1F",
+                "trainers": []
+            },
+            {
+                "name": "GraniteCave_B1F",
+                "trainers": []
+            },
+            {
+                "name": "GraniteCave_B2F",
+                "trainers": []
+            },
+            {
+                "name": "GraniteCave_StevensRoom",
+                "trainers": []
+            }
         ],
         "difficulty": 9
     },
     {
         "maps": [
-            { "name": "DewfordTown", "trainers": ["TRAINER_BRAWLY_1"] }
+            {
+                "name": "DewfordTown",
+                "trainers": []
+            }
         ],
         "difficulty": 10,
-        "challenges": ["TRAINER_BRAWLY_1"],
-        "unlocks": ["HM05 Flash"]
+        "challenges": [
+            "TRAINER_BRAWLY_1"
+        ],
+        "unlocks": [
+            "HM05 Flash"
+        ]
     },
     {
         "maps": [
-            { "name": "Route109", "trainers": [] },
-            { "name": "SlateportCity_OceanicMuseum_1F", "trainers": [] },
-            { "name": "SlateportCity_OceanicMuseum_2F", "trainers": [] }
+            {
+                "name": "Route109",
+                "trainers": [
+                    "TRAINER_ALICE",
+                    "TRAINER_AUSTINA",
+                    "TRAINER_CARTER",
+                    "TRAINER_CHANDLER",
+                    "TRAINER_DAVID",
+                    "TRAINER_EDMOND",
+                    "TRAINER_ELIJAH",
+                    "TRAINER_GWEN",
+                    "TRAINER_HAILEY",
+                    "TRAINER_HUEY",
+                    "TRAINER_LOLA_1",
+                    "TRAINER_MEL_AND_PAUL",
+                    "TRAINER_RICKY_1"
+                ]
+            },
+            {
+                "name": "SlateportCity_OceanicMuseum_1F",
+                "trainers": []
+            },
+            {
+                "name": "SlateportCity_OceanicMuseum_2F",
+                "trainers": [
+                    "TRAINER_GRUNT_MUSEUM_1",
+                    "TRAINER_GRUNT_MUSEUM_2"
+                ]
+            }
         ],
         "difficulty": 12
     },
     {
         "maps": [
-            { "name": "Route110", "trainers": [] },
-            { "name": "Route103", "trainers": [] }
+            {
+                "name": "Route110",
+                "trainers": [
+                    "TRAINER_ABIGAIL_1",
+                    "TRAINER_ALYSSA",
+                    "TRAINER_ANTHONY",
+                    "TRAINER_BENJAMIN_1",
+                    "TRAINER_BRENDAN_ROUTE_110_MUDKIP",
+                    "TRAINER_BRENDAN_ROUTE_110_TORCHIC",
+                    "TRAINER_BRENDAN_ROUTE_110_TREECKO",
+                    "TRAINER_DALE",
+                    "TRAINER_EDWARD",
+                    "TRAINER_EDWIN_1",
+                    "TRAINER_ISABEL_1",
+                    "TRAINER_JACLYN",
+                    "TRAINER_JACOB",
+                    "TRAINER_JASMINE",
+                    "TRAINER_JOSEPH",
+                    "TRAINER_KALEB",
+                    "TRAINER_MAY_ROUTE_110_MUDKIP",
+                    "TRAINER_MAY_ROUTE_110_TORCHIC",
+                    "TRAINER_MAY_ROUTE_110_TREECKO",
+                    "TRAINER_TIMMY"
+                ]
+            },
+            {
+                "name": "Route103",
+                "trainers": [
+                    "TRAINER_AMY_AND_LIV_1",
+                    "TRAINER_ANDREW",
+                    "TRAINER_BRENDAN_ROUTE_103_MUDKIP",
+                    "TRAINER_BRENDAN_ROUTE_103_TORCHIC",
+                    "TRAINER_BRENDAN_ROUTE_103_TREECKO",
+                    "TRAINER_DAISY",
+                    "TRAINER_ISABELLE",
+                    "TRAINER_MARCOS",
+                    "TRAINER_MAY_ROUTE_103_MUDKIP",
+                    "TRAINER_MAY_ROUTE_103_TORCHIC",
+                    "TRAINER_MAY_ROUTE_103_TREECKO",
+                    "TRAINER_MIGUEL_1",
+                    "TRAINER_PETE",
+                    "TRAINER_RHETT"
+                ]
+            }
         ],
         "difficulty": 13
     },
     {
         "maps": [
-            { "name": "MauvilleCity", "trainers": ["TRAINER_WALLY_MAUVILLE"] },
-            { "name": "Route117", "trainers": [] },
-            { "name": "Route118", "trainers": [] },
-            { "name": "RusturfTunnel", "trainers": [] }
+            {
+                "name": "MauvilleCity",
+                "trainers": [
+                    "TRAINER_WALLY_MAUVILLE"
+                ]
+            },
+            {
+                "name": "Route117",
+                "trainers": [
+                    "TRAINER_AISHA",
+                    "TRAINER_ANNA_AND_MEG_1",
+                    "TRAINER_BRANDI",
+                    "TRAINER_DEREK",
+                    "TRAINER_DYLAN_1",
+                    "TRAINER_ISAAC_1",
+                    "TRAINER_LYDIA_1",
+                    "TRAINER_MARIA_1",
+                    "TRAINER_MELINA"
+                ]
+            },
+            {
+                "name": "Route118",
+                "trainers": [
+                    "TRAINER_BARNY",
+                    "TRAINER_CHESTER",
+                    "TRAINER_DALTON_1",
+                    "TRAINER_DEANDRE",
+                    "TRAINER_PERRY",
+                    "TRAINER_ROSE_1",
+                    "TRAINER_WADE"
+                ]
+            },
+            {
+                "name": "RusturfTunnel",
+                "trainers": [
+                    "TRAINER_GRUNT_RUSTURF_TUNNEL",
+                    "TRAINER_MIKE_2"
+                ]
+            }
         ],
         "difficulty": 15,
-        "challenges": ["TRAINER_WALLY_MAUVILLE"]
+        "challenges": [
+            "TRAINER_WALLY_MAUVILLE"
+        ]
     },
     {
         "maps": [
-            { "name": "MauvilleCity", "trainers": ["TRAINER_WATTSON_1"] }
+            {
+                "name": "MauvilleCity",
+                "trainers": [
+                    "TRAINER_WALLY_MAUVILLE"
+                ]
+            }
         ],
         "difficulty": 17,
-        "challenges": ["TRAINER_WATTSON_1"],
-        "unlocks": ["HM06 Rock Smash"]
+        "challenges": [
+            "TRAINER_WATTSON_1"
+        ],
+        "unlocks": [
+            "HM06 Rock Smash"
+        ]
     },
     {
         "maps": [
-            { "name": "Route110", "trainers": [] },
-            { "name": "Route111", "trainers": [] },
-            { "name": "Route112", "trainers": [] },
-            { "name": "FieryPath", "trainers": [] }
+            {
+                "name": "Route110",
+                "trainers": [
+                    "TRAINER_ABIGAIL_1",
+                    "TRAINER_ALYSSA",
+                    "TRAINER_ANTHONY",
+                    "TRAINER_BENJAMIN_1",
+                    "TRAINER_BRENDAN_ROUTE_110_MUDKIP",
+                    "TRAINER_BRENDAN_ROUTE_110_TORCHIC",
+                    "TRAINER_BRENDAN_ROUTE_110_TREECKO",
+                    "TRAINER_DALE",
+                    "TRAINER_EDWARD",
+                    "TRAINER_EDWIN_1",
+                    "TRAINER_ISABEL_1",
+                    "TRAINER_JACLYN",
+                    "TRAINER_JACOB",
+                    "TRAINER_JASMINE",
+                    "TRAINER_JOSEPH",
+                    "TRAINER_KALEB",
+                    "TRAINER_MAY_ROUTE_110_MUDKIP",
+                    "TRAINER_MAY_ROUTE_110_TORCHIC",
+                    "TRAINER_MAY_ROUTE_110_TREECKO",
+                    "TRAINER_TIMMY"
+                ]
+            },
+            {
+                "name": "Route111",
+                "trainers": [
+                    "TRAINER_BEAU",
+                    "TRAINER_BECKY",
+                    "TRAINER_BIANCA",
+                    "TRAINER_BRANDEN",
+                    "TRAINER_BROOKE_1",
+                    "TRAINER_BRYAN",
+                    "TRAINER_CELIA",
+                    "TRAINER_CELINA",
+                    "TRAINER_DAISUKE",
+                    "TRAINER_DREW",
+                    "TRAINER_DUSTY_1",
+                    "TRAINER_HAYDEN",
+                    "TRAINER_HEIDI",
+                    "TRAINER_IRENE",
+                    "TRAINER_TRAVIS",
+                    "TRAINER_TYRON",
+                    "TRAINER_VICKY",
+                    "TRAINER_VICTOR",
+                    "TRAINER_VICTORIA",
+                    "TRAINER_VIVI",
+                    "TRAINER_WILTON_1"
+                ]
+            },
+            {
+                "name": "Route112",
+                "trainers": [
+                    "TRAINER_BRICE",
+                    "TRAINER_BRYANT",
+                    "TRAINER_CAROL",
+                    "TRAINER_LARRY",
+                    "TRAINER_SHAYLA",
+                    "TRAINER_TRENT_1"
+                ]
+            },
+            {
+                "name": "FieryPath",
+                "trainers": []
+            }
         ],
         "difficulty": 19
     },
     {
         "maps": [
-            { "name": "Route114", "trainers": [] }
+            {
+                "name": "Route114",
+                "trainers": [
+                    "TRAINER_ANGELINA",
+                    "TRAINER_BERNIE_1",
+                    "TRAINER_CHARLOTTE",
+                    "TRAINER_CLAUDE",
+                    "TRAINER_KAI",
+                    "TRAINER_LENNY",
+                    "TRAINER_LUCAS_1",
+                    "TRAINER_NANCY",
+                    "TRAINER_NOLAN",
+                    "TRAINER_SHANE",
+                    "TRAINER_STEVE_1",
+                    "TRAINER_TYRA_AND_IVY"
+                ]
+            }
         ],
         "difficulty": 20
     },
     {
         "maps": [
-            { "name": "MeteorFalls_1F_1R", "trainers": [] }
+            {
+                "name": "MeteorFalls_1F_1R",
+                "trainers": []
+            }
         ],
         "difficulty": 20
     },
     {
         "maps": [
-            { "name": "Route115", "trainers": [] }
+            {
+                "name": "Route115",
+                "trainers": [
+                    "TRAINER_ALIX",
+                    "TRAINER_CYNDY_1",
+                    "TRAINER_HECTOR",
+                    "TRAINER_HELENE",
+                    "TRAINER_JAIDEN",
+                    "TRAINER_KOICHI",
+                    "TRAINER_KYRA",
+                    "TRAINER_MARLENE",
+                    "TRAINER_NOB_1",
+                    "TRAINER_TIMOTHY_1"
+                ]
+            }
         ],
         "difficulty": 21
     },
     {
         "maps": [
-            { "name": "MtChimney", "trainers": ["TRAINER_MAXIE_MT_CHIMNEY"] }
+            {
+                "name": "MtChimney",
+                "trainers": [
+                    "TRAINER_GRUNT_MT_CHIMNEY_1",
+                    "TRAINER_GRUNT_MT_CHIMNEY_2",
+                    "TRAINER_MAXIE_MT_CHIMNEY",
+                    "TRAINER_MELISSA",
+                    "TRAINER_SAWYER_1",
+                    "TRAINER_SHEILA",
+                    "TRAINER_SHELBY_1",
+                    "TRAINER_SHIRLEY",
+                    "TRAINER_TABITHA_MT_CHIMNEY"
+                ]
+            }
         ],
         "difficulty": 23,
-        "challenges": ["TRAINER_MAXIE_MT_CHIMNEY"]
+        "challenges": [
+            "TRAINER_MAXIE_MT_CHIMNEY"
+        ]
     },
     {
         "maps": [
-            { "name": "JaggedPass", "trainers": [] }
+            {
+                "name": "JaggedPass",
+                "trainers": [
+                    "TRAINER_AUTUMN",
+                    "TRAINER_DIANA_1",
+                    "TRAINER_ERIC",
+                    "TRAINER_ETHAN_1",
+                    "TRAINER_GRUNT_JAGGED_PASS",
+                    "TRAINER_JULIO"
+                ]
+            }
         ],
         "difficulty": 24
     },
     {
         "maps": [
-            { "name": "Route115", "trainers": [] }
+            {
+                "name": "Route115",
+                "trainers": [
+                    "TRAINER_ALIX",
+                    "TRAINER_CYNDY_1",
+                    "TRAINER_HECTOR",
+                    "TRAINER_HELENE",
+                    "TRAINER_JAIDEN",
+                    "TRAINER_KOICHI",
+                    "TRAINER_KYRA",
+                    "TRAINER_MARLENE",
+                    "TRAINER_NOB_1",
+                    "TRAINER_TIMOTHY_1"
+                ]
+            }
         ],
         "difficulty": 21
     },
     {
         "maps": [
-            { "name": "LavaridgeTown", "trainers": ["TRAINER_FLANNERY_1"] }
+            {
+                "name": "LavaridgeTown",
+                "trainers": []
+            }
         ],
         "difficulty": 23,
-        "challenges": ["TRAINER_FLANNERY_1"],
-        "unlocks": ["HM04 Strength", "Go-Googles"]
+        "challenges": [
+            "TRAINER_FLANNERY_1"
+        ],
+        "unlocks": [
+            "HM04 Strength",
+            "Go-Googles"
+        ]
     },
     {
         "maps": [
-            { "name": "Route111", "trainers": [] }
+            {
+                "name": "Route111",
+                "trainers": [
+                    "TRAINER_BEAU",
+                    "TRAINER_BECKY",
+                    "TRAINER_BIANCA",
+                    "TRAINER_BRANDEN",
+                    "TRAINER_BROOKE_1",
+                    "TRAINER_BRYAN",
+                    "TRAINER_CELIA",
+                    "TRAINER_CELINA",
+                    "TRAINER_DAISUKE",
+                    "TRAINER_DREW",
+                    "TRAINER_DUSTY_1",
+                    "TRAINER_HAYDEN",
+                    "TRAINER_HEIDI",
+                    "TRAINER_IRENE",
+                    "TRAINER_TRAVIS",
+                    "TRAINER_TYRON",
+                    "TRAINER_VICKY",
+                    "TRAINER_VICTOR",
+                    "TRAINER_VICTORIA",
+                    "TRAINER_VIVI",
+                    "TRAINER_WILTON_1"
+                ]
+            }
         ],
         "difficulty": 24,
         "unlockedBy": "Go-Googles"
     },
     {
         "maps": [
-            { "name": "PetalburgCity", "trainers": ["TRAINER_NORMAN_1"] }
+            {
+                "name": "PetalburgCity",
+                "trainers": []
+            }
         ],
         "difficulty": 25,
-        "challenges": ["TRAINER_NORMAN_1"],
-        "unlocks": ["HM03 Surf"]
+        "challenges": [
+            "TRAINER_NORMAN_1"
+        ],
+        "unlocks": [
+            "HM03 Surf"
+        ]
     },
     {
         "maps": [
-            { "name": "PetalburgCity", "trainers": [] },
-            { "name": "Route102", "trainers": [] },
-            { "name": "Route103", "trainers": [] },
-            { "name": "Route110", "trainers": [] },
-            { "name": "NewMauville_Entrance", "trainers": [] },
-            { "name": "NewMauville_Inside", "trainers": [] },
-            { "name": "Route117", "trainers": [] },
-            { "name": "Route111", "trainers": [] },
-            { "name": "Route114", "trainers": [] }
+            {
+                "name": "PetalburgCity",
+                "trainers": []
+            },
+            {
+                "name": "Route102",
+                "trainers": [
+                    "TRAINER_ALLEN",
+                    "TRAINER_CALVIN_1",
+                    "TRAINER_RICK",
+                    "TRAINER_TIANA"
+                ]
+            },
+            {
+                "name": "Route103",
+                "trainers": [
+                    "TRAINER_AMY_AND_LIV_1",
+                    "TRAINER_ANDREW",
+                    "TRAINER_BRENDAN_ROUTE_103_MUDKIP",
+                    "TRAINER_BRENDAN_ROUTE_103_TORCHIC",
+                    "TRAINER_BRENDAN_ROUTE_103_TREECKO",
+                    "TRAINER_DAISY",
+                    "TRAINER_ISABELLE",
+                    "TRAINER_MARCOS",
+                    "TRAINER_MAY_ROUTE_103_MUDKIP",
+                    "TRAINER_MAY_ROUTE_103_TORCHIC",
+                    "TRAINER_MAY_ROUTE_103_TREECKO",
+                    "TRAINER_MIGUEL_1",
+                    "TRAINER_PETE",
+                    "TRAINER_RHETT"
+                ]
+            },
+            {
+                "name": "Route110",
+                "trainers": [
+                    "TRAINER_ABIGAIL_1",
+                    "TRAINER_ALYSSA",
+                    "TRAINER_ANTHONY",
+                    "TRAINER_BENJAMIN_1",
+                    "TRAINER_BRENDAN_ROUTE_110_MUDKIP",
+                    "TRAINER_BRENDAN_ROUTE_110_TORCHIC",
+                    "TRAINER_BRENDAN_ROUTE_110_TREECKO",
+                    "TRAINER_DALE",
+                    "TRAINER_EDWARD",
+                    "TRAINER_EDWIN_1",
+                    "TRAINER_ISABEL_1",
+                    "TRAINER_JACLYN",
+                    "TRAINER_JACOB",
+                    "TRAINER_JASMINE",
+                    "TRAINER_JOSEPH",
+                    "TRAINER_KALEB",
+                    "TRAINER_MAY_ROUTE_110_MUDKIP",
+                    "TRAINER_MAY_ROUTE_110_TORCHIC",
+                    "TRAINER_MAY_ROUTE_110_TREECKO",
+                    "TRAINER_TIMMY"
+                ]
+            },
+            {
+                "name": "NewMauville_Entrance",
+                "trainers": []
+            },
+            {
+                "name": "NewMauville_Inside",
+                "trainers": []
+            },
+            {
+                "name": "Route117",
+                "trainers": [
+                    "TRAINER_AISHA",
+                    "TRAINER_ANNA_AND_MEG_1",
+                    "TRAINER_BRANDI",
+                    "TRAINER_DEREK",
+                    "TRAINER_DYLAN_1",
+                    "TRAINER_ISAAC_1",
+                    "TRAINER_LYDIA_1",
+                    "TRAINER_MARIA_1",
+                    "TRAINER_MELINA"
+                ]
+            },
+            {
+                "name": "Route111",
+                "trainers": [
+                    "TRAINER_BEAU",
+                    "TRAINER_BECKY",
+                    "TRAINER_BIANCA",
+                    "TRAINER_BRANDEN",
+                    "TRAINER_BROOKE_1",
+                    "TRAINER_BRYAN",
+                    "TRAINER_CELIA",
+                    "TRAINER_CELINA",
+                    "TRAINER_DAISUKE",
+                    "TRAINER_DREW",
+                    "TRAINER_DUSTY_1",
+                    "TRAINER_HAYDEN",
+                    "TRAINER_HEIDI",
+                    "TRAINER_IRENE",
+                    "TRAINER_TRAVIS",
+                    "TRAINER_TYRON",
+                    "TRAINER_VICKY",
+                    "TRAINER_VICTOR",
+                    "TRAINER_VICTORIA",
+                    "TRAINER_VIVI",
+                    "TRAINER_WILTON_1"
+                ]
+            },
+            {
+                "name": "Route114",
+                "trainers": [
+                    "TRAINER_ANGELINA",
+                    "TRAINER_BERNIE_1",
+                    "TRAINER_CHARLOTTE",
+                    "TRAINER_CLAUDE",
+                    "TRAINER_KAI",
+                    "TRAINER_LENNY",
+                    "TRAINER_LUCAS_1",
+                    "TRAINER_NANCY",
+                    "TRAINER_NOLAN",
+                    "TRAINER_SHANE",
+                    "TRAINER_STEVE_1",
+                    "TRAINER_TYRA_AND_IVY"
+                ]
+            }
         ],
         "difficulty": 26,
         "unlockedBy": "HM03 Surf"
     },
     {
         "maps": [
-            { "name": "Route114", "trainers": [] },
-            { "name": "Route104", "trainers": [] },
-            { "name": "Route105", "trainers": [] },
-            { "name": "Route106", "trainers": [] }
+            {
+                "name": "Route114",
+                "trainers": [
+                    "TRAINER_ANGELINA",
+                    "TRAINER_BERNIE_1",
+                    "TRAINER_CHARLOTTE",
+                    "TRAINER_CLAUDE",
+                    "TRAINER_KAI",
+                    "TRAINER_LENNY",
+                    "TRAINER_LUCAS_1",
+                    "TRAINER_NANCY",
+                    "TRAINER_NOLAN",
+                    "TRAINER_SHANE",
+                    "TRAINER_STEVE_1",
+                    "TRAINER_TYRA_AND_IVY"
+                ]
+            },
+            {
+                "name": "Route104",
+                "trainers": [
+                    "TRAINER_BILLY",
+                    "TRAINER_BRENDAN_RUSTBORO_MUDKIP",
+                    "TRAINER_BRENDAN_RUSTBORO_TORCHIC",
+                    "TRAINER_BRENDAN_RUSTBORO_TREECKO",
+                    "TRAINER_CINDY_1",
+                    "TRAINER_DARIAN",
+                    "TRAINER_GINA_AND_MIA_1",
+                    "TRAINER_HALEY_1",
+                    "TRAINER_IVAN",
+                    "TRAINER_MAY_RUSTBORO_MUDKIP",
+                    "TRAINER_MAY_RUSTBORO_TORCHIC",
+                    "TRAINER_MAY_RUSTBORO_TREECKO",
+                    "TRAINER_WINSTON_1"
+                ]
+            },
+            {
+                "name": "Route105",
+                "trainers": [
+                    "TRAINER_ANDRES_1",
+                    "TRAINER_BEVERLY",
+                    "TRAINER_DOMINIK",
+                    "TRAINER_FOSTER",
+                    "TRAINER_IMANI",
+                    "TRAINER_JOSUE",
+                    "TRAINER_LUIS"
+                ]
+            },
+            {
+                "name": "Route106",
+                "trainers": [
+                    "TRAINER_DOUGLAS",
+                    "TRAINER_ELLIOT_1",
+                    "TRAINER_KYLA",
+                    "TRAINER_NED"
+                ]
+            }
         ],
         "difficulty": 27,
         "unlockedBy": "HM03 Surf"
     },
     {
         "maps": [
-            { "name": "Route107", "trainers": [] },
-            { "name": "Route108", "trainers": [] },
-            { "name": "AbandonedShip_Corridors_1F", "trainers": [] },
-            { "name": "AbandonedShip_Rooms_1F", "trainers": [] },
-            { "name": "AbandonedShip_Rooms2_1F", "trainers": [] },
-            { "name": "AbandonedShip_Corridors_B1F", "trainers": [] },
-            { "name": "AbandonedShip_Rooms_B1F", "trainers": [] },
-            { "name": "AbandonedShip_Rooms2_B1F", "trainers": [] },
-            { "name": "Route109", "trainers": [] },
-            { "name": "SlateportCity", "trainers": [] }
+            {
+                "name": "Route107",
+                "trainers": [
+                    "TRAINER_BETH",
+                    "TRAINER_CAMRON",
+                    "TRAINER_DARRIN",
+                    "TRAINER_DENISE",
+                    "TRAINER_LISA_AND_RAY",
+                    "TRAINER_TONY_1"
+                ]
+            },
+            {
+                "name": "Route108",
+                "trainers": [
+                    "TRAINER_CAROLINA",
+                    "TRAINER_CORY_1",
+                    "TRAINER_JEROME",
+                    "TRAINER_MATTHEW",
+                    "TRAINER_MISSY",
+                    "TRAINER_TARA"
+                ]
+            },
+            {
+                "name": "AbandonedShip_Corridors_1F",
+                "trainers": [
+                    "TRAINER_CHARLIE"
+                ]
+            },
+            {
+                "name": "AbandonedShip_Rooms_1F",
+                "trainers": [
+                    "TRAINER_DEMETRIUS",
+                    "TRAINER_THALIA_1"
+                ]
+            },
+            {
+                "name": "AbandonedShip_Rooms2_1F",
+                "trainers": [
+                    "TRAINER_GARRISON",
+                    "TRAINER_JANI",
+                    "TRAINER_KIRA_AND_DAN_1"
+                ]
+            },
+            {
+                "name": "AbandonedShip_Corridors_B1F",
+                "trainers": [
+                    "TRAINER_DUNCAN"
+                ]
+            },
+            {
+                "name": "AbandonedShip_Rooms_B1F",
+                "trainers": []
+            },
+            {
+                "name": "AbandonedShip_Rooms2_B1F",
+                "trainers": []
+            },
+            {
+                "name": "Route109",
+                "trainers": [
+                    "TRAINER_ALICE",
+                    "TRAINER_AUSTINA",
+                    "TRAINER_CARTER",
+                    "TRAINER_CHANDLER",
+                    "TRAINER_DAVID",
+                    "TRAINER_EDMOND",
+                    "TRAINER_ELIJAH",
+                    "TRAINER_GWEN",
+                    "TRAINER_HAILEY",
+                    "TRAINER_HUEY",
+                    "TRAINER_LOLA_1",
+                    "TRAINER_MEL_AND_PAUL",
+                    "TRAINER_RICKY_1"
+                ]
+            },
+            {
+                "name": "SlateportCity",
+                "trainers": []
+            }
         ],
         "difficulty": 28,
         "unlockedBy": "HM03 Surf"
     },
     {
         "maps": [
-            { "name": "Route118", "trainers": [] },
-            { "name": "Route123", "trainers": [] }
+            {
+                "name": "Route118",
+                "trainers": [
+                    "TRAINER_BARNY",
+                    "TRAINER_CHESTER",
+                    "TRAINER_DALTON_1",
+                    "TRAINER_DEANDRE",
+                    "TRAINER_PERRY",
+                    "TRAINER_ROSE_1",
+                    "TRAINER_WADE"
+                ]
+            },
+            {
+                "name": "Route123",
+                "trainers": [
+                    "TRAINER_ALBERTO",
+                    "TRAINER_BRAXTON",
+                    "TRAINER_CAMERON_1",
+                    "TRAINER_DAVIS",
+                    "TRAINER_ED",
+                    "TRAINER_FERNANDO_1",
+                    "TRAINER_FREDRICK",
+                    "TRAINER_JACKI_1",
+                    "TRAINER_JAZMYN",
+                    "TRAINER_JONAS",
+                    "TRAINER_KAYLEY",
+                    "TRAINER_KINDRA",
+                    "TRAINER_MIU_AND_YUKI",
+                    "TRAINER_VIOLET",
+                    "TRAINER_WENDY"
+                ]
+            }
         ],
         "difficulty": 29
     },
     {
         "maps": [
-            { "name": "Route119", "trainers": [] }
+            {
+                "name": "Route119",
+                "trainers": [
+                    "TRAINER_BRENDAN_ROUTE_119_MUDKIP",
+                    "TRAINER_BRENDAN_ROUTE_119_TORCHIC",
+                    "TRAINER_BRENDAN_ROUTE_119_TREECKO",
+                    "TRAINER_BRENT",
+                    "TRAINER_CATHERINE_1",
+                    "TRAINER_CHRIS",
+                    "TRAINER_DAYTON",
+                    "TRAINER_DONALD",
+                    "TRAINER_DOUG",
+                    "TRAINER_FABIAN",
+                    "TRAINER_GREG",
+                    "TRAINER_HIDEO",
+                    "TRAINER_HUGH",
+                    "TRAINER_JACKSON_1",
+                    "TRAINER_KENT",
+                    "TRAINER_MAY_ROUTE_119_MUDKIP",
+                    "TRAINER_MAY_ROUTE_119_TORCHIC",
+                    "TRAINER_MAY_ROUTE_119_TREECKO",
+                    "TRAINER_PHIL",
+                    "TRAINER_RACHEL",
+                    "TRAINER_TAKASHI",
+                    "TRAINER_TAYLOR",
+                    "TRAINER_YASU"
+                ]
+            }
         ],
         "difficulty": 30
     },
     {
         "maps": [
-            { "name": "Route119_WeatherInstitute_1F", "trainers": [] },
-            { "name": "Route119_WeatherInstitute_2F", "trainers": [] }
+            {
+                "name": "Route119_WeatherInstitute_1F",
+                "trainers": [
+                    "TRAINER_GRUNT_WEATHER_INST_1",
+                    "TRAINER_GRUNT_WEATHER_INST_4"
+                ]
+            },
+            {
+                "name": "Route119_WeatherInstitute_2F",
+                "trainers": [
+                    "TRAINER_GRUNT_WEATHER_INST_2",
+                    "TRAINER_GRUNT_WEATHER_INST_3",
+                    "TRAINER_GRUNT_WEATHER_INST_5",
+                    "TRAINER_SHELLY_WEATHER_INSTITUTE"
+                ]
+            }
         ],
         "difficulty": 31
     },
     {
         "maps": [
-            { "name": "Route119", "trainers": [] },
-            { "name": "FortreeCity", "trainers": ["TRAINER_WINONA_1"] }
+            {
+                "name": "Route119",
+                "trainers": [
+                    "TRAINER_BRENDAN_ROUTE_119_MUDKIP",
+                    "TRAINER_BRENDAN_ROUTE_119_TORCHIC",
+                    "TRAINER_BRENDAN_ROUTE_119_TREECKO",
+                    "TRAINER_BRENT",
+                    "TRAINER_CATHERINE_1",
+                    "TRAINER_CHRIS",
+                    "TRAINER_DAYTON",
+                    "TRAINER_DONALD",
+                    "TRAINER_DOUG",
+                    "TRAINER_FABIAN",
+                    "TRAINER_GREG",
+                    "TRAINER_HIDEO",
+                    "TRAINER_HUGH",
+                    "TRAINER_JACKSON_1",
+                    "TRAINER_KENT",
+                    "TRAINER_MAY_ROUTE_119_MUDKIP",
+                    "TRAINER_MAY_ROUTE_119_TORCHIC",
+                    "TRAINER_MAY_ROUTE_119_TREECKO",
+                    "TRAINER_PHIL",
+                    "TRAINER_RACHEL",
+                    "TRAINER_TAKASHI",
+                    "TRAINER_TAYLOR",
+                    "TRAINER_YASU"
+                ]
+            },
+            {
+                "name": "FortreeCity",
+                "trainers": []
+            }
         ],
         "difficulty": 33,
-        "challenges": ["TRAINER_WINONA_1"]
+        "challenges": [
+            "TRAINER_WINONA_1"
+        ]
     },
     {
         "maps": [
-            { "name": "Route120", "trainers": [] },
-            { "name": "ScorchedSlab", "trainers": [] }
+            {
+                "name": "Route120",
+                "trainers": [
+                    "TRAINER_ANGELICA",
+                    "TRAINER_CALLIE",
+                    "TRAINER_CHIP",
+                    "TRAINER_CLARISSA",
+                    "TRAINER_COLIN",
+                    "TRAINER_JEFFREY_1",
+                    "TRAINER_JENNA",
+                    "TRAINER_JENNIFER",
+                    "TRAINER_KEIGO",
+                    "TRAINER_LEONEL",
+                    "TRAINER_LORENZO",
+                    "TRAINER_RILEY",
+                    "TRAINER_ROBERT_1"
+                ]
+            },
+            {
+                "name": "ScorchedSlab",
+                "trainers": []
+            }
         ],
         "difficulty": 34
     },
     {
         "maps": [
-            { "name": "Route121", "trainers": [] },
-            { "name": "Route122", "trainers": [] },
-            { "name": "Route123", "trainers": [] }
+            {
+                "name": "Route121",
+                "trainers": [
+                    "TRAINER_CALE",
+                    "TRAINER_CRISTIN_1",
+                    "TRAINER_JESSICA_1",
+                    "TRAINER_KATE_AND_JOY",
+                    "TRAINER_MARCEL",
+                    "TRAINER_MYLES",
+                    "TRAINER_PAT",
+                    "TRAINER_TAMMY",
+                    "TRAINER_VANESSA",
+                    "TRAINER_WALTER_1"
+                ]
+            },
+            {
+                "name": "Route122",
+                "trainers": []
+            },
+            {
+                "name": "Route123",
+                "trainers": [
+                    "TRAINER_ALBERTO",
+                    "TRAINER_BRAXTON",
+                    "TRAINER_CAMERON_1",
+                    "TRAINER_DAVIS",
+                    "TRAINER_ED",
+                    "TRAINER_FERNANDO_1",
+                    "TRAINER_FREDRICK",
+                    "TRAINER_JACKI_1",
+                    "TRAINER_JAZMYN",
+                    "TRAINER_JONAS",
+                    "TRAINER_KAYLEY",
+                    "TRAINER_KINDRA",
+                    "TRAINER_MIU_AND_YUKI",
+                    "TRAINER_VIOLET",
+                    "TRAINER_WENDY"
+                ]
+            }
         ],
         "difficulty": 35
     },
     {
         "maps": [
-            { "name": "MtPyre_1F", "trainers": [] },
-            { "name": "MtPyre_2F", "trainers": [] },
-            { "name": "MtPyre_3F", "trainers": [] },
-            { "name": "MtPyre_4F", "trainers": [] },
-            { "name": "MtPyre_5F", "trainers": [] },
-            { "name": "MtPyre_6F", "trainers": [] },
-            { "name": "MtPyre_Exterior", "trainers": [] }
+            {
+                "name": "MtPyre_1F",
+                "trainers": []
+            },
+            {
+                "name": "MtPyre_2F",
+                "trainers": [
+                    "TRAINER_DEZ_AND_LUKE",
+                    "TRAINER_LEAH",
+                    "TRAINER_MARK",
+                    "TRAINER_ZANDER"
+                ]
+            },
+            {
+                "name": "MtPyre_3F",
+                "trainers": [
+                    "TRAINER_GABRIELLE_1",
+                    "TRAINER_KAYLA",
+                    "TRAINER_WILLIAM"
+                ]
+            },
+            {
+                "name": "MtPyre_4F",
+                "trainers": [
+                    "TRAINER_ATSUSHI"
+                ]
+            },
+            {
+                "name": "MtPyre_5F",
+                "trainers": [
+                    "TRAINER_TASHA"
+                ]
+            },
+            {
+                "name": "MtPyre_6F",
+                "trainers": [
+                    "TRAINER_CEDRIC",
+                    "TRAINER_VALERIE_1"
+                ]
+            },
+            {
+                "name": "MtPyre_Exterior",
+                "trainers": []
+            }
         ],
         "difficulty": 36
     },
     {
         "maps": [
-            { "name": "MtPyre_Summit", "trainers": [] }
+            {
+                "name": "MtPyre_Summit",
+                "trainers": [
+                    "TRAINER_GRUNT_MT_PYRE_1",
+                    "TRAINER_GRUNT_MT_PYRE_2",
+                    "TRAINER_GRUNT_MT_PYRE_3",
+                    "TRAINER_GRUNT_MT_PYRE_4"
+                ]
+            }
         ],
         "difficulty": 38
     },
     {
         "maps": [
-            { "name": "MagmaHideout_1F", "trainers": [] },
-            { "name": "MagmaHideout_2F_1R", "trainers": [] },
-            { "name": "MagmaHideout_2F_2R", "trainers": [] },
-            { "name": "MagmaHideout_3F_1R", "trainers": [] },
-            { "name": "MagmaHideout_3F_2R", "trainers": [] },
-            { "name": "MagmaHideout_4F", "trainers": [] }
+            {
+                "name": "MagmaHideout_1F",
+                "trainers": [
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_1",
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_2"
+                ]
+            },
+            {
+                "name": "MagmaHideout_2F_1R",
+                "trainers": [
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_14",
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_3",
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_4",
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_5"
+                ]
+            },
+            {
+                "name": "MagmaHideout_2F_2R",
+                "trainers": [
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_15",
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_6",
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_7",
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_8"
+                ]
+            },
+            {
+                "name": "MagmaHideout_3F_1R",
+                "trainers": [
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_16",
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_9"
+                ]
+            },
+            {
+                "name": "MagmaHideout_3F_2R",
+                "trainers": [
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_10"
+                ]
+            },
+            {
+                "name": "MagmaHideout_4F",
+                "trainers": [
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_11",
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_12",
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_13",
+                    "TRAINER_MAXIE_MAGMA_HIDEOUT",
+                    "TRAINER_TABITHA_MAGMA_HIDEOUT"
+                ]
+            }
         ],
         "difficulty": 39
     },
     {
         "maps": [
-            { "name": "MagmaHideout_4F", "trainers": ["TRAINER_MAXIE_MAGMA_HIDEOUT"] }
+            {
+                "name": "MagmaHideout_4F",
+                "trainers": [
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_11",
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_12",
+                    "TRAINER_GRUNT_MAGMA_HIDEOUT_13",
+                    "TRAINER_MAXIE_MAGMA_HIDEOUT",
+                    "TRAINER_TABITHA_MAGMA_HIDEOUT"
+                ]
+            }
         ],
         "difficulty": 41,
-        "challenges": ["TRAINER_MAXIE_MAGMA_HIDEOUT"]
+        "challenges": [
+            "TRAINER_MAXIE_MAGMA_HIDEOUT"
+        ]
     },
     {
         "maps": [
-            { "name": "LilycoveCity", "trainers": [] }
+            {
+                "name": "LilycoveCity",
+                "trainers": [
+                    "TRAINER_BRENDAN_LILYCOVE_MUDKIP",
+                    "TRAINER_BRENDAN_LILYCOVE_TORCHIC",
+                    "TRAINER_BRENDAN_LILYCOVE_TREECKO",
+                    "TRAINER_MAY_LILYCOVE_MUDKIP",
+                    "TRAINER_MAY_LILYCOVE_TORCHIC",
+                    "TRAINER_MAY_LILYCOVE_TREECKO"
+                ]
+            }
         ],
         "difficulty": 42
     },
     {
         "maps": [
-            { "name": "AquaHideout_1F", "trainers": [] },
-            { "name": "AquaHideout_B1F", "trainers": ["TRAINER_MATT"] }
+            {
+                "name": "AquaHideout_1F",
+                "trainers": [
+                    "TRAINER_GRUNT_AQUA_HIDEOUT_1"
+                ]
+            },
+            {
+                "name": "AquaHideout_B1F",
+                "trainers": [
+                    "TRAINER_GRUNT_AQUA_HIDEOUT_2",
+                    "TRAINER_GRUNT_AQUA_HIDEOUT_3",
+                    "TRAINER_GRUNT_AQUA_HIDEOUT_5",
+                    "TRAINER_GRUNT_AQUA_HIDEOUT_7"
+                ]
+            }
         ],
         "difficulty": 43,
-        "challenges": ["TRAINER_MATT"]
+        "challenges": [
+            "TRAINER_MATT"
+        ]
     },
     {
         "maps": [
-            { "name": "Route124", "trainers": [] },
-            { "name": "Route125", "trainers": [] }
+            {
+                "name": "Route124",
+                "trainers": [
+                    "TRAINER_CHAD",
+                    "TRAINER_DECLAN",
+                    "TRAINER_GRACE",
+                    "TRAINER_ISABELLA",
+                    "TRAINER_JENNY_1",
+                    "TRAINER_LILA_AND_ROY_1",
+                    "TRAINER_ROLAND",
+                    "TRAINER_SPENCER"
+                ]
+            },
+            {
+                "name": "Route125",
+                "trainers": [
+                    "TRAINER_AURON",
+                    "TRAINER_ERNEST_1",
+                    "TRAINER_KIM_AND_IRIS",
+                    "TRAINER_NOLEN",
+                    "TRAINER_PRESLEY",
+                    "TRAINER_SHARON",
+                    "TRAINER_STAN",
+                    "TRAINER_TANYA"
+                ]
+            }
         ],
         "difficulty": 44
     },
     {
         "maps": [
-            { "name": "Route124", "trainers": [] },
-            { "name": "Route125", "trainers": [] }
+            {
+                "name": "Route124",
+                "trainers": [
+                    "TRAINER_CHAD",
+                    "TRAINER_DECLAN",
+                    "TRAINER_GRACE",
+                    "TRAINER_ISABELLA",
+                    "TRAINER_JENNY_1",
+                    "TRAINER_LILA_AND_ROY_1",
+                    "TRAINER_ROLAND",
+                    "TRAINER_SPENCER"
+                ]
+            },
+            {
+                "name": "Route125",
+                "trainers": [
+                    "TRAINER_AURON",
+                    "TRAINER_ERNEST_1",
+                    "TRAINER_KIM_AND_IRIS",
+                    "TRAINER_NOLEN",
+                    "TRAINER_PRESLEY",
+                    "TRAINER_SHARON",
+                    "TRAINER_STAN",
+                    "TRAINER_TANYA"
+                ]
+            }
         ],
         "difficulty": 44
     },
     {
         "maps": [
-            { "name": "ShoalCave_LowTideEntranceRoom", "trainers": [] },
-            { "name": "ShoalCave_LowTideInnerRoom", "trainers": [] },
-            { "name": "ShoalCave_LowTideStairsRoom", "trainers": [] },
-            { "name": "ShoalCave_LowTideIceRoom", "trainers": [] },
-            { "name": "ShoalCave_HighTide_EntranceRoom", "trainers": [] },
-            { "name": "ShoalCave_HighTideInnerRoom", "trainers": [] }
+            {
+                "name": "ShoalCave_LowTideEntranceRoom",
+                "trainers": []
+            },
+            {
+                "name": "ShoalCave_LowTideInnerRoom",
+                "trainers": []
+            },
+            {
+                "name": "ShoalCave_LowTideStairsRoom",
+                "trainers": []
+            },
+            {
+                "name": "ShoalCave_LowTideIceRoom",
+                "trainers": []
+            },
+            {
+                "name": "ShoalCave_HighTide_EntranceRoom",
+                "trainers": []
+            },
+            {
+                "name": "ShoalCave_HighTideInnerRoom",
+                "trainers": []
+            }
         ],
         "difficulty": 45
     },
     {
         "maps": [
-            { "name": "MossdeepCity", "trainers": ["TRAINER_TATE_AND_LIZA_1"] }
+            {
+                "name": "MossdeepCity",
+                "trainers": []
+            }
         ],
         "difficulty": 47,
-        "challenges": ["TRAINER_TATE_AND_LIZA_1"],
-        "unlocks": ["HM08 Dive"]
+        "challenges": [
+            "TRAINER_TATE_AND_LIZA_1"
+        ],
+        "unlocks": [
+            "HM08 Dive"
+        ]
     },
     {
         "maps": [
-            { "name": "MossdeepCity_SpaceCenter_1F", "trainers": [] },
-            { "name": "MossdeepCity_SpaceCenter_2F", "trainers": ["TRAINER_MAXIE_MOSSDEEP"] }
+            {
+                "name": "MossdeepCity_SpaceCenter_1F",
+                "trainers": [
+                    "TRAINER_GRUNT_SPACE_CENTER_1",
+                    "TRAINER_GRUNT_SPACE_CENTER_2",
+                    "TRAINER_GRUNT_SPACE_CENTER_3",
+                    "TRAINER_GRUNT_SPACE_CENTER_4"
+                ]
+            },
+            {
+                "name": "MossdeepCity_SpaceCenter_2F",
+                "trainers": [
+                    "TRAINER_GRUNT_SPACE_CENTER_5",
+                    "TRAINER_GRUNT_SPACE_CENTER_6",
+                    "TRAINER_GRUNT_SPACE_CENTER_7",
+                    "TRAINER_MAXIE_MOSSDEEP",
+                    "TRAINER_TABITHA_MOSSDEEP"
+                ]
+            }
         ],
         "difficulty": 49,
-        "challenges": ["TRAINER_MAXIE_MOSSDEEP"]
+        "challenges": [
+            "TRAINER_MAXIE_MOSSDEEP"
+        ]
     },
     {
         "maps": [
-            { "name": "Underwater_Route124", "trainers": [] }
+            {
+                "name": "Underwater_Route124",
+                "trainers": []
+            }
         ],
         "difficulty": 49,
-        "unlockedBy": ["HM08 Dive"]
+        "unlockedBy": [
+            "HM08 Dive"
+        ]
     },
     {
         "maps": [
-            { "name": "Route127", "trainers": [] },
-            { "name": "Underwater_Route127", "trainers": [] },
-            { "name": "Route128", "trainers": [] },
-            { "name": "Underwater_Route128", "trainers": [] },
-            { "name": "Underwater_Route126", "trainers": [] }
+            {
+                "name": "Route127",
+                "trainers": [
+                    "TRAINER_AIDAN",
+                    "TRAINER_ATHENA",
+                    "TRAINER_CAMDEN",
+                    "TRAINER_DONNY",
+                    "TRAINER_HENRY",
+                    "TRAINER_JONAH",
+                    "TRAINER_KOJI_1",
+                    "TRAINER_ROGER"
+                ]
+            },
+            {
+                "name": "Underwater_Route127",
+                "trainers": []
+            },
+            {
+                "name": "Route128",
+                "trainers": [
+                    "TRAINER_ALEXA",
+                    "TRAINER_CARLEE",
+                    "TRAINER_HARRISON",
+                    "TRAINER_ISAIAH_1",
+                    "TRAINER_KATELYN_1",
+                    "TRAINER_RUBEN",
+                    "TRAINER_WAYNE"
+                ]
+            },
+            {
+                "name": "Underwater_Route128",
+                "trainers": []
+            },
+            {
+                "name": "Underwater_Route126",
+                "trainers": []
+            }
         ],
         "difficulty": 50
     },
     {
         "maps": [
-            { "name": "SeafloorCavern_Entrance", "trainers": [] },
-            { "name": "SeafloorCavern_Room1", "trainers": [] },
-            { "name": "SeafloorCavern_Room2", "trainers": [] },
-            { "name": "SeafloorCavern_Room3", "trainers": [] },
-            { "name": "SeafloorCavern_Room4", "trainers": [] },
-            { "name": "SeafloorCavern_Room5", "trainers": [] },
-            { "name": "SeafloorCavern_Room6", "trainers": [] },
-            { "name": "SeafloorCavern_Room7", "trainers": [] },
-            { "name": "SeafloorCavern_Room8", "trainers": [] },
-            { "name": "SeafloorCavern_Room9", "trainers": [] }
+            {
+                "name": "SeafloorCavern_Entrance",
+                "trainers": []
+            },
+            {
+                "name": "SeafloorCavern_Room1",
+                "trainers": [
+                    "TRAINER_GRUNT_SEAFLOOR_CAVERN_1",
+                    "TRAINER_GRUNT_SEAFLOOR_CAVERN_2"
+                ]
+            },
+            {
+                "name": "SeafloorCavern_Room2",
+                "trainers": []
+            },
+            {
+                "name": "SeafloorCavern_Room3",
+                "trainers": [
+                    "TRAINER_GRUNT_SEAFLOOR_CAVERN_5",
+                    "TRAINER_SHELLY_SEAFLOOR_CAVERN"
+                ]
+            },
+            {
+                "name": "SeafloorCavern_Room4",
+                "trainers": [
+                    "TRAINER_GRUNT_SEAFLOOR_CAVERN_3",
+                    "TRAINER_GRUNT_SEAFLOOR_CAVERN_4"
+                ]
+            },
+            {
+                "name": "SeafloorCavern_Room5",
+                "trainers": []
+            },
+            {
+                "name": "SeafloorCavern_Room6",
+                "trainers": []
+            },
+            {
+                "name": "SeafloorCavern_Room7",
+                "trainers": []
+            },
+            {
+                "name": "SeafloorCavern_Room8",
+                "trainers": []
+            },
+            {
+                "name": "SeafloorCavern_Room9",
+                "trainers": [
+                    "TRAINER_ARCHIE"
+                ]
+            }
         ],
         "difficulty": 51
     },
     {
         "maps": [
-            { "name": "SootopolisCity", "trainers": [] },
-            { "name": "CaveOfOrigin_Entrance", "trainers": [] },
-            { "name": "CaveOfOrigin_1F", "trainers": [] },
-            { "name": "CaveOfOrigin_B1F", "trainers": [] }
+            {
+                "name": "SootopolisCity",
+                "trainers": []
+            },
+            {
+                "name": "CaveOfOrigin_Entrance",
+                "trainers": []
+            },
+            {
+                "name": "CaveOfOrigin_1F",
+                "trainers": []
+            },
+            {
+                "name": "CaveOfOrigin_B1F",
+                "trainers": []
+            }
         ],
         "difficulty": 52
     },
     {
         "maps": [
-            { "name": "Route129", "trainers": [] },
-            { "name": "Route130", "trainers": [] },
-            { "name": "Route131", "trainers": [] }
+            {
+                "name": "Route129",
+                "trainers": [
+                    "TRAINER_ALLISON",
+                    "TRAINER_CHASE",
+                    "TRAINER_CLARENCE",
+                    "TRAINER_REED",
+                    "TRAINER_TISHA"
+                ]
+            },
+            {
+                "name": "Route130",
+                "trainers": [
+                    "TRAINER_KATIE",
+                    "TRAINER_RODNEY",
+                    "TRAINER_SANTIAGO"
+                ]
+            },
+            {
+                "name": "Route131",
+                "trainers": [
+                    "TRAINER_HERMAN",
+                    "TRAINER_KARA",
+                    "TRAINER_KEVIN",
+                    "TRAINER_RELI_AND_IAN",
+                    "TRAINER_RICHARD",
+                    "TRAINER_SUSIE",
+                    "TRAINER_TALIA"
+                ]
+            }
         ],
         "difficulty": 53
     },
     {
         "maps": [
-            { "name": "Route132", "trainers": [] },
-            { "name": "Route133", "trainers": [] },
-            { "name": "Route134", "trainers": [] }
+            {
+                "name": "Route132",
+                "trainers": [
+                    "TRAINER_DANA",
+                    "TRAINER_DARCY",
+                    "TRAINER_GILBERT",
+                    "TRAINER_JONATHAN",
+                    "TRAINER_KIYO",
+                    "TRAINER_MAKAYLA",
+                    "TRAINER_PAXTON",
+                    "TRAINER_RONALD"
+                ]
+            },
+            {
+                "name": "Route133",
+                "trainers": [
+                    "TRAINER_BECK",
+                    "TRAINER_CONOR",
+                    "TRAINER_DEBRA",
+                    "TRAINER_FRANKLIN",
+                    "TRAINER_LINDA",
+                    "TRAINER_MOLLIE",
+                    "TRAINER_WARREN"
+                ]
+            },
+            {
+                "name": "Route134",
+                "trainers": [
+                    "TRAINER_AARON",
+                    "TRAINER_ALEX",
+                    "TRAINER_HITOSHI",
+                    "TRAINER_HUDSON",
+                    "TRAINER_JACK",
+                    "TRAINER_KELVIN",
+                    "TRAINER_LAUREL",
+                    "TRAINER_MARLEY",
+                    "TRAINER_REYNA"
+                ]
+            }
         ],
         "difficulty": 54
     },
     {
         "maps": [
-            { "name": "SkyPillar_1F", "trainers": [] },
-            { "name": "SkyPillar_2F", "trainers": [] },
-            { "name": "SkyPillar_3F", "trainers": [] },
-            { "name": "SkyPillar_4F", "trainers": [] },
-            { "name": "SkyPillar_5F", "trainers": [] }
+            {
+                "name": "SkyPillar_1F",
+                "trainers": []
+            },
+            {
+                "name": "SkyPillar_2F",
+                "trainers": []
+            },
+            {
+                "name": "SkyPillar_3F",
+                "trainers": []
+            },
+            {
+                "name": "SkyPillar_4F",
+                "trainers": []
+            },
+            {
+                "name": "SkyPillar_5F",
+                "trainers": []
+            }
         ],
         "difficulty": 55
     },
     {
         "maps": [
-            { "name": "SootopolisCity", "trainers": ["TRAINER_JUAN_1"] }
+            {
+                "name": "SootopolisCity",
+                "trainers": []
+            }
         ],
         "difficulty": 57,
-        "challenges": ["TRAINER_JUAN_1"],
-        "unlocks": ["HM07 Waterfall"]
+        "challenges": [
+            "TRAINER_JUAN_1"
+        ],
+        "unlocks": [
+            "HM07 Waterfall"
+        ]
     },
     {
         "maps": [
-            { "name": "MeteorFalls_1F_2R", "trainers": [] },
-            { "name": "MeteorFalls_B1F_1R", "trainers": [] },
-            { "name": "MeteorFalls_B1F_2R", "trainers": [] },
-            { "name": "EverGrandeCity", "trainers": [] }
+            {
+                "name": "MeteorFalls_1F_2R",
+                "trainers": [
+                    "TRAINER_JOHN_AND_JAY_1",
+                    "TRAINER_NICOLAS_1"
+                ]
+            },
+            {
+                "name": "MeteorFalls_B1F_1R",
+                "trainers": []
+            },
+            {
+                "name": "MeteorFalls_B1F_2R",
+                "trainers": []
+            },
+            {
+                "name": "EverGrandeCity",
+                "trainers": []
+            }
         ],
         "difficulty": 58,
-        "unlockedBy": ["HM07 Waterfall"]
+        "unlockedBy": [
+            "HM07 Waterfall"
+        ]
     },
     {
         "maps": [
-            { "name": "VictoryRoad_1F", "trainers": [] },
-            { "name": "VictoryRoad_B1F", "trainers": [] },
-            { "name": "VictoryRoad_B2F", "trainers": [] }
+            {
+                "name": "VictoryRoad_1F",
+                "trainers": [
+                    "TRAINER_ALBERT",
+                    "TRAINER_EDGAR",
+                    "TRAINER_HOPE",
+                    "TRAINER_KATELYNN",
+                    "TRAINER_QUINCY",
+                    "TRAINER_WALLY_VR_1",
+                    "TRAINER_WALLY_VR_2"
+                ]
+            },
+            {
+                "name": "VictoryRoad_B1F",
+                "trainers": [
+                    "TRAINER_HALLE",
+                    "TRAINER_MICHELLE",
+                    "TRAINER_MITCHELL",
+                    "TRAINER_SAMUEL",
+                    "TRAINER_SHANNON"
+                ]
+            },
+            {
+                "name": "VictoryRoad_B2F",
+                "trainers": [
+                    "TRAINER_CAROLINE",
+                    "TRAINER_DIANNE",
+                    "TRAINER_FELIX",
+                    "TRAINER_JULIE",
+                    "TRAINER_OWEN",
+                    "TRAINER_VITO"
+                ]
+            }
         ],
         "difficulty": 60,
-        "challenges": ["TRAINER_WALLY_VR_1"]
+        "challenges": [
+            "TRAINER_WALLY_VR_1"
+        ]
     },
     {
         "maps": [
-            { "name": "EverGrandeCity_SidneysRoom", "trainers": ["TRAINER_SIDNEY"] }
+            {
+                "name": "EverGrandeCity_SidneysRoom",
+                "trainers": [
+                    "TRAINER_SIDNEY"
+                ]
+            }
         ],
         "difficulty": 61,
-        "challenges": ["TRAINER_SIDNEY"]
+        "challenges": [
+            "TRAINER_SIDNEY"
+        ]
     },
     {
         "maps": [
-            { "name": "EverGrandeCity_PhoebesRoom", "trainers": ["TRAINER_PHOEBE"] }
+            {
+                "name": "EverGrandeCity_PhoebesRoom",
+                "trainers": [
+                    "TRAINER_PHOEBE"
+                ]
+            }
         ],
         "difficulty": 63,
-        "challenges": ["TRAINER_PHOEBE"]
+        "challenges": [
+            "TRAINER_PHOEBE"
+        ]
     },
     {
         "maps": [
-            { "name": "EverGrandeCity_GlaciasRoom", "trainers": ["TRAINER_GLACIA"] }
+            {
+                "name": "EverGrandeCity_GlaciasRoom",
+                "trainers": [
+                    "TRAINER_GLACIA"
+                ]
+            }
         ],
         "difficulty": 65,
-        "challenges": ["TRAINER_GLACIA"]
+        "challenges": [
+            "TRAINER_GLACIA"
+        ]
     },
     {
         "maps": [
-            { "name": "EverGrandeCity_DrakesRoom", "trainers": ["TRAINER_DRAKE"] }
+            {
+                "name": "EverGrandeCity_DrakesRoom",
+                "trainers": [
+                    "TRAINER_DRAKE"
+                ]
+            }
         ],
         "difficulty": 67,
-        "challenges": ["TRAINER_DRAKE"]
+        "challenges": [
+            "TRAINER_DRAKE"
+        ]
     },
     {
         "maps": [
-            { "name": "EverGrandeCity_ChampionsRoom", "trainers": ["TRAINER_WALLACE"] }
+            {
+                "name": "EverGrandeCity_ChampionsRoom",
+                "trainers": [
+                    "TRAINER_WALLACE"
+                ]
+            }
         ],
         "difficulty": 70,
-        "challenges": ["TRAINER_WALLACE"]
+        "challenges": [
+            "TRAINER_WALLACE"
+        ]
     }
 ]
