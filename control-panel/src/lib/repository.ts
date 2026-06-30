@@ -4,6 +4,7 @@ import type {
   EvolutionTarget,
   ItemOption,
   LevelUpLearnsetsRawFile,
+  LevelUpLearnsetsRawEntry,
   LearnsetsView,
   LearnsetsViewEntry,
   LevelupMove,

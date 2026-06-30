@@ -1,270 +1,473 @@
 [
     {
-        "maps": ["Route101", "Route102"],
+        "maps": [
+            { "name": "Route101", "trainers": [] },
+            { "name": "Route102", "trainers": ["TRAINER_CALVIN_1", "TRAINER_RICK_1", "TRAINER_TIANA_1"] }
+        ],
         "difficulty": 1,
-        "challenges": ["May/Brendan"]
+        "challenges": []
     },
     {
-        "maps": ["Route103"],
+        "maps": [
+            { "name": "Route103", "trainers": ["TRAINER_BRENDAN_ROUTE_103_MUDKIP", "TRAINER_MAY_ROUTE_103_MUDKIP"] }
+        ],
         "difficulty": 2
     },
     {
-        "maps": ["Route104"],
+        "maps": [
+            { "name": "Route104", "trainers": [] }
+        ],
         "difficulty": 3
     },
     {
-        "maps": ["PetalburgWoods"],
+        "maps": [
+            { "name": "PetalburgWoods", "trainers": [] }
+        ],
         "difficulty": 4
     },
     {
-        "maps": ["Route116", "RusturfTunnel"],
+        "maps": [
+            { "name": "Route116", "trainers": [] },
+            { "name": "RusturfTunnel", "trainers": [] }
+        ],
         "difficulty": 5
     },
     {
-        "maps": ["RustboroCity"],
+        "maps": [
+            { "name": "RustboroCity", "trainers": ["TRAINER_ROXANNE_1"] }
+        ],
         "difficulty": 7,
-        "challenges": ["Roxanne", "May/Brendan"],
+        "challenges": ["TRAINER_ROXANNE_1"],
         "unlocks": ["HM01 Cut"]
     },
     {
-        "maps": ["PetalburgWoods"],
+        "maps": [
+            { "name": "PetalburgWoods", "trainers": [] }
+        ],
         "difficulty": 8,
         "unlockedBy": "HM01 Cut"
     },
     {
-        "maps": ["GranityCave_1F", "GranityCave_B1F", "GranityCave_B2F", "GranityCave_StevensRoom"],
+        "maps": [
+            { "name": "GraniteCave_1F", "trainers": [] },
+            { "name": "GraniteCave_B1F", "trainers": [] },
+            { "name": "GraniteCave_B2F", "trainers": [] },
+            { "name": "GraniteCave_StevensRoom", "trainers": [] }
+        ],
         "difficulty": 9
     },
     {
-        "maps": ["DewfordTown"],
+        "maps": [
+            { "name": "DewfordTown", "trainers": ["TRAINER_BRAWLY_1"] }
+        ],
         "difficulty": 10,
-        "challenges": ["Brawly"],
+        "challenges": ["TRAINER_BRAWLY_1"],
         "unlocks": ["HM05 Flash"]
     },
     {
-        "maps": ["Route109", "SlateportCity_OceanicMuseum_1F", "SlateportCity_OceanicMuseum_2F"],
+        "maps": [
+            { "name": "Route109", "trainers": [] },
+            { "name": "SlateportCity_OceanicMuseum_1F", "trainers": [] },
+            { "name": "SlateportCity_OceanicMuseum_2F", "trainers": [] }
+        ],
         "difficulty": 12
     },
     {
-        "maps": ["Route110", "Route103"],
-        "difficulty": 13,
-        "challenges": ["May/Brendan"]
+        "maps": [
+            { "name": "Route110", "trainers": [] },
+            { "name": "Route103", "trainers": [] }
+        ],
+        "difficulty": 13
     },
     {
-        "maps": ["MauvilleCity", "Route117", "Route118", "RusturfTunnel"],
+        "maps": [
+            { "name": "MauvilleCity", "trainers": ["TRAINER_WALLY_MAUVILLE"] },
+            { "name": "Route117", "trainers": [] },
+            { "name": "Route118", "trainers": [] },
+            { "name": "RusturfTunnel", "trainers": [] }
+        ],
         "difficulty": 15,
-        "challenges": ["Wally"]
+        "challenges": ["TRAINER_WALLY_MAUVILLE"]
     },
     {
-        "maps": ["MauvilleCity"],
+        "maps": [
+            { "name": "MauvilleCity", "trainers": ["TRAINER_WATTSON_1"] }
+        ],
         "difficulty": 17,
-        "challenges": ["Wattson"],
+        "challenges": ["TRAINER_WATTSON_1"],
         "unlocks": ["HM06 Rock Smash"]
     },
     {
-        "maps": ["Route110", "Route111", "Route112", "FieryPath"],
+        "maps": [
+            { "name": "Route110", "trainers": [] },
+            { "name": "Route111", "trainers": [] },
+            { "name": "Route112", "trainers": [] },
+            { "name": "FieryPath", "trainers": [] }
+        ],
         "difficulty": 19
     },
     {
-        "maps": ["Route114"],
+        "maps": [
+            { "name": "Route114", "trainers": [] }
+        ],
         "difficulty": 20
     },
     {
-        "maps": ["MeteorFalls_1F_1R"],
+        "maps": [
+            { "name": "MeteorFalls_1F_1R", "trainers": [] }
+        ],
         "difficulty": 20
     },
     {
-        "maps": ["Route115"],
+        "maps": [
+            { "name": "Route115", "trainers": [] }
+        ],
         "difficulty": 21
     },
     {
-        "maps": ["MtChimney"],
+        "maps": [
+            { "name": "MtChimney", "trainers": ["TRAINER_MAXIE_MT_CHIMNEY"] }
+        ],
         "difficulty": 23,
-        "challenges": ["Maxie"]
+        "challenges": ["TRAINER_MAXIE_MT_CHIMNEY"]
     },
     {
-        "maps": ["JaggedPass"],
+        "maps": [
+            { "name": "JaggedPass", "trainers": [] }
+        ],
         "difficulty": 24
     },
     {
-        "maps": ["Route115"],
+        "maps": [
+            { "name": "Route115", "trainers": [] }
+        ],
         "difficulty": 21
     },
     {
-        "maps": ["LavaridgeTown"],
+        "maps": [
+            { "name": "LavaridgeTown", "trainers": ["TRAINER_FLANNERY_1"] }
+        ],
         "difficulty": 23,
-        "challenges": ["Flannery"],
+        "challenges": ["TRAINER_FLANNERY_1"],
         "unlocks": ["HM04 Strength", "Go-Googles"]
     },
     {
-        "maps": ["Route111"],
+        "maps": [
+            { "name": "Route111", "trainers": [] }
+        ],
         "difficulty": 24,
         "unlockedBy": "Go-Googles"
     },
     {
-        "maps": ["PetalburgCity"],
+        "maps": [
+            { "name": "PetalburgCity", "trainers": ["TRAINER_NORMAN_1"] }
+        ],
         "difficulty": 25,
-        "challenges": ["Norman"],
+        "challenges": ["TRAINER_NORMAN_1"],
         "unlocks": ["HM03 Surf"]
     },
     {
-        "maps": ["PetalburgCity", "Route102", "Route103", "Route110", "NewMauville_Entrance", "NewMauville_Inside", "Route117", "Route111", "Route114"],
+        "maps": [
+            { "name": "PetalburgCity", "trainers": [] },
+            { "name": "Route102", "trainers": [] },
+            { "name": "Route103", "trainers": [] },
+            { "name": "Route110", "trainers": [] },
+            { "name": "NewMauville_Entrance", "trainers": [] },
+            { "name": "NewMauville_Inside", "trainers": [] },
+            { "name": "Route117", "trainers": [] },
+            { "name": "Route111", "trainers": [] },
+            { "name": "Route114", "trainers": [] }
+        ],
         "difficulty": 26,
         "unlockedBy": "HM03 Surf"
     },
     {
-        "maps": ["Route114", "Route104", "Route105", "Route106"],
+        "maps": [
+            { "name": "Route114", "trainers": [] },
+            { "name": "Route104", "trainers": [] },
+            { "name": "Route105", "trainers": [] },
+            { "name": "Route106", "trainers": [] }
+        ],
         "difficulty": 27,
         "unlockedBy": "HM03 Surf"
     },
     {
-        "maps": ["Route107", "Route108", "AbandonedShip_Corridors_1F", "AbandonedShip_Rooms_1F", "AbandonedShip_Rooms2_1F", "AbandonedShip_Corridors_B1F", "AbandonedShip_Rooms_B1F", "AbandonedShip_Rooms2_B1F", "Route109", "SlateportCity"],
+        "maps": [
+            { "name": "Route107", "trainers": [] },
+            { "name": "Route108", "trainers": [] },
+            { "name": "AbandonedShip_Corridors_1F", "trainers": [] },
+            { "name": "AbandonedShip_Rooms_1F", "trainers": [] },
+            { "name": "AbandonedShip_Rooms2_1F", "trainers": [] },
+            { "name": "AbandonedShip_Corridors_B1F", "trainers": [] },
+            { "name": "AbandonedShip_Rooms_B1F", "trainers": [] },
+            { "name": "AbandonedShip_Rooms2_B1F", "trainers": [] },
+            { "name": "Route109", "trainers": [] },
+            { "name": "SlateportCity", "trainers": [] }
+        ],
         "difficulty": 28,
         "unlockedBy": "HM03 Surf"
     },
     {
-        "maps": ["Route118", "Route123"],
+        "maps": [
+            { "name": "Route118", "trainers": [] },
+            { "name": "Route123", "trainers": [] }
+        ],
         "difficulty": 29
     },
     {
-        "maps": ["Route119"],
+        "maps": [
+            { "name": "Route119", "trainers": [] }
+        ],
         "difficulty": 30
     },
     {
-        "maps": ["Route119_WeatherInstitute_1F", "Route119_WeatherInstitute_2F"],
+        "maps": [
+            { "name": "Route119_WeatherInstitute_1F", "trainers": [] },
+            { "name": "Route119_WeatherInstitute_2F", "trainers": [] }
+        ],
         "difficulty": 31
     },
     {
-        "maps": ["Route119", "FortreeCity"],
+        "maps": [
+            { "name": "Route119", "trainers": [] },
+            { "name": "FortreeCity", "trainers": ["TRAINER_WINONA_1"] }
+        ],
         "difficulty": 33,
-        "challenges": ["May/Brendan", "Winona"]
+        "challenges": ["TRAINER_WINONA_1"]
     },
     {
-        "maps": ["Route120", "ScorchedSlab"],
+        "maps": [
+            { "name": "Route120", "trainers": [] },
+            { "name": "ScorchedSlab", "trainers": [] }
+        ],
         "difficulty": 34
     },
     {
-        "maps": ["Route121", "Route122", "Route123"],
+        "maps": [
+            { "name": "Route121", "trainers": [] },
+            { "name": "Route122", "trainers": [] },
+            { "name": "Route123", "trainers": [] }
+        ],
         "difficulty": 35
     },
     {
-        "maps": ["MtPyre_1F", "MtPyre_2F", "MtPyre_3F", "MtPyre_4F", "MtPyre_5F", "MtPyre_6F", "MtPyre_Exterior"],
+        "maps": [
+            { "name": "MtPyre_1F", "trainers": [] },
+            { "name": "MtPyre_2F", "trainers": [] },
+            { "name": "MtPyre_3F", "trainers": [] },
+            { "name": "MtPyre_4F", "trainers": [] },
+            { "name": "MtPyre_5F", "trainers": [] },
+            { "name": "MtPyre_6F", "trainers": [] },
+            { "name": "MtPyre_Exterior", "trainers": [] }
+        ],
         "difficulty": 36
     },
     {
-        "maps": ["MtPyre_Summit"],
+        "maps": [
+            { "name": "MtPyre_Summit", "trainers": [] }
+        ],
         "difficulty": 38
     },
     {
-        "maps": ["MagmaHideout_1F", "MagmaHideout_2F_1R", "MagmaHideout_2F_2R", "MagmaHideout_3F_1R", "MagmaHideout_3F_2R", "MagmaHideout_4F"],
+        "maps": [
+            { "name": "MagmaHideout_1F", "trainers": [] },
+            { "name": "MagmaHideout_2F_1R", "trainers": [] },
+            { "name": "MagmaHideout_2F_2R", "trainers": [] },
+            { "name": "MagmaHideout_3F_1R", "trainers": [] },
+            { "name": "MagmaHideout_3F_2R", "trainers": [] },
+            { "name": "MagmaHideout_4F", "trainers": [] }
+        ],
         "difficulty": 39
     },
     {
-        "maps": ["MagmaHideout_4F"],
+        "maps": [
+            { "name": "MagmaHideout_4F", "trainers": ["TRAINER_MAXIE_MAGMA_HIDEOUT"] }
+        ],
         "difficulty": 41,
-        "challenges": ["Maxie"]
+        "challenges": ["TRAINER_MAXIE_MAGMA_HIDEOUT"]
     },
     {
-        "maps": ["LilycoveCity"],
-        "difficulty": 42,
-        "challenges": ["May/Brendan"]
+        "maps": [
+            { "name": "LilycoveCity", "trainers": [] }
+        ],
+        "difficulty": 42
     },
     {
-        "maps": ["AquaHideout_1F", "AquaHideout_B1F"],
+        "maps": [
+            { "name": "AquaHideout_1F", "trainers": [] },
+            { "name": "AquaHideout_B1F", "trainers": ["TRAINER_MATT"] }
+        ],
         "difficulty": 43,
-        "challenges": ["Matt"]
+        "challenges": ["TRAINER_MATT"]
     },
     {
-        "maps": ["Route124, Route125"],
+        "maps": [
+            { "name": "Route124", "trainers": [] },
+            { "name": "Route125", "trainers": [] }
+        ],
         "difficulty": 44
     },
     {
-        "maps": ["Route124, Route125"],
+        "maps": [
+            { "name": "Route124", "trainers": [] },
+            { "name": "Route125", "trainers": [] }
+        ],
         "difficulty": 44
     },
     {
-        "maps": ["ShoalCave_LowTideEntranceRoom", "ShoalCave_LowTideInnerRoom", "ShoalCave_LowTideStairsRoom", "ShoalCave_LowTideIceRoom", "ShoalCave_HighTide_EntranceRoom", "ShoalCave_HighTideInnerRoom"],
+        "maps": [
+            { "name": "ShoalCave_LowTideEntranceRoom", "trainers": [] },
+            { "name": "ShoalCave_LowTideInnerRoom", "trainers": [] },
+            { "name": "ShoalCave_LowTideStairsRoom", "trainers": [] },
+            { "name": "ShoalCave_LowTideIceRoom", "trainers": [] },
+            { "name": "ShoalCave_HighTide_EntranceRoom", "trainers": [] },
+            { "name": "ShoalCave_HighTideInnerRoom", "trainers": [] }
+        ],
         "difficulty": 45
     },
     {
-        "maps": ["MossdeepCity"],
+        "maps": [
+            { "name": "MossdeepCity", "trainers": ["TRAINER_TATE_AND_LIZA_1"] }
+        ],
         "difficulty": 47,
-        "challenges": ["Tate and Liza"],
+        "challenges": ["TRAINER_TATE_AND_LIZA_1"],
         "unlocks": ["HM08 Dive"]
     },
     {
-        "maps": ["MossdeepCity_SpaceCenter_1F", "MossdeepCity_SpaceCenter_2F"],
+        "maps": [
+            { "name": "MossdeepCity_SpaceCenter_1F", "trainers": [] },
+            { "name": "MossdeepCity_SpaceCenter_2F", "trainers": ["TRAINER_MAXIE_MOSSDEEP"] }
+        ],
         "difficulty": 49,
-        "challenges": ["Maxie"]
+        "challenges": ["TRAINER_MAXIE_MOSSDEEP"]
     },
     {
-        "maps": ["Underwater_Route124"],
+        "maps": [
+            { "name": "Underwater_Route124", "trainers": [] }
+        ],
         "difficulty": 49,
         "unlockedBy": ["HM08 Dive"]
     },
     {
-        "maps": ["Route127", "Underwater_Route127", "Route128", "Underwater_Route128", "Underwater_Route126"],
+        "maps": [
+            { "name": "Route127", "trainers": [] },
+            { "name": "Underwater_Route127", "trainers": [] },
+            { "name": "Route128", "trainers": [] },
+            { "name": "Underwater_Route128", "trainers": [] },
+            { "name": "Underwater_Route126", "trainers": [] }
+        ],
         "difficulty": 50
     },
     {
-        "maps": ["SeafloorCavern_Entrance", "SeafloorCavern_Room1", "SeafloorCavern_Room2", "SeafloorCavern_Room3", "SeafloorCavern_Room4", "SeafloorCavern_Room5", "SeafloorCavern_Room6", "SeafloorCavern_Room7", "SeafloorCavern_Room8", "SeafloorCavern_Room9"],
+        "maps": [
+            { "name": "SeafloorCavern_Entrance", "trainers": [] },
+            { "name": "SeafloorCavern_Room1", "trainers": [] },
+            { "name": "SeafloorCavern_Room2", "trainers": [] },
+            { "name": "SeafloorCavern_Room3", "trainers": [] },
+            { "name": "SeafloorCavern_Room4", "trainers": [] },
+            { "name": "SeafloorCavern_Room5", "trainers": [] },
+            { "name": "SeafloorCavern_Room6", "trainers": [] },
+            { "name": "SeafloorCavern_Room7", "trainers": [] },
+            { "name": "SeafloorCavern_Room8", "trainers": [] },
+            { "name": "SeafloorCavern_Room9", "trainers": [] }
+        ],
         "difficulty": 51
     },
     {
-        "maps": ["SootopolisCity", "CaveOfOrigin_Entrance", "CaveOfOrigin_1F", "CaveOfOrigin_B1F"],
+        "maps": [
+            { "name": "SootopolisCity", "trainers": [] },
+            { "name": "CaveOfOrigin_Entrance", "trainers": [] },
+            { "name": "CaveOfOrigin_1F", "trainers": [] },
+            { "name": "CaveOfOrigin_B1F", "trainers": [] }
+        ],
         "difficulty": 52
     },
     {
-        "maps": ["Route_129", "Route130", "Route131"],
+        "maps": [
+            { "name": "Route129", "trainers": [] },
+            { "name": "Route130", "trainers": [] },
+            { "name": "Route131", "trainers": [] }
+        ],
         "difficulty": 53
     },
     {
-        "maps": ["Route132", "Route133", "Route134"],
+        "maps": [
+            { "name": "Route132", "trainers": [] },
+            { "name": "Route133", "trainers": [] },
+            { "name": "Route134", "trainers": [] }
+        ],
         "difficulty": 54
     },
     {
-        "maps": ["SkyPillar_1F", "SkyPillar_2F", "SkyPillar_3F", "SkyPillar_4F", "SkyPillar_5F"],
+        "maps": [
+            { "name": "SkyPillar_1F", "trainers": [] },
+            { "name": "SkyPillar_2F", "trainers": [] },
+            { "name": "SkyPillar_3F", "trainers": [] },
+            { "name": "SkyPillar_4F", "trainers": [] },
+            { "name": "SkyPillar_5F", "trainers": [] }
+        ],
         "difficulty": 55
     },
     {
-        "maps": ["SootopolisCity"],
+        "maps": [
+            { "name": "SootopolisCity", "trainers": ["TRAINER_JUAN_1"] }
+        ],
         "difficulty": 57,
-        "challenges": ["Juan"],
+        "challenges": ["TRAINER_JUAN_1"],
         "unlocks": ["HM07 Waterfall"]
     },
     {
-        "maps": ["MeteorFalls_1F_2R", "MeteorFalls_B1F_1R", "MeteorFalls_B1F_2R", "EverGrandeCity"],
+        "maps": [
+            { "name": "MeteorFalls_1F_2R", "trainers": [] },
+            { "name": "MeteorFalls_B1F_1R", "trainers": [] },
+            { "name": "MeteorFalls_B1F_2R", "trainers": [] },
+            { "name": "EverGrandeCity", "trainers": [] }
+        ],
         "difficulty": 58,
         "unlockedBy": ["HM07 Waterfall"]
     },
     {
-        "maps": ["VictoryRoad_1F", "VictoryRoad_B1F", "VictoryRoad_B2F"],
+        "maps": [
+            { "name": "VictoryRoad_1F", "trainers": [] },
+            { "name": "VictoryRoad_B1F", "trainers": [] },
+            { "name": "VictoryRoad_B2F", "trainers": [] }
+        ],
         "difficulty": 60,
-        "challenges": ["Wally"]
+        "challenges": ["TRAINER_WALLY_VR_1"]
     },
     {
-        "maps": ["EverGrandeCity_SidneysRoom"],
+        "maps": [
+            { "name": "EverGrandeCity_SidneysRoom", "trainers": ["TRAINER_SIDNEY"] }
+        ],
         "difficulty": 61,
-        "challenges": ["Sidney"]
+        "challenges": ["TRAINER_SIDNEY"]
     },
     {
-        "maps": ["EverGrandeCity_PhoebesRoom"],
+        "maps": [
+            { "name": "EverGrandeCity_PhoebesRoom", "trainers": ["TRAINER_PHOEBE"] }
+        ],
         "difficulty": 63,
-        "challenges": ["Phoebe"]
+        "challenges": ["TRAINER_PHOEBE"]
     },
     {
-        "maps": ["EverGrandeCity_GlaciasRoom"],
+        "maps": [
+            { "name": "EverGrandeCity_GlaciasRoom", "trainers": ["TRAINER_GLACIA"] }
+        ],
         "difficulty": 65,
-        "challenges": ["Glacia"]
+        "challenges": ["TRAINER_GLACIA"]
     },
     {
-        "maps": ["EverGrandeCity_DrakesRoom"],
+        "maps": [
+            { "name": "EverGrandeCity_DrakesRoom", "trainers": ["TRAINER_DRAKE"] }
+        ],
         "difficulty": 67,
-        "challenges": ["Drake"]
+        "challenges": ["TRAINER_DRAKE"]
     },
     {
-        "maps": ["EverGrandeCity_ChampionsRoom"],
+        "maps": [
+            { "name": "EverGrandeCity_ChampionsRoom", "trainers": ["TRAINER_WALLACE"] }
+        ],
         "difficulty": 70,
-        "challenges": ["Wallace"]
+        "challenges": ["TRAINER_WALLACE"]
     }
 ]

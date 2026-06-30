@@ -119,6 +119,7 @@
         <button
           type="button"
           class="trainer-part-item"
+          onclick={() => window.dispatchEvent(new CustomEvent('selectPart', { detail: part.part }))}
         >
           <div class="part-header">
             <span class="part-number">Part {part.part}</span>
