@@ -1,6 +1,6 @@
 import type { APIRoute } from 'astro';
 import { getPart } from '../../../lib/itineraryTrainerLoader';
-import { getTrainersForIds, groupTrainersByBaseName } from '../../../lib/trainerRepository';
+import { getTrainersForIds, groupTrainersByBaseName, groupRivalTrainers, isRivalTrainer } from '../../../lib/trainerRepository';
 
 export const prerender = false;
 
@@ -35,12 +35,24 @@ export const GET: APIRoute = async ({ url }) => {
 
     if (hasTrainers) {
       const trainerDisplays = getTrainersForIds(map.trainers, []);
-      trainerGroups = groupTrainersByBaseName(trainerDisplays);
+      const rivalTrainers = trainerDisplays.filter(t => isRivalTrainer(t.baseName));
+      const regularTrainers = trainerDisplays.filter(t => !isRivalTrainer(t.baseName));
+      
+      const regularGroups = groupTrainersByBaseName(regularTrainers);
+      const rivalGroups = groupRivalTrainers(rivalTrainers);
+      
+      trainerGroups = [...regularGroups, ...rivalGroups];
     }
 
     if (hasChallenges) {
       const challengeDisplays = getTrainersForIds(map.challenges!, map.challenges!);
-      challengeGroups = groupTrainersByBaseName(challengeDisplays);
+      const rivalChallenges = challengeDisplays.filter(t => isRivalTrainer(t.baseName));
+      const regularChallenges = challengeDisplays.filter(t => !isRivalTrainer(t.baseName));
+      
+      const regularChallengeGroups = groupTrainersByBaseName(regularChallenges);
+      const rivalChallengeGroups = groupRivalTrainers(rivalChallenges);
+      
+      challengeGroups = [...regularChallengeGroups, ...rivalChallengeGroups];
     }
 
     if (trainerGroups.length > 0 || challengeGroups.length > 0) {

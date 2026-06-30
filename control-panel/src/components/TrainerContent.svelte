@@ -1,5 +1,6 @@
 <script lang="ts">
   import TrainerDetail from './TrainerDetail.svelte';
+  import RivalTabs from './RivalTabs.svelte';
   import type { TrainerGroup, TrainerPartyType, TrainerPokemon } from '../lib/trainerTypes';
 
   interface SpeciesOption {
@@ -141,9 +142,19 @@
     {#each mapsWithTrainers as mapData}
       <div class="form-section">
         <h3>{formatMapName(mapData.mapName)}</h3>
-        {#if mapData.trainers.length > 0}
+        
+        {#if mapData.trainers.some(g => g.isRival)}
+          <RivalTabs
+            rivalGroups={mapData.trainers.filter(g => g.isRival)}
+            {speciesOptions}
+            {itemOptions}
+            onSave={handleSave}
+          />
+        {/if}
+        
+        {#if mapData.trainers.filter(g => !g.isRival).length > 0}
           <div class="trainers-list">
-            {#each mapData.trainers as group}
+            {#each mapData.trainers.filter(g => !g.isRival) as group}
               <TrainerDetail
                 {group}
                 {speciesOptions}
@@ -153,19 +164,32 @@
             {/each}
           </div>
         {/if}
+        
         {#if mapData.challenges.length > 0}
           <div class="challenges-section">
             <h4>Challenges</h4>
-            <div class="challenges-list">
-              {#each mapData.challenges as group}
-                <TrainerDetail
-                  {group}
-                  {speciesOptions}
-                  {itemOptions}
-                  onSave={handleSave}
-                />
-              {/each}
-            </div>
+            
+            {#if mapData.challenges.some(g => g.isRival)}
+              <RivalTabs
+                rivalGroups={mapData.challenges.filter(g => g.isRival)}
+                {speciesOptions}
+                {itemOptions}
+                onSave={handleSave}
+              />
+            {/if}
+            
+            {#if mapData.challenges.filter(g => !g.isRival).length > 0}
+              <div class="challenges-list">
+                {#each mapData.challenges.filter(g => !g.isRival) as group}
+                  <TrainerDetail
+                    {group}
+                    {speciesOptions}
+                    {itemOptions}
+                    onSave={handleSave}
+                  />
+                {/each}
+              </div>
+            {/if}
           </div>
         {/if}
       </div>
@@ -214,6 +238,7 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    margin-top: 1.5rem;
   }
 
   .challenges-section {

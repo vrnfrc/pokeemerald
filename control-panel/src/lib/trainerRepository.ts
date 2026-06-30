@@ -127,6 +127,56 @@ export function clearCache(): void {
   cachedParties = null;
 }
 
+export function isRivalTrainer(trainerName: string): boolean {
+  const upperName = trainerName.toUpperCase();
+  return upperName.startsWith('BRENDAN') || upperName.startsWith('MAY');
+}
+
+export function extractStarterFromRival(trainerName: string): 'MUDKIP' | 'TREECKO' | 'TORCHIC' | null {
+  const upperName = trainerName.toUpperCase();
+  if (upperName.includes('MUDKIP')) return 'MUDKIP';
+  if (upperName.includes('TREECKO')) return 'TREECKO';
+  if (upperName.includes('TORCHIC')) return 'TORCHIC';
+  return null;
+}
+
+export function extractRivalName(trainerName: string): 'BRENDAN' | 'MAY' | null {
+  const upperName = trainerName.toUpperCase();
+  if (upperName.startsWith('BRENDAN')) return 'BRENDAN';
+  if (upperName.startsWith('MAY')) return 'MAY';
+  return null;
+}
+
+export function groupRivalTrainers(trainers: TrainerDisplay[]): TrainerGroup[] {
+  const groups = new Map<string, TrainerGroup>();
+
+  for (const trainer of trainers) {
+    const rivalName = extractRivalName(trainer.baseName);
+    const starter = extractStarterFromRival(trainer.baseName);
+    
+    if (!rivalName || !starter) continue;
+
+    const groupKey = `${rivalName}_${starter}`;
+    
+    if (!groups.has(groupKey)) {
+      groups.set(groupKey, {
+        baseName: groupKey,
+        displayName: `${rivalName.charAt(0) + rivalName.slice(1).toLowerCase()} (${starter.charAt(0) + starter.slice(1).toLowerCase()})`,
+        trainerClass: trainer.trainerClass,
+        trainerClassName: trainer.trainerClassName,
+        trainerPic: trainer.trainerPic,
+        iterations: [],
+        isRival: true,
+        starter,
+      });
+    }
+    
+    groups.get(groupKey)!.iterations.push(trainer);
+  }
+
+  return Array.from(groups.values());
+}
+
 export interface TrainerRepository {
   loadTrainerParties(): TrainerPartiesFile;
   saveTrainerParties(file: TrainerPartiesFile): void;

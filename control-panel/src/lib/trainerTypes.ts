@@ -66,6 +66,8 @@ export interface TrainerGroup {
   trainerClassName: string;
   trainerPic: string;
   iterations: TrainerDisplay[];
+  isRival?: boolean;
+  starter?: 'MUDKIP' | 'TREECKO' | 'TORCHIC';
 }
 
 export interface ItineraryMap {
