@@ -28,10 +28,17 @@
             {
                 "name": "Route102",
                 "trainers": [
-                    "TRAINER_ALLEN",
-                    "TRAINER_CALVIN_1",
-                    "TRAINER_RICK",
-                    "TRAINER_TIANA"
+                    { "id": "TRAINER_ALLEN", "party": "sParty_Allen" },
+                    { "id": "TRAINER_CALVIN_1", "party": "sParty_Calvin1" },
+                    { "id": "TRAINER_RICK", "party": "sParty_Rick" },
+                    { "id": "TRAINER_TIANA", "party": "sParty_Tiana" }
+                ],
+                "challenges": [],
+                "rematches": [
+                    { "id": "TRAINER_CALVIN_2", "party": "sParty_Calvin2" },
+                    { "id": "TRAINER_CALVIN_3", "party": "sParty_Calvin3" },
+                    { "id": "TRAINER_CALVIN_4", "party": "sParty_Calvin4" },
+                    { "id": "TRAINER_CALVIN_5", "party": "sParty_Calvin5" }
                 ]
             }
         ],
