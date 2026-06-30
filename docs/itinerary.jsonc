@@ -6,21 +6,6 @@
                 "trainers": []
             },
             {
-                "name": "Route102",
-                "trainers": [
-                    "TRAINER_ALLEN",
-                    "TRAINER_CALVIN_1",
-                    "TRAINER_RICK",
-                    "TRAINER_TIANA"
-                ]
-            }
-        ],
-        "difficulty": 1,
-        "challenges": []
-    },
-    {
-        "maps": [
-            {
                 "name": "Route103",
                 "trainers": [
                     "TRAINER_AMY_AND_LIV_1",
@@ -40,7 +25,30 @@
                 ]
             }
         ],
-        "difficulty": 2
+        "difficulty": 1,
+        "challenges": [
+            "TRAINER_BRENDAN_ROUTE_103_MUDKIP",
+            "TRAINER_BRENDAN_ROUTE_103_TORCHIC",
+            "TRAINER_BRENDAN_ROUTE_103_TREECKO",
+            "TRAINER_MAY_ROUTE_103_MUDKIP",
+            "TRAINER_MAY_ROUTE_103_TORCHIC",
+            "TRAINER_MAY_ROUTE_103_TREECKO"
+        ]
+    },
+    {
+        "maps": [
+            {
+                "name": "Route102",
+                "trainers": [
+                    "TRAINER_ALLEN",
+                    "TRAINER_CALVIN_1",
+                    "TRAINER_RICK",
+                    "TRAINER_TIANA"
+                ]
+            }
+        ],
+        "difficulty": 2,
+        "challenges": []
     },
     {
         "maps": [
@@ -48,22 +56,17 @@
                 "name": "Route104",
                 "trainers": [
                     "TRAINER_BILLY",
-                    "TRAINER_BRENDAN_RUSTBORO_MUDKIP",
-                    "TRAINER_BRENDAN_RUSTBORO_TORCHIC",
-                    "TRAINER_BRENDAN_RUSTBORO_TREECKO",
                     "TRAINER_CINDY_1",
                     "TRAINER_DARIAN",
                     "TRAINER_GINA_AND_MIA_1",
                     "TRAINER_HALEY_1",
                     "TRAINER_IVAN",
-                    "TRAINER_MAY_RUSTBORO_MUDKIP",
-                    "TRAINER_MAY_RUSTBORO_TORCHIC",
-                    "TRAINER_MAY_RUSTBORO_TREECKO",
                     "TRAINER_WINSTON_1"
                 ]
             }
         ],
-        "difficulty": 3
+        "difficulty": 3,
+        "challenges": []
     },
     {
         "maps": [
@@ -76,7 +79,8 @@
                 ]
             }
         ],
-        "difficulty": 4
+        "difficulty": 4,
+        "challenges": []
     },
     {
         "maps": [
@@ -103,7 +107,8 @@
                 ]
             }
         ],
-        "difficulty": 5
+        "difficulty": 5,
+        "challenges": []
     },
     {
         "maps": [
@@ -113,9 +118,13 @@
                     "TRAINER_BRENDAN_RUSTBORO_MUDKIP",
                     "TRAINER_BRENDAN_RUSTBORO_TORCHIC",
                     "TRAINER_BRENDAN_RUSTBORO_TREECKO",
+                    "TRAINER_JOSH",
+                    "TRAINER_MARC",
                     "TRAINER_MAY_RUSTBORO_MUDKIP",
                     "TRAINER_MAY_RUSTBORO_TORCHIC",
-                    "TRAINER_MAY_RUSTBORO_TREECKO"
+                    "TRAINER_MAY_RUSTBORO_TREECKO",
+                    "TRAINER_ROXANNE_1",
+                    "TRAINER_TOMMY"
                 ]
             }
         ],
@@ -139,7 +148,8 @@
             }
         ],
         "difficulty": 8,
-        "unlockedBy": "HM01 Cut"
+        "unlockedBy": "HM01 Cut",
+        "challenges": []
     },
     {
         "maps": [
@@ -160,13 +170,22 @@
                 "trainers": []
             }
         ],
-        "difficulty": 9
+        "difficulty": 9,
+        "challenges": []
     },
     {
         "maps": [
             {
                 "name": "DewfordTown",
-                "trainers": []
+                "trainers": [
+                    "TRAINER_BRAWLY_1",
+                    "TRAINER_BRENDEN",
+                    "TRAINER_CRISTIAN",
+                    "TRAINER_JOCELYN",
+                    "TRAINER_LAURA",
+                    "TRAINER_LILITH",
+                    "TRAINER_TAKAO"
+                ]
             }
         ],
         "difficulty": 10,
@@ -187,14 +206,17 @@
                     "TRAINER_CARTER",
                     "TRAINER_CHANDLER",
                     "TRAINER_DAVID",
+                    "TRAINER_DWAYNE",
                     "TRAINER_EDMOND",
                     "TRAINER_ELIJAH",
                     "TRAINER_GWEN",
                     "TRAINER_HAILEY",
                     "TRAINER_HUEY",
+                    "TRAINER_JOHANNA",
                     "TRAINER_LOLA_1",
                     "TRAINER_MEL_AND_PAUL",
-                    "TRAINER_RICKY_1"
+                    "TRAINER_RICKY_1",
+                    "TRAINER_SIMON"
                 ]
             },
             {
@@ -209,7 +231,8 @@
                 ]
             }
         ],
-        "difficulty": 12
+        "difficulty": 12,
+        "challenges": []
     },
     {
         "maps": [
@@ -217,25 +240,49 @@
                 "name": "Route110",
                 "trainers": [
                     "TRAINER_ABIGAIL_1",
+                    "TRAINER_ALAN",
+                    "TRAINER_ALEXIS",
+                    "TRAINER_ALVARO",
                     "TRAINER_ALYSSA",
                     "TRAINER_ANTHONY",
                     "TRAINER_BENJAMIN_1",
+                    "TRAINER_BENNY",
                     "TRAINER_BRENDAN_ROUTE_110_MUDKIP",
                     "TRAINER_BRENDAN_ROUTE_110_TORCHIC",
                     "TRAINER_BRENDAN_ROUTE_110_TREECKO",
+                    "TRAINER_CORA",
                     "TRAINER_DALE",
+                    "TRAINER_EDDIE",
                     "TRAINER_EDWARD",
                     "TRAINER_EDWIN_1",
+                    "TRAINER_EVERETT",
+                    "TRAINER_GEORGIA",
                     "TRAINER_ISABEL_1",
                     "TRAINER_JACLYN",
                     "TRAINER_JACOB",
                     "TRAINER_JASMINE",
                     "TRAINER_JOSEPH",
+                    "TRAINER_JOSHUA",
+                    "TRAINER_JUSTIN",
                     "TRAINER_KALEB",
+                    "TRAINER_KEIRA",
+                    "TRAINER_LEROY",
+                    "TRAINER_MARIELA",
+                    "TRAINER_MARTHA",
                     "TRAINER_MAY_ROUTE_110_MUDKIP",
                     "TRAINER_MAY_ROUTE_110_TORCHIC",
                     "TRAINER_MAY_ROUTE_110_TREECKO",
-                    "TRAINER_TIMMY"
+                    "TRAINER_PATRICIA",
+                    "TRAINER_PAUL",
+                    "TRAINER_PAULA",
+                    "TRAINER_ROBIN",
+                    "TRAINER_SALLY",
+                    "TRAINER_SEBASTIAN",
+                    "TRAINER_SOPHIA",
+                    "TRAINER_TED",
+                    "TRAINER_TIMMY",
+                    "TRAINER_VINCENT",
+                    "TRAINER_YUJI"
                 ]
             },
             {
@@ -258,14 +305,34 @@
                 ]
             }
         ],
-        "difficulty": 13
+        "difficulty": 13,
+        "challenges": [
+            "TRAINER_BRENDAN_ROUTE_103_MUDKIP",
+            "TRAINER_BRENDAN_ROUTE_103_TORCHIC",
+            "TRAINER_BRENDAN_ROUTE_103_TREECKO",
+            "TRAINER_BRENDAN_ROUTE_110_MUDKIP",
+            "TRAINER_BRENDAN_ROUTE_110_TORCHIC",
+            "TRAINER_BRENDAN_ROUTE_110_TREECKO",
+            "TRAINER_MAY_ROUTE_103_MUDKIP",
+            "TRAINER_MAY_ROUTE_103_TORCHIC",
+            "TRAINER_MAY_ROUTE_103_TREECKO",
+            "TRAINER_MAY_ROUTE_110_MUDKIP",
+            "TRAINER_MAY_ROUTE_110_TORCHIC",
+            "TRAINER_MAY_ROUTE_110_TREECKO"
+        ]
     },
     {
         "maps": [
             {
                 "name": "MauvilleCity",
                 "trainers": [
-                    "TRAINER_WALLY_MAUVILLE"
+                    "TRAINER_ANGELO",
+                    "TRAINER_BEN",
+                    "TRAINER_KIRK",
+                    "TRAINER_SHAWN",
+                    "TRAINER_VIVIAN",
+                    "TRAINER_WALLY_MAUVILLE",
+                    "TRAINER_WATTSON_1"
                 ]
             },
             {
@@ -312,7 +379,13 @@
             {
                 "name": "MauvilleCity",
                 "trainers": [
-                    "TRAINER_WALLY_MAUVILLE"
+                    "TRAINER_ANGELO",
+                    "TRAINER_BEN",
+                    "TRAINER_KIRK",
+                    "TRAINER_SHAWN",
+                    "TRAINER_VIVIAN",
+                    "TRAINER_WALLY_MAUVILLE",
+                    "TRAINER_WATTSON_1"
                 ]
             }
         ],
@@ -330,25 +403,49 @@
                 "name": "Route110",
                 "trainers": [
                     "TRAINER_ABIGAIL_1",
+                    "TRAINER_ALAN",
+                    "TRAINER_ALEXIS",
+                    "TRAINER_ALVARO",
                     "TRAINER_ALYSSA",
                     "TRAINER_ANTHONY",
                     "TRAINER_BENJAMIN_1",
+                    "TRAINER_BENNY",
                     "TRAINER_BRENDAN_ROUTE_110_MUDKIP",
                     "TRAINER_BRENDAN_ROUTE_110_TORCHIC",
                     "TRAINER_BRENDAN_ROUTE_110_TREECKO",
+                    "TRAINER_CORA",
                     "TRAINER_DALE",
+                    "TRAINER_EDDIE",
                     "TRAINER_EDWARD",
                     "TRAINER_EDWIN_1",
+                    "TRAINER_EVERETT",
+                    "TRAINER_GEORGIA",
                     "TRAINER_ISABEL_1",
                     "TRAINER_JACLYN",
                     "TRAINER_JACOB",
                     "TRAINER_JASMINE",
                     "TRAINER_JOSEPH",
+                    "TRAINER_JOSHUA",
+                    "TRAINER_JUSTIN",
                     "TRAINER_KALEB",
+                    "TRAINER_KEIRA",
+                    "TRAINER_LEROY",
+                    "TRAINER_MARIELA",
+                    "TRAINER_MARTHA",
                     "TRAINER_MAY_ROUTE_110_MUDKIP",
                     "TRAINER_MAY_ROUTE_110_TORCHIC",
                     "TRAINER_MAY_ROUTE_110_TREECKO",
-                    "TRAINER_TIMMY"
+                    "TRAINER_PATRICIA",
+                    "TRAINER_PAUL",
+                    "TRAINER_PAULA",
+                    "TRAINER_ROBIN",
+                    "TRAINER_SALLY",
+                    "TRAINER_SEBASTIAN",
+                    "TRAINER_SOPHIA",
+                    "TRAINER_TED",
+                    "TRAINER_TIMMY",
+                    "TRAINER_VINCENT",
+                    "TRAINER_YUJI"
                 ]
             },
             {
@@ -393,7 +490,15 @@
                 "trainers": []
             }
         ],
-        "difficulty": 19
+        "difficulty": 19,
+        "challenges": [
+            "TRAINER_BRENDAN_ROUTE_110_MUDKIP",
+            "TRAINER_BRENDAN_ROUTE_110_TORCHIC",
+            "TRAINER_BRENDAN_ROUTE_110_TREECKO",
+            "TRAINER_MAY_ROUTE_110_MUDKIP",
+            "TRAINER_MAY_ROUTE_110_TORCHIC",
+            "TRAINER_MAY_ROUTE_110_TREECKO"
+        ]
     },
     {
         "maps": [
@@ -415,7 +520,8 @@
                 ]
             }
         ],
-        "difficulty": 20
+        "difficulty": 20,
+        "challenges": []
     },
     {
         "maps": [
@@ -424,7 +530,8 @@
                 "trainers": []
             }
         ],
-        "difficulty": 20
+        "difficulty": 20,
+        "challenges": []
     },
     {
         "maps": [
@@ -444,7 +551,8 @@
                 ]
             }
         ],
-        "difficulty": 21
+        "difficulty": 21,
+        "challenges": []
     },
     {
         "maps": [
@@ -482,7 +590,8 @@
                 ]
             }
         ],
-        "difficulty": 24
+        "difficulty": 24,
+        "challenges": []
     },
     {
         "maps": [
@@ -502,13 +611,24 @@
                 ]
             }
         ],
-        "difficulty": 21
+        "difficulty": 21,
+        "challenges": []
     },
     {
         "maps": [
             {
                 "name": "LavaridgeTown",
-                "trainers": []
+                "trainers": [
+                    "TRAINER_AXLE",
+                    "TRAINER_COLE",
+                    "TRAINER_DANIELLE",
+                    "TRAINER_ELI",
+                    "TRAINER_FLANNERY_1",
+                    "TRAINER_GERALD",
+                    "TRAINER_JACE",
+                    "TRAINER_JEFF",
+                    "TRAINER_KEEGAN"
+                ]
             }
         ],
         "difficulty": 23,
@@ -550,13 +670,23 @@
             }
         ],
         "difficulty": 24,
-        "unlockedBy": "Go-Googles"
+        "unlockedBy": "Go-Googles",
+        "challenges": []
     },
     {
         "maps": [
             {
                 "name": "PetalburgCity",
-                "trainers": []
+                "trainers": [
+                    "TRAINER_ALEXIA",
+                    "TRAINER_BERKE",
+                    "TRAINER_GEORGE",
+                    "TRAINER_JODY",
+                    "TRAINER_MARY",
+                    "TRAINER_NORMAN_1",
+                    "TRAINER_PARKER",
+                    "TRAINER_RANDALL"
+                ]
             }
         ],
         "difficulty": 25,
@@ -571,7 +701,16 @@
         "maps": [
             {
                 "name": "PetalburgCity",
-                "trainers": []
+                "trainers": [
+                    "TRAINER_ALEXIA",
+                    "TRAINER_BERKE",
+                    "TRAINER_GEORGE",
+                    "TRAINER_JODY",
+                    "TRAINER_MARY",
+                    "TRAINER_NORMAN_1",
+                    "TRAINER_PARKER",
+                    "TRAINER_RANDALL"
+                ]
             },
             {
                 "name": "Route102",
@@ -605,25 +744,49 @@
                 "name": "Route110",
                 "trainers": [
                     "TRAINER_ABIGAIL_1",
+                    "TRAINER_ALAN",
+                    "TRAINER_ALEXIS",
+                    "TRAINER_ALVARO",
                     "TRAINER_ALYSSA",
                     "TRAINER_ANTHONY",
                     "TRAINER_BENJAMIN_1",
+                    "TRAINER_BENNY",
                     "TRAINER_BRENDAN_ROUTE_110_MUDKIP",
                     "TRAINER_BRENDAN_ROUTE_110_TORCHIC",
                     "TRAINER_BRENDAN_ROUTE_110_TREECKO",
+                    "TRAINER_CORA",
                     "TRAINER_DALE",
+                    "TRAINER_EDDIE",
                     "TRAINER_EDWARD",
                     "TRAINER_EDWIN_1",
+                    "TRAINER_EVERETT",
+                    "TRAINER_GEORGIA",
                     "TRAINER_ISABEL_1",
                     "TRAINER_JACLYN",
                     "TRAINER_JACOB",
                     "TRAINER_JASMINE",
                     "TRAINER_JOSEPH",
+                    "TRAINER_JOSHUA",
+                    "TRAINER_JUSTIN",
                     "TRAINER_KALEB",
+                    "TRAINER_KEIRA",
+                    "TRAINER_LEROY",
+                    "TRAINER_MARIELA",
+                    "TRAINER_MARTHA",
                     "TRAINER_MAY_ROUTE_110_MUDKIP",
                     "TRAINER_MAY_ROUTE_110_TORCHIC",
                     "TRAINER_MAY_ROUTE_110_TREECKO",
-                    "TRAINER_TIMMY"
+                    "TRAINER_PATRICIA",
+                    "TRAINER_PAUL",
+                    "TRAINER_PAULA",
+                    "TRAINER_ROBIN",
+                    "TRAINER_SALLY",
+                    "TRAINER_SEBASTIAN",
+                    "TRAINER_SOPHIA",
+                    "TRAINER_TED",
+                    "TRAINER_TIMMY",
+                    "TRAINER_VINCENT",
+                    "TRAINER_YUJI"
                 ]
             },
             {
@@ -693,7 +856,21 @@
             }
         ],
         "difficulty": 26,
-        "unlockedBy": "HM03 Surf"
+        "unlockedBy": "HM03 Surf",
+        "challenges": [
+            "TRAINER_BRENDAN_ROUTE_103_MUDKIP",
+            "TRAINER_BRENDAN_ROUTE_103_TORCHIC",
+            "TRAINER_BRENDAN_ROUTE_103_TREECKO",
+            "TRAINER_BRENDAN_ROUTE_110_MUDKIP",
+            "TRAINER_BRENDAN_ROUTE_110_TORCHIC",
+            "TRAINER_BRENDAN_ROUTE_110_TREECKO",
+            "TRAINER_MAY_ROUTE_103_MUDKIP",
+            "TRAINER_MAY_ROUTE_103_TORCHIC",
+            "TRAINER_MAY_ROUTE_103_TREECKO",
+            "TRAINER_MAY_ROUTE_110_MUDKIP",
+            "TRAINER_MAY_ROUTE_110_TORCHIC",
+            "TRAINER_MAY_ROUTE_110_TREECKO"
+        ]
     },
     {
         "maps": [
@@ -718,17 +895,11 @@
                 "name": "Route104",
                 "trainers": [
                     "TRAINER_BILLY",
-                    "TRAINER_BRENDAN_RUSTBORO_MUDKIP",
-                    "TRAINER_BRENDAN_RUSTBORO_TORCHIC",
-                    "TRAINER_BRENDAN_RUSTBORO_TREECKO",
                     "TRAINER_CINDY_1",
                     "TRAINER_DARIAN",
                     "TRAINER_GINA_AND_MIA_1",
                     "TRAINER_HALEY_1",
                     "TRAINER_IVAN",
-                    "TRAINER_MAY_RUSTBORO_MUDKIP",
-                    "TRAINER_MAY_RUSTBORO_TORCHIC",
-                    "TRAINER_MAY_RUSTBORO_TREECKO",
                     "TRAINER_WINSTON_1"
                 ]
             },
@@ -755,7 +926,8 @@
             }
         ],
         "difficulty": 27,
-        "unlockedBy": "HM03 Surf"
+        "unlockedBy": "HM03 Surf",
+        "challenges": []
     },
     {
         "maps": [
@@ -824,14 +996,17 @@
                     "TRAINER_CARTER",
                     "TRAINER_CHANDLER",
                     "TRAINER_DAVID",
+                    "TRAINER_DWAYNE",
                     "TRAINER_EDMOND",
                     "TRAINER_ELIJAH",
                     "TRAINER_GWEN",
                     "TRAINER_HAILEY",
                     "TRAINER_HUEY",
+                    "TRAINER_JOHANNA",
                     "TRAINER_LOLA_1",
                     "TRAINER_MEL_AND_PAUL",
-                    "TRAINER_RICKY_1"
+                    "TRAINER_RICKY_1",
+                    "TRAINER_SIMON"
                 ]
             },
             {
@@ -840,7 +1015,8 @@
             }
         ],
         "difficulty": 28,
-        "unlockedBy": "HM03 Surf"
+        "unlockedBy": "HM03 Surf",
+        "challenges": []
     },
     {
         "maps": [
@@ -877,7 +1053,8 @@
                 ]
             }
         ],
-        "difficulty": 29
+        "difficulty": 29,
+        "challenges": []
     },
     {
         "maps": [
@@ -910,7 +1087,15 @@
                 ]
             }
         ],
-        "difficulty": 30
+        "difficulty": 30,
+        "challenges": [
+            "TRAINER_BRENDAN_ROUTE_119_MUDKIP",
+            "TRAINER_BRENDAN_ROUTE_119_TORCHIC",
+            "TRAINER_BRENDAN_ROUTE_119_TREECKO",
+            "TRAINER_MAY_ROUTE_119_MUDKIP",
+            "TRAINER_MAY_ROUTE_119_TORCHIC",
+            "TRAINER_MAY_ROUTE_119_TREECKO"
+        ]
     },
     {
         "maps": [
@@ -931,7 +1116,8 @@
                 ]
             }
         ],
-        "difficulty": 31
+        "difficulty": 31,
+        "challenges": []
     },
     {
         "maps": [
@@ -965,11 +1151,25 @@
             },
             {
                 "name": "FortreeCity",
-                "trainers": []
+                "trainers": [
+                    "TRAINER_ASHLEY",
+                    "TRAINER_DARIUS",
+                    "TRAINER_EDWARDO",
+                    "TRAINER_FLINT",
+                    "TRAINER_HUMBERTO",
+                    "TRAINER_JARED",
+                    "TRAINER_WINONA_1"
+                ]
             }
         ],
         "difficulty": 33,
         "challenges": [
+            "TRAINER_BRENDAN_ROUTE_119_MUDKIP",
+            "TRAINER_BRENDAN_ROUTE_119_TORCHIC",
+            "TRAINER_BRENDAN_ROUTE_119_TREECKO",
+            "TRAINER_MAY_ROUTE_119_MUDKIP",
+            "TRAINER_MAY_ROUTE_119_TORCHIC",
+            "TRAINER_MAY_ROUTE_119_TREECKO",
             "TRAINER_WINONA_1"
         ]
     },
@@ -998,7 +1198,8 @@
                 "trainers": []
             }
         ],
-        "difficulty": 34
+        "difficulty": 34,
+        "challenges": []
     },
     {
         "maps": [
@@ -1042,7 +1243,8 @@
                 ]
             }
         ],
-        "difficulty": 35
+        "difficulty": 35,
+        "challenges": []
     },
     {
         "maps": [
@@ -1091,7 +1293,8 @@
                 "trainers": []
             }
         ],
-        "difficulty": 36
+        "difficulty": 36,
+        "challenges": []
     },
     {
         "maps": [
@@ -1105,7 +1308,8 @@
                 ]
             }
         ],
-        "difficulty": 38
+        "difficulty": 38,
+        "challenges": []
     },
     {
         "maps": [
@@ -1158,7 +1362,8 @@
                 ]
             }
         ],
-        "difficulty": 39
+        "difficulty": 39,
+        "challenges": []
     },
     {
         "maps": [
@@ -1192,7 +1397,15 @@
                 ]
             }
         ],
-        "difficulty": 42
+        "difficulty": 42,
+        "challenges": [
+            "TRAINER_BRENDAN_LILYCOVE_MUDKIP",
+            "TRAINER_BRENDAN_LILYCOVE_TORCHIC",
+            "TRAINER_BRENDAN_LILYCOVE_TREECKO",
+            "TRAINER_MAY_LILYCOVE_MUDKIP",
+            "TRAINER_MAY_LILYCOVE_TORCHIC",
+            "TRAINER_MAY_LILYCOVE_TREECKO"
+        ]
     },
     {
         "maps": [
@@ -1209,6 +1422,15 @@
                     "TRAINER_GRUNT_AQUA_HIDEOUT_3",
                     "TRAINER_GRUNT_AQUA_HIDEOUT_5",
                     "TRAINER_GRUNT_AQUA_HIDEOUT_7"
+                ]
+            },
+            {
+                "name": "AquaHideout_B2F",
+                "trainers": [
+                    "TRAINER_GRUNT_AQUA_HIDEOUT_4",
+                    "TRAINER_GRUNT_AQUA_HIDEOUT_6",
+                    "TRAINER_GRUNT_AQUA_HIDEOUT_8",
+                    "TRAINER_MATT"
                 ]
             }
         ],
@@ -1246,7 +1468,8 @@
                 ]
             }
         ],
-        "difficulty": 44
+        "difficulty": 44,
+        "challenges": []
     },
     {
         "maps": [
@@ -1277,7 +1500,8 @@
                 ]
             }
         ],
-        "difficulty": 44
+        "difficulty": 44,
+        "challenges": []
     },
     {
         "maps": [
@@ -1306,13 +1530,28 @@
                 "trainers": []
             }
         ],
-        "difficulty": 45
+        "difficulty": 45,
+        "challenges": []
     },
     {
         "maps": [
             {
                 "name": "MossdeepCity",
-                "trainers": []
+                "trainers": [
+                    "TRAINER_BLAKE",
+                    "TRAINER_CLIFFORD",
+                    "TRAINER_HANNAH",
+                    "TRAINER_KATHLEEN",
+                    "TRAINER_MACEY",
+                    "TRAINER_MAURA",
+                    "TRAINER_NATE",
+                    "TRAINER_NICHOLAS",
+                    "TRAINER_PRESTON",
+                    "TRAINER_SAMANTHA",
+                    "TRAINER_SYLVIA",
+                    "TRAINER_TATE_AND_LIZA_1",
+                    "TRAINER_VIRGIL"
+                ]
             }
         ],
         "difficulty": 47,
@@ -1360,7 +1599,8 @@
         "difficulty": 49,
         "unlockedBy": [
             "HM08 Dive"
-        ]
+        ],
+        "challenges": []
     },
     {
         "maps": [
@@ -1402,7 +1642,8 @@
                 "trainers": []
             }
         ],
-        "difficulty": 50
+        "difficulty": 50,
+        "challenges": []
     },
     {
         "maps": [
@@ -1458,13 +1699,26 @@
                 ]
             }
         ],
-        "difficulty": 51
+        "difficulty": 51,
+        "challenges": []
     },
     {
         "maps": [
             {
                 "name": "SootopolisCity",
-                "trainers": []
+                "trainers": [
+                    "TRAINER_ANDREA",
+                    "TRAINER_ANNIKA",
+                    "TRAINER_BETHANY",
+                    "TRAINER_BRIANNA",
+                    "TRAINER_BRIDGET",
+                    "TRAINER_CONNIE",
+                    "TRAINER_CRISSY",
+                    "TRAINER_DAPHNE",
+                    "TRAINER_JUAN_1",
+                    "TRAINER_OLIVIA",
+                    "TRAINER_TIFFANY"
+                ]
             },
             {
                 "name": "CaveOfOrigin_Entrance",
@@ -1479,7 +1733,8 @@
                 "trainers": []
             }
         ],
-        "difficulty": 52
+        "difficulty": 52,
+        "challenges": []
     },
     {
         "maps": [
@@ -1514,7 +1769,8 @@
                 ]
             }
         ],
-        "difficulty": 53
+        "difficulty": 53,
+        "challenges": []
     },
     {
         "maps": [
@@ -1558,7 +1814,8 @@
                 ]
             }
         ],
-        "difficulty": 54
+        "difficulty": 54,
+        "challenges": []
     },
     {
         "maps": [
@@ -1583,13 +1840,26 @@
                 "trainers": []
             }
         ],
-        "difficulty": 55
+        "difficulty": 55,
+        "challenges": []
     },
     {
         "maps": [
             {
                 "name": "SootopolisCity",
-                "trainers": []
+                "trainers": [
+                    "TRAINER_ANDREA",
+                    "TRAINER_ANNIKA",
+                    "TRAINER_BETHANY",
+                    "TRAINER_BRIANNA",
+                    "TRAINER_BRIDGET",
+                    "TRAINER_CONNIE",
+                    "TRAINER_CRISSY",
+                    "TRAINER_DAPHNE",
+                    "TRAINER_JUAN_1",
+                    "TRAINER_OLIVIA",
+                    "TRAINER_TIFFANY"
+                ]
             }
         ],
         "difficulty": 57,
@@ -1625,7 +1895,8 @@
         "difficulty": 58,
         "unlockedBy": [
             "HM07 Waterfall"
-        ]
+        ],
+        "challenges": []
     },
     {
         "maps": [
