@@ -30,6 +30,7 @@ export interface TrainerParty {
   name: string;
   type: TrainerPartyType;
   pokemon: TrainerPokemon[];
+  trainerItems?: string[];
 }
 
 export interface TrainerPartiesFile {
@@ -56,6 +57,7 @@ export interface TrainerDisplay {
   trainerPic: string;
   trainerType: TrainerPartyType;
   isChallenge: boolean;
+  items: string[];
   pokemon: TrainerPokemon[];
 }
 
@@ -121,7 +123,11 @@ export function ivToDisplayLabel(iv: number): string {
 }
 
 export function trainerPicToFilename(pic: string): string {
-  return pic.replace('TRAINER_PIC_', '').toLowerCase();
+  let name = pic.replace('TRAINER_PIC_', '').toLowerCase();
+  if (name.startsWith('rs_')) {
+    name = name.replace('rs_', '') + '_rs';
+  }
+  return name;
 }
 
 export function validateIV(iv: number): boolean {

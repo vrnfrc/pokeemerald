@@ -102,6 +102,22 @@ export const PUT: APIRoute = async ({ params, request }) => {
     updates.pokemon = validatedPokemon;
   }
 
+  if (body.items !== undefined) {
+    if (!Array.isArray(body.items)) {
+      return new Response('Items must be an array', { status: 400 });
+    }
+    const items = loadItems();
+    const validItemValues = items.map((i) => i.value);
+    const validatedItems: string[] = [];
+    for (const item of body.items) {
+      if (item !== 'NONE' && !validItemValues.includes(item)) {
+        return new Response(`Invalid item: ${item}`, { status: 400 });
+      }
+      validatedItems.push(item);
+    }
+    updates.trainerItems = validatedItems;
+  }
+
   const newParties = updateTrainerParty(name, updates);
   saveTrainerParties(newParties);
 

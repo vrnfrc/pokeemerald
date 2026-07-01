@@ -1,4 +1,6 @@
 <script lang="ts">
+  import { onMount } from 'svelte';
+
   let query = $state('');
   let parts = $state<any[]>([]);
   let loading = $state(true);
@@ -6,13 +8,13 @@
   interface TrainerPart {
     part: number;
     maps: string[];
+    mapsWithChallenges: string[];
     difficulty: number;
     hasChallenges: boolean;
     unlocks?: string[];
     unlockedBy?: string[];
   }
 
-  // Fetch itinerary data from API
   async function loadItinerary() {
     try {
       const response = await fetch('/api/itinerary');
@@ -26,8 +28,9 @@
     }
   }
 
-  // Load data on component mount
-  loadItinerary();
+  onMount(() => {
+    loadItinerary();
+  });
 
   const filtered = $derived.by(() => {
     const q = query.trim().toLowerCase();
@@ -68,12 +71,9 @@
           {/if}
           <div class="part-maps">
             {#each part.maps as map}
-              <span class="map-name">{map}</span>
+              <span class="map-name" class:has-challenge={part.mapsWithChallenges.includes(map)}>{map}</span>
             {/each}
           </div>
-          {#if part.hasChallenges}
-            <span class="part-challenges">Challenge</span>
-          {/if}
         </button>
         {#if part.unlocks}
           <div class="unlock-divider"></div>
@@ -170,11 +170,8 @@
     color: var(--muted);
     line-height: 1.3;
   }
-  .part-challenges {
-    font-size: 0.78rem;
+  .map-name.has-challenge {
     color: var(--danger);
-    font-weight: 500;
-    margin-top: 0.2rem;
   }
 
   .unlock-divider {

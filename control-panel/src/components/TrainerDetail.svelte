@@ -13,7 +13,7 @@
     group: TrainerGroup;
     speciesOptions: { value: string; label: string }[];
     itemOptions: { value: string; label: string }[];
-    onSave: (trainerName: string, updates: { type?: TrainerPartyType; pokemon?: TrainerPokemon[] }) => Promise<void>;
+    onSave: (trainerName: string, updates: { type?: TrainerPartyType; pokemon?: TrainerPokemon[]; items?: string[] }) => Promise<void>;
   }
 
   let { group, speciesOptions, itemOptions, onSave }: Props = $props();
@@ -60,6 +60,7 @@
       await onSave(trainer.name, {
         type: trainer.trainerType,
         pokemon: trainer.pokemon,
+        items: trainer.items,
       });
       statusMessage = 'Saved successfully';
       statusKind = 'success';
@@ -77,7 +78,23 @@
 
   function handleImageError(event: Event) {
     const img = event.target as HTMLImageElement;
-    img.src = '/api/trainer-sprite/hiker';
+    img.style.display = 'none';
+  }
+
+  function handleItemChange(index: number, value: string) {
+    const items = [...localTrainers[selectedTabIndex].items];
+    items[index] = value;
+    localTrainers[selectedTabIndex] = { ...localTrainers[selectedTabIndex], items };
+  }
+
+  function addItem() {
+    const items = [...localTrainers[selectedTabIndex].items, 'NONE'];
+    localTrainers[selectedTabIndex] = { ...localTrainers[selectedTabIndex], items };
+  }
+
+  function removeItem(index: number) {
+    const items = localTrainers[selectedTabIndex].items.filter((_, i) => i !== index);
+    localTrainers[selectedTabIndex] = { ...localTrainers[selectedTabIndex], items };
   }
 
   function formatTrainerName(name: string): string {
@@ -96,9 +113,6 @@
     <div class="trainer-info">
       <h2 class="trainer-name">{group.displayName}</h2>
       <p class="trainer-class">{group.trainerClassName}</p>
-      {#if group.iterations.some((t) => t.isChallenge)}
-        <span class="challenge-badge">Challenge</span>
-      {/if}
     </div>
   </div>
 
@@ -115,39 +129,63 @@
           {:else}
             Rematch {trainer.iteration}
           {/if}
-          {#if trainer.isChallenge}
-            <span class="tab-badge">*</span>
-          {/if}
         </button>
       {/each}
     </div>
   {/if}
 
   {#if selectedTrainer}
-    <div class="trainer-type-section">
-      <label class="field-label">Trainer Type</label>
-      <select
-        value={selectedTrainer.trainerType}
-        onchange={handleTypeChange}
-        class="type-select"
-      >
-        {#each TRAINER_TYPE_OPTIONS as opt}
-          <option value={opt.value}>{opt.label}</option>
-        {/each}
-      </select>
+    <div class="trainer-config">
+      <div class="config-section">
+        <div class="field-label">Items</div>
+        <div class="trainer-items-list">
+          {#each selectedTrainer.items as item, i}
+            <div class="item-row">
+              <select
+                value={item}
+                onchange={(e) => handleItemChange(i, (e.target as HTMLSelectElement).value)}
+                class="item-select"
+              >
+                <option value="NONE">None</option>
+                {#each itemOptions as opt}
+                  <option value={opt.value}>{opt.label}</option>
+                {/each}
+              </select>
+              <button class="remove-item-btn" onclick={() => removeItem(i)}>×</button>
+            </div>
+          {/each}
+          <button class="add-item-btn" onclick={addItem}>+ Add Item</button>
+        </div>
+      </div>
+
+      <div class="config-section">
+        <div class="field-label">Type</div>
+        <select
+          value={selectedTrainer.trainerType}
+          onchange={handleTypeChange}
+          class="type-select"
+        >
+          {#each TRAINER_TYPE_OPTIONS as opt}
+            <option value={opt.value}>{opt.label}</option>
+          {/each}
+        </select>
+      </div>
     </div>
 
-    <div class="pokemon-grid">
-      {#each selectedTrainer.pokemon as pokemon, i}
-        <TrainerPokemonCard
-          {pokemon}
-          index={i}
-          trainerType={selectedTrainer.trainerType}
-          {speciesOptions}
-          {itemOptions}
-          onChange={handlePokemonChange}
-        />
-      {/each}
+    <div class="party-section">
+      <h3 class="party-title">Party</h3>
+      <div class="pokemon-grid">
+        {#each selectedTrainer.pokemon as pokemon, i}
+          <TrainerPokemonCard
+            {pokemon}
+            index={i}
+            trainerType={selectedTrainer.trainerType}
+            {speciesOptions}
+            {itemOptions}
+            onChange={handlePokemonChange}
+          />
+        {/each}
+      </div>
     </div>
 
     <div class="save-section">
@@ -180,11 +218,13 @@
   }
 
   .trainer-sprite {
-    width: 96px;
-    height: 96px;
+    width: 100px;
+    height: 100px;
     image-rendering: pixelated;
     background: var(--panel);
     border-radius: 8px;
+    padding: 8px;
+    box-sizing: border-box;
   }
 
   .trainer-info {
@@ -206,15 +246,102 @@
     margin: 0;
   }
 
-  .challenge-badge {
-    display: inline-block;
-    padding: 0.25rem 0.5rem;
-    background: var(--danger);
-    color: white;
-    border-radius: 4px;
-    font-size: 0.75rem;
+  .trainer-config {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .config-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .party-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .party-title {
+    font-size: 1rem;
     font-weight: 600;
-    margin-top: 0.5rem;
+    color: var(--text);
+    margin: 0;
+  }
+
+  .trainer-items-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+  }
+
+  .item-row {
+    display: flex;
+    gap: 0.4rem;
+    align-items: center;
+  }
+
+  .item-select {
+    flex: 1;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.4rem 2rem 0.4rem 0.4rem;
+    color: var(--text);
+    font-size: 0.85rem;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa3b2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.4rem center;
+    background-size: 14px;
+  }
+
+  .item-select:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .remove-item-btn {
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--danger);
+    cursor: pointer;
+    font-size: 1.2rem;
+    line-height: 1;
+    transition: all 0.2s;
+  }
+
+  .remove-item-btn:hover {
+    background: rgba(255, 85, 85, 0.1);
+    border-color: var(--danger);
+  }
+
+  .add-item-btn {
+    padding: 0.4rem 0.8rem;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    color: var(--muted);
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: all 0.2s;
+    align-self: flex-start;
+  }
+
+  .add-item-btn:hover {
+    background: var(--panel-2);
+    color: var(--text);
+    border-color: var(--accent);
   }
 
   .tabs {
@@ -248,21 +375,6 @@
     border-color: var(--accent);
   }
 
-  .tab-badge {
-    color: var(--danger);
-    font-weight: 700;
-  }
-
-  .tab.active .tab-badge {
-    color: white;
-  }
-
-  .trainer-type-section {
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
   .field-label {
     font-size: 0.9rem;
     color: var(--muted);
@@ -270,14 +382,19 @@
   }
 
   .type-select {
-    width: 100%;
-    max-width: 300px;
+    width: 280px;
     background: var(--panel);
     border: 1px solid var(--border);
     border-radius: 4px;
-    padding: 0.5rem;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
     color: var(--text);
     font-size: 0.9rem;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa3b2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.4rem center;
+    background-size: 14px;
   }
 
   .type-select:focus {
@@ -287,7 +404,7 @@
 
   .pokemon-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 1rem;
   }
 

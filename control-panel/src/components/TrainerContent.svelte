@@ -97,7 +97,7 @@
     }
   }
 
-  async function handleSave(trainerName: string, updates: { type?: TrainerPartyType; pokemon?: TrainerPokemon[] }) {
+  async function handleSave(trainerName: string, updates: { type?: TrainerPartyType; pokemon?: TrainerPokemon[]; items?: string[] }) {
     const res = await fetch(`/api/trainers/${trainerName}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -262,8 +262,10 @@
     gap: 2rem;
   }
 
-  .challenges-list :global(.trainer-detail) {
+  .challenges-section :global(.trainer-detail) {
     background: rgba(255, 85, 85, 0.05);
     border: 1px solid rgba(255, 85, 85, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
   }
 </style>

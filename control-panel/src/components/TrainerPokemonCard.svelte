@@ -64,10 +64,22 @@
     }
   }
 
-  function handleLevelChange(event: Event) {
+  function handleLevelInput(event: Event) {
+    const target = event.target as HTMLInputElement;
+    target.value = target.value.replace(/[^0-9]/g, '');
+  }
+
+  function handleLevelBlur(event: Event) {
     const target = event.target as HTMLInputElement;
     const lvl = parseInt(target.value);
-    if (!isNaN(lvl) && lvl >= 1 && lvl <= 100) {
+    if (isNaN(lvl) || lvl < 1) {
+      target.value = '1';
+      onChange(index, { lvl: 1 });
+    } else if (lvl > 100) {
+      target.value = '100';
+      onChange(index, { lvl: 100 });
+    } else {
+      target.value = String(lvl);
       onChange(index, { lvl });
     }
   }
@@ -92,42 +104,41 @@
 
 <div class="pokemon-card">
   <div class="card-header">
-    <img
-      src="/api/sprite/{pokemon.species.toLowerCase()}"
-      alt={pokemon.species}
-      class="pokemon-sprite"
-      onerror={handleImageError}
-    />
+    <div class="sprite-wrap">
+      <img
+        src="/api/sprite/{pokemon.species.toLowerCase()}"
+        alt={pokemon.species}
+        class="pokemon-sprite"
+        onerror={handleImageError}
+      />
+    </div>
     <div class="card-title">
       <select value={pokemon.species} onchange={handleSpeciesChange} class="species-select">
         {#each speciesOptions as opt}
           <option value={opt.value}>{opt.label}</option>
         {/each}
       </select>
+      <div class="level-field">
+        <div class="field-label">Level</div>
+        <input
+          type="text"
+          inputmode="numeric"
+          pattern="[0-9]*"
+          value={pokemon.lvl}
+          oninput={handleLevelInput}
+          onblur={handleLevelBlur}
+          class="level-input"
+        />
+      </div>
     </div>
   </div>
 
   <div class="card-body">
     <div class="field-group">
-      <label class="field-label">
-        Level
-        <span class="field-value">{pokemon.lvl}</span>
-      </label>
-      <input
-        type="range"
-        min="1"
-        max="100"
-        value={pokemon.lvl}
-        oninput={handleLevelChange}
-        class="slider"
-      />
-    </div>
-
-    <div class="field-group">
-      <label class="field-label">
-        IV
+      <div class="field-label">
+        <span>IV</span>
         <span class="field-value">{pokemon.iv} ({ivToDisplayLabel(pokemon.iv)})</span>
-      </label>
+      </div>
       <input
         type="range"
         min="0"
@@ -140,7 +151,7 @@
 
     {#if capabilities.hasItems}
       <div class="field-group">
-        <label class="field-label">Held Item</label>
+        <div class="field-label">Held Item</div>
         <select
           value={normalizeItemValue(pokemon.heldItem || 'NONE')}
           onchange={handleItemChange}
@@ -155,7 +166,7 @@
 
     {#if capabilities.hasCustomMoves}
       <div class="field-group">
-        <label class="field-label">Moves</label>
+        <div class="field-label">Moves</div>
         <div class="moves-grid">
           {#each [0, 1, 2, 3] as slotIndex}
             <select
@@ -185,22 +196,36 @@
 
   .card-header {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 0.75rem;
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--border);
   }
 
-  .pokemon-sprite {
-    width: 64px;
-    height: 64px;
-    image-rendering: pixelated;
+  .sprite-wrap {
+    width: 100px;
+    height: 100px;
+    flex-shrink: 0;
     background: var(--panel);
     border-radius: 4px;
+    overflow: hidden;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  .pokemon-sprite {
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+    object-fit: cover;
+    object-position: top;
   }
 
   .card-title {
     flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
   }
 
   .species-select {
@@ -208,10 +233,16 @@
     background: var(--panel);
     border: 1px solid var(--border);
     border-radius: 4px;
-    padding: 0.5rem;
+    padding: 0.5rem 2rem 0.5rem 0.5rem;
     color: var(--text);
     font-size: 0.9rem;
     font-weight: 600;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa3b2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.4rem center;
+    background-size: 14px;
   }
 
   .species-select:focus {
@@ -219,16 +250,44 @@
     border-color: var(--accent);
   }
 
+  .level-field {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .level-field .field-label {
+    font-size: 0.8rem;
+    white-space: nowrap;
+  }
+
+  .level-input {
+    width: 56px;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 0.3rem 0.4rem;
+    color: var(--text);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  .level-input:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
   .card-body {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 1.25rem;
   }
 
   .field-group {
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 0.5rem;
   }
 
   .field-label {
@@ -238,6 +297,7 @@
     font-size: 0.85rem;
     color: var(--muted);
     font-weight: 500;
+    gap: 1rem;
   }
 
   .field-value {
@@ -279,9 +339,15 @@
     background: var(--panel);
     border: 1px solid var(--border);
     border-radius: 4px;
-    padding: 0.4rem;
+    padding: 0.4rem 2rem 0.4rem 0.4rem;
     color: var(--text);
     font-size: 0.85rem;
+    appearance: none;
+    -webkit-appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%239aa3b2' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 0.4rem center;
+    background-size: 14px;
   }
 
   .item-select:focus,

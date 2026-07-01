@@ -8,13 +8,15 @@ export const GET: APIRoute = async () => {
   
   const parts = itinerary.parts.map((part: any, index: number) => {
     const mapNames = part.maps.map((m: any) => typeof m === 'string' ? m : m.name);
-    const hasChallenges = part.maps.some((m: any) => 
-      typeof m !== 'string' && m.challenges && m.challenges.length > 0
-    );
+    const mapsWithChallenges = part.maps
+      .filter((m: any) => typeof m !== 'string' && m.challenges && m.challenges.length > 0)
+      .map((m: any) => m.name);
+    const hasChallenges = mapsWithChallenges.length > 0;
     
     return {
       part: index + 1,
       maps: mapNames,
+      mapsWithChallenges,
       difficulty: part.difficulty,
       hasChallenges,
       unlocks: part.unlocks,

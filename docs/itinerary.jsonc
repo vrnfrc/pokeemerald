@@ -358,7 +358,7 @@
                     { "id": "TRAINER_VICTOR", "party": "sParty_Victor" },
                     { "id": "TRAINER_VICKY", "party": "sParty_Vicky" },
                     { "id": "TRAINER_VIVI", "party": "sParty_Vivi" },
-                    { "id": "TRAINER_VICTORIA", "party": "sParty_Victoria" },
+                    { "id": "TRAINER_VICTORIA", "party": "sParty_Victoria" }
                 ],
                 "challenges": [],
                 "rematches": []

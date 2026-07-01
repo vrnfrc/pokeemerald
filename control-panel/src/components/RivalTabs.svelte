@@ -6,7 +6,7 @@
     rivalGroups: TrainerGroup[];
     speciesOptions: { value: string; label: string }[];
     itemOptions: { value: string; label: string }[];
-    onSave: (trainerName: string, updates: { type?: TrainerPartyType; pokemon?: TrainerPokemon[] }) => Promise<void>;
+    onSave: (trainerName: string, updates: { type?: TrainerPartyType; pokemon?: TrainerPokemon[]; items?: string[] }) => Promise<void>;
   }
 
   let { rivalGroups, speciesOptions, itemOptions, onSave }: Props = $props();

@@ -76,6 +76,7 @@ export function getTrainerDisplay(partyName: string, isChallenge: boolean = fals
     trainerPic: metadata?.trainerPic || 'TRAINER_PIC_HIKER',
     trainerType: party.type,
     isChallenge,
+    items: party.trainerItems || metadata?.items || [],
     pokemon: party.pokemon,
   };
 }

@@ -4,7 +4,7 @@
   }
 
   let { current }: Props = $props();
-  let selected = $state(current);
+  let selected = $derived(current);
 
   function navigate(e: Event) {
     const target = e.target as HTMLSelectElement;

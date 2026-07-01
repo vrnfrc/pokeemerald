@@ -158,6 +158,11 @@ describe('trainerPicToFilename', () => {
     assert.equal(trainerPicToFilename('TRAINER_PIC_AQUA_GRUNT_M'), 'aqua_grunt_m');
     assert.equal(trainerPicToFilename('TRAINER_PIC_LEADER_ROXANNE'), 'leader_roxanne');
   });
+
+  it('converts RS_ prefix to _rs suffix', () => {
+    assert.equal(trainerPicToFilename('TRAINER_PIC_RS_BRENDAN'), 'brendan_rs');
+    assert.equal(trainerPicToFilename('TRAINER_PIC_RS_MAY'), 'may_rs');
+  });
 });
 
 describe('getTrainerTypeCapabilities', () => {
