@@ -186,6 +186,24 @@
     {
         "maps": [
             {
+                "name": "Route106",
+                "trainers": [
+                    { "id": "TRAINER_NED", "party": "sParty_Ned" },
+                    { "id": "TRAINER_ELLIOT_1", "party": "sParty_Elliot1" }
+                ],
+                "challenges": [],
+                "rematches": [
+                    { "id": "TRAINER_ELLIOT_2", "party": "sParty_Elliot2" },
+                    { "id": "TRAINER_ELLIOT_3", "party": "sParty_Elliot3" },
+                    { "id": "TRAINER_ELLIOT_4", "party": "sParty_Elliot4" },
+                    { "id": "TRAINER_ELLIOT_5", "party": "sParty_Elliot5" }
+                ]
+            }
+        ]
+    },
+    {
+        "maps": [
+            {
                 "name": "DewfordTown",
                 "trainers": [
                     { "id": "TRAINER_LAURA", "party": "sParty_Laura" },
@@ -563,7 +581,7 @@
                     { "id": "TRAINER_NOB_1", "party": "sParty_Nob1" },
                     { "id": "TRAINER_CYNDY_1", "party": "sParty_Cyndy1" },
                     { "id": "TRAINER_MARLENE", "party": "sParty_Marlene" },
-                    { "id": "TRAINER_HECTOR", "party": "sParty_Hector" },
+                    { "id": "TRAINER_HECTOR", "party": "sParty_Hector" }
                 ],
                 "challenges": [],
                 "rematches": [
@@ -754,72 +772,14 @@
                 ]
             },
             {
-                "name": "Route114",
-                "trainers": [
-                    { "id": "TRAINER_ANGELINA", "party": "sParty_Angelina" },
-                    { "id": "TRAINER_BERNIE_1", "party": "sParty_Bernie1" },
-                    { "id": "TRAINER_CHARLOTTE", "party": "sParty_Charlotte" },
-                    { "id": "TRAINER_CLAUDE", "party": "sParty_Claude" },
-                    { "id": "TRAINER_KAI", "party": "sParty_Kai" },
-                    { "id": "TRAINER_LENNY", "party": "sParty_Lenny" },
-                    { "id": "TRAINER_LUCAS_1", "party": "sParty_Lucas1" },
-                    { "id": "TRAINER_NANCY", "party": "sParty_Nancy" },
-                    { "id": "TRAINER_NOLAN", "party": "sParty_Nolan" },
-                    { "id": "TRAINER_SHANE", "party": "sParty_Shane" },
-                    { "id": "TRAINER_STEVE_1", "party": "sParty_Steve1" },
-                    { "id": "TRAINER_TYRA_AND_IVY", "party": "sParty_TyraAndIvy" }
-                ],
-                "challenges": [],
-                "rematches": [
-                    { "id": "TRAINER_BERNIE_2", "party": "sParty_Bernie2" },
-                    { "id": "TRAINER_BERNIE_3", "party": "sParty_Bernie3" },
-                    { "id": "TRAINER_BERNIE_4", "party": "sParty_Bernie4" },
-                    { "id": "TRAINER_BERNIE_5", "party": "sParty_Bernie5" },
-                    { "id": "TRAINER_LUCAS_2", "party": "sParty_Lucas2" },
-                    { "id": "TRAINER_STEVE_2", "party": "sParty_Steve2" },
-                    { "id": "TRAINER_STEVE_3", "party": "sParty_Steve3" },
-                    { "id": "TRAINER_STEVE_4", "party": "sParty_Steve4" },
-                    { "id": "TRAINER_STEVE_5", "party": "sParty_Steve5" }
-                ]
-            },
-            {
-                "name": "Route104",
-                "trainers": [
-                    { "id": "TRAINER_BILLY", "party": "sParty_Billy" },
-                    { "id": "TRAINER_CINDY_1", "party": "sParty_Cindy1" },
-                    { "id": "TRAINER_DARIAN", "party": "sParty_Darian" },
-                    { "id": "TRAINER_GINA_AND_MIA_1", "party": "sParty_GinaAndMia1" },
-                    { "id": "TRAINER_HALEY_1", "party": "sParty_Haley1" },
-                    { "id": "TRAINER_IVAN", "party": "sParty_Ivan" },
-                    { "id": "TRAINER_WINSTON_1", "party": "sParty_Winston1" }
-                ],
-                "challenges": [],
-                "rematches": [
-                    { "id": "TRAINER_CINDY_2", "party": "sParty_Cindy2" },
-                    { "id": "TRAINER_CINDY_3", "party": "sParty_Cindy3" },
-                    { "id": "TRAINER_CINDY_4", "party": "sParty_Cindy4" },
-                    { "id": "TRAINER_CINDY_5", "party": "sParty_Cindy5" },
-                    { "id": "TRAINER_CINDY_6", "party": "sParty_Cindy6" },
-                    { "id": "TRAINER_GINA_AND_MIA_2", "party": "sParty_GinaAndMia2" },
-                    { "id": "TRAINER_HALEY_2", "party": "sParty_Haley2" },
-                    { "id": "TRAINER_HALEY_3", "party": "sParty_Haley3" },
-                    { "id": "TRAINER_HALEY_4", "party": "sParty_Haley4" },
-                    { "id": "TRAINER_HALEY_5", "party": "sParty_Haley5" },
-                    { "id": "TRAINER_WINSTON_2", "party": "sParty_Winston2" },
-                    { "id": "TRAINER_WINSTON_3", "party": "sParty_Winston3" },
-                    { "id": "TRAINER_WINSTON_4", "party": "sParty_Winston4" },
-                    { "id": "TRAINER_WINSTON_5", "party": "sParty_Winston5" }
-                ]
-            },
-            {
                 "name": "Route105",
                 "trainers": [
-                    { "id": "TRAINER_ANDRES_1", "party": "sParty_Andres1" },
-                    { "id": "TRAINER_BEVERLY", "party": "sParty_Beverly" },
+                    { "id": "TRAINER_IMANI", "party": "sParty_Imani" },
                     { "id": "TRAINER_DOMINIK", "party": "sParty_Dominik" },
                     { "id": "TRAINER_FOSTER", "party": "sParty_Foster" },
-                    { "id": "TRAINER_IMANI", "party": "sParty_Imani" },
+                    { "id": "TRAINER_ANDRES_1", "party": "sParty_Andres1" },
                     { "id": "TRAINER_JOSUE", "party": "sParty_Josue" },
+                    { "id": "TRAINER_BEVERLY", "party": "sParty_Beverly" },
                     { "id": "TRAINER_LUIS", "party": "sParty_Luis" }
                 ],
                 "challenges": [],
@@ -834,20 +794,13 @@
                 "name": "Route106",
                 "trainers": [
                     { "id": "TRAINER_DOUGLAS", "party": "sParty_Douglas" },
-                    { "id": "TRAINER_ELLIOT_1", "party": "sParty_Elliot1" },
-                    { "id": "TRAINER_KYLA", "party": "sParty_Kyla" },
-                    { "id": "TRAINER_NED", "party": "sParty_Ned" }
+                    { "id": "TRAINER_KYLA", "party": "sParty_Kyla" }
                 ],
                 "challenges": [],
-                "rematches": [
-                    { "id": "TRAINER_ELLIOT_2", "party": "sParty_Elliot2" },
-                    { "id": "TRAINER_ELLIOT_3", "party": "sParty_Elliot3" },
-                    { "id": "TRAINER_ELLIOT_4", "party": "sParty_Elliot4" },
-                    { "id": "TRAINER_ELLIOT_5", "party": "sParty_Elliot5" }
-                ]
+                "rematches": []
             }
         ],
-        "difficulty": 2,
+        "difficulty": 26,
         "unlockedBy": "HM03 Surf"
     },
     {
@@ -855,12 +808,12 @@
             {
                 "name": "Route107",
                 "trainers": [
-                    { "id": "TRAINER_BETH", "party": "sParty_Beth" },
-                    { "id": "TRAINER_CAMRON", "party": "sParty_Camron" },
-                    { "id": "TRAINER_DARRIN", "party": "sParty_Darrin" },
                     { "id": "TRAINER_DENISE", "party": "sParty_Denise" },
+                    { "id": "TRAINER_TONY_1", "party": "sParty_Tony1" },
                     { "id": "TRAINER_LISA_AND_RAY", "party": "sParty_LisaAndRay" },
-                    { "id": "TRAINER_TONY_1", "party": "sParty_Tony1" }
+                    { "id": "TRAINER_DARRIN", "party": "sParty_Darrin" },
+                    { "id": "TRAINER_CAMRON", "party": "sParty_Camron" },
+                    { "id": "TRAINER_BETH", "party": "sParty_Beth" }
                 ],
                 "challenges": [],
                 "rematches": [
@@ -873,12 +826,12 @@
             {
                 "name": "Route108",
                 "trainers": [
+                    { "id": "TRAINER_MISSY", "party": "sParty_Missy" },
+                    { "id": "TRAINER_MATTHEW", "party": "sParty_Matthew" },
+                    { "id": "TRAINER_TARA", "party": "sParty_Tara" },
                     { "id": "TRAINER_CAROLINA", "party": "sParty_Carolina" },
                     { "id": "TRAINER_CORY_1", "party": "sParty_Cory1" },
-                    { "id": "TRAINER_JEROME", "party": "sParty_Jerome" },
-                    { "id": "TRAINER_MATTHEW", "party": "sParty_Matthew" },
-                    { "id": "TRAINER_MISSY", "party": "sParty_Missy" },
-                    { "id": "TRAINER_TARA", "party": "sParty_Tara" }
+                    { "id": "TRAINER_JEROME", "party": "sParty_Jerome" }
                 ],
                 "challenges": [],
                 "rematches": [
@@ -929,34 +882,16 @@
                 "rematches": []
             },
             {
-                "name": "AbandonedShip_Rooms_B1F",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "AbandonedShip_Rooms2_B1F",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
                 "name": "Route109",
                 "trainers": [
-                    { "id": "TRAINER_ALICE", "party": "sParty_Alice" },
-                    { "id": "TRAINER_AUSTINA", "party": "sParty_Austina" },
-                    { "id": "TRAINER_CARTER", "party": "sParty_Carter" },
-                    { "id": "TRAINER_DAVID", "party": "sParty_David" },
                     { "id": "TRAINER_ELIJAH", "party": "sParty_Elijah" },
-                    { "id": "TRAINER_GWEN", "party": "sParty_Gwen" },
-                    { "id": "TRAINER_MEL_AND_PAUL", "party": "sParty_MelAndPaul" }
+                    { "id": "TRAINER_CARTER", "party": "sParty_Carter" },
+                    { "id": "TRAINER_MEL_AND_PAUL", "party": "sParty_MelAndPaul" },
+                    { "id": "TRAINER_ALICE", "party": "sParty_Alice" },
+                    { "id": "TRAINER_DAVID", "party": "sParty_David" },
+                    { "id": "TRAINER_AUSTINA", "party": "sParty_Austina" },
+                    { "id": "TRAINER_GWEN", "party": "sParty_Gwen" }
                 ],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "SlateportCity",
-                "trainers": [],
                 "challenges": [],
                 "rematches": []
             }
