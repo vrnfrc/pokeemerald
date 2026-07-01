@@ -1,6 +1,7 @@
 <script lang="ts">
   import TrainerDetail from './TrainerDetail.svelte';
   import RivalTabs from './RivalTabs.svelte';
+  import { hoennDexOrder } from '../lib/hoennDex';
   import type { TrainerGroup, TrainerPartyType, TrainerPokemon } from '../lib/trainerTypes';
 
   interface SpeciesOption {
@@ -54,10 +55,14 @@
     try {
       const res = await fetch('/api/species');
       const data = await res.json();
-      speciesOptions = data.species.map((s: any) => ({
-        value: s.label,
-        label: s.label.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, (c: string) => c.toUpperCase()),
-      }));
+      const hoennSet = new Set(hoennDexOrder);
+      speciesOptions = data.species
+        .filter((s: any) => hoennSet.has(s.label))
+        .sort((a: any, b: any) => hoennDexOrder.indexOf(a.label) - hoennDexOrder.indexOf(b.label))
+        .map((s: any) => ({
+          value: s.label,
+          label: s.label.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, (c: string) => c.toUpperCase()),
+        }));
     } catch (err) {
       console.error('Failed to load species options:', err);
     }

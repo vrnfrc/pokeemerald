@@ -66,6 +66,9 @@ export function getTrainerDisplay(partyName: string, isChallenge: boolean = fals
   const { baseName, iteration } = parseTrainerName(partyName);
   const displayName = baseName.replace(/([A-Z])/g, ' $1').trim();
 
+  const items = party.trainerItems !== undefined ? party.trainerItems : (metadata?.items || []);
+  const paddedItems = [...items, ...Array(4 - items.length).fill('NONE')].slice(0, 4);
+
   return {
     name: partyName,
     displayName,
@@ -76,7 +79,7 @@ export function getTrainerDisplay(partyName: string, isChallenge: boolean = fals
     trainerPic: metadata?.trainerPic || 'TRAINER_PIC_HIKER',
     trainerType: party.type,
     isChallenge,
-    items: party.trainerItems || metadata?.items || [],
+    items: paddedItems,
     pokemon: party.pokemon,
   };
 }

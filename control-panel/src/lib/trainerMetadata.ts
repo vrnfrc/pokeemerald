@@ -31,7 +31,10 @@ function parseItems(itemsStr: string): string[] {
   const re = /ITEM_([A-Z0-9_]+)/g;
   let m;
   while ((m = re.exec(itemsStr))) {
-    items.push(`ITEM_${m[1]}`);
+    const item = `ITEM_${m[1]}`;
+    if (item !== 'ITEM_NONE') {
+      items.push(item);
+    }
   }
   return items;
 }
@@ -40,12 +43,25 @@ function parseTrainers(src: string): Map<string, TrainerMetadata> {
   const map = new Map<string, TrainerMetadata>();
   const classNames = loadTrainerClassNames();
 
-  const trainerRegex = /\[(TRAINER_[A-Z0-9_]+)\]\s*=\s*\{([^}]+)\}/g;
+  const trainerRegex = /\[(TRAINER_[A-Z0-9_]+)\]\s*=\s*\{/g;
   let trainerMatch;
 
   while ((trainerMatch = trainerRegex.exec(src))) {
     const trainerId = trainerMatch[1];
-    const body = trainerMatch[2];
+    const startIndex = trainerMatch.index + trainerMatch[0].length;
+    
+    // Find the matching closing brace by counting brace depth
+    let depth = 1;
+    let endIndex = startIndex;
+    while (depth > 0 && endIndex < src.length) {
+      if (src[endIndex] === '{') depth++;
+      else if (src[endIndex] === '}') depth--;
+      endIndex++;
+    }
+    
+    if (depth !== 0) continue; // Unbalanced braces, skip
+    
+    const body = src.substring(startIndex, endIndex - 1);
 
     if (trainerId === 'TRAINER_NONE') continue;
 

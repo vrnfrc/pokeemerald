@@ -31,6 +31,7 @@
   });
 
   const selectedTrainer = $derived(localTrainers[selectedTabIndex]);
+  const itemSlots = $derived([0, 1, 2, 3].map(i => selectedTrainer?.items[i] || 'NONE'));
 
   function handleTypeChange(event: Event) {
     const target = event.target as HTMLSelectElement;
@@ -57,10 +58,11 @@
 
     try {
       const trainer = localTrainers[selectedTabIndex];
+      const itemsToSave = trainer.items.filter(item => item !== 'NONE');
       await onSave(trainer.name, {
         type: trainer.trainerType,
         pokemon: trainer.pokemon,
-        items: trainer.items,
+        items: itemsToSave,
       });
       statusMessage = 'Saved successfully';
       statusKind = 'success';
@@ -84,16 +86,6 @@
   function handleItemChange(index: number, value: string) {
     const items = [...localTrainers[selectedTabIndex].items];
     items[index] = value;
-    localTrainers[selectedTabIndex] = { ...localTrainers[selectedTabIndex], items };
-  }
-
-  function addItem() {
-    const items = [...localTrainers[selectedTabIndex].items, 'NONE'];
-    localTrainers[selectedTabIndex] = { ...localTrainers[selectedTabIndex], items };
-  }
-
-  function removeItem(index: number) {
-    const items = localTrainers[selectedTabIndex].items.filter((_, i) => i !== index);
     localTrainers[selectedTabIndex] = { ...localTrainers[selectedTabIndex], items };
   }
 
@@ -139,22 +131,18 @@
       <div class="config-section">
         <div class="field-label">Items</div>
         <div class="trainer-items-list">
-          {#each selectedTrainer.items as item, i}
-            <div class="item-row">
-              <select
-                value={item}
-                onchange={(e) => handleItemChange(i, (e.target as HTMLSelectElement).value)}
-                class="item-select"
-              >
-                <option value="NONE">None</option>
-                {#each itemOptions as opt}
-                  <option value={opt.value}>{opt.label}</option>
-                {/each}
-              </select>
-              <button class="remove-item-btn" onclick={() => removeItem(i)}>×</button>
-            </div>
+          {#each itemSlots as item, i}
+            <select
+              value={item}
+              onchange={(e) => handleItemChange(i, (e.target as HTMLSelectElement).value)}
+              class="item-select"
+            >
+              <option value="NONE">None</option>
+              {#each itemOptions as opt}
+                <option value={opt.value}>{opt.label}</option>
+              {/each}
+            </select>
           {/each}
-          <button class="add-item-btn" onclick={addItem}>+ Add Item</button>
         </div>
       </div>
 
@@ -278,12 +266,6 @@
     gap: 0.4rem;
   }
 
-  .item-row {
-    display: flex;
-    gap: 0.4rem;
-    align-items: center;
-  }
-
   .item-select {
     flex: 1;
     background: var(--panel);
@@ -302,45 +284,6 @@
 
   .item-select:focus {
     outline: none;
-    border-color: var(--accent);
-  }
-
-  .remove-item-btn {
-    width: 28px;
-    height: 28px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    color: var(--danger);
-    cursor: pointer;
-    font-size: 1.2rem;
-    line-height: 1;
-    transition: all 0.2s;
-  }
-
-  .remove-item-btn:hover {
-    background: rgba(255, 85, 85, 0.1);
-    border-color: var(--danger);
-  }
-
-  .add-item-btn {
-    padding: 0.4rem 0.8rem;
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 4px;
-    color: var(--muted);
-    cursor: pointer;
-    font-size: 0.85rem;
-    transition: all 0.2s;
-    align-self: flex-start;
-  }
-
-  .add-item-btn:hover {
-    background: var(--panel-2);
-    color: var(--text);
     border-color: var(--accent);
   }
 
