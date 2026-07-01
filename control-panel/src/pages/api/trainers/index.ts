@@ -1,7 +1,8 @@
 import type { APIRoute } from 'astro';
 import { getPart } from '../../../lib/itineraryTrainerLoader';
 import { getTrainersForIds, groupTrainersByBaseName, groupRivalTrainers, isRivalTrainer } from '../../../lib/trainerRepository';
-import { trainerIdToPartyName, parseTrainerName } from '../../../lib/trainerTypes';
+import { trainerIdToPartyName } from '../../../lib/trainerMetadata';
+import { parseTrainerName } from '../../../lib/trainerTypes';
 
 export const prerender = false;
 

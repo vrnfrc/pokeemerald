@@ -15,6 +15,28 @@
 
   const capabilities = $derived(getTrainerTypeCapabilities(trainerType));
 
+  // Normalize move names: data uses "PSYCHIC", options use "MOVE_PSYCHIC"
+  function normalizeMoveValue(move: string): string {
+    if (!move || move === 'NONE') return 'NONE';
+    return move.startsWith('MOVE_') ? move : `MOVE_${move}`;
+  }
+
+  function denormalizeMoveValue(move: string): string {
+    if (!move || move === 'NONE') return 'NONE';
+    return move.replace(/^MOVE_/, '');
+  }
+
+  // Normalize item names: data uses "SITRUS_BERRY", options use "ITEM_SITRUS_BERRY"
+  function normalizeItemValue(item: string): string {
+    if (!item || item === 'NONE') return 'NONE';
+    return item.startsWith('ITEM_') ? item : `ITEM_${item}`;
+  }
+
+  function denormalizeItemValue(item: string): string {
+    if (!item || item === 'NONE') return 'NONE';
+    return item.replace(/^ITEM_/, '');
+  }
+
   const moveOptionsHtml = $derived(
     ['NONE', ...MOVE_LIST]
       .map((m) => `<option value="${m}">${m === 'NONE' ? '-' : formatMoveName(m)}</option>`)
@@ -22,7 +44,7 @@
   );
 
   function formatMoveName(move: string): string {
-    return MOVE_NAME_MAP[move] || move.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
+    return MOVE_NAME_MAP[move] || move.replace(/^MOVE_/, '').replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, (c) => c.toUpperCase());
   }
 
   function formatSpeciesName(species: string): string {
@@ -52,13 +74,13 @@
 
   function handleItemChange(event: Event) {
     const target = event.target as HTMLSelectElement;
-    onChange(index, { heldItem: target.value });
+    onChange(index, { heldItem: denormalizeItemValue(target.value) });
   }
 
   function handleMoveChange(slotIndex: number, event: Event) {
     const target = event.target as HTMLSelectElement;
     const moves = [...(pokemon.moves || ['NONE', 'NONE', 'NONE', 'NONE'])];
-    moves[slotIndex] = target.value;
+    moves[slotIndex] = denormalizeMoveValue(target.value);
     onChange(index, { moves });
   }
 
@@ -120,7 +142,7 @@
       <div class="field-group">
         <label class="field-label">Held Item</label>
         <select
-          value={pokemon.heldItem || 'NONE'}
+          value={normalizeItemValue(pokemon.heldItem || 'NONE')}
           onchange={handleItemChange}
           class="item-select"
         >
@@ -137,7 +159,7 @@
         <div class="moves-grid">
           {#each [0, 1, 2, 3] as slotIndex}
             <select
-              value={pokemon.moves?.[slotIndex] || 'NONE'}
+              value={normalizeMoveValue(pokemon.moves?.[slotIndex] || 'NONE')}
               onchange={(e) => handleMoveChange(slotIndex, e)}
               class="move-select"
             >

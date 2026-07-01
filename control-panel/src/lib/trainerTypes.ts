@@ -111,10 +111,6 @@ export function parseTrainerName(name: string): { baseName: string; iteration: n
   return { baseName: name, iteration: null };
 }
 
-export function trainerIdToPartyName(trainerId: string): string {
-  return trainerId.replace(/^TRAINER_/, '').toLowerCase().replace(/_([0-9]+)$/, '$1').replace(/_([a-z])/g, (_, c) => c.toUpperCase());
-}
-
 export function ivToDisplayLabel(iv: number): string {
   if (iv === 0) return 'Default';
   if (iv === 255) return 'Perfect';
