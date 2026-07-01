@@ -52,7 +52,9 @@ export const GET: APIRoute = async ({ url }) => {
         return parseTrainerName(partyName).baseName;
       }));
       
-      // Separate rematches into trainer rematches and challenge rematches
+      // Build set of baseNames that have real rematches
+      // If rematches array is empty, NO trainer has rematches
+      const rematchedBaseNames = new Set<string>();
       const trainerRematchIds: string[] = [];
       const challengeRematchIds: string[] = [];
       
@@ -60,7 +62,9 @@ export const GET: APIRoute = async ({ url }) => {
         for (const rematch of map.rematches) {
           const partyName = trainerIdToPartyName(rematch.id);
           const { baseName } = parseTrainerName(partyName);
+          rematchedBaseNames.add(baseName);
           
+          // Route rematch to trainer or challenge based on where the baseName exists
           if (trainerBaseNames.has(baseName)) {
             trainerRematchIds.push(rematch.id);
           } else if (challengeBaseNames.has(baseName)) {
@@ -73,6 +77,15 @@ export const GET: APIRoute = async ({ url }) => {
       const allTrainerIds = [...trainerIds, ...trainerRematchIds];
       const trainerDisplays = getTrainersForIds(allTrainerIds, []);
       
+      // For trainers whose baseName is NOT in rematchedBaseNames, make them unique
+      // This handles the grunt corner case where _N is a distinguishing number, not a rematch
+      for (const t of trainerDisplays) {
+        if (!rematchedBaseNames.has(t.baseName)) {
+          t.baseName = t.baseName + (t.iteration ?? '');
+          t.iteration = null;
+        }
+      }
+      
       const rivalTrainers = trainerDisplays.filter(t => isRivalTrainer(t.baseName));
       const regularTrainers = trainerDisplays.filter(t => !isRivalTrainer(t.baseName));
       
@@ -84,6 +97,14 @@ export const GET: APIRoute = async ({ url }) => {
       // Combine challenges with their rematches
       const allChallengeIds = [...challengeIds, ...challengeRematchIds];
       const challengeDisplays = getTrainersForIds(allChallengeIds, allChallengeIds);
+      
+      // For challenges whose baseName is NOT in rematchedBaseNames, make them unique
+      for (const t of challengeDisplays) {
+        if (!rematchedBaseNames.has(t.baseName)) {
+          t.baseName = t.baseName + (t.iteration ?? '');
+          t.iteration = null;
+        }
+      }
       
       const rivalChallenges = challengeDisplays.filter(t => isRivalTrainer(t.baseName));
       const regularChallenges = challengeDisplays.filter(t => !isRivalTrainer(t.baseName));

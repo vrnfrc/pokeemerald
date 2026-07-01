@@ -110,8 +110,8 @@
           class:active={i === selectedTabIndex}
           onclick={() => (selectedTabIndex = i)}
         >
-          {#if trainer.iteration === null}
-            First Encounter
+          {#if trainer.iteration === null || trainer.iteration === 1}
+            First match
           {:else}
             Rematch {trainer.iteration}
           {/if}

@@ -22,6 +22,97 @@ describe('parseTrainerName', () => {
   });
 });
 
+describe('rematch detection logic', () => {
+  it('grunts with _N suffix but no rematches array entries are distinct trainers', () => {
+    // Simulate the grunt corner case:
+    // TRAINER_GRUNT_MUSEUM_1 and TRAINER_GRUNT_MUSEUM_2 are in trainers[]
+    // rematches[] is empty
+    // Expected: both should be displayed as separate trainers (no tabs)
+
+    const trainers = [
+      { partyName: 'GruntMuseum1', baseName: 'GruntMuseum', iteration: 1 },
+      { partyName: 'GruntMuseum2', baseName: 'GruntMuseum', iteration: 2 },
+    ];
+
+    // rematches array is empty, so rematchedBaseNames is empty
+    const rematchedBaseNames = new Set<string>();
+
+    // Apply the logic from pages/api/trainers/index.ts
+    const processed = trainers.map(t => {
+      if (!rematchedBaseNames.has(t.baseName)) {
+        return { ...t, baseName: t.baseName + (t.iteration ?? ''), iteration: null };
+      }
+      return t;
+    });
+
+    // Both grunts should now have unique baseNames and null iteration
+    assert.equal(processed[0].baseName, 'GruntMuseum1');
+    assert.equal(processed[0].iteration, null);
+    assert.equal(processed[1].baseName, 'GruntMuseum2');
+    assert.equal(processed[1].iteration, null);
+  });
+
+  it('trainers with rematches array entries keep their iteration numbers', () => {
+    // Simulate the rematch case:
+    // TRAINER_CALVIN_1 is in trainers[]
+    // TRAINER_CALVIN_2, TRAINER_CALVIN_3 are in rematches[]
+    // Expected: Calvin1 keeps iteration: 1, grouped with Calvin2, Calvin3
+
+    const trainers = [
+      { partyName: 'Calvin1', baseName: 'Calvin', iteration: 1 },
+    ];
+
+    // rematches array has Calvin2, Calvin3 → baseName "Calvin" is in rematchedBaseNames
+    const rematchedBaseNames = new Set(['Calvin']);
+
+    // Apply the logic from pages/api/trainers/index.ts
+    const processed = trainers.map(t => {
+      if (!rematchedBaseNames.has(t.baseName)) {
+        return { ...t, baseName: t.baseName + (t.iteration ?? ''), iteration: null };
+      }
+      return t;
+    });
+
+    // Calvin1 should keep its baseName and iteration
+    assert.equal(processed[0].baseName, 'Calvin');
+    assert.equal(processed[0].iteration, 1);
+  });
+
+  it('mixed scenario: some trainers have rematches, others do not', () => {
+    // Simulate a map with both grunts and rematch trainers:
+    // trainers[]: GRUNT_MUSEUM_1, GRUNT_MUSEUM_2, CALVIN_1
+    // rematches[]: CALVIN_2, CALVIN_3
+    // Expected: grunts are separate, Calvin has tabs
+
+    const trainers = [
+      { partyName: 'GruntMuseum1', baseName: 'GruntMuseum', iteration: 1 },
+      { partyName: 'GruntMuseum2', baseName: 'GruntMuseum', iteration: 2 },
+      { partyName: 'Calvin1', baseName: 'Calvin', iteration: 1 },
+    ];
+
+    // rematches array has Calvin2, Calvin3 → baseName "Calvin" is in rematchedBaseNames
+    const rematchedBaseNames = new Set(['Calvin']);
+
+    // Apply the logic from pages/api/trainers/index.ts
+    const processed = trainers.map(t => {
+      if (!rematchedBaseNames.has(t.baseName)) {
+        return { ...t, baseName: t.baseName + (t.iteration ?? ''), iteration: null };
+      }
+      return t;
+    });
+
+    // Grunts should be separate
+    assert.equal(processed[0].baseName, 'GruntMuseum1');
+    assert.equal(processed[0].iteration, null);
+    assert.equal(processed[1].baseName, 'GruntMuseum2');
+    assert.equal(processed[1].iteration, null);
+
+    // Calvin should keep iteration
+    assert.equal(processed[2].baseName, 'Calvin');
+    assert.equal(processed[2].iteration, 1);
+  });
+});
+
 describe('validateIV', () => {
   it('accepts valid IV values', () => {
     assert.equal(validateIV(0), true);
