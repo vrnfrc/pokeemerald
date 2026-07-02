@@ -5871,9 +5871,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 0,
-          "lvl": 5,
+          "iv": 128,
+          "lvl": 6,
           "species": "POOCHYENA"
+        },
+        {
+          "iv": 128,
+          "lvl": 6,
+          "species": "ZIGZAGOON"
         }
       ]
     },
@@ -9375,7 +9380,7 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 0,
+          "iv": 255,
           "lvl": 5,
           "species": "TREECKO"
         }
@@ -9428,7 +9433,7 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 0,
+          "iv": 255,
           "lvl": 5,
           "species": "TORCHIC"
         }
@@ -9481,7 +9486,7 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 0,
+          "iv": 255,
           "lvl": 5,
           "species": "MUDKIP"
         }
@@ -9534,7 +9539,7 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 0,
+          "iv": 255,
           "lvl": 5,
           "species": "TREECKO"
         }
@@ -9587,7 +9592,7 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 0,
+          "iv": 255,
           "lvl": 5,
           "species": "TORCHIC"
         }
@@ -9640,7 +9645,7 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 0,
+          "iv": 255,
           "lvl": 5,
           "species": "MUDKIP"
         }
