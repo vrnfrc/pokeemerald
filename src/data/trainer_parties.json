@@ -2958,9 +2958,19 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 13,
+          "iv": 200,
+          "lvl": 20,
           "species": "MACHOP"
+        },
+        {
+          "iv": 200,
+          "lvl": 20,
+          "species": "MACHOP"
+        },
+        {
+          "iv": 200,
+          "lvl": 20,
+          "species": "MAKUHITA"
         }
       ]
     },
@@ -4681,8 +4691,8 @@
       "type": "TrainerMonItemCustomMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 16,
+          "iv": 255,
+          "lvl": 23,
           "species": "MACHOP",
           "heldItem": "NONE",
           "moves": [
@@ -4693,8 +4703,20 @@
           ]
         },
         {
-          "iv": 130,
-          "lvl": 16,
+          "iv": 255,
+          "lvl": 23,
+          "species": "HERACROSS",
+          "heldItem": "SITRUS_BERRY",
+          "moves": [
+            "TACKLE",
+            "ENDURE",
+            "BRICK_BREAK",
+            "BULK_UP"
+          ]
+        },
+        {
+          "iv": 255,
+          "lvl": 24,
           "species": "MEDITITE",
           "heldItem": "NONE",
           "moves": [
@@ -4705,9 +4727,21 @@
           ]
         },
         {
-          "iv": 200,
-          "lvl": 19,
-          "species": "MAKUHITA",
+          "iv": 255,
+          "lvl": 25,
+          "species": "COMBUSKEN",
+          "heldItem": "SITRUS_BERRY",
+          "moves": [
+            "PECK",
+            "EMBER",
+            "DOUBLE_KICK",
+            "BULK_UP"
+          ]
+        },
+        {
+          "iv": 255,
+          "lvl": 25,
+          "species": "HARIYAMA",
           "heldItem": "SITRUS_BERRY",
           "moves": [
             "ARM_THRUST",
@@ -6372,18 +6406,18 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 10,
+          "lvl": 16,
           "species": "MAGIKARP"
         },
         {
           "iv": 130,
-          "lvl": 7,
+          "lvl": 16,
           "species": "TENTACOOL"
         },
         {
           "iv": 130,
-          "lvl": 10,
-          "species": "MAGIKARP"
+          "lvl": 16,
+          "species": "WAILMER"
         }
       ]
     },
@@ -6393,8 +6427,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 11,
+          "lvl": 17,
           "species": "TENTACOOL"
+        },
+        {
+          "iv": 130,
+          "lvl": 17,
+          "species": "CARVANHA"
         }
       ]
     },
@@ -7818,9 +7857,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 13,
+          "iv": 200,
+          "lvl": 21,
           "species": "MEDITITE"
+        },
+        {
+          "iv": 200,
+          "lvl": 21,
+          "species": "MACHOP"
         }
       ]
     },
@@ -7829,9 +7873,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 150,
-          "lvl": 13,
+          "iv": 200,
+          "lvl": 20,
           "species": "MEDITITE"
+        },
+        {
+          "iv": 200,
+          "lvl": 20,
+          "species": "MACHOP"
         }
       ]
     },
@@ -10484,9 +10533,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 13,
+          "iv": 200,
+          "lvl": 20,
           "species": "MACHOP"
+        },
+        {
+          "iv": 200,
+          "lvl": 20,
+          "species": "MAKUHITA"
         }
       ]
     },
@@ -10495,8 +10549,8 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 150,
-          "lvl": 13,
+          "iv": 200,
+          "lvl": 22,
           "species": "MEDITITE"
         }
       ]
@@ -10507,8 +10561,18 @@
       "pokemon": [
         {
           "iv": 200,
-          "lvl": 13,
+          "lvl": 21,
           "species": "MAKUHITA"
+        },
+        {
+          "iv": 200,
+          "lvl": 21,
+          "species": "MAKUHITA"
+        },
+        {
+          "iv": 200,
+          "lvl": 21,
+          "species": "MEDITITE"
         }
       ]
     },
