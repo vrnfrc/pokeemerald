@@ -14685,8 +14685,8 @@
           "move": "MOVE_ODOR_SLEUTH"
         },
         {
-          "level": 21,
-          "level_padded": "21",
+          "level": 22,
+          "level_padded": "22",
           "move": "MOVE_ROAR"
         },
         {
@@ -14695,9 +14695,9 @@
           "move": "MOVE_SWAGGER"
         },
         {
-          "level": 29,
-          "level_padded": "29",
-          "move": "MOVE_SCARY_FACE"
+          "level": 31,
+          "level_padded": "31",
+          "move": "MOVE_POISON_FANG"
         },
         {
           "level": 33,
@@ -14707,7 +14707,7 @@
         {
           "level": 37,
           "level_padded": "37",
-          "move": "MOVE_TAUNT"
+          "move": "MOVE_SLUDGE_BOMB"
         },
         {
           "level": 41,
@@ -14771,14 +14771,14 @@
           "move": "MOVE_ROAR"
         },
         {
-          "level": 27,
-          "level_padded": "27",
+          "level": 25,
+          "level_padded": "25",
           "move": "MOVE_SWAGGER"
         },
         {
-          "level": 32,
-          "level_padded": "32",
-          "move": "MOVE_SCARY_FACE"
+          "level": 30,
+          "level_padded": "30",
+          "move": "MOVE_POISON_FANG"
         },
         {
           "level": 37,
@@ -14788,7 +14788,7 @@
         {
           "level": 42,
           "level_padded": "42",
-          "move": "MOVE_TAUNT"
+          "move": "MOVE_SLUDGE_BOMB"
         },
         {
           "level": 47,

@@ -10092,7 +10092,7 @@
       "baseSpDefense": "60",
       "types": [
         "TYPE_DARK",
-        "TYPE_DARK"
+        "TYPE_POISON"
       ],
       "catchRate": "127",
       "expYield": "128",
@@ -13354,7 +13354,7 @@
     {
       "baseHP": "35",
       "baseAttack": "64",
-      "baseDefense": "85",
+      "baseDefense": "70",
       "baseSpeed": "32",
       "baseSpAttack": "74",
       "baseSpDefense": "55",
@@ -13391,14 +13391,14 @@
     },
     {
       "baseHP": "55",
-      "baseAttack": "104",
-      "baseDefense": "105",
-      "baseSpeed": "52",
-      "baseSpAttack": "94",
-      "baseSpDefense": "75",
+      "baseAttack": "74",
+      "baseDefense": "75",
+      "baseSpeed": "100",
+      "baseSpAttack": "114",
+      "baseSpDefense": "105",
       "types": [
         "TYPE_WATER",
-        "TYPE_WATER"
+        "TYPE_DARK"
       ],
       "catchRate": "60",
       "expYield": "178",
@@ -13429,14 +13429,14 @@
     },
     {
       "baseHP": "55",
-      "baseAttack": "84",
+      "baseAttack": "74",
       "baseDefense": "105",
-      "baseSpeed": "52",
+      "baseSpeed": "100",
       "baseSpAttack": "114",
       "baseSpDefense": "75",
       "types": [
         "TYPE_WATER",
-        "TYPE_WATER"
+        "TYPE_PSYCHIC"
       ],
       "catchRate": "60",
       "expYield": "178",
