@@ -13,6 +13,7 @@
     hasChallenges: boolean;
     unlocks?: string[];
     unlockedBy?: string[];
+    done: boolean;
   }
 
   async function loadItinerary() {
@@ -25,6 +26,28 @@
       parts = [];
     } finally {
       loading = false;
+    }
+  }
+
+  async function toggleDone(partIndex: number, event: Event) {
+    event.stopPropagation();
+    const part = parts.find(p => p.part === partIndex);
+    if (!part) return;
+    
+    const newDone = !part.done;
+    
+    try {
+      const response = await fetch('/api/itinerary', {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ partIndex: partIndex - 1, done: newDone })
+      });
+      
+      if (response.ok) {
+        part.done = newDone;
+      }
+    } catch (error) {
+      console.error('Failed to update done status:', error);
     }
   }
 
@@ -62,17 +85,27 @@
           class="trainer-part-item"
           onclick={() => window.dispatchEvent(new CustomEvent('selectPart', { detail: part.part }))}
         >
-          <div class="part-header">
-            <span class="part-number">Part {part.part}</span>
-            <span class="part-difficulty">{part.difficulty}</span>
+          <div class="part-checkbox-wrap">
+            <input
+              type="checkbox"
+              class="part-checkbox"
+              checked={part.done}
+              onclick={(e) => toggleDone(part.part, e)}
+            />
           </div>
-          {#if part.unlockedBy}
-            <span class="part-unlocked-by">Unlocked by: {part.unlockedBy.join(', ')}</span>
-          {/if}
-          <div class="part-maps">
-            {#each part.maps as map}
-              <span class="map-name" class:has-challenge={part.mapsWithChallenges.includes(map)}>{map}</span>
-            {/each}
+          <div class="part-content">
+            <div class="part-header">
+              <span class="part-number">Part {part.part}</span>
+              <span class="part-difficulty">{part.difficulty}</span>
+            </div>
+            {#if part.unlockedBy}
+              <span class="part-unlocked-by">Unlocked by: {part.unlockedBy.join(', ')}</span>
+            {/if}
+            <div class="part-maps">
+              {#each part.maps as map}
+                <span class="map-name" class:has-challenge={part.mapsWithChallenges.includes(map)}>{map}</span>
+              {/each}
+            </div>
           </div>
         </button>
         {#if part.unlocks}
@@ -128,8 +161,9 @@
     margin-bottom: 0.3rem;
     font: inherit;
     display: flex;
-    flex-direction: column;
-    gap: 0.25rem;
+    flex-direction: row;
+    align-items: center;
+    gap: 0.75rem;
     background: transparent;
     border: none;
     color: var(--text);
@@ -139,6 +173,28 @@
   .trainer-part-item:nth-child(even) { background: rgba(255, 255, 255, 0.025); }
   .trainer-part-item:hover { background: var(--panel-2); transform: translateX(4px); }
   .trainer-part-item:focus-visible { outline: 2px solid var(--accent); outline-offset: -2px; }
+
+  .part-checkbox-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .part-checkbox {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+    accent-color: var(--accent);
+  }
+
+  .part-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+  }
 
   .part-header {
     display: flex;
