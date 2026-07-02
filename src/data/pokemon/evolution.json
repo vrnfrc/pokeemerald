@@ -1442,8 +1442,8 @@
       "from": "FEEBAS",
       "to": [
         {
-          "method": "EVO_BEAUTY",
-          "param": 170,
+          "method": "EVO_LEVEL",
+          "param": 40,
           "target": "MILOTIC"
         }
       ]

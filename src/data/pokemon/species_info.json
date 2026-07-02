@@ -11262,11 +11262,11 @@
       "label": "KECLEON"
     },
     {
-      "baseHP": "40",
-      "baseAttack": "40",
+      "baseHP": "60",
+      "baseAttack": "65",
       "baseDefense": "55",
       "baseSpeed": "55",
-      "baseSpAttack": "40",
+      "baseSpAttack": "65",
       "baseSpDefense": "70",
       "types": [
         "TYPE_GROUND",
@@ -11300,11 +11300,11 @@
       "label": "BALTOY"
     },
     {
-      "baseHP": "60",
-      "baseAttack": "70",
+      "baseHP": "80",
+      "baseAttack": "90",
       "baseDefense": "105",
       "baseSpeed": "75",
-      "baseSpAttack": "70",
+      "baseSpAttack": "90",
       "baseSpDefense": "120",
       "types": [
         "TYPE_GROUND",
@@ -11569,7 +11569,7 @@
       "baseHP": "43",
       "baseAttack": "80",
       "baseDefense": "65",
-      "baseSpeed": "35",
+      "baseSpeed": "60",
       "baseSpAttack": "50",
       "baseSpDefense": "35",
       "types": [
@@ -11607,7 +11607,7 @@
       "baseHP": "63",
       "baseAttack": "120",
       "baseDefense": "85",
-      "baseSpeed": "55",
+      "baseSpeed": "85",
       "baseSpAttack": "90",
       "baseSpDefense": "55",
       "types": [
@@ -11642,11 +11642,11 @@
       "label": "CRAWDAUNT"
     },
     {
-      "baseHP": "20",
-      "baseAttack": "15",
-      "baseDefense": "20",
+      "baseHP": "60",
+      "baseAttack": "45",
+      "baseDefense": "40",
       "baseSpeed": "80",
-      "baseSpAttack": "10",
+      "baseSpAttack": "65",
       "baseSpDefense": "55",
       "types": [
         "TYPE_WATER",
@@ -11682,8 +11682,8 @@
     {
       "baseHP": "95",
       "baseAttack": "60",
-      "baseDefense": "79",
-      "baseSpeed": "81",
+      "baseDefense": "80",
+      "baseSpeed": "85",
       "baseSpAttack": "100",
       "baseSpDefense": "125",
       "types": [
@@ -12253,7 +12253,7 @@
       "baseHP": "50",
       "baseAttack": "85",
       "baseDefense": "40",
-      "baseSpeed": "35",
+      "baseSpeed": "75",
       "baseSpAttack": "85",
       "baseSpDefense": "40",
       "types": [
@@ -12291,7 +12291,7 @@
       "baseHP": "70",
       "baseAttack": "115",
       "baseDefense": "60",
-      "baseSpeed": "55",
+      "baseSpeed": "95",
       "baseSpAttack": "115",
       "baseSpDefense": "60",
       "types": [
@@ -12329,9 +12329,9 @@
       "baseHP": "50",
       "baseAttack": "50",
       "baseDefense": "50",
-      "baseSpeed": "50",
-      "baseSpAttack": "50",
-      "baseSpDefense": "50",
+      "baseSpeed": "55",
+      "baseSpAttack": "60",
+      "baseSpDefense": "60",
       "types": [
         "TYPE_ICE",
         "TYPE_ICE"
@@ -12356,7 +12356,7 @@
       ],
       "abilities": [
         "ABILITY_INNER_FOCUS",
-        "ABILITY_NONE"
+        "ABILITY_OBLIVIOUS"
       ],
       "safariZoneFleeRate": "0",
       "bodyColor": "BODY_COLOR_GRAY",
@@ -12367,12 +12367,12 @@
       "baseHP": "80",
       "baseAttack": "80",
       "baseDefense": "80",
-      "baseSpeed": "80",
-      "baseSpAttack": "80",
-      "baseSpDefense": "80",
+      "baseSpeed": "90",
+      "baseSpAttack": "100",
+      "baseSpDefense": "100",
       "types": [
         "TYPE_ICE",
-        "TYPE_ICE"
+        "TYPE_DARK"
       ],
       "catchRate": "75",
       "expYield": "187",
@@ -12394,7 +12394,7 @@
       ],
       "abilities": [
         "ABILITY_INNER_FOCUS",
-        "ABILITY_NONE"
+        "ABILITY_INTIMIDATE"
       ],
       "safariZoneFleeRate": "0",
       "bodyColor": "BODY_COLOR_GRAY",
@@ -12403,9 +12403,9 @@
     },
     {
       "baseHP": "70",
-      "baseAttack": "55",
+      "baseAttack": "110",
       "baseDefense": "65",
-      "baseSpeed": "70",
+      "baseSpeed": "80",
       "baseSpAttack": "95",
       "baseSpDefense": "85",
       "types": [
@@ -12443,8 +12443,8 @@
       "baseHP": "70",
       "baseAttack": "95",
       "baseDefense": "85",
-      "baseSpeed": "70",
-      "baseSpAttack": "55",
+      "baseSpeed": "80",
+      "baseSpAttack": "110",
       "baseSpDefense": "65",
       "types": [
         "TYPE_ROCK",
@@ -12783,10 +12783,10 @@
     },
     {
       "baseHP": "45",
-      "baseAttack": "40",
+      "baseAttack": "70",
       "baseDefense": "60",
-      "baseSpeed": "50",
-      "baseSpAttack": "40",
+      "baseSpeed": "70",
+      "baseSpAttack": "75",
       "baseSpDefense": "75",
       "types": [
         "TYPE_NORMAL",
@@ -12820,12 +12820,12 @@
       "label": "SWABLU"
     },
     {
-      "baseHP": "75",
-      "baseAttack": "70",
-      "baseDefense": "90",
-      "baseSpeed": "80",
-      "baseSpAttack": "70",
-      "baseSpDefense": "105",
+      "baseHP": "80",
+      "baseAttack": "100",
+      "baseDefense": "85",
+      "baseSpeed": "90",
+      "baseSpAttack": "110",
+      "baseSpDefense": "90",
       "types": [
         "TYPE_DRAGON",
         "TYPE_FLYING"
@@ -13470,7 +13470,7 @@
       "baseAttack": "130",
       "baseDefense": "60",
       "baseSpeed": "75",
-      "baseSpAttack": "75",
+      "baseSpAttack": "95",
       "baseSpDefense": "60",
       "types": [
         "TYPE_DARK",
@@ -13507,7 +13507,7 @@
       "baseHP": "44",
       "baseAttack": "75",
       "baseDefense": "35",
-      "baseSpeed": "45",
+      "baseSpeed": "55",
       "baseSpAttack": "63",
       "baseSpDefense": "33",
       "types": [
@@ -13545,7 +13545,7 @@
       "baseHP": "64",
       "baseAttack": "115",
       "baseDefense": "65",
-      "baseSpeed": "65",
+      "baseSpeed": "90",
       "baseSpAttack": "83",
       "baseSpDefense": "63",
       "types": [

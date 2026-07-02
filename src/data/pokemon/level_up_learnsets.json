@@ -15766,29 +15766,29 @@
           "move": "MOVE_HEADBUTT"
         },
         {
-          "level": 23,
-          "level_padded": "23",
+          "level": 28,
+          "level_padded": "28",
+          "move": "MOVE_POISON_POWDER"
+        },
+        {
+          "level": 30,
+          "level_padded": "30",
           "move": "MOVE_MACH_PUNCH"
         },
         {
-          "level": 28,
-          "level_padded": "28",
-          "move": "MOVE_COUNTER"
+          "level": 34,
+          "level_padded": "34",
+          "move": "MOVE_GIGA_DRAIN"
         },
         {
-          "level": 36,
-          "level_padded": "36",
+          "level": 40,
+          "level_padded": "40",
           "move": "MOVE_SKY_UPPERCUT"
         },
         {
           "level": 45,
           "level_padded": "45",
-          "move": "MOVE_MIND_READER"
-        },
-        {
-          "level": 54,
-          "level_padded": "54",
-          "move": "MOVE_DYNAMIC_PUNCH"
+          "move": "MOVE_SPORE"
         }
       ]
     },
@@ -16520,7 +16520,7 @@
         {
           "level": 36,
           "level_padded": "36",
-          "move": "MOVE_HYPER_BEAM"
+          "move": "MOVE_PSYCHIC"
         },
         {
           "level": 42,
@@ -16957,7 +16957,7 @@
         {
           "level": 32,
           "level_padded": "32",
-          "move": "MOVE_TAUNT"
+          "move": "MOVE_CRUNCH"
         },
         {
           "level": 35,
@@ -17033,7 +17033,7 @@
         {
           "level": 34,
           "level_padded": "34",
-          "move": "MOVE_TAUNT"
+          "move": "MOVE_CRUNCH"
         },
         {
           "level": 39,
@@ -18130,7 +18130,7 @@
         {
           "level": 41,
           "level_padded": "41",
-          "move": "MOVE_COTTON_SPORE"
+          "move": "MOVE_CRUNCH"
         },
         {
           "level": 45,
@@ -18211,7 +18211,7 @@
         {
           "level": 47,
           "level_padded": "47",
-          "move": "MOVE_COTTON_SPORE"
+          "move": "MOVE_CRUNCH"
         },
         {
           "level": 53,
@@ -18404,12 +18404,12 @@
         {
           "level": 43,
           "level_padded": "43",
-          "move": "MOVE_FUTURE_SIGHT"
+          "move": "MOVE_ROCK_SLIDE"
         },
         {
           "level": 49,
           "level_padded": "49",
-          "move": "MOVE_EXPLOSION"
+          "move": "MOVE_FUTURE_SIGHT"
         }
       ]
     },
@@ -18460,12 +18460,12 @@
         {
           "level": 43,
           "level_padded": "43",
-          "move": "MOVE_SOLAR_BEAM"
+          "move": "MOVE_PSYCHIC"
         },
         {
           "level": 49,
           "level_padded": "49",
-          "move": "MOVE_EXPLOSION"
+          "move": "MOVE_SOLAR_BEAM"
         }
       ]
     },
@@ -19110,7 +19110,7 @@
         {
           "level": 45,
           "level_padded": "45",
-          "move": "MOVE_REFRESH"
+          "move": "MOVE_DRAGON_CLAW"
         },
         {
           "level": 54,
