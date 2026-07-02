@@ -26,6 +26,8 @@
 
   let localTrainers = $state<TrainerDisplay[]>([]);
   let showItems = $state<boolean[]>([]);
+  let draggedIndex = $state<number | null>(null);
+  let dragOverIndex = $state<number | null>(null);
 
   $effect(() => {
     localTrainers = group.iterations.map((t) => ({ ...t, pokemon: [...t.pokemon] }));
@@ -78,6 +80,52 @@
       ...localTrainers[selectedTabIndex],
       pokemon: newPokemon,
     };
+  }
+
+  function handleDragStart(index: number, event: DragEvent) {
+    draggedIndex = index;
+    if (event.dataTransfer) {
+      event.dataTransfer.effectAllowed = 'move';
+      event.dataTransfer.setData('text/plain', String(index));
+    }
+  }
+
+  function handleDragOver(index: number, event: DragEvent) {
+    event.preventDefault();
+    if (event.dataTransfer) {
+      event.dataTransfer.dropEffect = 'move';
+    }
+    dragOverIndex = index;
+  }
+
+  function handleDragLeave() {
+    dragOverIndex = null;
+  }
+
+  function handleDrop(index: number, event: DragEvent) {
+    event.preventDefault();
+    if (draggedIndex === null || draggedIndex === index) {
+      draggedIndex = null;
+      dragOverIndex = null;
+      return;
+    }
+
+    const currentPokemon = [...localTrainers[selectedTabIndex].pokemon];
+    const [draggedPokemon] = currentPokemon.splice(draggedIndex, 1);
+    currentPokemon.splice(index, 0, draggedPokemon);
+
+    localTrainers[selectedTabIndex] = {
+      ...localTrainers[selectedTabIndex],
+      pokemon: currentPokemon,
+    };
+
+    draggedIndex = null;
+    dragOverIndex = null;
+  }
+
+  function handleDragEnd() {
+    draggedIndex = null;
+    dragOverIndex = null;
   }
 
   async function handleSave() {
@@ -239,16 +287,27 @@
       <h3 class="party-title">Party</h3>
       <div class="pokemon-grid">
         {#each selectedTrainer.pokemon as pokemon, i}
-          <TrainerPokemonCard
-            {pokemon}
-            index={i}
-            trainerType={selectedTrainer.trainerType}
-            {speciesOptions}
-            {itemOptions}
-            onChange={handlePokemonChange}
-            onRemove={handleRemovePokemon}
-            canRemove={selectedTrainer.pokemon.length > 1}
-          />
+          <div
+            class="pokemon-card-wrapper"
+            class:dragging={draggedIndex === i}
+            class:drag-over={dragOverIndex === i}
+          >
+            <TrainerPokemonCard
+              {pokemon}
+              index={i}
+              trainerType={selectedTrainer.trainerType}
+              {speciesOptions}
+              {itemOptions}
+              onChange={handlePokemonChange}
+              onRemove={handleRemovePokemon}
+              canRemove={selectedTrainer.pokemon.length > 1}
+              onDragStart={(e) => handleDragStart(i, e)}
+              onDragOver={(e) => handleDragOver(i, e)}
+              onDragLeave={handleDragLeave}
+              onDrop={(e) => handleDrop(i, e)}
+              onDragEnd={handleDragEnd}
+            />
+          </div>
         {/each}
         {#if selectedTrainer.pokemon.length < 6}
           <button class="add-pokemon-card" onclick={handleAddPokemon}>
@@ -431,6 +490,22 @@
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
     gap: 1rem;
+  }
+
+  .pokemon-card-wrapper {
+    transition: transform 0.2s, opacity 0.2s;
+  }
+
+  .pokemon-card-wrapper.dragging {
+    opacity: 0.4;
+    transform: scale(0.95);
+  }
+
+  .pokemon-card-wrapper.drag-over {
+    transform: scale(1.02);
+    outline: 2px dashed var(--accent);
+    outline-offset: 4px;
+    border-radius: 8px;
   }
 
   .save-section {

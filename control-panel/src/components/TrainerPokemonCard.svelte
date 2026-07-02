@@ -11,9 +11,14 @@
     onChange: (index: number, updates: Partial<TrainerPokemon>) => void;
     onRemove: (index: number) => void;
     canRemove: boolean;
+    onDragStart?: (event: DragEvent) => void;
+    onDragOver?: (event: DragEvent) => void;
+    onDragLeave?: (event: DragEvent) => void;
+    onDrop?: (event: DragEvent) => void;
+    onDragEnd?: (event: DragEvent) => void;
   }
 
-  let { pokemon, index, trainerType, speciesOptions, itemOptions, onChange, onRemove, canRemove }: Props = $props();
+  let { pokemon, index, trainerType, speciesOptions, itemOptions, onChange, onRemove, canRemove, onDragStart, onDragOver, onDragLeave, onDrop, onDragEnd }: Props = $props();
 
   const capabilities = $derived(getTrainerTypeCapabilities(trainerType));
 
@@ -110,7 +115,15 @@
 </script>
 
 <div class="pokemon-card">
-  <div class="card-header">
+  <div 
+    class="card-header"
+    draggable="true"
+    ondragstart={onDragStart}
+    ondragover={onDragOver}
+    ondragleave={onDragLeave}
+    ondrop={onDrop}
+    ondragend={onDragEnd}
+  >
     <div class="sprite-wrap">
       <img
         src="/api/sprite/{pokemon.species.toLowerCase()}"
@@ -213,6 +226,12 @@
     gap: 0.75rem;
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--border);
+    cursor: grab;
+    user-select: none;
+  }
+
+  .card-header:active {
+    cursor: grabbing;
   }
 
   .sprite-wrap {
