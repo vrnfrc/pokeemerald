@@ -12,7 +12,6 @@ function stripJsonComments(src: string): string {
 }
 
 export function loadItinerary(): ItineraryFile {
-  if (cachedItinerary) return cachedItinerary;
   const src = fs.readFileSync(ITINERARY_JSON_PATH, 'utf-8');
   const cleaned = stripJsonComments(src);
   const data = JSON.parse(cleaned);

@@ -11,7 +11,6 @@ const TRAINER_PARTIES_JSON_PATH = path.join(POKEEMERALD_ROOT, 'src/data/trainer_
 let cachedParties: TrainerPartiesFile | null = null;
 
 export function loadTrainerParties(): TrainerPartiesFile {
-  if (cachedParties) return cachedParties;
   const src = fs.readFileSync(TRAINER_PARTIES_JSON_PATH, 'utf-8');
   cachedParties = JSON.parse(src) as TrainerPartiesFile;
   return cachedParties;

@@ -37,7 +37,6 @@ export function parseItems(src: string): ItemOption[] {
 }
 
 export function loadItems(): ItemOption[] {
-  if (cachedItems) return cachedItems;
   const src = fs.readFileSync(ITEMS_H_PATH, 'utf-8');
   cachedItems = parseItems(src);
   return cachedItems;

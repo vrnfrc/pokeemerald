@@ -112,9 +112,6 @@
       const data = await res.json();
       throw new Error(data.error || 'Failed to save');
     }
-    if (selectedPartIndex !== null) {
-      await loadTrainers(selectedPartIndex - 1);
-    }
   }
 
   function formatMapName(name: string): string {

@@ -20,7 +20,6 @@ function parseTrainerClassNames(src: string): Map<string, string> {
 }
 
 function loadTrainerClassNames(): Map<string, string> {
-  if (cachedClassNames) return cachedClassNames;
   const src = fs.readFileSync(TRAINER_CLASS_NAMES_H_PATH, 'utf-8');
   cachedClassNames = parseTrainerClassNames(src);
   return cachedClassNames;
@@ -95,7 +94,6 @@ function parseTrainers(src: string): Map<string, TrainerMetadata> {
 }
 
 export function loadTrainerMetadata(): Map<string, TrainerMetadata> {
-  if (cachedMetadata) return cachedMetadata;
   const src = fs.readFileSync(TRAINERS_H_PATH, 'utf-8');
   cachedMetadata = parseTrainers(src);
   return cachedMetadata;

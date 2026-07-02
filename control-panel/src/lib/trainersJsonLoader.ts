@@ -27,7 +27,6 @@ export interface TrainersJsonFile {
 let cachedTrainers: TrainersJsonFile | null = null;
 
 export function loadTrainersJson(): TrainersJsonFile {
-  if (cachedTrainers) return cachedTrainers;
   const src = fs.readFileSync(TRAINERS_JSON_PATH, 'utf-8');
   cachedTrainers = JSON.parse(src) as TrainersJsonFile;
   return cachedTrainers;
