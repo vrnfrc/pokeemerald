@@ -134,7 +134,7 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 160,
+          "iv": 180,
           "lvl": 10,
           "species": "POOCHYENA"
         }
@@ -215,8 +215,13 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 11,
+          "iv": 180,
+          "lvl": 14,
+          "species": "ZUBAT"
+        },
+        {
+          "iv": 180,
+          "lvl": 15,
           "species": "POOCHYENA"
         }
       ]
@@ -5143,8 +5148,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 9,
+          "lvl": 10,
           "species": "SHROOMISH"
+        },
+        {
+          "iv": 130,
+          "lvl": 10,
+          "species": "SEEDOT"
         }
       ]
     },
@@ -5937,8 +5947,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 9,
+          "lvl": 10,
           "species": "MACHOP"
+        },
+        {
+          "iv": 130,
+          "lvl": 10,
+          "species": "MAKUHITA"
         }
       ]
     },
@@ -11094,12 +11109,12 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 8,
-          "species": "WURMPLE"
+          "lvl": 10,
+          "species": "BEAUTIFLY"
         },
         {
           "iv": 130,
-          "lvl": 8,
+          "lvl": 10,
           "species": "NINCADA"
         }
       ]
@@ -11333,8 +11348,18 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 8,
+          "lvl": 10,
           "species": "GEODUDE"
+        },
+        {
+          "iv": 130,
+          "lvl": 11,
+          "species": "GEODUDE"
+        },
+        {
+          "iv": 130,
+          "lvl": 12,
+          "species": "ARON"
         }
       ]
     },
@@ -13635,13 +13660,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 8,
+          "lvl": 11,
           "species": "GEODUDE"
         },
         {
           "iv": 130,
-          "lvl": 8,
-          "species": "GEODUDE"
+          "lvl": 11,
+          "species": "ARON"
         }
       ]
     },
@@ -13651,12 +13676,12 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 8,
+          "lvl": 10,
           "species": "SHROOMISH"
         },
         {
           "iv": 130,
-          "lvl": 8,
+          "lvl": 10,
           "species": "LOTAD"
         }
       ]
