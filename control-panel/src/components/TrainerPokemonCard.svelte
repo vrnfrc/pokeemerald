@@ -9,9 +9,11 @@
     speciesOptions: { value: string; label: string }[];
     itemOptions: { value: string; label: string }[];
     onChange: (index: number, updates: Partial<TrainerPokemon>) => void;
+    onRemove: (index: number) => void;
+    canRemove: boolean;
   }
 
-  let { pokemon, index, trainerType, speciesOptions, itemOptions, onChange }: Props = $props();
+  let { pokemon, index, trainerType, speciesOptions, itemOptions, onChange, onRemove, canRemove }: Props = $props();
 
   const capabilities = $derived(getTrainerTypeCapabilities(trainerType));
 
@@ -100,6 +102,10 @@
     const img = event.target as HTMLImageElement;
     img.src = '/api/sprite/unknown';
   }
+
+  function handleRemove() {
+    onRemove(index);
+  }
 </script>
 
 <div class="pokemon-card">
@@ -181,6 +187,11 @@
       </div>
     {/if}
   </div>
+  {#if canRemove}
+    <button class="remove-pokemon-button" onclick={handleRemove}>
+      Remove Pokémon
+    </button>
+  {/if}
 </div>
 
 <style>
@@ -360,5 +371,23 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 0.5rem;
+  }
+
+  .remove-pokemon-button {
+    width: 100%;
+    padding: 0.5rem;
+    background: rgba(255, 85, 85, 0.1);
+    color: var(--danger);
+    border: 1px solid var(--danger);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-top: 0.5rem;
+  }
+
+  .remove-pokemon-button:hover {
+    background: rgba(255, 85, 85, 0.2);
   }
 </style>

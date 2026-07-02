@@ -56,6 +56,30 @@
     };
   }
 
+  function handleAddPokemon() {
+    const currentPokemon = localTrainers[selectedTabIndex].pokemon;
+    if (currentPokemon.length >= 6) return;
+    
+    const lastPokemon = currentPokemon[currentPokemon.length - 1];
+    const newPokemon = { ...lastPokemon };
+    
+    localTrainers[selectedTabIndex] = {
+      ...localTrainers[selectedTabIndex],
+      pokemon: [...currentPokemon, newPokemon],
+    };
+  }
+
+  function handleRemovePokemon(index: number) {
+    const currentPokemon = localTrainers[selectedTabIndex].pokemon;
+    if (currentPokemon.length <= 1) return;
+    
+    const newPokemon = currentPokemon.filter((_, i) => i !== index);
+    localTrainers[selectedTabIndex] = {
+      ...localTrainers[selectedTabIndex],
+      pokemon: newPokemon,
+    };
+  }
+
   async function handleSave() {
     saving = true;
     statusMessage = '';
@@ -222,8 +246,15 @@
             {speciesOptions}
             {itemOptions}
             onChange={handlePokemonChange}
+            onRemove={handleRemovePokemon}
+            canRemove={selectedTrainer.pokemon.length > 1}
           />
         {/each}
+        {#if selectedTrainer.pokemon.length < 6}
+          <button class="add-pokemon-card" onclick={handleAddPokemon}>
+            <span class="add-pokemon-text">Add a Pokémon</span>
+          </button>
+        {/if}
       </div>
     </div>
 
@@ -482,5 +513,29 @@
 
   .remove-items-button:hover {
     background: rgba(255, 85, 85, 0.2);
+  }
+
+  .add-pokemon-card {
+    background: var(--panel-2);
+    border: 2px dashed var(--border);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-height: 200px;
+  }
+
+  .add-pokemon-card:hover {
+    border-color: var(--accent);
+    background: var(--panel);
+  }
+
+  .add-pokemon-text {
+    color: var(--muted);
+    font-size: 1rem;
+    font-weight: 500;
   }
 </style>
