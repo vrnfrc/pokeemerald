@@ -274,9 +274,6 @@ experimental_json_files:
 	$(JSONPROC) $(DATA_SRC_SUBDIR)/pokemon/level_up_learnsets.json $(DATA_SRC_SUBDIR)/pokemon/level_up_learnsets.json.txt $(DATA_SRC_SUBDIR)/pokemon/level_up_learnsets.h
 	$(JSONPROC) $(DATA_SRC_SUBDIR)/pokemon/tmhm_learnsets.json $(DATA_SRC_SUBDIR)/pokemon/tmhm_learnsets.json.txt $(DATA_SRC_SUBDIR)/pokemon/tmhm_learnsets.h
 	$(JSONPROC) $(DATA_SRC_SUBDIR)/trainers.json $(DATA_SRC_SUBDIR)/trainers.json.txt $(DATA_SRC_SUBDIR)/trainers.h
-
-# Temporary test rule for trainer_parties JSON conversion
-trainer_parties_json:
 	$(JSONPROC) $(DATA_SRC_SUBDIR)/trainer_parties.json $(DATA_SRC_SUBDIR)/trainer_parties.json.txt $(DATA_SRC_SUBDIR)/trainer_parties.h
 
 
