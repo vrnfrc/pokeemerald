@@ -3,6 +3,7 @@
   import {
     TRAINER_TYPE_OPTIONS,
     trainerPicToFilename,
+    getTrainerTypeCapabilities,
     type TrainerGroup,
     type TrainerDisplay,
     type TrainerPartyType,
@@ -62,13 +63,27 @@
 
     try {
       const trainer = localTrainers[selectedTabIndex];
+      const caps = getTrainerTypeCapabilities(trainer.trainerType);
+      
       const hasRealItems = trainer.items.some(item => item !== 'NONE');
-      const itemsToSave = hasRealItems
-        ? trainer.items.map(item => item === 'NONE' ? 'ITEM_NONE' : item)
+      const itemsToSave = caps.hasItems
+        ? (hasRealItems ? trainer.items.map(item => item === 'NONE' ? 'ITEM_NONE' : item) : [])
         : [];
+      
+      const pokemonToSave = trainer.pokemon.map(p => {
+        const cleaned: any = { ...p };
+        if (!caps.hasItems) {
+          delete cleaned.heldItem;
+        }
+        if (!caps.hasCustomMoves) {
+          delete cleaned.moves;
+        }
+        return cleaned;
+      });
+      
       await onSave(trainer.name, {
         type: trainer.trainerType,
-        pokemon: trainer.pokemon,
+        pokemon: pokemonToSave,
         items: itemsToSave,
       });
       statusMessage = 'Saved successfully';

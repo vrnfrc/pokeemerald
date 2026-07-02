@@ -100,8 +100,8 @@ export function getTrainerTypeCapabilities(type: TrainerPartyType): {
   hasCustomMoves: boolean;
 } {
   return {
-    hasItems: type.includes('Item'),
-    hasCustomMoves: type.includes('CustomMoves'),
+    hasItems: type === 'TrainerMonItemDefaultMoves' || type === 'TrainerMonItemCustomMoves',
+    hasCustomMoves: type === 'TrainerMonNoItemCustomMoves' || type === 'TrainerMonItemCustomMoves',
   };
 }
 

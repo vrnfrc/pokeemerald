@@ -101,7 +101,9 @@ export const PUT: APIRoute = async ({ params, request }) => {
           return new Response('Moves must be an array of max 4 items', { status: 400 });
         }
         for (const move of p.moves) {
-          if (move !== 'NONE' && !MOVE_LIST.includes(move)) {
+          if (move === 'NONE') continue;
+          const moveWithPrefix = move.startsWith('MOVE_') ? move : `MOVE_${move}`;
+          if (!MOVE_LIST.includes(moveWithPrefix)) {
             return new Response(`Invalid move: ${move}`, { status: 400 });
           }
         }
