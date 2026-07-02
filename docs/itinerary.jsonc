@@ -51,12 +51,7 @@
                 "trainers": [
                     { "id": "TRAINER_BILLY", "party": "sParty_Billy" },
                     { "id": "TRAINER_DARIAN", "party": "sParty_Darian" },
-                    { "id": "TRAINER_CINDY_1", "party": "sParty_Cindy1" },
-                    { "id": "TRAINER_WINSTON_1", "party": "sParty_Winston1" },
-                    { "id": "TRAINER_HALEY_1", "party": "sParty_Haley1" },
-                    { "id": "TRAINER_GINA_AND_MIA_1", "party": "sParty_GinaAndMia1" },
-                    { "id": "TRAINER_IVAN", "party": "sParty_Ivan" }
-                    
+                    { "id": "TRAINER_CINDY_1", "party": "sParty_Cindy1" }
                 ],
                 "challenges": [],
                 "rematches": [
@@ -64,23 +59,9 @@
                     { "id": "TRAINER_CINDY_3", "party": "sParty_Cindy3" },
                     { "id": "TRAINER_CINDY_4", "party": "sParty_Cindy4" },
                     { "id": "TRAINER_CINDY_5", "party": "sParty_Cindy5" },
-                    { "id": "TRAINER_CINDY_6", "party": "sParty_Cindy6" },
-                    { "id": "TRAINER_WINSTON_2", "party": "sParty_Winston2" },
-                    { "id": "TRAINER_WINSTON_3", "party": "sParty_Winston3" },
-                    { "id": "TRAINER_WINSTON_4", "party": "sParty_Winston4" },
-                    { "id": "TRAINER_WINSTON_5", "party": "sParty_Winston5" },
-                    { "id": "TRAINER_HALEY_2", "party": "sParty_Haley2" },
-                    { "id": "TRAINER_HALEY_3", "party": "sParty_Haley3" },
-                    { "id": "TRAINER_HALEY_4", "party": "sParty_Haley4" },
-                    { "id": "TRAINER_HALEY_5", "party": "sParty_Haley5" },
-                    { "id": "TRAINER_GINA_AND_MIA_2", "party": "sParty_GinaAndMia2" }
+                    { "id": "TRAINER_CINDY_6", "party": "sParty_Cindy6" }
                 ]
-            }
-        ],
-        "difficulty": 3
-    },
-    {
-        "maps": [
+            },
             {
                 "name": "PetalburgWoods",
                 "trainers": [
@@ -95,9 +76,30 @@
                     { "id": "TRAINER_JAMES_4", "party": "sParty_James4" },
                     { "id": "TRAINER_JAMES_5", "party": "sParty_James5" }
                 ]
+            },
+            {
+                "name": "Route104",
+                "trainers": [
+                    { "id": "TRAINER_WINSTON_1", "party": "sParty_Winston1" },
+                    { "id": "TRAINER_HALEY_1", "party": "sParty_Haley1" },
+                    { "id": "TRAINER_GINA_AND_MIA_1", "party": "sParty_GinaAndMia1" },
+                    { "id": "TRAINER_IVAN", "party": "sParty_Ivan" }
+                ],
+                "challenges": [],
+                "rematches": [
+                    { "id": "TRAINER_WINSTON_2", "party": "sParty_Winston2" },
+                    { "id": "TRAINER_WINSTON_3", "party": "sParty_Winston3" },
+                    { "id": "TRAINER_WINSTON_4", "party": "sParty_Winston4" },
+                    { "id": "TRAINER_WINSTON_5", "party": "sParty_Winston5" },
+                    { "id": "TRAINER_HALEY_2", "party": "sParty_Haley2" },
+                    { "id": "TRAINER_HALEY_3", "party": "sParty_Haley3" },
+                    { "id": "TRAINER_HALEY_4", "party": "sParty_Haley4" },
+                    { "id": "TRAINER_HALEY_5", "party": "sParty_Haley5" },
+                    { "id": "TRAINER_GINA_AND_MIA_2", "party": "sParty_GinaAndMia2" }
+                ]
             }
         ],
-        "difficulty": 4
+        "difficulty": 3
     },
     {
         "maps": [
