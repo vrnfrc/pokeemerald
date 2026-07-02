@@ -284,14 +284,14 @@
     from: string;
     toIndex: number;
     method: string;
-    param: number;
+    param: string | number;
     target: string;
     x: number;
     y: number;
   };
 
   interface EvoMaps {
-    from: Map<string, { method: string; param: number; target: string }[]>;
+    from: Map<string, { method: string; param: string | number; target: string }[]>;
     toParent: Map<string, { from: string; toIndex: number }>;
   }
 
@@ -412,19 +412,21 @@
     };
     refreshSaveState();
 
-    const buildParam = (method: string, current: number) => {
+    const buildParam = (method: string, current: string | number) => {
       paramWrap.innerHTML = '';
       const t = paramType(method);
       if (t === 'none') return;
       if (t === 'item') {
-        const match = evoItems.find((i) => i.number === current);
+        const match = typeof current === 'string'
+          ? evoItems.find((i) => i.value === current)
+          : evoItems.find((i) => i.number === current);
         const sel = document.createElement('select');
         sel.className = 'evo-item-select';
         sel.innerHTML = evoItemOptionsHtml;
         sel.value = match?.value ?? evoItems[0]?.value ?? '';
         sel.addEventListener('change', () => {
           const picked = evoItems.find((i) => i.value === sel.value);
-          draftParam = picked ? picked.number : 0;
+          draftParam = picked ? picked.value : 0;
           refreshSaveState();
         });
         paramWrap.appendChild(sel);

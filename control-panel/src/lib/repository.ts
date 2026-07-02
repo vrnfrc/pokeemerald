@@ -333,7 +333,7 @@ export function findEvoRoot(file: EvolutionFile, label: string): string {
   return cur;
 }
 
-export function findEvoChildren(file: EvolutionFile, label: string): { method: string; param: number; target: string }[] {
+export function findEvoChildren(file: EvolutionFile, label: string): { method: string; param: string | number; target: string }[] {
   const entry = findEntry(file, label);
   return entry ? entry.to.map((t) => ({ ...t })) : [];
 }
@@ -379,7 +379,7 @@ export function setEvolutionMethod(file: EvolutionFile, from: string, toIndex: n
   });
 }
 
-export function setEvolutionParam(file: EvolutionFile, from: string, toIndex: number, param: number): EvolutionFile {
+export function setEvolutionParam(file: EvolutionFile, from: string, toIndex: number, param: string | number): EvolutionFile {
   return withEntryEvo(file, from, (entry) => {
     if (toIndex < 0 || toIndex >= entry.to.length) return entry;
     return {

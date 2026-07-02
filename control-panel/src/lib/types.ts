@@ -70,7 +70,7 @@ export interface TmhmLearnsetsRawFile {
 
 export interface EvolutionTarget {
   method: string;
-  param: number;
+  param: string | number;
   target: string;
 }
 
