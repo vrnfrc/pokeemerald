@@ -24,13 +24,17 @@
   let statusKind = $state<'success' | 'error' | null>(null);
 
   let localTrainers = $state<TrainerDisplay[]>([]);
+  let showItems = $state<boolean[]>([]);
 
   $effect(() => {
     localTrainers = group.iterations.map((t) => ({ ...t, pokemon: [...t.pokemon] }));
+    showItems = group.iterations.map((t) => t.items.some(item => item !== 'NONE'));
     selectedTabIndex = 0;
   });
 
   const selectedTrainer = $derived(localTrainers[selectedTabIndex]);
+  const hasItems = $derived(selectedTrainer?.items.length > 0);
+  const isShowingItems = $derived(showItems[selectedTabIndex]);
   const itemSlots = $derived([0, 1, 2, 3].map(i => selectedTrainer?.items[i] || 'NONE'));
 
   function handleTypeChange(event: Event) {
@@ -58,7 +62,10 @@
 
     try {
       const trainer = localTrainers[selectedTabIndex];
-      const itemsToSave = trainer.items.filter(item => item !== 'NONE');
+      const hasRealItems = trainer.items.some(item => item !== 'NONE');
+      const itemsToSave = hasRealItems
+        ? trainer.items.map(item => item === 'NONE' ? 'ITEM_NONE' : item)
+        : [];
       await onSave(trainer.name, {
         type: trainer.trainerType,
         pokemon: trainer.pokemon,
@@ -86,7 +93,28 @@
   function handleItemChange(index: number, value: string) {
     const items = [...localTrainers[selectedTabIndex].items];
     items[index] = value;
-    localTrainers[selectedTabIndex] = { ...localTrainers[selectedTabIndex], items };
+    
+    // If all items are "None", clear the array
+    const allNone = items.every(item => item === 'NONE');
+    if (allNone) {
+      localTrainers[selectedTabIndex] = { ...localTrainers[selectedTabIndex], items: [] };
+      showItems[selectedTabIndex] = false;
+    } else {
+      localTrainers[selectedTabIndex] = { ...localTrainers[selectedTabIndex], items };
+    }
+  }
+
+  function handleAddItems() {
+    localTrainers[selectedTabIndex] = {
+      ...localTrainers[selectedTabIndex],
+      items: ['NONE', 'NONE', 'NONE', 'NONE'],
+    };
+    showItems[selectedTabIndex] = true;
+  }
+
+  function handleRemoveAllItems() {
+    localTrainers[selectedTabIndex] = { ...localTrainers[selectedTabIndex], items: [] };
+    showItems[selectedTabIndex] = false;
   }
 
   function formatTrainerName(name: string): string {
@@ -130,20 +158,28 @@
     <div class="trainer-config">
       <div class="config-section">
         <div class="field-label">Items</div>
-        <div class="trainer-items-list">
-          {#each itemSlots as item, i}
-            <select
-              value={item}
-              onchange={(e) => handleItemChange(i, (e.target as HTMLSelectElement).value)}
-              class="item-select"
-            >
-              <option value="NONE">None</option>
-              {#each itemOptions as opt}
-                <option value={opt.value}>{opt.label}</option>
-              {/each}
-            </select>
-          {/each}
-        </div>
+        {#if isShowingItems}
+          <button class="remove-items-button" onclick={handleRemoveAllItems}>
+            Remove all items
+          </button>
+          <div class="trainer-items-list">
+            {#each itemSlots as item, i}
+              <select
+                value={item}
+                onchange={(e) => handleItemChange(i, (e.target as HTMLSelectElement).value)}
+                class="item-select"
+              >
+                {#each itemOptions as opt}
+                  <option value={opt.value}>{opt.label}</option>
+                {/each}
+              </select>
+            {/each}
+          </div>
+        {:else}
+          <button class="add-items-button" onclick={handleAddItems}>
+            Add items
+          </button>
+        {/if}
       </div>
 
       <div class="config-section">
@@ -398,5 +434,38 @@
   .save-button:disabled {
     opacity: 0.6;
     cursor: not-allowed;
+  }
+
+  .add-items-button,
+  .remove-items-button {
+    padding: 0.5rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s;
+    align-self: flex-start;
+  }
+
+  .add-items-button {
+    background: var(--panel);
+    color: var(--text);
+  }
+
+  .add-items-button:hover {
+    background: var(--panel-2);
+    border-color: var(--accent);
+  }
+
+  .remove-items-button {
+    background: rgba(255, 85, 85, 0.1);
+    color: var(--danger);
+    border-color: var(--danger);
+    margin-bottom: 0.5rem;
+  }
+
+  .remove-items-button:hover {
+    background: rgba(255, 85, 85, 0.2);
   }
 </style>

@@ -6,6 +6,14 @@ import type { TrainerPartyType, TrainerPokemon } from '../../../lib/trainerTypes
 import { validateIV, validateLevel } from '../../../lib/trainerTypes';
 import { MOVE_LIST } from '../../../lib/movesData';
 import { loadItems } from '../../../lib/itemsData';
+import { updateTrainerJsonEntry, saveTrainersJson, partyNameToTrainerId } from '../../../lib/trainersJsonLoader';
+
+const PARTY_TYPE_TO_TRAINERS_JSON: Record<TrainerPartyType, string> = {
+  'TrainerMonNoItemDefaultMoves': 'NO_ITEM_DEFAULT_MOVES',
+  'TrainerMonNoItemCustomMoves': 'NO_ITEM_CUSTOM_MOVES',
+  'TrainerMonItemDefaultMoves': 'ITEM_DEFAULT_MOVES',
+  'TrainerMonItemCustomMoves': 'ITEM_CUSTOM_MOVES',
+};
 
 export const prerender = false;
 
@@ -37,7 +45,9 @@ export const PUT: APIRoute = async ({ params, request }) => {
   }
 
   const body = await request.json();
-  const updates: Partial<typeof party> = {};
+  const partyUpdates: Partial<typeof party> = {};
+  let trainersJsonItems: string[] | undefined;
+  let trainersJsonType: string | undefined;
 
   if (body.type !== undefined) {
     const validTypes: TrainerPartyType[] = [
@@ -49,7 +59,8 @@ export const PUT: APIRoute = async ({ params, request }) => {
     if (!validTypes.includes(body.type)) {
       return new Response('Invalid trainer type', { status: 400 });
     }
-    updates.type = body.type;
+    partyUpdates.type = body.type;
+    trainersJsonType = PARTY_TYPE_TO_TRAINERS_JSON[body.type];
   }
 
   if (body.pokemon !== undefined) {
@@ -99,7 +110,7 @@ export const PUT: APIRoute = async ({ params, request }) => {
 
       validatedPokemon.push(pokemon);
     }
-    updates.pokemon = validatedPokemon;
+    partyUpdates.pokemon = validatedPokemon;
   }
 
   if (body.items !== undefined) {
@@ -115,11 +126,22 @@ export const PUT: APIRoute = async ({ params, request }) => {
       }
       validatedItems.push(item);
     }
-    updates.trainerItems = validatedItems;
+    trainersJsonItems = validatedItems;
   }
 
-  const newParties = updateTrainerParty(name, updates);
-  saveTrainerParties(newParties);
+  if (Object.keys(partyUpdates).length > 0) {
+    const newParties = updateTrainerParty(name, partyUpdates);
+    saveTrainerParties(newParties);
+  }
+
+  if (trainersJsonItems !== undefined || trainersJsonType !== undefined) {
+    const trainerId = partyNameToTrainerId(name);
+    const newTrainers = updateTrainerJsonEntry(trainerId, {
+      items: trainersJsonItems,
+      partyType: trainersJsonType,
+    });
+    saveTrainersJson(newTrainers);
+  }
 
   const updatedTrainer = getTrainerDisplay(name);
   return new Response(JSON.stringify({ trainer: updatedTrainer }), {

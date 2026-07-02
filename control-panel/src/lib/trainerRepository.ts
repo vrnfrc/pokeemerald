@@ -3,6 +3,7 @@ import path from 'node:path';
 import type { TrainerPartiesFile, TrainerParty, TrainerPokemon, TrainerDisplay, TrainerGroup } from './trainerTypes';
 import { parseTrainerName, getTrainerTypeCapabilities } from './trainerTypes';
 import { getTrainerMetadata, trainerIdToPartyName } from './trainerMetadata';
+import { getTrainerJsonEntry, partyNameToTrainerId } from './trainersJsonLoader';
 
 const POKEEMERALD_ROOT = path.resolve(process.cwd(), '..');
 const TRAINER_PARTIES_JSON_PATH = path.join(POKEEMERALD_ROOT, 'src/data/trainer_parties.json');
@@ -60,13 +61,14 @@ export function getTrainerDisplay(partyName: string, isChallenge: boolean = fals
   const party = getTrainerParty(partyName);
   if (!party) return null;
 
-  const trainerId = `TRAINER_${partyName.replace(/([A-Z])/g, '_$1').toUpperCase().replace(/^_/, '').replace(/([0-9]+)$/, '_$1')}`;
+  const trainerId = partyNameToTrainerId(partyName);
   const metadata = getTrainerMetadata(trainerId);
+  const trainersJsonEntry = getTrainerJsonEntry(trainerId);
 
   const { baseName, iteration } = parseTrainerName(partyName);
   const displayName = baseName.replace(/([A-Z])/g, ' $1').trim();
 
-  const items = party.trainerItems !== undefined ? party.trainerItems : (metadata?.items || []);
+  const items = trainersJsonEntry?.items || metadata?.items || [];
   const paddedItems = [...items, ...Array(4 - items.length).fill('NONE')].slice(0, 4);
 
   return {
