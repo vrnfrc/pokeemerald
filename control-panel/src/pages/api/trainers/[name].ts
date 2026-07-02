@@ -121,7 +121,7 @@ export const PUT: APIRoute = async ({ params, request }) => {
     const validItemValues = items.map((i) => i.value);
     const validatedItems: string[] = [];
     for (const item of body.items) {
-      if (item !== 'NONE' && !validItemValues.includes(item)) {
+      if (item !== 'NONE' && item !== 'ITEM_NONE' && !validItemValues.includes(item)) {
         return new Response(`Invalid item: ${item}`, { status: 400 });
       }
       validatedItems.push(item);
