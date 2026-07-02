@@ -1243,7 +1243,7 @@
       "to": [
         {
           "method": "EVO_LEVEL",
-          "param": 18,
+          "param": 26,
           "target": "MIGHTYENA"
         }
       ]
@@ -1353,7 +1353,7 @@
       "to": [
         {
           "method": "EVO_LEVEL",
-          "param": 22,
+          "param": 26,
           "target": "SWELLOW"
         }
       ]
@@ -1363,7 +1363,7 @@
       "to": [
         {
           "method": "EVO_LEVEL",
-          "param": 23,
+          "param": 30,
           "target": "BRELOOM"
         }
       ]
