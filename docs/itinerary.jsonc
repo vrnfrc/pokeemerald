@@ -85,7 +85,8 @@
                 ]
             }
         ],
-        "difficulty": 2
+        "difficulty": 2,
+        "done": false
     },
     {
         "maps": [
@@ -166,7 +167,9 @@
                 ]
             }
         ],
-        "difficulty": 3
+        "difficulty": 3,
+        "done": false
+
     },
     {
         "maps": [
@@ -231,7 +234,9 @@
                 ]
             }
         ],
-        "difficulty": 4
+        "difficulty": 4,
+        "done": false
+
     },
     {
         "maps": [
@@ -295,7 +300,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 5
+        "difficulty": 5,
+        "done": false
+
     },
     {
         "maps": [
@@ -366,6 +373,8 @@
             }
         ],
         "difficulty": 7,
+        "done": false,
+
         "unlocks": [
             "HM01 Cut"
         ]
@@ -414,6 +423,8 @@
             }
         ],
         "difficulty": 8,
+        "done": false,
+
         "unlockedBy": "HM01 Cut"
     },
     {
@@ -451,7 +462,9 @@
                 ]
             }
         ]
-    },
+    ,
+        "done": false
+},
     {
         "maps": [
             {
@@ -509,6 +522,8 @@
             }
         ],
         "difficulty": 10,
+        "done": false,
+
         "unlocks": [
             "HM05 Flash"
         ]
@@ -607,7 +622,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 12
+        "difficulty": 12,
+        "done": false
+
     },
     {
         "maps": [
@@ -777,7 +794,9 @@
                 ]
             }
         ],
-        "difficulty": 13
+        "difficulty": 13,
+        "done": false
+
     },
     {
         "maps": [
@@ -1023,7 +1042,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 14
+        "difficulty": 14,
+        "done": false
+
     },
     {
         "maps": [
@@ -1078,6 +1099,8 @@
             }
         ],
         "difficulty": 16,
+        "done": false,
+
         "unlocks": [
             "HM06 Rock Smash"
         ]
@@ -1257,7 +1280,9 @@
                 ]
             }
         ],
-        "difficulty": 17
+        "difficulty": 17,
+        "done": false
+
     },
     {
         "maps": [
@@ -1434,7 +1459,9 @@
                 ]
             }
         ],
-        "difficulty": 20
+        "difficulty": 20,
+        "done": false
+
     },
     {
         "maps": [
@@ -1495,7 +1522,9 @@
                 ]
             }
         ],
-        "difficulty": 21
+        "difficulty": 21,
+        "done": false
+
     },
     {
         "maps": [
@@ -1577,7 +1606,9 @@
                 ]
             }
         ],
-        "difficulty": 23
+        "difficulty": 23,
+        "done": false
+
     },
     {
         "maps": [
@@ -1642,7 +1673,9 @@
                 ]
             }
         ],
-        "difficulty": 24
+        "difficulty": 24,
+        "done": false
+
     },
     {
         "maps": [
@@ -1709,6 +1742,8 @@
             }
         ],
         "difficulty": 23,
+        "done": false,
+
         "unlocks": [
             "HM04 Strength",
             "Go-Googles"
@@ -1774,6 +1809,8 @@
             }
         ],
         "difficulty": 24,
+        "done": false,
+
         "unlockedBy": "Go-Googles"
     },
     {
@@ -1837,6 +1874,8 @@
             }
         ],
         "difficulty": 25,
+        "done": false,
+
         "unlocks": [
             "HM03 Surf"
         ]
@@ -1975,6 +2014,8 @@
             }
         ],
         "difficulty": 26,
+        "done": false,
+
         "unlockedBy": "HM03 Surf"
     },
     {
@@ -2185,6 +2226,8 @@
             }
         ],
         "difficulty": 28,
+        "done": false,
+
         "unlockedBy": "HM03 Surf"
     },
     {
@@ -2236,7 +2279,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 29
+        "difficulty": 29,
+        "done": false
+
     },
     {
         "maps": [
@@ -2413,7 +2458,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 30
+        "difficulty": 30,
+        "done": false
+
     },
     {
         "maps": [
@@ -2454,7 +2501,9 @@
                 ]
             }
         ],
-        "difficulty": 31
+        "difficulty": 31,
+        "done": false
+
     },
     {
         "maps": [
@@ -2512,7 +2561,9 @@
                 ]
             }
         ],
-        "difficulty": 33
+        "difficulty": 33,
+        "done": false
+
     },
     {
         "maps": [
@@ -2585,7 +2636,9 @@
                 ]
             }
         ],
-        "difficulty": 34
+        "difficulty": 34,
+        "done": false
+
     },
     {
         "maps": [
@@ -2786,7 +2839,9 @@
                 ]
             }
         ],
-        "difficulty": 35
+        "difficulty": 35,
+        "done": false
+
     },
     {
         "maps": [
@@ -2904,7 +2959,9 @@
                 ]
             }
         ],
-        "difficulty": 36
+        "difficulty": 36,
+        "done": false
+
     },
     {
         "maps": [
@@ -2932,7 +2989,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 38
+        "difficulty": 38,
+        "done": false
+
     },
     {
         "maps": [
@@ -3063,7 +3122,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 39
+        "difficulty": 39,
+        "done": false
+
     },
     {
         "maps": [
@@ -3099,7 +3160,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 42
+        "difficulty": 42,
+        "done": false
+
     },
     {
         "maps": [
@@ -3162,7 +3225,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 43
+        "difficulty": 43,
+        "done": false
+
     },
     {
         "maps": [
@@ -3295,7 +3360,9 @@
                 ]
             }
         ],
-        "difficulty": 44
+        "difficulty": 44,
+        "done": false
+
     },
     {
         "maps": [
@@ -3378,6 +3445,8 @@
             }
         ],
         "difficulty": 47,
+        "done": false,
+
         "unlocks": [
             "HM08 Dive"
         ]
@@ -3436,7 +3505,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 49
+        "difficulty": 49,
+        "done": false
+
     },
     {
         "maps": [
@@ -3565,7 +3636,9 @@
                 ]
             }
         ],
-        "difficulty": 50
+        "difficulty": 50,
+        "done": false
+
     },
     {
         "maps": [
@@ -3627,7 +3700,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 51
+        "difficulty": 51,
+        "done": false
+
     },
     {
         "maps": [
@@ -3713,7 +3788,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 53
+        "difficulty": 53,
+        "done": false
+
     },
     {
         "maps": [
@@ -3835,7 +3912,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 54
+        "difficulty": 54,
+        "done": false
+
     },
     {
         "maps": [
@@ -3910,6 +3989,8 @@
             }
         ],
         "difficulty": 57,
+        "done": false,
+
         "unlocks": [
             "HM07 Waterfall"
         ]
@@ -3966,6 +4047,8 @@
             }
         ],
         "difficulty": 58,
+        "done": false,
+
         "unlockedBy": [
             "HM07 Waterfall"
         ]
@@ -4067,7 +4150,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 60
+        "difficulty": 60,
+        "done": false
+
     },
     {
         "maps": [
@@ -4083,7 +4168,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 61
+        "difficulty": 61,
+        "done": false
+
     },
     {
         "maps": [
@@ -4099,7 +4186,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 62
+        "difficulty": 62,
+        "done": false
+
     },
     {
         "maps": [
@@ -4115,7 +4204,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 65
+        "difficulty": 65,
+        "done": false
+
     },
     {
         "maps": [
@@ -4131,7 +4222,9 @@
                 "rematches": []
             }
         ],
-        "difficulty": 67
+        "difficulty": 67,
+        "done": false
+
     },
     {
         "maps": [
@@ -4147,6 +4240,8 @@
                 "rematches": []
             }
         ],
-        "difficulty": 70
+        "difficulty": 70,
+        "done": false
+
     }
 ]
