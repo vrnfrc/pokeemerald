@@ -370,7 +370,7 @@
             }
         ],
         "difficulty": 7,
-        "done": false,
+        "done": true,
         "unlocks": [
             "HM01 Cut"
         ]
@@ -419,7 +419,7 @@
             }
         ],
         "difficulty": 8,
-        "done": false,
+        "done": true,
         "unlockedBy": "HM01 Cut"
     },
     {

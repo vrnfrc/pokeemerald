@@ -5072,7 +5072,7 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 9,
+          "lvl": 16,
           "species": "RALTS"
         }
       ]
@@ -10729,12 +10729,12 @@
       "pokemon": [
         {
           "iv": 255,
-          "lvl": 20,
+          "lvl": 18,
           "species": "LOMBRE"
         },
         {
           "iv": 255,
-          "lvl": 20,
+          "lvl": 19,
           "species": "COMBUSKEN"
         }
       ]
@@ -10745,12 +10745,12 @@
       "pokemon": [
         {
           "iv": 255,
-          "lvl": 20,
+          "lvl": 18,
           "species": "WINGULL"
         },
         {
           "iv": 255,
-          "lvl": 20,
+          "lvl": 19,
           "species": "GROVYLE"
         }
       ]
@@ -10846,12 +10846,12 @@
       "pokemon": [
         {
           "iv": 255,
-          "lvl": 20,
+          "lvl": 18,
           "species": "SLUGMA"
         },
         {
           "iv": 255,
-          "lvl": 20,
+          "lvl": 19,
           "species": "MARSHTOMP"
         }
       ]
@@ -10862,12 +10862,12 @@
       "pokemon": [
         {
           "iv": 255,
-          "lvl": 20,
+          "lvl": 18,
           "species": "WINGULL"
         },
         {
           "iv": 255,
-          "lvl": 20,
+          "lvl": 19,
           "species": "GROVYLE"
         }
       ]
@@ -10952,7 +10952,7 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 9,
+          "lvl": 16,
           "species": "MARILL"
         }
       ]
@@ -12860,13 +12860,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 8,
+          "lvl": 15,
           "species": "ZIGZAGOON",
           "heldItem": "NUGGET"
         },
         {
           "iv": 130,
-          "lvl": 8,
+          "lvl": 15,
           "species": "POOCHYENA",
           "heldItem": "NONE"
         }
@@ -12878,13 +12878,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 8,
+          "lvl": 15,
           "species": "LOTAD",
           "heldItem": "NONE"
         },
         {
           "iv": 130,
-          "lvl": 8,
+          "lvl": 15,
           "species": "ZIGZAGOON",
           "heldItem": "NUGGET"
         }
@@ -13961,12 +13961,12 @@
       "pokemon": [
         {
           "iv": 255,
-          "lvl": 20,
+          "lvl": 18,
           "species": "LOMBRE"
         },
         {
           "iv": 255,
-          "lvl": 20,
+          "lvl": 19,
           "species": "COMBUSKEN"
         }
       ]
@@ -13977,12 +13977,12 @@
       "pokemon": [
         {
           "iv": 255,
-          "lvl": 20,
+          "lvl": 18,
           "species": "TORKOAL"
         },
         {
           "iv": 255,
-          "lvl": 20,
+          "lvl": 19,
           "species": "MARSHTOMP"
         }
       ]
