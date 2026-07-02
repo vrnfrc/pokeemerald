@@ -1,6 +1,6 @@
 <script lang="ts">
   import { MOVE_LIST, MOVE_NAME_MAP } from '../lib/movesData';
-  import { ivToDisplayLabel, type TrainerPokemon, type TrainerPartyType, getTrainerTypeCapabilities } from '../lib/trainerTypes';
+  import { type TrainerPokemon, type TrainerPartyType, getTrainerTypeCapabilities } from '../lib/trainerTypes';
 
   interface Props {
     pokemon: TrainerPokemon;
@@ -143,12 +143,13 @@
     <div class="field-group">
       <div class="field-label">
         <span>IV</span>
-        <span class="field-value">{pokemon.iv} ({ivToDisplayLabel(pokemon.iv)})</span>
+        <span class="field-value">{pokemon.iv}</span>
       </div>
       <input
         type="range"
         min="0"
         max="255"
+        step="10"
         value={pokemon.iv}
         oninput={handleIvChange}
         class="slider"
