@@ -20,12 +20,12 @@ export const prerender = false;
 export const GET: APIRoute = async ({ params }) => {
   const name = params.name;
   if (!name) {
-    return new Response('Missing trainer name', { status: 400 });
+    return new Response(JSON.stringify({ error: 'Missing trainer name' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
   }
 
   const trainer = getTrainerDisplay(name);
   if (!trainer) {
-    return new Response('Trainer not found', { status: 404 });
+    return new Response(JSON.stringify({ error: 'Trainer not found' }), { status: 404, headers: { 'Content-Type': 'application/json' } });
   }
 
   return new Response(JSON.stringify({ trainer }), {
@@ -36,12 +36,12 @@ export const GET: APIRoute = async ({ params }) => {
 export const PUT: APIRoute = async ({ params, request }) => {
   const name = params.name;
   if (!name) {
-    return new Response('Missing trainer name', { status: 400 });
+    return new Response(JSON.stringify({ error: 'Missing trainer name' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
   }
 
   const party = getTrainerParty(name);
   if (!party) {
-    return new Response('Trainer not found', { status: 404 });
+    return new Response(JSON.stringify({ error: 'Trainer not found' }), { status: 404, headers: { 'Content-Type': 'application/json' } });
   }
 
   const body = await request.json();
@@ -57,7 +57,7 @@ export const PUT: APIRoute = async ({ params, request }) => {
       'TrainerMonItemCustomMoves',
     ];
     if (!validTypes.includes(body.type)) {
-      return new Response('Invalid trainer type', { status: 400 });
+      return new Response(JSON.stringify({ error: 'Invalid trainer type' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
     }
     partyUpdates.type = body.type;
     trainersJsonType = PARTY_TYPE_TO_TRAINERS_JSON[body.type];
@@ -65,7 +65,7 @@ export const PUT: APIRoute = async ({ params, request }) => {
 
   if (body.pokemon !== undefined) {
     if (!Array.isArray(body.pokemon)) {
-      return new Response('Pokemon must be an array', { status: 400 });
+      return new Response(JSON.stringify({ error: 'Pokemon must be an array' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
     }
 
     const items = loadItems();
@@ -74,13 +74,13 @@ export const PUT: APIRoute = async ({ params, request }) => {
     const validatedPokemon: TrainerPokemon[] = [];
     for (const p of body.pokemon) {
       if (!validateIV(p.iv)) {
-        return new Response(`Invalid IV: ${p.iv}`, { status: 400 });
+        return new Response(JSON.stringify({ error: `Invalid IV: ${p.iv}` }), { status: 400, headers: { 'Content-Type': 'application/json' } });
       }
       if (!validateLevel(p.lvl)) {
-        return new Response(`Invalid level: ${p.lvl}`, { status: 400 });
+        return new Response(JSON.stringify({ error: `Invalid level: ${p.lvl}` }), { status: 400, headers: { 'Content-Type': 'application/json' } });
       }
       if (!p.species || typeof p.species !== 'string') {
-        return new Response(`Invalid species: ${p.species}`, { status: 400 });
+        return new Response(JSON.stringify({ error: `Invalid species: ${p.species}` }), { status: 400, headers: { 'Content-Type': 'application/json' } });
       }
 
       const pokemon: TrainerPokemon = {
@@ -90,21 +90,22 @@ export const PUT: APIRoute = async ({ params, request }) => {
       };
 
       if (p.heldItem !== undefined) {
-        if (p.heldItem !== 'NONE' && !validItemValues.includes(p.heldItem)) {
-          return new Response(`Invalid held item: ${p.heldItem}`, { status: 400 });
+        const normalizedItem = p.heldItem === 'NONE' ? 'NONE' : (p.heldItem.startsWith('ITEM_') ? p.heldItem : `ITEM_${p.heldItem}`);
+        if (normalizedItem !== 'NONE' && !validItemValues.includes(normalizedItem)) {
+          return new Response(JSON.stringify({ error: `Invalid held item: ${p.heldItem}` }), { status: 400, headers: { 'Content-Type': 'application/json' } });
         }
-        pokemon.heldItem = p.heldItem;
+        pokemon.heldItem = normalizedItem === 'NONE' ? 'NONE' : normalizedItem.replace(/^ITEM_/, '');
       }
 
       if (p.moves !== undefined) {
         if (!Array.isArray(p.moves) || p.moves.length > 4) {
-          return new Response('Moves must be an array of max 4 items', { status: 400 });
+          return new Response(JSON.stringify({ error: 'Moves must be an array of max 4 items' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
         }
         for (const move of p.moves) {
           if (move === 'NONE') continue;
           const moveWithPrefix = move.startsWith('MOVE_') ? move : `MOVE_${move}`;
           if (!MOVE_LIST.includes(moveWithPrefix)) {
-            return new Response(`Invalid move: ${move}`, { status: 400 });
+            return new Response(JSON.stringify({ error: `Invalid move: ${move}` }), { status: 400, headers: { 'Content-Type': 'application/json' } });
           }
         }
         pokemon.moves = p.moves;
@@ -117,14 +118,14 @@ export const PUT: APIRoute = async ({ params, request }) => {
 
   if (body.items !== undefined) {
     if (!Array.isArray(body.items)) {
-      return new Response('Items must be an array', { status: 400 });
+      return new Response(JSON.stringify({ error: 'Items must be an array' }), { status: 400, headers: { 'Content-Type': 'application/json' } });
     }
     const items = loadItems();
     const validItemValues = items.map((i) => i.value);
     const validatedItems: string[] = [];
     for (const item of body.items) {
       if (item !== 'NONE' && item !== 'ITEM_NONE' && !validItemValues.includes(item)) {
-        return new Response(`Invalid item: ${item}`, { status: 400 });
+        return new Response(JSON.stringify({ error: `Invalid item: ${item}` }), { status: 400, headers: { 'Content-Type': 'application/json' } });
       }
       validatedItems.push(item);
     }

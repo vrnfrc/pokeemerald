@@ -60,10 +60,11 @@
 
   function handleIvChange(event: Event) {
     const target = event.target as HTMLInputElement;
-    const iv = parseInt(target.value);
-    if (!isNaN(iv) && iv >= 0 && iv <= 255) {
-      onChange(index, { iv });
-    }
+    const raw = parseInt(target.value);
+    if (isNaN(raw)) return;
+    const iv = raw >= 255 ? 255 : Math.round(raw / 10) * 10;
+    target.value = String(iv);
+    onChange(index, { iv });
   }
 
   function handleLevelInput(event: Event) {
@@ -149,7 +150,7 @@
         type="range"
         min="0"
         max="255"
-        step="10"
+        step="1"
         value={pokemon.iv}
         oninput={handleIvChange}
         class="slider"

@@ -76,7 +76,12 @@
                     { "id": "TRAINER_JAMES_4", "party": "sParty_James4" },
                     { "id": "TRAINER_JAMES_5", "party": "sParty_James5" }
                 ]
-            },
+            }
+        ],
+        "difficulty": 3
+    },
+    {
+        "maps": [
             {
                 "name": "Route104",
                 "trainers": [
@@ -99,7 +104,7 @@
                 ]
             }
         ],
-        "difficulty": 3
+        "difficulty": 4
     },
     {
         "maps": [

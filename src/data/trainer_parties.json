@@ -134,8 +134,8 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 9,
+          "iv": 160,
+          "lvl": 10,
           "species": "POOCHYENA"
         }
       ]
@@ -1965,7 +1965,7 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 7,
+          "lvl": 8,
           "species": "ZIGZAGOON",
           "heldItem": "NUGGET"
         }
@@ -2374,7 +2374,7 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 7,
+          "lvl": 10,
           "species": "ZIGZAGOON",
           "heldItem": "NUGGET"
         }
@@ -6280,7 +6280,7 @@
         },
         {
           "iv": 130,
-          "lvl": 12,
+          "lvl": 9,
           "species": "CARVANHA"
         }
       ]
@@ -10876,12 +10876,12 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 10,
+          "lvl": 9,
           "species": "LOTAD"
         },
         {
           "iv": 130,
-          "lvl": 10,
+          "lvl": 9,
           "species": "SHROOMISH"
         }
       ]
@@ -11068,23 +11068,23 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 3,
+          "lvl": 6,
           "species": "WURMPLE"
         },
         {
           "iv": 130,
-          "lvl": 3,
-          "species": "WURMPLE"
+          "lvl": 7,
+          "species": "SILCOON"
         },
         {
           "iv": 130,
-          "lvl": 3,
-          "species": "WURMPLE"
+          "lvl": 7,
+          "species": "CASCOON"
         },
         {
           "iv": 130,
-          "lvl": 3,
-          "species": "WURMPLE"
+          "lvl": 7,
+          "species": "NINCADA"
         }
       ]
     },
@@ -11153,13 +11153,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 6,
+          "lvl": 8,
           "species": "NINCADA"
         },
         {
           "iv": 130,
-          "lvl": 6,
-          "species": "NINCADA"
+          "lvl": 8,
+          "species": "CASCOON"
         }
       ]
     },

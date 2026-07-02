@@ -109,8 +109,11 @@
       body: JSON.stringify(updates),
     });
     if (!res.ok) {
-      const data = await res.json();
-      throw new Error(data.error || 'Failed to save');
+      const contentType = res.headers.get('content-type') || '';
+      const message = contentType.includes('application/json')
+        ? (await res.json()).error
+        : await res.text();
+      throw new Error(message || 'Failed to save');
     }
   }
 
