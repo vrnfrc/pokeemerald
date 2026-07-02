@@ -4603,8 +4603,8 @@
       "type": "TrainerMonItemCustomMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 12,
+          "iv": 255,
+          "lvl": 16,
           "species": "GEODUDE",
           "heldItem": "NONE",
           "moves": [
@@ -4615,22 +4615,58 @@
           ]
         },
         {
-          "iv": 130,
-          "lvl": 12,
-          "species": "GEODUDE",
+          "iv": 255,
+          "lvl": 16,
+          "species": "ARON",
           "heldItem": "NONE",
           "moves": [
             "TACKLE",
-            "DEFENSE_CURL",
-            "ROCK_THROW",
+            "HARDEN",
+            "METAL_CLAW",
             "ROCK_TOMB"
           ]
         },
         {
-          "iv": 200,
-          "lvl": 15,
-          "species": "NOSEPASS",
+          "iv": 255,
+          "lvl": 16,
+          "species": "RHYHORN",
           "heldItem": "ORAN_BERRY",
+          "moves": [
+            "STOMP",
+            "FURY_ATTACK",
+            "HORN_ATTACK",
+            "ROCK_TOMB"
+          ]
+        },
+        {
+          "iv": 255,
+          "lvl": 17,
+          "species": "LILEEP",
+          "heldItem": "NONE",
+          "moves": [
+            "ASTONISH",
+            "ACID",
+            "CONSTRICT",
+            "NONE"
+          ]
+        },
+        {
+          "iv": 255,
+          "lvl": 17,
+          "species": "ANORITH",
+          "heldItem": "NONE",
+          "moves": [
+            "MUD_SPORT",
+            "HARDEN",
+            "SCRATCH",
+            "ROCK_TOMB"
+          ]
+        },
+        {
+          "iv": 255,
+          "lvl": 18,
+          "species": "NOSEPASS",
+          "heldItem": "NONE",
           "moves": [
             "BLOCK",
             "HARDEN",
@@ -5910,18 +5946,22 @@
     },
     {
       "name": "Josh",
-      "type": "TrainerMonNoItemCustomMoves",
+      "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 10,
-          "species": "GEODUDE",
-          "moves": [
-            "TACKLE",
-            "NONE",
-            "NONE",
-            "NONE"
-          ]
+          "iv": 200,
+          "lvl": 14,
+          "species": "GEODUDE"
+        },
+        {
+          "iv": 200,
+          "lvl": 14,
+          "species": "LILEEP"
+        },
+        {
+          "iv": 200,
+          "lvl": 14,
+          "species": "ARON"
         }
       ]
     },
@@ -5930,14 +5970,19 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 8,
+          "iv": 200,
+          "lvl": 14,
           "species": "GEODUDE"
         },
         {
-          "iv": 130,
-          "lvl": 8,
-          "species": "GEODUDE"
+          "iv": 200,
+          "lvl": 14,
+          "species": "ARON"
+        },
+        {
+          "iv": 200,
+          "lvl": 14,
+          "species": "ANORITH"
         }
       ]
     },
@@ -10423,14 +10468,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 8,
+          "iv": 200,
+          "lvl": 15,
           "species": "GEODUDE"
         },
         {
-          "iv": 130,
-          "lvl": 8,
-          "species": "GEODUDE"
+          "iv": 200,
+          "lvl": 15,
+          "species": "NOSEPASS"
         }
       ]
     },
@@ -10683,14 +10728,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 13,
-          "species": "LOTAD"
+          "iv": 255,
+          "lvl": 20,
+          "species": "LOMBRE"
         },
         {
-          "iv": 130,
-          "lvl": 15,
-          "species": "TORCHIC"
+          "iv": 255,
+          "lvl": 20,
+          "species": "COMBUSKEN"
         }
       ]
     },
@@ -10699,14 +10744,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 13,
+          "iv": 255,
+          "lvl": 20,
           "species": "WINGULL"
         },
         {
-          "iv": 130,
-          "lvl": 15,
-          "species": "TREECKO"
+          "iv": 255,
+          "lvl": 20,
+          "species": "GROVYLE"
         }
       ]
     },
@@ -10800,14 +10845,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 13,
+          "iv": 255,
+          "lvl": 20,
           "species": "SLUGMA"
         },
         {
-          "iv": 130,
-          "lvl": 15,
-          "species": "MUDKIP"
+          "iv": 255,
+          "lvl": 20,
+          "species": "MARSHTOMP"
         }
       ]
     },
@@ -10816,14 +10861,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 13,
+          "iv": 255,
+          "lvl": 20,
           "species": "WINGULL"
         },
         {
-          "iv": 130,
-          "lvl": 15,
-          "species": "TREECKO"
+          "iv": 255,
+          "lvl": 20,
+          "species": "GROVYLE"
         }
       ]
     },
@@ -13915,14 +13960,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 13,
-          "species": "LOTAD"
+          "iv": 255,
+          "lvl": 20,
+          "species": "LOMBRE"
         },
         {
-          "iv": 130,
-          "lvl": 15,
-          "species": "TORCHIC"
+          "iv": 255,
+          "lvl": 20,
+          "species": "COMBUSKEN"
         }
       ]
     },
@@ -13931,14 +13976,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 13,
+          "iv": 255,
+          "lvl": 20,
           "species": "TORKOAL"
         },
         {
-          "iv": 130,
-          "lvl": 15,
-          "species": "MUDKIP"
+          "iv": 255,
+          "lvl": 20,
+          "species": "MARSHTOMP"
         }
       ]
     },
