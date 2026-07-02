@@ -1455,12 +1455,12 @@
                 "trainers": [
                     { "id": "TRAINER_AIDAN", "party": "sParty_Aidan" },
                     { "id": "TRAINER_ATHENA", "party": "sParty_Athena" },
-                    { "id": "TRAINER_CAMDEN", "party": "sParty_Camden" },
-                    { "id": "TRAINER_DONNY", "party": "sParty_Donny" },
-                    { "id": "TRAINER_HENRY", "party": "sParty_Henry" },
                     { "id": "TRAINER_JONAH", "party": "sParty_Jonah" },
+                    { "id": "TRAINER_HENRY", "party": "sParty_Henry" },
+                    { "id": "TRAINER_ROGER", "party": "sParty_Roger" },
                     { "id": "TRAINER_KOJI_1", "party": "sParty_Koji1" },
-                    { "id": "TRAINER_ROGER", "party": "sParty_Roger" }
+                    { "id": "TRAINER_CAMDEN", "party": "sParty_Camden" },
+                    { "id": "TRAINER_DONNY", "party": "sParty_Donny" }
                 ],
                 "challenges": [],
                 "rematches": [
@@ -1471,21 +1471,15 @@
                 ]
             },
             {
-                "name": "Underwater_Route127",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
                 "name": "Route128",
                 "trainers": [
                     { "id": "TRAINER_ALEXA", "party": "sParty_Alexa" },
-                    { "id": "TRAINER_CARLEE", "party": "sParty_Carlee" },
-                    { "id": "TRAINER_HARRISON", "party": "sParty_Harrison" },
-                    { "id": "TRAINER_ISAIAH_1", "party": "sParty_Isaiah1" },
-                    { "id": "TRAINER_KATELYN_1", "party": "sParty_Katelyn1" },
                     { "id": "TRAINER_RUBEN", "party": "sParty_Ruben" },
-                    { "id": "TRAINER_WAYNE", "party": "sParty_Wayne" }
+                    { "id": "TRAINER_ISAIAH_1", "party": "sParty_Isaiah1" },
+                    { "id": "TRAINER_WAYNE", "party": "sParty_Wayne" },
+                    { "id": "TRAINER_KATELYN_1", "party": "sParty_Katelyn1" },
+                    { "id": "TRAINER_HARRISON", "party": "sParty_Harrison" },
+                    { "id": "TRAINER_CARLEE", "party": "sParty_Carlee" }
                 ],
                 "challenges": [],
                 "rematches": [
@@ -1498,30 +1492,12 @@
                     { "id": "TRAINER_KATELYN_4", "party": "sParty_Katelyn4" },
                     { "id": "TRAINER_KATELYN_5", "party": "sParty_Katelyn5" }
                 ]
-            },
-            {
-                "name": "Underwater_Route128",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "Underwater_Route126",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
             }
         ],
         "difficulty": 50
     },
     {
         "maps": [
-            {
-                "name": "SeafloorCavern_Entrance",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
             {
                 "name": "SeafloorCavern_Room1",
                 "trainers": [
@@ -1532,18 +1508,13 @@
                 "rematches": []
             },
             {
-                "name": "SeafloorCavern_Room2",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
                 "name": "SeafloorCavern_Room3",
                 "trainers": [
-                    { "id": "TRAINER_GRUNT_SEAFLOOR_CAVERN_5", "party": "sParty_GruntSeafloorCavern5" },
+                    { "id": "TRAINER_GRUNT_SEAFLOOR_CAVERN_5", "party": "sParty_GruntSeafloorCavern5" }
+                ],
+                "challenges": [
                     { "id": "TRAINER_SHELLY_SEAFLOOR_CAVERN", "party": "sParty_ShellySeafloorCavern" }
                 ],
-                "challenges": [],
                 "rematches": []
             },
             {
@@ -1556,35 +1527,11 @@
                 "rematches": []
             },
             {
-                "name": "SeafloorCavern_Room5",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "SeafloorCavern_Room6",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "SeafloorCavern_Room7",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "SeafloorCavern_Room8",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
                 "name": "SeafloorCavern_Room9",
-                "trainers": [
+                "trainers": [],
+                "challenges": [
                     { "id": "TRAINER_ARCHIE", "party": "sParty_Archie" }
                 ],
-                "challenges": [],
                 "rematches": []
             }
         ],
@@ -1593,59 +1540,13 @@
     {
         "maps": [
             {
-                "name": "SootopolisCity",
-                "trainers": [
-                    { "id": "TRAINER_ANDREA", "party": "sParty_Andrea" },
-                    { "id": "TRAINER_ANNIKA", "party": "sParty_Annika" },
-                    { "id": "TRAINER_BETHANY", "party": "sParty_Bethany" },
-                    { "id": "TRAINER_BRIANNA", "party": "sParty_Brianna" },
-                    { "id": "TRAINER_BRIDGET", "party": "sParty_Bridget" },
-                    { "id": "TRAINER_CONNIE", "party": "sParty_Connie" },
-                    { "id": "TRAINER_CRISSY", "party": "sParty_Crissy" },
-                    { "id": "TRAINER_DAPHNE", "party": "sParty_Daphne" },
-                    { "id": "TRAINER_JUAN_1", "party": "sParty_Juan1" },
-                    { "id": "TRAINER_OLIVIA", "party": "sParty_Olivia" },
-                    { "id": "TRAINER_TIFFANY", "party": "sParty_Tiffany" }
-                ],
-                "challenges": [],
-                "rematches": [
-                    { "id": "TRAINER_JUAN_2", "party": "sParty_Juan2" },
-                    { "id": "TRAINER_JUAN_3", "party": "sParty_Juan3" },
-                    { "id": "TRAINER_JUAN_4", "party": "sParty_Juan4" },
-                    { "id": "TRAINER_JUAN_5", "party": "sParty_Juan5" }
-                ]
-            },
-            {
-                "name": "CaveOfOrigin_Entrance",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "CaveOfOrigin_1F",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "CaveOfOrigin_B1F",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            }
-        ],
-        "difficulty": 52
-    },
-    {
-        "maps": [
-            {
                 "name": "Route129",
                 "trainers": [
-                    { "id": "TRAINER_ALLISON", "party": "sParty_Allison" },
                     { "id": "TRAINER_CHASE", "party": "sParty_Chase" },
+                    { "id": "TRAINER_ALLISON", "party": "sParty_Allison" },
+                    { "id": "TRAINER_TISHA", "party": "sParty_Tisha" },
                     { "id": "TRAINER_CLARENCE", "party": "sParty_Clarence" },
-                    { "id": "TRAINER_REED", "party": "sParty_Reed" },
-                    { "id": "TRAINER_TISHA", "party": "sParty_Tisha" }
+                    { "id": "TRAINER_REED", "party": "sParty_Reed" }
                 ],
                 "challenges": [],
                 "rematches": []
@@ -1653,8 +1554,8 @@
             {
                 "name": "Route130",
                 "trainers": [
-                    { "id": "TRAINER_KATIE", "party": "sParty_Katie" },
                     { "id": "TRAINER_RODNEY", "party": "sParty_Rodney" },
+                    { "id": "TRAINER_KATIE", "party": "sParty_Katie" },
                     { "id": "TRAINER_SANTIAGO", "party": "sParty_Santiago" }
                 ],
                 "challenges": [],
@@ -1663,13 +1564,13 @@
             {
                 "name": "Route131",
                 "trainers": [
-                    { "id": "TRAINER_HERMAN", "party": "sParty_Herman" },
-                    { "id": "TRAINER_KARA", "party": "sParty_Kara" },
                     { "id": "TRAINER_KEVIN", "party": "sParty_Kevin" },
-                    { "id": "TRAINER_RELI_AND_IAN", "party": "sParty_ReliAndIan" },
+                    { "id": "TRAINER_TALIA", "party": "sParty_Talia" },
                     { "id": "TRAINER_RICHARD", "party": "sParty_Richard" },
+                    { "id": "TRAINER_KARA", "party": "sParty_Kara" },
+                    { "id": "TRAINER_HERMAN", "party": "sParty_Herman" },
                     { "id": "TRAINER_SUSIE", "party": "sParty_Susie" },
-                    { "id": "TRAINER_TALIA", "party": "sParty_Talia" }
+                    { "id": "TRAINER_RELI_AND_IAN", "party": "sParty_ReliAndIan" }
                 ],
                 "challenges": [],
                 "rematches": []
@@ -1730,41 +1631,6 @@
     {
         "maps": [
             {
-                "name": "SkyPillar_1F",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "SkyPillar_2F",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "SkyPillar_3F",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "SkyPillar_4F",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "SkyPillar_5F",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            }
-        ],
-        "difficulty": 55
-    },
-    {
-        "maps": [
-            {
                 "name": "SootopolisCity",
                 "trainers": [
                     { "id": "TRAINER_ANDREA", "party": "sParty_Andrea" },
@@ -1813,24 +1679,6 @@
                     { "id": "TRAINER_NICOLAS_4", "party": "sParty_Nicolas4" },
                     { "id": "TRAINER_NICOLAS_5", "party": "sParty_Nicolas5" }
                 ]
-            },
-            {
-                "name": "MeteorFalls_B1F_1R",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "MeteorFalls_B1F_2R",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
-            },
-            {
-                "name": "EverGrandeCity",
-                "trainers": [],
-                "challenges": [],
-                "rematches": []
             }
         ],
         "difficulty": 58,
