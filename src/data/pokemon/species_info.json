@@ -9750,7 +9750,7 @@
       "baseSpDefense": "65",
       "types": [
         "TYPE_GRASS",
-        "TYPE_GRASS"
+        "TYPE_ELECTRIC"
       ],
       "catchRate": "45",
       "expYield": "141",
@@ -9788,7 +9788,7 @@
       "baseSpDefense": "85",
       "types": [
         "TYPE_GRASS",
-        "TYPE_GRASS"
+        "TYPE_ELECTRIC"
       ],
       "catchRate": "45",
       "expYield": "208",
@@ -9933,11 +9933,11 @@
     },
     {
       "baseHP": "50",
-      "baseAttack": "70",
-      "baseDefense": "50",
-      "baseSpeed": "40",
-      "baseSpAttack": "50",
-      "baseSpDefense": "50",
+      "baseAttack": "60",
+      "baseDefense": "45",
+      "baseSpeed": "50",
+      "baseSpAttack": "60",
+      "baseSpDefense": "45",
       "types": [
         "TYPE_WATER",
         "TYPE_WATER"
@@ -9971,11 +9971,11 @@
     },
     {
       "baseHP": "70",
-      "baseAttack": "85",
-      "baseDefense": "70",
-      "baseSpeed": "50",
-      "baseSpAttack": "60",
-      "baseSpDefense": "70",
+      "baseAttack": "70",
+      "baseDefense": "60",
+      "baseSpeed": "70",
+      "baseSpAttack": "75",
+      "baseSpDefense": "60",
       "types": [
         "TYPE_WATER",
         "TYPE_GROUND"
@@ -10008,12 +10008,12 @@
       "label": "MARSHTOMP"
     },
     {
-      "baseHP": "100",
-      "baseAttack": "110",
-      "baseDefense": "90",
-      "baseSpeed": "60",
-      "baseSpAttack": "85",
-      "baseSpDefense": "90",
+      "baseHP": "90",
+      "baseAttack": "100",
+      "baseDefense": "80",
+      "baseSpeed": "85",
+      "baseSpAttack": "110",
+      "baseSpDefense": "80",
       "types": [
         "TYPE_WATER",
         "TYPE_GROUND"
@@ -10049,8 +10049,8 @@
       "baseHP": "35",
       "baseAttack": "55",
       "baseDefense": "35",
-      "baseSpeed": "35",
-      "baseSpAttack": "30",
+      "baseSpeed": "65",
+      "baseSpAttack": "60",
       "baseSpDefense": "30",
       "types": [
         "TYPE_DARK",

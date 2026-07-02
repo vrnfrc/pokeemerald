@@ -14006,6 +14006,11 @@
           "move": "MOVE_QUICK_ATTACK"
         },
         {
+          "level": 13,
+          "level_padded": "13",
+          "move": "MOVE_VINE_WHIP"
+        },
+        {
           "level": 16,
           "level_padded": "16",
           "move": "MOVE_PURSUIT"
@@ -14033,7 +14038,7 @@
         {
           "level": 41,
           "level_padded": "41",
-          "move": "MOVE_DETECT"
+          "move": "MOVE_THUNDERBOLT"
         },
         {
           "level": 46,
@@ -14077,9 +14082,14 @@
           "move": "MOVE_QUICK_ATTACK"
         },
         {
+          "level": 13,
+          "level_padded": "13",
+          "move": "MOVE_VINE_WHIP"
+        },
+        {
           "level": 16,
           "level_padded": "16",
-          "move": "MOVE_FURY_CUTTER"
+          "move": "MOVE_THUNDER_SHOCK"
         },
         {
           "level": 17,
@@ -14109,12 +14119,12 @@
         {
           "level": 47,
           "level_padded": "47",
-          "move": "MOVE_DETECT"
+          "move": "MOVE_THUNDERBOLT"
         },
         {
           "level": 53,
           "level_padded": "53",
-          "move": "MOVE_FALSE_SWIPE"
+          "move": "MOVE_GIGA_DRAIN"
         }
       ]
     },
@@ -14153,9 +14163,14 @@
           "move": "MOVE_QUICK_ATTACK"
         },
         {
+          "level": 13,
+          "level_padded": "13",
+          "move": "MOVE_VINE_WHIP"
+        },
+        {
           "level": 16,
           "level_padded": "16",
-          "move": "MOVE_FURY_CUTTER"
+          "move": "MOVE_THUNDER_SHOCK"
         },
         {
           "level": 17,
@@ -14185,12 +14200,12 @@
         {
           "level": 51,
           "level_padded": "51",
-          "move": "MOVE_DETECT"
+          "move": "MOVE_THUNDERBOLT"
         },
         {
           "level": 59,
           "level_padded": "59",
-          "move": "MOVE_FALSE_SWIPE"
+          "move": "MOVE_GIGA_DRAIN"
         }
       ]
     },
@@ -14246,11 +14261,6 @@
         {
           "level": 37,
           "level_padded": "37",
-          "move": "MOVE_MIRROR_MOVE"
-        },
-        {
-          "level": 43,
-          "level_padded": "43",
           "move": "MOVE_FLAMETHROWER"
         }
       ]
@@ -14322,7 +14332,7 @@
         {
           "level": 43,
           "level_padded": "43",
-          "move": "MOVE_MIRROR_MOVE"
+          "move": "MOVE_FLAMETHROWER"
         },
         {
           "level": 50,
@@ -14408,7 +14418,7 @@
         {
           "level": 49,
           "level_padded": "49",
-          "move": "MOVE_MIRROR_MOVE"
+          "move": "MOVE_FLAMETHROWER"
         },
         {
           "level": 59,
@@ -14454,7 +14464,7 @@
         {
           "level": 24,
           "level_padded": "24",
-          "move": "MOVE_MUD_SPORT"
+          "move": "MOVE_WATER_PULSE"
         },
         {
           "level": 28,
@@ -14535,7 +14545,7 @@
         {
           "level": 25,
           "level_padded": "25",
-          "move": "MOVE_MUD_SPORT"
+          "move": "MOVE_WATER_PULSE"
         },
         {
           "level": 31,
@@ -14616,7 +14626,7 @@
         {
           "level": 25,
           "level_padded": "25",
-          "move": "MOVE_MUD_SPORT"
+          "move": "MOVE_WATER_PULSE"
         },
         {
           "level": 31,
