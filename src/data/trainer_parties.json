@@ -4692,6 +4692,18 @@
       "pokemon": [
         {
           "iv": 255,
+          "lvl": 22,
+          "species": "HERACROSS",
+          "heldItem": "SITRUS_BERRY",
+          "moves": [
+            "TACKLE",
+            "ENDURE",
+            "LEER",
+            "BULK_UP"
+          ]
+        },
+        {
+          "iv": 255,
           "lvl": 23,
           "species": "MACHOP",
           "heldItem": "NONE",
@@ -4705,24 +4717,24 @@
         {
           "iv": 255,
           "lvl": 23,
-          "species": "HERACROSS",
-          "heldItem": "SITRUS_BERRY",
-          "moves": [
-            "TACKLE",
-            "ENDURE",
-            "BRICK_BREAK",
-            "BULK_UP"
-          ]
-        },
-        {
-          "iv": 255,
-          "lvl": 24,
           "species": "MEDITITE",
           "heldItem": "NONE",
           "moves": [
             "FOCUS_PUNCH",
             "LIGHT_SCREEN",
             "REFLECT",
+            "BULK_UP"
+          ]
+        },
+        {
+          "iv": 255,
+          "lvl": 24,
+          "species": "MAKUHITA",
+          "heldItem": "SITRUS_BERRY",
+          "moves": [
+            "ARM_THRUST",
+            "VITAL_THROW",
+            "FAKE_OUT",
             "BULK_UP"
           ]
         },
@@ -4735,18 +4747,6 @@
             "PECK",
             "EMBER",
             "DOUBLE_KICK",
-            "BULK_UP"
-          ]
-        },
-        {
-          "iv": 255,
-          "lvl": 25,
-          "species": "HARIYAMA",
-          "heldItem": "SITRUS_BERRY",
-          "moves": [
-            "ARM_THRUST",
-            "VITAL_THROW",
-            "REVERSAL",
             "BULK_UP"
           ]
         }
