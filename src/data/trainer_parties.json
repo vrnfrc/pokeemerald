@@ -285,8 +285,18 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 15,
+          "lvl": 24,
           "species": "CARVANHA"
+        },
+        {
+          "iv": 130,
+          "lvl": 24,
+          "species": "GULPIN"
+        },
+        {
+          "iv": 130,
+          "lvl": 24,
+          "species": "POOCHYENA"
         }
       ]
     },
@@ -296,13 +306,18 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 14,
-          "species": "ZUBAT"
+          "lvl": 23,
+          "species": "GOLBAT"
         },
         {
           "iv": 130,
-          "lvl": 14,
+          "lvl": 25,
           "species": "CARVANHA"
+        },
+        {
+          "iv": 130,
+          "lvl": 25,
+          "species": "CLAMPERL"
         }
       ]
     },
@@ -921,13 +936,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 12,
-          "species": "AZURILL"
+          "lvl": 21,
+          "species": "GOLDEEN"
         },
         {
           "iv": 130,
-          "lvl": 12,
-          "species": "AZURILL"
+          "lvl": 23,
+          "species": "MARILL"
         }
       ]
     },
@@ -1019,18 +1034,22 @@
     },
     {
       "name": "Ricky1",
-      "type": "TrainerMonNoItemCustomMoves",
+      "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 13,
-          "species": "ZIGZAGOON",
-          "moves": [
-            "SAND_ATTACK",
-            "HEADBUTT",
-            "TAIL_WHIP",
-            "SURF"
-          ]
+          "lvl": 21,
+          "species": "CLAMPERL"
+        },
+        {
+          "iv": 130,
+          "lvl": 22,
+          "species": "TENTACOOL"
+        },
+        {
+          "iv": 130,
+          "lvl": 22,
+          "species": "GOLDEEN"
         }
       ]
     },
@@ -1040,13 +1059,18 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 12,
+          "lvl": 23,
           "species": "AZURILL"
         },
         {
           "iv": 130,
-          "lvl": 12,
+          "lvl": 24,
           "species": "MARILL"
+        },
+        {
+          "iv": 130,
+          "lvl": 23,
+          "species": "CLAMPERL"
         }
       ]
     },
@@ -8932,13 +8956,23 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 12,
+          "lvl": 23,
           "species": "WINGULL"
         },
         {
           "iv": 130,
-          "lvl": 12,
+          "lvl": 23,
           "species": "MACHOP"
+        },
+        {
+          "iv": 130,
+          "lvl": 23,
+          "species": "GOLDEEN"
+        },
+        {
+          "iv": 130,
+          "lvl": 23,
+          "species": "LINOONE"
         }
       ]
     },
@@ -8948,8 +8982,18 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 13,
+          "lvl": 23,
+          "species": "MAKUHITA"
+        },
+        {
+          "iv": 130,
+          "lvl": 23,
           "species": "WINGULL"
+        },
+        {
+          "iv": 130,
+          "lvl": 23,
+          "species": "LINOONE"
         }
       ]
     },
@@ -8975,17 +9019,17 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 11,
+          "lvl": 24,
           "species": "WINGULL"
         },
         {
           "iv": 130,
-          "lvl": 11,
+          "lvl": 23,
           "species": "MACHOP"
         },
         {
           "iv": 130,
-          "lvl": 11,
+          "lvl": 24,
           "species": "TENTACOOL"
         }
       ]
@@ -11776,8 +11820,18 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 13,
+          "lvl": 23,
           "species": "GOLDEEN"
+        },
+        {
+          "iv": 130,
+          "lvl": 23,
+          "species": "CLAMPERL"
+        },
+        {
+          "iv": 130,
+          "lvl": 23,
+          "species": "SKITTY"
         }
       ]
     },
@@ -12976,8 +13030,18 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 13,
+          "lvl": 21,
+          "species": "AZURILL"
+        },
+        {
+          "iv": 130,
+          "lvl": 23,
           "species": "MARILL"
+        },
+        {
+          "iv": 130,
+          "lvl": 22,
+          "species": "CLAMPERL"
         }
       ]
     },
@@ -12987,13 +13051,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 12,
+          "lvl": 23,
           "species": "TENTACOOL"
         },
         {
           "iv": 130,
-          "lvl": 12,
-          "species": "TENTACOOL"
+          "lvl": 22,
+          "species": "LINOONE"
         }
       ]
     },
