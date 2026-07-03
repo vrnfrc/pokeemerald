@@ -4037,10 +4037,6 @@
                     {
                         "id": "TRAINER_QUINCY",
                         "party": "sParty_Quincy"
-                    },
-                    {
-                        "id": "TRAINER_WALLY_VR_2",
-                        "party": "sParty_WallyVr2"
                     }
                 ],
                 "challenges": [
@@ -4049,7 +4045,24 @@
                         "party": "sParty_WallyVr1"
                     }
                 ],
-                "rematches": []
+                "rematches": [
+                    {
+                        "id": "TRAINER_WALLY_VR_2",
+                        "party": "sParty_WallyVr2"
+                    },
+                    {
+                        "id": "TRAINER_WALLY_VR_3",
+                        "party": "sParty_WallyVr3"
+                    },
+                    {
+                        "id": "TRAINER_WALLY_VR_4",
+                        "party": "sParty_WallyVr4"
+                    },
+                    {
+                        "id": "TRAINER_WALLY_VR_5",
+                        "party": "sParty_WallyVr5"
+                    }
+                ]
             },
             {
                 "name": "VictoryRoad_B1F",
