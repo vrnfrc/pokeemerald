@@ -4042,25 +4042,25 @@
                 "challenges": [
                     {
                         "id": "TRAINER_WALLY_VR_1",
-                        "party": "sParty_WallyVr1"
+                        "party": "sParty_WallyVR1"
                     }
                 ],
                 "rematches": [
                     {
                         "id": "TRAINER_WALLY_VR_2",
-                        "party": "sParty_WallyVr2"
+                        "party": "sParty_WallyVR2"
                     },
                     {
                         "id": "TRAINER_WALLY_VR_3",
-                        "party": "sParty_WallyVr3"
+                        "party": "sParty_WallyVR3"
                     },
                     {
                         "id": "TRAINER_WALLY_VR_4",
-                        "party": "sParty_WallyVr4"
+                        "party": "sParty_WallyVR4"
                     },
                     {
                         "id": "TRAINER_WALLY_VR_5",
-                        "party": "sParty_WallyVr5"
+                        "party": "sParty_WallyVR5"
                     }
                 ]
             },
