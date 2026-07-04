@@ -17125,7 +17125,7 @@
         {
           "level": 45,
           "level_padded": "45",
-          "move": "MOVE_ATTRACT"
+          "move": "MOVE_ICE_BEAM"
         },
         {
           "level": 50,

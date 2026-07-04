@@ -11688,7 +11688,7 @@
       "baseSpDefense": "125",
       "types": [
         "TYPE_WATER",
-        "TYPE_WATER"
+        "TYPE_ICE"
       ],
       "catchRate": "60",
       "expYield": "213",

@@ -1270,8 +1270,8 @@
                 ]
             }
         ],
-        "difficulty": 17,
-        "done": false
+        "difficulty": 16,
+        "done": true
     },
     {
         "maps": [
@@ -1448,8 +1448,8 @@
                 ]
             }
         ],
-        "difficulty": 20,
-        "done": false
+        "difficulty": 17,
+        "done": true
     },
     {
         "maps": [
@@ -1510,8 +1510,8 @@
                 ]
             }
         ],
-        "difficulty": 21,
-        "done": false
+        "difficulty": 18,
+        "done": true
     },
     {
         "maps": [
@@ -1593,8 +1593,8 @@
                 ]
             }
         ],
-        "difficulty": 23,
-        "done": false
+        "difficulty": 19,
+        "done": true
     },
     {
         "maps": [
@@ -1659,8 +1659,8 @@
                 ]
             }
         ],
-        "difficulty": 24,
-        "done": false
+        "difficulty": 20,
+        "done": true
     },
     {
         "maps": [
@@ -1726,8 +1726,8 @@
                 ]
             }
         ],
-        "difficulty": 23,
-        "done": false,
+        "difficulty": 22,
+        "done": true,
         "unlocks": [
             "HM04 Strength",
             "Go-Googles"
