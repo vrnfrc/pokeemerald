@@ -657,3 +657,11 @@ MagmaHideout_4F_EventScript_ItemMaxRevive::
 MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
 	end
+
+Route118_EventScript_ItemDeepSeaScale::
+	finditem ITEM_DEEP_SEA_SCALE
+	end
+
+Route118_EventScript_ItemDeepSeaTooth::
+	finditem ITEM_DEEP_SEA_TOOTH
+	end

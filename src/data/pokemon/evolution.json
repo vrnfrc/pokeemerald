@@ -1243,7 +1243,7 @@
       "to": [
         {
           "method": "EVO_LEVEL",
-          "param": 26,
+          "param": 30,
           "target": "MIGHTYENA"
         }
       ]

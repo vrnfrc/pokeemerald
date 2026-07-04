@@ -14702,7 +14702,7 @@
         {
           "level": 33,
           "level_padded": "33",
-          "move": "MOVE_TAKE_DOWN"
+          "move": "MOVE_CRUNCH"
         },
         {
           "level": 37,
@@ -14712,7 +14712,7 @@
         {
           "level": 41,
           "level_padded": "41",
-          "move": "MOVE_CRUNCH"
+          "move": "MOVE_TAKE_DOWN"
         },
         {
           "level": 45,
@@ -14783,7 +14783,7 @@
         {
           "level": 37,
           "level_padded": "37",
-          "move": "MOVE_TAKE_DOWN"
+          "move": "MOVE_CRUNCH"
         },
         {
           "level": 42,
@@ -14793,7 +14793,7 @@
         {
           "level": 47,
           "level_padded": "47",
-          "move": "MOVE_CRUNCH"
+          "move": "MOVE_TAKE_DOWN"
         },
         {
           "level": 52,

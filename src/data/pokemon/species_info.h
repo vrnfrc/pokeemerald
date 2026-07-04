@@ -7918,12 +7918,12 @@ const struct SpeciesInfo gSpeciesInfo[] =
 
     [SPECIES_POOCHYENA] =
     {
-        .baseHP        = 35,
-        .baseAttack    = 55,
-        .baseDefense   = 35,
-        .baseSpeed     = 65,
-        .baseSpAttack  = 60,
-        .baseSpDefense = 30,
+        .baseHP        = 50,
+        .baseAttack    = 60,
+        .baseDefense   = 50,
+        .baseSpeed     = 70,
+        .baseSpAttack  = 70,
+        .baseSpDefense = 50,
         .types = { TYPE_DARK, TYPE_DARK },
         .catchRate = 255,
         .expYield = 66,
@@ -7950,10 +7950,10 @@ const struct SpeciesInfo gSpeciesInfo[] =
     {
         .baseHP        = 70,
         .baseAttack    = 90,
-        .baseDefense   = 70,
+        .baseDefense   = 80,
         .baseSpeed     = 100,
         .baseSpAttack  = 105,
-        .baseSpDefense = 60,
+        .baseSpDefense = 75,
         .types = { TYPE_DARK, TYPE_POISON },
         .catchRate = 127,
         .expYield = 153,
