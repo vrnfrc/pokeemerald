@@ -19014,7 +19014,7 @@
         {
           "level": 21,
           "level_padded": "21",
-          "move": "MOVE_SAFEGUARD"
+          "move": "MOVE_WING_ATTACK"
         },
         {
           "level": 28,
@@ -19085,7 +19085,7 @@
         {
           "level": 21,
           "level_padded": "21",
-          "move": "MOVE_SAFEGUARD"
+          "move": "MOVE_WING_ATTACK"
         },
         {
           "level": 28,
