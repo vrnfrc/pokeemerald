@@ -1662,12 +1662,12 @@
       "from": "CLAMPERL",
       "to": [
         {
-          "method": "EVO_TRADE_ITEM",
+          "method": "EVO_ITEM",
           "param": "ITEM_DEEP_SEA_TOOTH",
           "target": "HUNTAIL"
         },
         {
-          "method": "EVO_TRADE_ITEM",
+          "method": "EVO_ITEM",
           "param": "ITEM_DEEP_SEA_SCALE",
           "target": "GOREBYSS"
         }
