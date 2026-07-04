@@ -537,18 +537,18 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 14,
+          "lvl": 27,
           "species": "ROSELIA"
         },
         {
           "iv": 130,
-          "lvl": 14,
+          "lvl": 27,
           "species": "SHROOMISH"
         },
         {
           "iv": 130,
-          "lvl": 14,
-          "species": "ROSELIA"
+          "lvl": 27,
+          "species": "GLOOM"
         }
       ]
     },
@@ -3175,29 +3175,17 @@
     },
     {
       "name": "Kirk",
-      "type": "TrainerMonNoItemCustomMoves",
+      "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 17,
-          "species": "ELECTRIKE",
-          "moves": [
-            "QUICK_ATTACK",
-            "THUNDER_WAVE",
-            "SPARK",
-            "LEER"
-          ]
+          "iv": 200,
+          "lvl": 30,
+          "species": "MANECTRIC"
         },
         {
-          "iv": 130,
-          "lvl": 17,
-          "species": "VOLTORB",
-          "moves": [
-            "CHARGE",
-            "SHOCK_WAVE",
-            "SCREECH",
-            "NONE"
-          ]
+          "iv": 200,
+          "lvl": 30,
+          "species": "ELECTRODE"
         }
       ]
     },
@@ -3233,14 +3221,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 17,
-          "species": "VOLTORB"
+          "iv": 200,
+          "lvl": 30,
+          "species": "ELECTRODE"
         },
         {
-          "iv": 130,
-          "lvl": 17,
-          "species": "MAGNEMITE"
+          "iv": 200,
+          "lvl": 30,
+          "species": "MAGNETON"
         }
       ]
     },
@@ -3266,13 +3254,18 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 15,
+          "lvl": 27,
           "species": "MAGNEMITE"
         },
         {
           "iv": 130,
-          "lvl": 15,
-          "species": "WHISMUR"
+          "lvl": 27,
+          "species": "LOUDRED"
+        },
+        {
+          "iv": 130,
+          "lvl": 27,
+          "species": "VOLTORB"
         }
       ]
     },
@@ -3786,12 +3779,12 @@
       "pokemon": [
         {
           "iv": 150,
-          "lvl": 16,
+          "lvl": 28,
           "species": "DUSTOX"
         },
         {
           "iv": 150,
-          "lvl": 16,
+          "lvl": 28,
           "species": "BEAUTIFLY"
         }
       ]
@@ -4808,22 +4801,58 @@
       "type": "TrainerMonItemCustomMoves",
       "pokemon": [
         {
-          "iv": 200,
-          "lvl": 20,
-          "species": "VOLTORB",
+          "iv": 255,
+          "lvl": 32,
+          "species": "GROVYLE",
           "heldItem": "NONE",
           "moves": [
-            "ROLLOUT",
-            "SPARK",
-            "SELF_DESTRUCT",
-            "SHOCK_WAVE"
+            "LEAF_BLADE",
+            "PURSUIT",
+            "SHOCK_WAVE",
+            "QUICK_ATTACK"
           ]
         },
         {
-          "iv": 200,
-          "lvl": 20,
-          "species": "ELECTRIKE",
+          "iv": 255,
+          "lvl": 32,
+          "species": "MAGNETON",
           "heldItem": "NONE",
+          "moves": [
+            "SPARK",
+            "SONIC_BOOM",
+            "SHOCK_WAVE",
+            "SUPERSONIC"
+          ]
+        },
+        {
+          "iv": 255,
+          "lvl": 33,
+          "species": "LANTURN",
+          "heldItem": "NONE",
+          "moves": [
+            "WATER_GUN",
+            "SHOCK_WAVE",
+            "CONFUSE_RAY",
+            "THUNDER_WAVE"
+          ]
+        },
+        {
+          "iv": 255,
+          "lvl": 33,
+          "species": "ELECTRODE",
+          "heldItem": "NONE",
+          "moves": [
+            "SELF_DESTRUCT",
+            "SCREECH",
+            "SHOCK_WAVE",
+            "SPARK"
+          ]
+        },
+        {
+          "iv": 255,
+          "lvl": 34,
+          "species": "MANECTRIC",
+          "heldItem": "SITRUS_BERRY",
           "moves": [
             "SHOCK_WAVE",
             "LEER",
@@ -4832,27 +4861,15 @@
           ]
         },
         {
-          "iv": 220,
-          "lvl": 22,
-          "species": "MAGNETON",
-          "heldItem": "NONE",
-          "moves": [
-            "SUPERSONIC",
-            "SHOCK_WAVE",
-            "THUNDER_WAVE",
-            "SONIC_BOOM"
-          ]
-        },
-        {
-          "iv": 250,
-          "lvl": 24,
-          "species": "MANECTRIC",
+          "iv": 255,
+          "lvl": 34,
+          "species": "RAICHU",
           "heldItem": "SITRUS_BERRY",
           "moves": [
             "QUICK_ATTACK",
             "THUNDER_WAVE",
             "SHOCK_WAVE",
-            "HOWL"
+            "THUNDERBOLT"
           ]
         }
       ]
@@ -5393,8 +5410,8 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 15,
-          "species": "ZIGZAGOON",
+          "lvl": 27,
+          "species": "LINOONE",
           "moves": [
             "GROWL",
             "TAIL_WHIP",
@@ -5404,8 +5421,8 @@
         },
         {
           "iv": 130,
-          "lvl": 17,
-          "species": "MAKUHITA",
+          "lvl": 27,
+          "species": "HARIYAMA",
           "moves": [
             "TACKLE",
             "FOCUS_ENERGY",
@@ -6106,29 +6123,22 @@
     },
     {
       "name": "Ben",
-      "type": "TrainerMonNoItemCustomMoves",
+      "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 150,
-          "lvl": 17,
-          "species": "ZIGZAGOON",
-          "moves": [
-            "HEADBUTT",
-            "SAND_ATTACK",
-            "GROWL",
-            "THUNDERBOLT"
-          ]
+          "iv": 200,
+          "lvl": 29,
+          "species": "LANTURN"
         },
         {
-          "iv": 150,
-          "lvl": 17,
-          "species": "GULPIN",
-          "moves": [
-            "AMNESIA",
-            "SLUDGE",
-            "YAWN",
-            "POUND"
-          ]
+          "iv": 200,
+          "lvl": 29,
+          "species": "PIKACHU"
+        },
+        {
+          "iv": 200,
+          "lvl": 29,
+          "species": "PLUSLE"
         }
       ]
     },
@@ -6579,8 +6589,18 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 16,
+          "lvl": 27,
           "species": "TENTACOOL"
+        },
+        {
+          "iv": 130,
+          "lvl": 27,
+          "species": "WAILMER"
+        },
+        {
+          "iv": 130,
+          "lvl": 27,
+          "species": "GYARADOS"
         }
       ]
     },
@@ -6909,8 +6929,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 17,
+          "lvl": 27,
           "species": "DODUO"
+        },
+        {
+          "iv": 130,
+          "lvl": 27,
+          "species": "SWABLU"
         }
       ]
     },
@@ -6964,8 +6989,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 17,
+          "lvl": 28,
           "species": "DODUO"
+        },
+        {
+          "iv": 130,
+          "lvl": 28,
+          "species": "ROSELIA"
         }
       ]
     },
@@ -9926,33 +9956,33 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 11,
-          "species": "WHISMUR"
+          "lvl": 26,
+          "species": "LOUDRED"
         },
         {
           "iv": 130,
-          "lvl": 11,
-          "species": "ZIGZAGOON"
+          "lvl": 26,
+          "species": "LINOONE"
         },
         {
           "iv": 130,
-          "lvl": 11,
+          "lvl": 26,
           "species": "ARON"
         },
         {
           "iv": 130,
-          "lvl": 11,
-          "species": "POOCHYENA"
+          "lvl": 26,
+          "species": "MIGHTYENA"
         },
         {
           "iv": 130,
-          "lvl": 11,
-          "species": "TAILLOW"
+          "lvl": 26,
+          "species": "SWELLOW"
         },
         {
           "iv": 130,
-          "lvl": 11,
-          "species": "MAKUHITA"
+          "lvl": 26,
+          "species": "HARIYAMA"
         }
       ]
     },
@@ -10145,32 +10175,32 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 11,
-          "species": "WINGULL"
+          "lvl": 26,
+          "species": "PELIPPER"
         },
         {
           "iv": 130,
-          "lvl": 11,
+          "lvl": 26,
           "species": "SHROOMISH"
         },
         {
           "iv": 130,
-          "lvl": 11,
-          "species": "MARILL"
+          "lvl": 26,
+          "species": "AZUMARILL"
         },
         {
           "iv": 130,
-          "lvl": 11,
+          "lvl": 26,
           "species": "ROSELIA"
         },
         {
           "iv": 130,
-          "lvl": 11,
-          "species": "SKITTY"
+          "lvl": 26,
+          "species": "DELCATTY"
         },
         {
           "iv": 130,
-          "lvl": 11,
+          "lvl": 26,
           "species": "GOLDEEN"
         }
       ]
@@ -11657,18 +11687,18 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 16,
-          "species": "GEODUDE"
+          "lvl": 28,
+          "species": "GRAVELER"
         },
         {
           "iv": 130,
-          "lvl": 16,
-          "species": "GEODUDE"
+          "lvl": 28,
+          "species": "GRAVELER"
         },
         {
           "iv": 130,
-          "lvl": 16,
-          "species": "MACHOP"
+          "lvl": 28,
+          "species": "MACHOKE"
         }
       ]
     },
@@ -11928,29 +11958,17 @@
     },
     {
       "name": "Vivian",
-      "type": "TrainerMonNoItemCustomMoves",
+      "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 17,
-          "species": "MEDITITE",
-          "moves": [
-            "BIDE",
-            "DETECT",
-            "CONFUSION",
-            "THUNDER_PUNCH"
-          ]
+          "iv": 200,
+          "lvl": 30,
+          "species": "ELECTRODE"
         },
         {
-          "iv": 130,
-          "lvl": 17,
-          "species": "MEDITITE",
-          "moves": [
-            "THUNDER_PUNCH",
-            "DETECT",
-            "CONFUSION",
-            "MEDITATE"
-          ]
+          "iv": 200,
+          "lvl": 30,
+          "species": "MAGNETON"
         }
       ]
     },
@@ -12097,9 +12115,19 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 16,
-          "species": "RALTS"
+          "iv": 255,
+          "lvl": 28,
+          "species": "KIRLIA"
+        },
+        {
+          "iv": 255,
+          "lvl": 28,
+          "species": "SKITTY"
+        },
+        {
+          "iv": 255,
+          "lvl": 28,
+          "species": "ROSELIA"
         }
       ]
     },
@@ -13400,18 +13428,18 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 14,
-          "species": "ZIGZAGOON"
+          "lvl": 27,
+          "species": "LINOONE"
         },
         {
           "iv": 130,
-          "lvl": 14,
+          "lvl": 27,
           "species": "ARON"
         },
         {
           "iv": 130,
-          "lvl": 14,
-          "species": "ELECTRIKE"
+          "lvl": 27,
+          "species": "MANECTRIC"
         }
       ]
     },
@@ -13985,8 +14013,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 17,
+          "lvl": 28,
           "species": "DODUO"
+        },
+        {
+          "iv": 130,
+          "lvl": 28,
+          "species": "AZUMARILL"
         }
       ]
     },
@@ -13996,8 +14029,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 17,
-          "species": "RALTS"
+          "lvl": 28,
+          "species": "KIRLIA"
+        },
+        {
+          "iv": 130,
+          "lvl": 28,
+          "species": "KADABRA"
         }
       ]
     },
@@ -14007,8 +14045,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 17,
+          "lvl": 28,
           "species": "MEDITITE"
+        },
+        {
+          "iv": 130,
+          "lvl": 28,
+          "species": "HARIYAMA"
         }
       ]
     },
@@ -16445,31 +16488,17 @@
     },
     {
       "name": "Angelo",
-      "type": "TrainerMonItemCustomMoves",
+      "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 17,
-          "species": "ILLUMISE",
-          "heldItem": "NONE",
-          "moves": [
-            "SHOCK_WAVE",
-            "QUICK_ATTACK",
-            "CHARM",
-            "NONE"
-          ]
+          "iv": 200,
+          "lvl": 30,
+          "species": "PIKACHU"
         },
         {
-          "iv": 130,
-          "lvl": 17,
-          "species": "VOLBEAT",
-          "heldItem": "NONE",
-          "moves": [
-            "SHOCK_WAVE",
-            "QUICK_ATTACK",
-            "CONFUSE_RAY",
-            "NONE"
-          ]
+          "iv": 200,
+          "lvl": 30,
+          "species": "MANECTRIC"
         }
       ]
     },
