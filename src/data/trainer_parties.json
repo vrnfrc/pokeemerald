@@ -5533,14 +5533,14 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 16,
-          "species": "TAILLOW",
+          "lvl": 27,
+          "species": "SWELLOW",
           "heldItem": "ORAN_BERRY"
         },
         {
           "iv": 130,
-          "lvl": 16,
-          "species": "ZIGZAGOON",
+          "lvl": 27,
+          "species": "LINOONE",
           "heldItem": "ORAN_BERRY"
         }
       ]
@@ -5701,7 +5701,7 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 17,
+          "lvl": 28,
           "species": "ROSELIA",
           "heldItem": "ORAN_BERRY"
         }
@@ -5920,18 +5920,17 @@
     },
     {
       "name": "Vicky",
-      "type": "TrainerMonNoItemCustomMoves",
+      "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 200,
-          "lvl": 18,
-          "species": "MEDITITE",
-          "moves": [
-            "HI_JUMP_KICK",
-            "MEDITATE",
-            "CONFUSION",
-            "DETECT"
-          ]
+          "iv": 130,
+          "lvl": 27,
+          "species": "MEDITITE"
+        },
+        {
+          "iv": 130,
+          "lvl": 27,
+          "species": "LINOONE"
         }
       ]
     },
@@ -11146,17 +11145,17 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 15,
-          "species": "MARILL"
+          "lvl": 26,
+          "species": "AZUMARILL"
         },
         {
           "iv": 130,
-          "lvl": 15,
+          "lvl": 26,
           "species": "SHROOMISH"
         },
         {
           "iv": 130,
-          "lvl": 15,
+          "lvl": 26,
           "species": "NUMEL"
         }
       ]
@@ -13235,8 +13234,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 19,
+          "lvl": 27,
           "species": "SANDSHREW"
+        },
+        {
+          "iv": 130,
+          "lvl": 27,
+          "species": "TRAPINCH"
         }
       ]
     },
@@ -13246,8 +13250,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 18,
+          "lvl": 27,
           "species": "ROSELIA"
+        },
+        {
+          "iv": 130,
+          "lvl": 27,
+          "species": "GLOOM"
         }
       ]
     },
@@ -13257,8 +13266,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 18,
+          "lvl": 27,
           "species": "SHROOMISH"
+        },
+        {
+          "iv": 130,
+          "lvl": 27,
+          "species": "ROSELIA"
         }
       ]
     },
@@ -13268,8 +13282,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 18,
+          "lvl": 27,
           "species": "NUMEL"
+        },
+        {
+          "iv": 130,
+          "lvl": 27,
+          "species": "SANDSHREW"
         }
       ]
     },
