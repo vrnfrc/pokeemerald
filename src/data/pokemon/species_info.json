@@ -77,7 +77,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "45",
-      "expYield": "64",
+      "expYield": "76",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -115,7 +115,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "45",
-      "expYield": "141",
+      "expYield": "169",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -191,7 +191,7 @@
         "TYPE_FIRE"
       ],
       "catchRate": "45",
-      "expYield": "65",
+      "expYield": "78",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -229,7 +229,7 @@
         "TYPE_FIRE"
       ],
       "catchRate": "45",
-      "expYield": "142",
+      "expYield": "170",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -305,7 +305,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "45",
-      "expYield": "66",
+      "expYield": "79",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -343,7 +343,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "45",
-      "expYield": "143",
+      "expYield": "171",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -419,7 +419,7 @@
         "TYPE_BUG"
       ],
       "catchRate": "255",
-      "expYield": "53",
+      "expYield": "63",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -457,7 +457,7 @@
         "TYPE_BUG"
       ],
       "catchRate": "120",
-      "expYield": "72",
+      "expYield": "86",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -495,7 +495,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "45",
-      "expYield": "160",
+      "expYield": "192",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -533,7 +533,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "255",
-      "expYield": "52",
+      "expYield": "62",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -571,7 +571,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "120",
-      "expYield": "71",
+      "expYield": "85",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -609,7 +609,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "45",
-      "expYield": "159",
+      "expYield": "190",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -647,7 +647,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "255",
-      "expYield": "55",
+      "expYield": "66",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -685,7 +685,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "120",
-      "expYield": "113",
+      "expYield": "135",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -761,7 +761,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "255",
-      "expYield": "57",
+      "expYield": "68",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -799,7 +799,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "127",
-      "expYield": "116",
+      "expYield": "139",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -837,7 +837,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "255",
-      "expYield": "58",
+      "expYield": "69",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -875,7 +875,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "90",
-      "expYield": "162",
+      "expYield": "194",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -913,7 +913,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "255",
-      "expYield": "62",
+      "expYield": "74",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -951,7 +951,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "90",
-      "expYield": "147",
+      "expYield": "176",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -989,7 +989,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "190",
-      "expYield": "82",
+      "expYield": "98",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1027,7 +1027,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "75",
-      "expYield": "122",
+      "expYield": "146",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1065,7 +1065,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "255",
-      "expYield": "93",
+      "expYield": "111",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -1103,7 +1103,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "90",
-      "expYield": "163",
+      "expYield": "195",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -1141,7 +1141,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "235",
-      "expYield": "59",
+      "expYield": "70",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1179,7 +1179,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "120",
-      "expYield": "117",
+      "expYield": "140",
       "evYield_HP": "2",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1255,7 +1255,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "235",
-      "expYield": "60",
+      "expYield": "72",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -1293,7 +1293,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "120",
-      "expYield": "118",
+      "expYield": "141",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -1369,7 +1369,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "150",
-      "expYield": "68",
+      "expYield": "81",
       "evYield_HP": "2",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1407,7 +1407,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "25",
-      "expYield": "129",
+      "expYield": "154",
       "evYield_HP": "3",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1445,7 +1445,7 @@
         "TYPE_FIRE"
       ],
       "catchRate": "190",
-      "expYield": "63",
+      "expYield": "75",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1521,7 +1521,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "170",
-      "expYield": "76",
+      "expYield": "91",
       "evYield_HP": "2",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1559,7 +1559,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "50",
-      "expYield": "109",
+      "expYield": "130",
       "evYield_HP": "3",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1597,7 +1597,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "255",
-      "expYield": "54",
+      "expYield": "64",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1673,7 +1673,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "255",
-      "expYield": "78",
+      "expYield": "93",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1711,7 +1711,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "120",
-      "expYield": "132",
+      "expYield": "158",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1787,7 +1787,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "190",
-      "expYield": "70",
+      "expYield": "84",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -1825,7 +1825,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "75",
-      "expYield": "128",
+      "expYield": "153",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "1",
@@ -1863,7 +1863,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "190",
-      "expYield": "75",
+      "expYield": "90",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1901,7 +1901,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "75",
-      "expYield": "138",
+      "expYield": "165",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1939,7 +1939,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "255",
-      "expYield": "81",
+      "expYield": "97",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -1977,7 +1977,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "50",
-      "expYield": "153",
+      "expYield": "183",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -2015,7 +2015,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "255",
-      "expYield": "69",
+      "expYield": "82",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -2053,7 +2053,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "90",
-      "expYield": "148",
+      "expYield": "177",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -2091,7 +2091,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "190",
-      "expYield": "80",
+      "expYield": "96",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -2167,7 +2167,7 @@
         "TYPE_FIGHTING"
       ],
       "catchRate": "190",
-      "expYield": "74",
+      "expYield": "88",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -2205,7 +2205,7 @@
         "TYPE_FIGHTING"
       ],
       "catchRate": "75",
-      "expYield": "149",
+      "expYield": "178",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -2243,7 +2243,7 @@
         "TYPE_FIRE"
       ],
       "catchRate": "190",
-      "expYield": "91",
+      "expYield": "109",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -2319,7 +2319,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "255",
-      "expYield": "77",
+      "expYield": "92",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -2357,7 +2357,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "120",
-      "expYield": "131",
+      "expYield": "157",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -2433,7 +2433,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "200",
-      "expYield": "73",
+      "expYield": "87",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -2471,7 +2471,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "100",
-      "expYield": "145",
+      "expYield": "174",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -2547,7 +2547,7 @@
         "TYPE_FIGHTING"
       ],
       "catchRate": "180",
-      "expYield": "88",
+      "expYield": "105",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -2585,7 +2585,7 @@
         "TYPE_FIGHTING"
       ],
       "catchRate": "90",
-      "expYield": "146",
+      "expYield": "175",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -2661,7 +2661,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "255",
-      "expYield": "84",
+      "expYield": "100",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -2699,7 +2699,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "120",
-      "expYield": "151",
+      "expYield": "181",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -2775,7 +2775,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "190",
-      "expYield": "105",
+      "expYield": "126",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -2851,7 +2851,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "255",
-      "expYield": "86",
+      "expYield": "103",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -2889,7 +2889,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "120",
-      "expYield": "134",
+      "expYield": "160",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -2965,7 +2965,7 @@
         "TYPE_FIRE"
       ],
       "catchRate": "190",
-      "expYield": "152",
+      "expYield": "182",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -3041,7 +3041,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "190",
-      "expYield": "99",
+      "expYield": "118",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -3079,7 +3079,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "75",
-      "expYield": "164",
+      "expYield": "196",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -3117,7 +3117,7 @@
         "TYPE_STEEL"
       ],
       "catchRate": "190",
-      "expYield": "89",
+      "expYield": "106",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -3155,7 +3155,7 @@
         "TYPE_STEEL"
       ],
       "catchRate": "60",
-      "expYield": "161",
+      "expYield": "193",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -3193,7 +3193,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "45",
-      "expYield": "94",
+      "expYield": "112",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -3231,7 +3231,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "190",
-      "expYield": "96",
+      "expYield": "115",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -3269,7 +3269,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "45",
-      "expYield": "158",
+      "expYield": "189",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -3307,7 +3307,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "190",
-      "expYield": "100",
+      "expYield": "120",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -3383,7 +3383,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "190",
-      "expYield": "90",
+      "expYield": "108",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -3421,7 +3421,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "75",
-      "expYield": "157",
+      "expYield": "188",
       "evYield_HP": "1",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -3459,7 +3459,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "190",
-      "expYield": "97",
+      "expYield": "116",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -3535,7 +3535,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "190",
-      "expYield": "95",
+      "expYield": "114",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -3573,7 +3573,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "90",
-      "expYield": "126",
+      "expYield": "151",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -3649,7 +3649,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "45",
-      "expYield": "108",
+      "expYield": "129",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -3687,7 +3687,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "190",
-      "expYield": "102",
+      "expYield": "122",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -3725,7 +3725,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "75",
-      "expYield": "165",
+      "expYield": "198",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -3763,7 +3763,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "225",
-      "expYield": "115",
+      "expYield": "138",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -3839,7 +3839,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "190",
-      "expYield": "103",
+      "expYield": "123",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -3877,7 +3877,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "60",
-      "expYield": "150",
+      "expYield": "180",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -3915,7 +3915,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "90",
-      "expYield": "98",
+      "expYield": "117",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -3991,7 +3991,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "190",
-      "expYield": "87",
+      "expYield": "104",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -4029,7 +4029,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "75",
-      "expYield": "124",
+      "expYield": "148",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -4067,7 +4067,7 @@
         "TYPE_FIGHTING"
       ],
       "catchRate": "45",
-      "expYield": "139",
+      "expYield": "166",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -4105,7 +4105,7 @@
         "TYPE_FIGHTING"
       ],
       "catchRate": "45",
-      "expYield": "140",
+      "expYield": "168",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -4143,7 +4143,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "45",
-      "expYield": "127",
+      "expYield": "152",
       "evYield_HP": "2",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -4181,7 +4181,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "190",
-      "expYield": "114",
+      "expYield": "136",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -4257,7 +4257,7 @@
         "TYPE_ROCK"
       ],
       "catchRate": "120",
-      "expYield": "135",
+      "expYield": "162",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -4371,7 +4371,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "45",
-      "expYield": "166",
+      "expYield": "199",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -4447,7 +4447,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "225",
-      "expYield": "83",
+      "expYield": "99",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -4485,7 +4485,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "75",
-      "expYield": "155",
+      "expYield": "186",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -4523,7 +4523,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "225",
-      "expYield": "111",
+      "expYield": "133",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -4599,7 +4599,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "225",
-      "expYield": "106",
+      "expYield": "127",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -4675,7 +4675,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "45",
-      "expYield": "136",
+      "expYield": "163",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -4751,7 +4751,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "45",
-      "expYield": "137",
+      "expYield": "164",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -4789,7 +4789,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "45",
-      "expYield": "156",
+      "expYield": "187",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -4827,7 +4827,7 @@
         "TYPE_FIRE"
       ],
       "catchRate": "45",
-      "expYield": "167",
+      "expYield": "200",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -4941,7 +4941,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "255",
-      "expYield": "20",
+      "expYield": "24",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -5055,7 +5055,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "35",
-      "expYield": "61",
+      "expYield": "73",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -5093,7 +5093,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "45",
-      "expYield": "92",
+      "expYield": "110",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -5245,7 +5245,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "45",
-      "expYield": "130",
+      "expYield": "156",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -5283,7 +5283,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "45",
-      "expYield": "120",
+      "expYield": "144",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -5359,7 +5359,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "45",
-      "expYield": "119",
+      "expYield": "142",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -5473,7 +5473,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "25",
-      "expYield": "154",
+      "expYield": "184",
       "evYield_HP": "2",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -5625,7 +5625,7 @@
         "TYPE_DRAGON"
       ],
       "catchRate": "45",
-      "expYield": "67",
+      "expYield": "80",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -5663,7 +5663,7 @@
         "TYPE_DRAGON"
       ],
       "catchRate": "45",
-      "expYield": "144",
+      "expYield": "172",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -5777,7 +5777,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "45",
-      "expYield": "64",
+      "expYield": "76",
       "evYield_HP": "3",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -5815,7 +5815,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "45",
-      "expYield": "64",
+      "expYield": "76",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -5853,7 +5853,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "45",
-      "expYield": "141",
+      "expYield": "169",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -5929,7 +5929,7 @@
         "TYPE_FIRE"
       ],
       "catchRate": "45",
-      "expYield": "65",
+      "expYield": "78",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -5967,7 +5967,7 @@
         "TYPE_FIRE"
       ],
       "catchRate": "45",
-      "expYield": "142",
+      "expYield": "170",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6043,7 +6043,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "45",
-      "expYield": "66",
+      "expYield": "79",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -6081,7 +6081,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "45",
-      "expYield": "143",
+      "expYield": "171",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "1",
@@ -6157,7 +6157,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "255",
-      "expYield": "57",
+      "expYield": "68",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -6195,7 +6195,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "90",
-      "expYield": "116",
+      "expYield": "139",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6233,7 +6233,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "255",
-      "expYield": "58",
+      "expYield": "69",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6271,7 +6271,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "90",
-      "expYield": "162",
+      "expYield": "194",
       "evYield_HP": "2",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6309,7 +6309,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "255",
-      "expYield": "54",
+      "expYield": "64",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6347,7 +6347,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "90",
-      "expYield": "134",
+      "expYield": "160",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6385,7 +6385,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "255",
-      "expYield": "54",
+      "expYield": "64",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -6423,7 +6423,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "90",
-      "expYield": "134",
+      "expYield": "160",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -6499,7 +6499,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "190",
-      "expYield": "90",
+      "expYield": "108",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6537,7 +6537,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "75",
-      "expYield": "156",
+      "expYield": "187",
       "evYield_HP": "2",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6575,7 +6575,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "190",
-      "expYield": "42",
+      "expYield": "50",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6613,7 +6613,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "150",
-      "expYield": "37",
+      "expYield": "44",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6651,7 +6651,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "170",
-      "expYield": "39",
+      "expYield": "46",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6689,7 +6689,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "190",
-      "expYield": "74",
+      "expYield": "88",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6727,7 +6727,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "75",
-      "expYield": "114",
+      "expYield": "136",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6765,7 +6765,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "190",
-      "expYield": "73",
+      "expYield": "87",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6841,7 +6841,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "235",
-      "expYield": "59",
+      "expYield": "70",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6879,7 +6879,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "120",
-      "expYield": "117",
+      "expYield": "140",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -6993,7 +6993,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "190",
-      "expYield": "58",
+      "expYield": "69",
       "evYield_HP": "2",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7031,7 +7031,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "75",
-      "expYield": "153",
+      "expYield": "183",
       "evYield_HP": "3",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7069,7 +7069,7 @@
         "TYPE_ROCK"
       ],
       "catchRate": "65",
-      "expYield": "135",
+      "expYield": "162",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -7145,7 +7145,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "255",
-      "expYield": "74",
+      "expYield": "88",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7183,7 +7183,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "120",
-      "expYield": "136",
+      "expYield": "163",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7259,7 +7259,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "45",
-      "expYield": "94",
+      "expYield": "112",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7297,7 +7297,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "235",
-      "expYield": "52",
+      "expYield": "62",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7335,7 +7335,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "120",
-      "expYield": "146",
+      "expYield": "175",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7373,7 +7373,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "75",
-      "expYield": "147",
+      "expYield": "176",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7411,7 +7411,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "255",
-      "expYield": "52",
+      "expYield": "62",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7449,7 +7449,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "90",
-      "expYield": "137",
+      "expYield": "164",
       "evYield_HP": "2",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7563,7 +7563,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "30",
-      "expYield": "107",
+      "expYield": "128",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7601,7 +7601,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "70",
-      "expYield": "164",
+      "expYield": "196",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7639,7 +7639,7 @@
         "TYPE_GHOST"
       ],
       "catchRate": "45",
-      "expYield": "147",
+      "expYield": "176",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7677,7 +7677,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "225",
-      "expYield": "61",
+      "expYield": "73",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -7753,7 +7753,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "60",
-      "expYield": "149",
+      "expYield": "178",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7791,7 +7791,7 @@
         "TYPE_BUG"
       ],
       "catchRate": "190",
-      "expYield": "60",
+      "expYield": "72",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -7829,7 +7829,7 @@
         "TYPE_STEEL"
       ],
       "catchRate": "75",
-      "expYield": "118",
+      "expYield": "141",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -7867,7 +7867,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "190",
-      "expYield": "75",
+      "expYield": "90",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -7905,7 +7905,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "60",
-      "expYield": "108",
+      "expYield": "129",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -7981,7 +7981,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "190",
-      "expYield": "63",
+      "expYield": "75",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -8057,7 +8057,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "45",
-      "expYield": "100",
+      "expYield": "120",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -8133,7 +8133,7 @@
         "TYPE_ROCK"
       ],
       "catchRate": "190",
-      "expYield": "80",
+      "expYield": "96",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -8209,7 +8209,7 @@
         "TYPE_ICE"
       ],
       "catchRate": "60",
-      "expYield": "132",
+      "expYield": "158",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -8247,7 +8247,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "120",
-      "expYield": "124",
+      "expYield": "148",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -8323,7 +8323,7 @@
         "TYPE_FIRE"
       ],
       "catchRate": "190",
-      "expYield": "78",
+      "expYield": "93",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -8361,7 +8361,7 @@
         "TYPE_ROCK"
       ],
       "catchRate": "75",
-      "expYield": "154",
+      "expYield": "184",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -8399,7 +8399,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "225",
-      "expYield": "78",
+      "expYield": "93",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -8437,7 +8437,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "75",
-      "expYield": "160",
+      "expYield": "192",
       "evYield_HP": "1",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -8475,7 +8475,7 @@
         "TYPE_ROCK"
       ],
       "catchRate": "60",
-      "expYield": "113",
+      "expYield": "135",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -8513,7 +8513,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "190",
-      "expYield": "78",
+      "expYield": "93",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -8551,7 +8551,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "75",
-      "expYield": "164",
+      "expYield": "196",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -8703,7 +8703,7 @@
         "TYPE_FIRE"
       ],
       "catchRate": "120",
-      "expYield": "114",
+      "expYield": "136",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -8817,7 +8817,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "120",
-      "expYield": "124",
+      "expYield": "148",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -8931,7 +8931,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "45",
-      "expYield": "165",
+      "expYield": "198",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -8969,7 +8969,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "45",
-      "expYield": "106",
+      "expYield": "127",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -9007,7 +9007,7 @@
         "TYPE_FIGHTING"
       ],
       "catchRate": "75",
-      "expYield": "91",
+      "expYield": "109",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -9045,7 +9045,7 @@
         "TYPE_FIGHTING"
       ],
       "catchRate": "45",
-      "expYield": "138",
+      "expYield": "165",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -9083,7 +9083,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "45",
-      "expYield": "87",
+      "expYield": "104",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -9121,7 +9121,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "45",
-      "expYield": "106",
+      "expYield": "127",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -9159,7 +9159,7 @@
         "TYPE_FIRE"
       ],
       "catchRate": "45",
-      "expYield": "117",
+      "expYield": "140",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -9387,7 +9387,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "45",
-      "expYield": "67",
+      "expYield": "80",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -9425,7 +9425,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "45",
-      "expYield": "144",
+      "expYield": "172",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -9577,7 +9577,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "45",
-      "expYield": "64",
+      "expYield": "76",
       "evYield_HP": "3",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -9715,7 +9715,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "45",
-      "expYield": "65",
+      "expYield": "78",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -9753,7 +9753,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "45",
-      "expYield": "141",
+      "expYield": "169",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -9829,7 +9829,7 @@
         "TYPE_FIRE"
       ],
       "catchRate": "45",
-      "expYield": "65",
+      "expYield": "78",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -9867,7 +9867,7 @@
         "TYPE_FIGHTING"
       ],
       "catchRate": "45",
-      "expYield": "142",
+      "expYield": "170",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -9943,7 +9943,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "45",
-      "expYield": "65",
+      "expYield": "78",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -9981,7 +9981,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "45",
-      "expYield": "143",
+      "expYield": "171",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -10057,7 +10057,7 @@
         "TYPE_DARK"
       ],
       "catchRate": "255",
-      "expYield": "55",
+      "expYield": "66",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -10095,7 +10095,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "127",
-      "expYield": "128",
+      "expYield": "153",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -10133,7 +10133,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "255",
-      "expYield": "60",
+      "expYield": "72",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10171,7 +10171,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "90",
-      "expYield": "128",
+      "expYield": "153",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10209,7 +10209,7 @@
         "TYPE_BUG"
       ],
       "catchRate": "255",
-      "expYield": "54",
+      "expYield": "64",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10247,7 +10247,7 @@
         "TYPE_BUG"
       ],
       "catchRate": "120",
-      "expYield": "71",
+      "expYield": "85",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -10285,7 +10285,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "45",
-      "expYield": "161",
+      "expYield": "193",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10323,7 +10323,7 @@
         "TYPE_BUG"
       ],
       "catchRate": "120",
-      "expYield": "72",
+      "expYield": "86",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -10361,7 +10361,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "45",
-      "expYield": "160",
+      "expYield": "192",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10399,7 +10399,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "255",
-      "expYield": "74",
+      "expYield": "88",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10437,7 +10437,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "120",
-      "expYield": "141",
+      "expYield": "169",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10513,7 +10513,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "255",
-      "expYield": "74",
+      "expYield": "88",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -10551,7 +10551,7 @@
         "TYPE_DARK"
       ],
       "catchRate": "120",
-      "expYield": "141",
+      "expYield": "169",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -10627,7 +10627,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "255",
-      "expYield": "65",
+      "expYield": "78",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -10665,7 +10665,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "120",
-      "expYield": "155",
+      "expYield": "186",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10703,7 +10703,7 @@
         "TYPE_GHOST"
       ],
       "catchRate": "45",
-      "expYield": "95",
+      "expYield": "114",
       "evYield_HP": "2",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10741,7 +10741,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "200",
-      "expYield": "59",
+      "expYield": "70",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10779,7 +10779,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "45",
-      "expYield": "162",
+      "expYield": "194",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10817,7 +10817,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "255",
-      "expYield": "65",
+      "expYield": "78",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10855,7 +10855,7 @@
         "TYPE_FIGHTING"
       ],
       "catchRate": "90",
-      "expYield": "165",
+      "expYield": "198",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -10893,7 +10893,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "255",
-      "expYield": "85",
+      "expYield": "102",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10931,7 +10931,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "190",
-      "expYield": "64",
+      "expYield": "76",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -10969,7 +10969,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "45",
-      "expYield": "164",
+      "expYield": "196",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -11007,7 +11007,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "200",
-      "expYield": "63",
+      "expYield": "75",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -11045,7 +11045,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "75",
-      "expYield": "128",
+      "expYield": "153",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -11083,7 +11083,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "125",
-      "expYield": "137",
+      "expYield": "164",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -11159,7 +11159,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "255",
-      "expYield": "65",
+      "expYield": "78",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -11197,7 +11197,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "60",
-      "expYield": "138",
+      "expYield": "165",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -11235,7 +11235,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "200",
-      "expYield": "132",
+      "expYield": "158",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -11273,7 +11273,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "255",
-      "expYield": "58",
+      "expYield": "69",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -11349,7 +11349,7 @@
         "TYPE_ROCK"
       ],
       "catchRate": "255",
-      "expYield": "108",
+      "expYield": "129",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -11387,7 +11387,7 @@
         "TYPE_FIRE"
       ],
       "catchRate": "90",
-      "expYield": "161",
+      "expYield": "193",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -11425,7 +11425,7 @@
         "TYPE_GHOST"
       ],
       "catchRate": "45",
-      "expYield": "98",
+      "expYield": "117",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "1",
@@ -11463,7 +11463,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "190",
-      "expYield": "92",
+      "expYield": "110",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -11501,7 +11501,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "75",
-      "expYield": "158",
+      "expYield": "189",
       "evYield_HP": "2",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -11539,7 +11539,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "225",
-      "expYield": "110",
+      "expYield": "132",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -11577,7 +11577,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "205",
-      "expYield": "111",
+      "expYield": "133",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -11615,7 +11615,7 @@
         "TYPE_DARK"
       ],
       "catchRate": "155",
-      "expYield": "161",
+      "expYield": "193",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -11653,7 +11653,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "255",
-      "expYield": "61",
+      "expYield": "73",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -11729,7 +11729,7 @@
         "TYPE_DARK"
       ],
       "catchRate": "225",
-      "expYield": "88",
+      "expYield": "105",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -11805,7 +11805,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "255",
-      "expYield": "73",
+      "expYield": "87",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -11843,7 +11843,7 @@
         "TYPE_DRAGON"
       ],
       "catchRate": "120",
-      "expYield": "126",
+      "expYield": "151",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -11919,7 +11919,7 @@
         "TYPE_FIGHTING"
       ],
       "catchRate": "180",
-      "expYield": "87",
+      "expYield": "104",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -11995,7 +11995,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "120",
-      "expYield": "104",
+      "expYield": "124",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12071,7 +12071,7 @@
         "TYPE_GROUND"
       ],
       "catchRate": "255",
-      "expYield": "88",
+      "expYield": "105",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12147,7 +12147,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "255",
-      "expYield": "75",
+      "expYield": "90",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12185,7 +12185,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "120",
-      "expYield": "128",
+      "expYield": "153",
       "evYield_HP": "2",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12261,7 +12261,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "190",
-      "expYield": "97",
+      "expYield": "116",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12337,7 +12337,7 @@
         "TYPE_ICE"
       ],
       "catchRate": "190",
-      "expYield": "74",
+      "expYield": "88",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12413,7 +12413,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "45",
-      "expYield": "150",
+      "expYield": "180",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12451,7 +12451,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "45",
-      "expYield": "150",
+      "expYield": "180",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -12489,7 +12489,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "150",
-      "expYield": "33",
+      "expYield": "39",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12527,7 +12527,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "255",
-      "expYield": "89",
+      "expYield": "106",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12565,7 +12565,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "60",
-      "expYield": "164",
+      "expYield": "196",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12603,7 +12603,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "200",
-      "expYield": "120",
+      "expYield": "144",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12641,7 +12641,7 @@
         "TYPE_ELECTRIC"
       ],
       "catchRate": "200",
-      "expYield": "120",
+      "expYield": "144",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12679,7 +12679,7 @@
         "TYPE_STEEL"
       ],
       "catchRate": "45",
-      "expYield": "98",
+      "expYield": "117",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "1",
@@ -12717,7 +12717,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "180",
-      "expYield": "91",
+      "expYield": "109",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12755,7 +12755,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "90",
-      "expYield": "153",
+      "expYield": "183",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12793,7 +12793,7 @@
         "TYPE_FLYING"
       ],
       "catchRate": "255",
-      "expYield": "74",
+      "expYield": "88",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12869,7 +12869,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "125",
-      "expYield": "44",
+      "expYield": "52",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -12907,7 +12907,7 @@
         "TYPE_GHOST"
       ],
       "catchRate": "190",
-      "expYield": "97",
+      "expYield": "116",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -12983,7 +12983,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "150",
-      "expYield": "152",
+      "expYield": "182",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -13021,7 +13021,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "255",
-      "expYield": "83",
+      "expYield": "99",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -13059,7 +13059,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "120",
-      "expYield": "126",
+      "expYield": "151",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -13135,7 +13135,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "225",
-      "expYield": "75",
+      "expYield": "90",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -13249,7 +13249,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "190",
-      "expYield": "68",
+      "expYield": "81",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -13287,7 +13287,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "120",
-      "expYield": "126",
+      "expYield": "151",
       "evYield_HP": "2",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -13363,7 +13363,7 @@
         "TYPE_WATER"
       ],
       "catchRate": "255",
-      "expYield": "142",
+      "expYield": "170",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -13515,7 +13515,7 @@
         "TYPE_GHOST"
       ],
       "catchRate": "225",
-      "expYield": "97",
+      "expYield": "116",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -13591,7 +13591,7 @@
         "TYPE_POISON"
       ],
       "catchRate": "90",
-      "expYield": "165",
+      "expYield": "198",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -13629,7 +13629,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "90",
-      "expYield": "165",
+      "expYield": "198",
       "evYield_HP": "0",
       "evYield_Attack": "2",
       "evYield_Defense": "0",
@@ -13705,7 +13705,7 @@
         "TYPE_ROCK"
       ],
       "catchRate": "180",
-      "expYield": "96",
+      "expYield": "115",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -13743,7 +13743,7 @@
         "TYPE_ROCK"
       ],
       "catchRate": "90",
-      "expYield": "152",
+      "expYield": "182",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -13819,7 +13819,7 @@
         "TYPE_NORMAL"
       ],
       "catchRate": "45",
-      "expYield": "145",
+      "expYield": "174",
       "evYield_HP": "1",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -13857,7 +13857,7 @@
         "TYPE_BUG"
       ],
       "catchRate": "150",
-      "expYield": "146",
+      "expYield": "175",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -13895,7 +13895,7 @@
         "TYPE_BUG"
       ],
       "catchRate": "150",
-      "expYield": "146",
+      "expYield": "175",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -13933,7 +13933,7 @@
         "TYPE_GRASS"
       ],
       "catchRate": "45",
-      "expYield": "121",
+      "expYield": "145",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -14009,7 +14009,7 @@
         "TYPE_BUG"
       ],
       "catchRate": "45",
-      "expYield": "119",
+      "expYield": "142",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -14085,7 +14085,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "235",
-      "expYield": "70",
+      "expYield": "84",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -14123,7 +14123,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "120",
-      "expYield": "140",
+      "expYield": "168",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
@@ -14199,7 +14199,7 @@
         "TYPE_DRAGON"
       ],
       "catchRate": "45",
-      "expYield": "89",
+      "expYield": "106",
       "evYield_HP": "0",
       "evYield_Attack": "1",
       "evYield_Defense": "0",
@@ -14237,7 +14237,7 @@
         "TYPE_DRAGON"
       ],
       "catchRate": "45",
-      "expYield": "144",
+      "expYield": "172",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -14313,7 +14313,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "25",
-      "expYield": "103",
+      "expYield": "123",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "1",
@@ -14351,7 +14351,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "3",
-      "expYield": "153",
+      "expYield": "183",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "2",
@@ -14807,7 +14807,7 @@
         "TYPE_PSYCHIC"
       ],
       "catchRate": "45",
-      "expYield": "147",
+      "expYield": "176",
       "evYield_HP": "0",
       "evYield_Attack": "0",
       "evYield_Defense": "0",
