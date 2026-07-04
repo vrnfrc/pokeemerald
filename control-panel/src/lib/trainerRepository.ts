@@ -23,7 +23,8 @@ export function saveTrainerParties(file: TrainerPartiesFile): void {
 
 export function getTrainerParty(partyName: string): TrainerParty | null {
   const parties = loadTrainerParties();
-  return parties.parties.find((p) => p.name === partyName) || null;
+  const lower = partyName.toLowerCase();
+  return parties.parties.find((p) => p.name.toLowerCase() === lower) || null;
 }
 
 export function updateTrainerParty(partyName: string, updates: Partial<TrainerParty>): TrainerPartiesFile {
