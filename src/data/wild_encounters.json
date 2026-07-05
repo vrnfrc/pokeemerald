@@ -857,64 +857,64 @@
             "encounter_rate": 10,
             "mons": [
               {
-                "min_level": 20,
-                "max_level": 20,
-                "species": "SPECIES_SANDSHREW"
+                "min_level": 37,
+                "max_level": 37,
+                "species": "SPECIES_SANDSLASH"
               },
               {
-                "min_level": 20,
-                "max_level": 20,
-                "species": "SPECIES_TRAPINCH"
+                "min_level": 37,
+                "max_level": 37,
+                "species": "SPECIES_VIBRAVA"
               },
               {
-                "min_level": 21,
-                "max_level": 21,
-                "species": "SPECIES_SANDSHREW"
+                "min_level": 38,
+                "max_level": 38,
+                "species": "SPECIES_SANDSLASH"
               },
               {
-                "min_level": 21,
-                "max_level": 21,
-                "species": "SPECIES_TRAPINCH"
+                "min_level": 38,
+                "max_level": 38,
+                "species": "SPECIES_VIBRAVA"
               },
               {
-                "min_level": 19,
-                "max_level": 19,
-                "species": "SPECIES_BALTOY"
+                "min_level": 36,
+                "max_level": 36,
+                "species": "SPECIES_CLAYDOL"
               },
               {
-                "min_level": 21,
-                "max_level": 21,
-                "species": "SPECIES_BALTOY"
+                "min_level": 38,
+                "max_level": 38,
+                "species": "SPECIES_CLAYDOL"
               },
               {
-                "min_level": 19,
-                "max_level": 19,
-                "species": "SPECIES_SANDSHREW"
+                "min_level": 36,
+                "max_level": 36,
+                "species": "SPECIES_SANDSLASH"
               },
               {
-                "min_level": 19,
-                "max_level": 19,
-                "species": "SPECIES_TRAPINCH"
+                "min_level": 36,
+                "max_level": 36,
+                "species": "SPECIES_VIBRAVA"
               },
               {
-                "min_level": 20,
-                "max_level": 20,
-                "species": "SPECIES_BALTOY"
+                "min_level": 37,
+                "max_level": 37,
+                "species": "SPECIES_CLAYDOL"
               },
               {
-                "min_level": 20,
-                "max_level": 20,
-                "species": "SPECIES_CACNEA"
+                "min_level": 37,
+                "max_level": 37,
+                "species": "SPECIES_CACTURNE"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_CACNEA"
+                "min_level": 39,
+                "max_level": 39,
+                "species": "SPECIES_CACTURNE"
               },
               {
-                "min_level": 22,
-                "max_level": 22,
-                "species": "SPECIES_CACNEA"
+                "min_level": 39,
+                "max_level": 39,
+                "species": "SPECIES_CACTURNE"
               }
             ]
           },
@@ -1117,7 +1117,7 @@
               {
                 "min_level": 30,
                 "max_level": 30,
-                "species": "SPECIES_SPINDA"
+                "species": "SPECIES_CACNEA"
               },
               {
                 "min_level": 30,
@@ -1127,7 +1127,7 @@
               {
                 "min_level": 29,
                 "max_level": 29,
-                "species": "SPECIES_SPINDA"
+                "species": "SPECIES_TRAPINCH"
               },
               {
                 "min_level": 29,
@@ -1152,7 +1152,7 @@
               {
                 "min_level": 31,
                 "max_level": 31,
-                "species": "SPECIES_SPINDA"
+                "species": "SPECIES_BALTOY"
               },
               {
                 "min_level": 31,
@@ -1162,7 +1162,7 @@
               {
                 "min_level": 31,
                 "max_level": 31,
-                "species": "SPECIES_SPINDA"
+                "species": "SPECIES_BALTOY"
               },
               {
                 "min_level": 31,

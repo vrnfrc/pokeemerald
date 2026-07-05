@@ -1525,26 +1525,6 @@
                     {
                         "id": "TRAINER_GRUNT_MT_CHIMNEY_2",
                         "party": "sParty_GruntMtChimney2"
-                    },
-                    {
-                        "id": "TRAINER_SHIRLEY",
-                        "party": "sParty_Shirley"
-                    },
-                    {
-                        "id": "TRAINER_SHEILA",
-                        "party": "sParty_Sheila"
-                    },
-                    {
-                        "id": "TRAINER_SHELBY_1",
-                        "party": "sParty_Shelby1"
-                    },
-                    {
-                        "id": "TRAINER_SAWYER_1",
-                        "party": "sParty_Sawyer1"
-                    },
-                    {
-                        "id": "TRAINER_MELISSA",
-                        "party": "sParty_Melissa"
                     }
                 ],
                 "challenges": [
@@ -1557,40 +1537,7 @@
                         "party": "sParty_MaxieMtChimney"
                     }
                 ],
-                "rematches": [
-                    {
-                        "id": "TRAINER_SHELBY_2",
-                        "party": "sParty_Shelby2"
-                    },
-                    {
-                        "id": "TRAINER_SHELBY_3",
-                        "party": "sParty_Shelby3"
-                    },
-                    {
-                        "id": "TRAINER_SHELBY_4",
-                        "party": "sParty_Shelby4"
-                    },
-                    {
-                        "id": "TRAINER_SHELBY_5",
-                        "party": "sParty_Shelby5"
-                    },
-                    {
-                        "id": "TRAINER_SAWYER_2",
-                        "party": "sParty_Sawyer2"
-                    },
-                    {
-                        "id": "TRAINER_SAWYER_3",
-                        "party": "sParty_Sawyer3"
-                    },
-                    {
-                        "id": "TRAINER_SAWYER_4",
-                        "party": "sParty_Sawyer4"
-                    },
-                    {
-                        "id": "TRAINER_SAWYER_5",
-                        "party": "sParty_Sawyer5"
-                    }
-                ]
+                "rematches": []
             }
         ],
         "difficulty": 19,
@@ -1608,6 +1555,10 @@
                     {
                         "id": "TRAINER_DIANA_1",
                         "party": "sParty_Diana1"
+                    },
+                    {
+                        "id": "TRAINER_GRUNT_JAGGED_PASS",
+                        "party": "sParty_GruntJaggedPass"
                     },
                     {
                         "id": "TRAINER_JULIO",
@@ -1732,6 +1683,72 @@
             "HM04 Strength",
             "Go-Googles"
         ]
+    },
+    {
+        "maps": [
+            {
+                "name": "MtChimney",
+                "trainers": [
+                    {
+                        "id": "TRAINER_SHIRLEY",
+                        "party": "sParty_Shirley"
+                    },
+                    {
+                        "id": "TRAINER_SHEILA",
+                        "party": "sParty_Sheila"
+                    },
+                    {
+                        "id": "TRAINER_SHELBY_1",
+                        "party": "sParty_Shelby1"
+                    },
+                    {
+                        "id": "TRAINER_SAWYER_1",
+                        "party": "sParty_Sawyer1"
+                    },
+                    {
+                        "id": "TRAINER_MELISSA",
+                        "party": "sParty_Melissa"
+                    }
+                ],
+                "challenges": [],
+                "rematches": [
+                    {
+                        "id": "TRAINER_SHELBY_2",
+                        "party": "sParty_Shelby2"
+                    },
+                    {
+                        "id": "TRAINER_SHELBY_3",
+                        "party": "sParty_Shelby3"
+                    },
+                    {
+                        "id": "TRAINER_SHELBY_4",
+                        "party": "sParty_Shelby4"
+                    },
+                    {
+                        "id": "TRAINER_SHELBY_5",
+                        "party": "sParty_Shelby5"
+                    },
+                    {
+                        "id": "TRAINER_SAWYER_2",
+                        "party": "sParty_Sawyer2"
+                    },
+                    {
+                        "id": "TRAINER_SAWYER_3",
+                        "party": "sParty_Sawyer3"
+                    },
+                    {
+                        "id": "TRAINER_SAWYER_4",
+                        "party": "sParty_Sawyer4"
+                    },
+                    {
+                        "id": "TRAINER_SAWYER_5",
+                        "party": "sParty_Sawyer5"
+                    }
+                ]
+            }
+        ],
+        "difficulty": 23,
+        "done": true
     },
     {
         "maps": [
@@ -2967,17 +2984,6 @@
     },
     {
         "maps": [
-            {
-                "name": "JaggedPass",
-                "trainers": [
-                    {
-                        "id": "TRAINER_GRUNT_JAGGED_PASS",
-                        "party": "sParty_GruntJaggedPass"
-                    }
-                ],
-                "challenges": [],
-                "rematches": []
-            },
             {
                 "name": "MagmaHideout_1F",
                 "trainers": [
