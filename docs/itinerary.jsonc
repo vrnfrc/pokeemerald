@@ -1810,7 +1810,7 @@
             }
         ],
         "difficulty": 24,
-        "done": false,
+        "done": true,
         "unlockedBy": "Go-Googles"
     },
     {
@@ -1874,7 +1874,7 @@
             }
         ],
         "difficulty": 25,
-        "done": false,
+        "done": true,
         "unlocks": [
             "HM03 Surf"
         ]

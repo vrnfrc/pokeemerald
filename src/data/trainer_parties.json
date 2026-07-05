@@ -687,18 +687,22 @@
     },
     {
       "name": "Dusty1",
-      "type": "TrainerMonNoItemCustomMoves",
+      "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 23,
-          "species": "SANDSLASH",
-          "moves": [
-            "DIG",
-            "SLASH",
-            "SAND_ATTACK",
-            "POISON_STING"
-          ]
+          "iv": 180,
+          "lvl": 41,
+          "species": "SANDSLASH"
+        },
+        {
+          "iv": 180,
+          "lvl": 42,
+          "species": "CACTURNE"
+        },
+        {
+          "iv": 180,
+          "lvl": 43,
+          "species": "VIBRAVA"
         }
       ]
     },
@@ -1170,73 +1174,97 @@
     },
     {
       "name": "Randall",
-      "type": "TrainerMonItemCustomMoves",
+      "type": "TrainerMonItemDefaultMoves",
       "pokemon": [
         {
           "iv": 255,
-          "lvl": 26,
+          "lvl": 43,
           "species": "SWELLOW",
-          "heldItem": "NONE",
-          "moves": [
-            "QUICK_ATTACK",
-            "AGILITY",
-            "WING_ATTACK",
-            "NONE"
-          ]
+          "heldItem": "NONE"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
+          "species": "KECLEON",
+          "heldItem": "NONE"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
+          "species": "EXPLOUD",
+          "heldItem": "NONE"
         }
       ]
     },
     {
       "name": "Parker",
-      "type": "TrainerMonItemCustomMoves",
+      "type": "TrainerMonItemDefaultMoves",
       "pokemon": [
         {
           "iv": 255,
-          "lvl": 26,
+          "lvl": 43,
+          "species": "LINOONE",
+          "heldItem": "NONE"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
+          "species": "EXPLOUD",
+          "heldItem": "NONE"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
           "species": "SPINDA",
-          "heldItem": "NONE",
-          "moves": [
-            "TEETER_DANCE",
-            "DIZZY_PUNCH",
-            "FOCUS_PUNCH",
-            "NONE"
-          ]
+          "heldItem": "NONE"
         }
       ]
     },
     {
       "name": "George",
-      "type": "TrainerMonItemCustomMoves",
+      "type": "TrainerMonItemDefaultMoves",
       "pokemon": [
         {
           "iv": 255,
-          "lvl": 26,
-          "species": "SLAKOTH",
-          "heldItem": "SITRUS_BERRY",
-          "moves": [
-            "SLACK_OFF",
-            "COUNTER",
-            "SHADOW_BALL",
-            "NONE"
-          ]
+          "lvl": 43,
+          "species": "VIGOROTH",
+          "heldItem": "SITRUS_BERRY"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
+          "species": "SLAKING",
+          "heldItem": "NONE"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
+          "species": "LINOONE",
+          "heldItem": "NONE"
         }
       ]
     },
     {
       "name": "Berke",
-      "type": "TrainerMonItemCustomMoves",
+      "type": "TrainerMonItemDefaultMoves",
       "pokemon": [
         {
           "iv": 255,
-          "lvl": 26,
-          "species": "VIGOROTH",
-          "heldItem": "NONE",
-          "moves": [
-            "FOCUS_ENERGY",
-            "SLASH",
-            "NONE",
-            "NONE"
-          ]
+          "lvl": 43,
+          "species": "ZANGOOSE",
+          "heldItem": "NONE"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
+          "species": "SPINDA",
+          "heldItem": "NONE"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
+          "species": "LINOONE",
+          "heldItem": "NONE"
         }
       ]
     },
@@ -1566,55 +1594,73 @@
     },
     {
       "name": "Mary",
-      "type": "TrainerMonItemCustomMoves",
+      "type": "TrainerMonItemDefaultMoves",
       "pokemon": [
         {
           "iv": 255,
-          "lvl": 26,
+          "lvl": 43,
           "species": "DELCATTY",
-          "heldItem": "NONE",
-          "moves": [
-            "FAINT_ATTACK",
-            "SHOCK_WAVE",
-            "NONE",
-            "NONE"
-          ]
+          "heldItem": "NONE"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
+          "species": "WIGGLYTUFF",
+          "heldItem": "NONE"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
+          "species": "ZANGOOSE",
+          "heldItem": "NONE"
         }
       ]
     },
     {
       "name": "Alexia",
-      "type": "TrainerMonItemCustomMoves",
+      "type": "TrainerMonItemDefaultMoves",
       "pokemon": [
         {
           "iv": 255,
-          "lvl": 26,
+          "lvl": 43,
           "species": "WIGGLYTUFF",
-          "heldItem": "NONE",
-          "moves": [
-            "DEFENSE_CURL",
-            "DOUBLE_EDGE",
-            "SHADOW_BALL",
-            "NONE"
-          ]
+          "heldItem": "NONE"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
+          "species": "ZANGOOSE",
+          "heldItem": "NONE"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
+          "species": "DELCATTY",
+          "heldItem": "NONE"
         }
       ]
     },
     {
       "name": "Jody",
-      "type": "TrainerMonItemCustomMoves",
+      "type": "TrainerMonItemDefaultMoves",
       "pokemon": [
         {
           "iv": 255,
-          "lvl": 26,
+          "lvl": 43,
           "species": "ZANGOOSE",
-          "heldItem": "NONE",
-          "moves": [
-            "SWORDS_DANCE",
-            "SLASH",
-            "NONE",
-            "NONE"
-          ]
+          "heldItem": "NONE"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
+          "species": "SLAKING",
+          "heldItem": "NONE"
+        },
+        {
+          "iv": 255,
+          "lvl": 43,
+          "species": "WIGGLYTUFF",
+          "heldItem": "NONE"
         }
       ]
     },
@@ -3560,57 +3606,43 @@
     },
     {
       "name": "Drew",
-      "type": "TrainerMonNoItemCustomMoves",
+      "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 23,
-          "species": "SANDSHREW",
-          "moves": [
-            "DIG",
-            "SAND_ATTACK",
-            "POISON_STING",
-            "SLASH"
-          ]
+          "iv": 180,
+          "lvl": 41,
+          "species": "SANDSLASH"
+        },
+        {
+          "iv": 180,
+          "lvl": 41,
+          "species": "SPINDA"
+        },
+        {
+          "iv": 180,
+          "lvl": 41,
+          "species": "SKARMORY"
         }
       ]
     },
     {
       "name": "Beau",
-      "type": "TrainerMonNoItemCustomMoves",
+      "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 21,
-          "species": "BALTOY",
-          "moves": [
-            "RAPID_SPIN",
-            "MUD_SLAP",
-            "PSYBEAM",
-            "ROCK_TOMB"
-          ]
+          "iv": 180,
+          "lvl": 41,
+          "species": "CLAYDOL"
         },
         {
-          "iv": 130,
-          "lvl": 21,
-          "species": "SANDSHREW",
-          "moves": [
-            "POISON_STING",
-            "SAND_ATTACK",
-            "SCRATCH",
-            "DIG"
-          ]
+          "iv": 180,
+          "lvl": 41,
+          "species": "SANDSLASH"
         },
         {
-          "iv": 130,
-          "lvl": 21,
-          "species": "BALTOY",
-          "moves": [
-            "RAPID_SPIN",
-            "MUD_SLAP",
-            "PSYBEAM",
-            "ROCK_TOMB"
-          ]
+          "iv": 180,
+          "lvl": 41,
+          "species": "CACTURNE"
         }
       ]
     },
@@ -5025,51 +5057,75 @@
       "type": "TrainerMonItemCustomMoves",
       "pokemon": [
         {
-          "iv": 200,
-          "lvl": 27,
-          "species": "SPINDA",
-          "heldItem": "NONE",
-          "moves": [
-            "TEETER_DANCE",
-            "PSYBEAM",
-            "FACADE",
-            "ENCORE"
-          ]
-        },
-        {
-          "iv": 200,
-          "lvl": 27,
-          "species": "VIGOROTH",
-          "heldItem": "NONE",
-          "moves": [
-            "SLASH",
-            "FACADE",
-            "ENCORE",
-            "FAINT_ATTACK"
-          ]
-        },
-        {
-          "iv": 200,
-          "lvl": 29,
+          "iv": 255,
+          "lvl": 44,
           "species": "LINOONE",
           "heldItem": "NONE",
           "moves": [
-            "SLASH",
-            "BELLY_DRUM",
+            "SCRATCH",
+            "HEADBUTT",
             "FACADE",
-            "HEADBUTT"
+            "ODOR_SLEUTH"
           ]
         },
         {
-          "iv": 250,
-          "lvl": 31,
+          "iv": 255,
+          "lvl": 45,
+          "species": "SPINDA",
+          "heldItem": "NONE",
+          "moves": [
+            "DOUBLE_EDGE",
+            "TEETER_DANCE",
+            "DIZZY_PUNCH",
+            "FACADE"
+          ]
+        },
+        {
+          "iv": 255,
+          "lvl": 45,
+          "species": "DELCATTY",
+          "heldItem": "NONE",
+          "moves": [
+            "ATTRACT",
+            "SING",
+            "FACADE",
+            "FACADE"
+          ]
+        },
+        {
+          "iv": 255,
+          "lvl": 46,
+          "species": "ZANGOOSE",
+          "heldItem": "NONE",
+          "moves": [
+            "SCRATCH",
+            "PURSUIT",
+            "SWORDS_DANCE",
+            "FACADE"
+          ]
+        },
+        {
+          "iv": 255,
+          "lvl": 47,
+          "species": "EXPLOUD",
+          "heldItem": "NONE",
+          "moves": [
+            "HYPER_BEAM",
+            "FACADE",
+            "SCREECH",
+            "UPROAR"
+          ]
+        },
+        {
+          "iv": 255,
+          "lvl": 47,
           "species": "SLAKING",
           "heldItem": "SITRUS_BERRY",
           "moves": [
-            "COUNTER",
-            "YAWN",
+            "SLACK_OFF",
             "FACADE",
-            "FAINT_ATTACK"
+            "YAWN",
+            "COUNTER"
           ]
         }
       ]
@@ -8713,57 +8769,43 @@
     },
     {
       "name": "Heidi",
-      "type": "TrainerMonNoItemCustomMoves",
+      "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 22,
-          "species": "SANDSHREW",
-          "moves": [
-            "DIG",
-            "SAND_ATTACK",
-            "POISON_STING",
-            "SLASH"
-          ]
+          "iv": 180,
+          "lvl": 42,
+          "species": "SANDSLASH"
         },
         {
-          "iv": 130,
-          "lvl": 22,
-          "species": "BALTOY",
-          "moves": [
-            "RAPID_SPIN",
-            "MUD_SLAP",
-            "PSYBEAM",
-            "ROCK_TOMB"
-          ]
+          "iv": 180,
+          "lvl": 42,
+          "species": "CLAYDOL"
+        },
+        {
+          "iv": 180,
+          "lvl": 42,
+          "species": "VIBRAVA"
         }
       ]
     },
     {
       "name": "Becky",
-      "type": "TrainerMonNoItemCustomMoves",
+      "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 22,
-          "species": "SANDSHREW",
-          "moves": [
-            "SAND_ATTACK",
-            "POISON_STING",
-            "SLASH",
-            "DIG"
-          ]
+          "iv": 180,
+          "lvl": 42,
+          "species": "SANDSLASH"
         },
         {
-          "iv": 130,
-          "lvl": 22,
-          "species": "MARILL",
-          "moves": [
-            "ROLLOUT",
-            "BUBBLE_BEAM",
-            "TAIL_WHIP",
-            "DEFENSE_CURL"
-          ]
+          "iv": 180,
+          "lvl": 42,
+          "species": "AZUMARILL"
+        },
+        {
+          "iv": 180,
+          "lvl": 42,
+          "species": "GOLEM"
         }
       ]
     },
@@ -13949,14 +13991,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 22,
-          "species": "MARILL"
+          "iv": 180,
+          "lvl": 43,
+          "species": "AZUMARILL"
         },
         {
-          "iv": 130,
-          "lvl": 22,
-          "species": "LOMBRE"
+          "iv": 180,
+          "lvl": 43,
+          "species": "LUDICOLO"
         }
       ]
     },
@@ -13965,14 +14007,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 22,
-          "species": "SANDSHREW"
+          "iv": 180,
+          "lvl": 41,
+          "species": "SANDSLASH"
         },
         {
-          "iv": 130,
-          "lvl": 22,
-          "species": "SANDSLASH"
+          "iv": 180,
+          "lvl": 44,
+          "species": "CLAYDOL"
         }
       ]
     },
@@ -13981,14 +14023,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 22,
-          "species": "TAILLOW"
+          "iv": 180,
+          "lvl": 42,
+          "species": "SWELLOW"
         },
         {
-          "iv": 130,
-          "lvl": 22,
-          "species": "NUZLEAF"
+          "iv": 180,
+          "lvl": 43,
+          "species": "SHIFTRY"
         }
       ]
     },

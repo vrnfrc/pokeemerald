@@ -749,7 +749,7 @@
         "AI_SCRIPT_CHECK_BAD_MOVE"
       ],
       "party": {
-        "type": "NO_ITEM_CUSTOM_MOVES",
+        "type": "NO_ITEM_DEFAULT_MOVES",
         "name": "sParty_Dusty1"
       }
     },
@@ -1188,7 +1188,7 @@
         "AI_SCRIPT_CHECK_VIABILITY"
       ],
       "party": {
-        "type": "ITEM_CUSTOM_MOVES",
+        "type": "ITEM_DEFAULT_MOVES",
         "name": "sParty_Randall"
       }
     },
@@ -1211,7 +1211,7 @@
         "AI_SCRIPT_CHECK_VIABILITY"
       ],
       "party": {
-        "type": "ITEM_CUSTOM_MOVES",
+        "type": "ITEM_DEFAULT_MOVES",
         "name": "sParty_Parker"
       }
     },
@@ -1234,7 +1234,7 @@
         "AI_SCRIPT_CHECK_VIABILITY"
       ],
       "party": {
-        "type": "ITEM_CUSTOM_MOVES",
+        "type": "ITEM_DEFAULT_MOVES",
         "name": "sParty_George"
       }
     },
@@ -1257,7 +1257,7 @@
         "AI_SCRIPT_CHECK_VIABILITY"
       ],
       "party": {
-        "type": "ITEM_CUSTOM_MOVES",
+        "type": "ITEM_DEFAULT_MOVES",
         "name": "sParty_Berke"
       }
     },
@@ -1597,7 +1597,7 @@
         "AI_SCRIPT_CHECK_VIABILITY"
       ],
       "party": {
-        "type": "ITEM_CUSTOM_MOVES",
+        "type": "ITEM_DEFAULT_MOVES",
         "name": "sParty_Mary"
       }
     },
@@ -1620,7 +1620,7 @@
         "AI_SCRIPT_CHECK_VIABILITY"
       ],
       "party": {
-        "type": "ITEM_CUSTOM_MOVES",
+        "type": "ITEM_DEFAULT_MOVES",
         "name": "sParty_Alexia"
       }
     },
@@ -1643,7 +1643,7 @@
         "AI_SCRIPT_SETUP_FIRST_TURN"
       ],
       "party": {
-        "type": "ITEM_CUSTOM_MOVES",
+        "type": "ITEM_DEFAULT_MOVES",
         "name": "sParty_Jody"
       }
     },
@@ -3724,7 +3724,7 @@
         "AI_SCRIPT_CHECK_BAD_MOVE"
       ],
       "party": {
-        "type": "NO_ITEM_CUSTOM_MOVES",
+        "type": "NO_ITEM_DEFAULT_MOVES",
         "name": "sParty_Drew"
       }
     },
@@ -3740,7 +3740,7 @@
         "AI_SCRIPT_CHECK_BAD_MOVE"
       ],
       "party": {
-        "type": "NO_ITEM_CUSTOM_MOVES",
+        "type": "NO_ITEM_DEFAULT_MOVES",
         "name": "sParty_Beau"
       }
     },
@@ -7974,7 +7974,7 @@
         "AI_SCRIPT_CHECK_BAD_MOVE"
       ],
       "party": {
-        "type": "NO_ITEM_CUSTOM_MOVES",
+        "type": "NO_ITEM_DEFAULT_MOVES",
         "name": "sParty_Heidi"
       }
     },
@@ -7990,7 +7990,7 @@
         "AI_SCRIPT_CHECK_BAD_MOVE"
       ],
       "party": {
-        "type": "NO_ITEM_CUSTOM_MOVES",
+        "type": "NO_ITEM_DEFAULT_MOVES",
         "name": "sParty_Becky"
       }
     },
