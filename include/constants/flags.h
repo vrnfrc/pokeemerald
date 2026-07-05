@@ -1225,8 +1225,8 @@
 
 #define FLAG_ITEM_ROUTE_118_DEEP_SEA_SCALE                          0x493
 #define FLAG_ITEM_ROUTE_118_DEEP_SEA_TOOTH                          0x494
-#define FLAG_UNUSED_0x495                                           0x495 // Unused Flag
-#define FLAG_UNUSED_0x496                                           0x496 // Unused Flag
+#define FLAG_ITEM_ROUTE_114_TM35                                    0x495
+#define FLAG_ITEM_ROUTE_114_TM26                                    0x496
 #define FLAG_UNUSED_0x497                                           0x497 // Unused Flag
 #define FLAG_UNUSED_0x498                                           0x498 // Unused Flag
 #define FLAG_UNUSED_0x499                                           0x499 // Unused Flag

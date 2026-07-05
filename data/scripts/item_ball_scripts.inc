@@ -102,6 +102,10 @@ Route114_EventScript_ItemEnergyPowder::
 	finditem ITEM_ENERGY_POWDER
 	end
 
+Route114_EventScript_ItemTM35::
+	finditem ITEM_TM35
+	end
+
 Route115_EventScript_ItemSuperPotion::
 	finditem ITEM_SUPER_POTION
 	end
@@ -656,6 +660,10 @@ MagmaHideout_4F_EventScript_ItemMaxRevive::
 
 MagmaHideout_3F_3R_EventScript_ItemEscapeRope::
 	finditem ITEM_ESCAPE_ROPE
+	end
+
+Route114_EventScript_ItemTM26::
+	finditem ITEM_TM26
 	end
 
 Route118_EventScript_ItemDeepSeaScale::
