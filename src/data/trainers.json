@@ -781,7 +781,7 @@
         "AI_SCRIPT_CHECK_BAD_MOVE"
       ],
       "party": {
-        "type": "NO_ITEM_CUSTOM_MOVES",
+        "type": "NO_ITEM_DEFAULT_MOVES",
         "name": "sParty_Foster"
       }
     },

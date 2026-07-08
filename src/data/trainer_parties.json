@@ -747,29 +747,17 @@
     },
     {
       "name": "Foster",
-      "type": "TrainerMonNoItemCustomMoves",
+      "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 25,
-          "species": "SANDSHREW",
-          "moves": [
-            "DIG",
-            "SLASH",
-            "SAND_ATTACK",
-            "POISON_STING"
-          ]
+          "iv": 180,
+          "lvl": 43,
+          "species": "GOLEM"
         },
         {
-          "iv": 130,
-          "lvl": 25,
-          "species": "SANDSLASH",
-          "moves": [
-            "DIG",
-            "SLASH",
-            "SAND_ATTACK",
-            "POISON_STING"
-          ]
+          "iv": 180,
+          "lvl": 43,
+          "species": "SANDSLASH"
         }
       ]
     },
@@ -2710,9 +2698,19 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 26,
-          "species": "CARVANHA"
+          "iv": 180,
+          "lvl": 43,
+          "species": "SHARPEDO"
+        },
+        {
+          "iv": 180,
+          "lvl": 43,
+          "species": "GOREBYSS"
+        },
+        {
+          "iv": 180,
+          "lvl": 43,
+          "species": "HUNTAIL"
         }
       ]
     },
@@ -2721,9 +2719,19 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 26,
-          "species": "TENTACOOL"
+          "iv": 180,
+          "lvl": 42,
+          "species": "TENTACRUEL"
+        },
+        {
+          "iv": 180,
+          "lvl": 42,
+          "species": "GYARADOS"
+        },
+        {
+          "iv": 180,
+          "lvl": 42,
+          "species": "MILOTIC"
         }
       ]
     },
@@ -2732,14 +2740,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 24,
-          "species": "TENTACOOL"
+          "iv": 180,
+          "lvl": 43,
+          "species": "SHARPEDO"
         },
         {
-          "iv": 130,
-          "lvl": 24,
-          "species": "TENTACOOL"
+          "iv": 180,
+          "lvl": 43,
+          "species": "TENTACRUEL"
         }
       ]
     },
@@ -3136,14 +3144,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 24,
-          "species": "MACHOP"
+          "iv": 180,
+          "lvl": 41,
+          "species": "MACHAMP"
         },
         {
-          "iv": 150,
-          "lvl": 28,
-          "species": "MACHOKE"
+          "iv": 180,
+          "lvl": 42,
+          "species": "MEDICHAM"
         }
       ]
     },
@@ -6009,9 +6017,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 200,
-          "lvl": 27,
+          "iv": 180,
+          "lvl": 42,
           "species": "HARIYAMA"
+        },
+        {
+          "iv": 180,
+          "lvl": 42,
+          "species": "MACHAMP"
         }
       ]
     },
@@ -8395,13 +8408,13 @@
       "pokemon": [
         {
           "iv": 130,
-          "lvl": 25,
-          "species": "WINGULL"
+          "lvl": 43,
+          "species": "PELIPPER"
         },
         {
           "iv": 130,
-          "lvl": 25,
-          "species": "WAILMER"
+          "lvl": 43,
+          "species": "WAILORD"
         }
       ]
     },
@@ -8410,9 +8423,19 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 26,
-          "species": "MARILL"
+          "iv": 180,
+          "lvl": 42,
+          "species": "AZUMARILL"
+        },
+        {
+          "iv": 180,
+          "lvl": 42,
+          "species": "PELIPPER"
+        },
+        {
+          "iv": 180,
+          "lvl": 42,
+          "species": "SEAKING"
         }
       ]
     },
@@ -8421,9 +8444,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 26,
-          "species": "WAILMER"
+          "iv": 180,
+          "lvl": 44,
+          "species": "WAILORD"
+        },
+        {
+          "iv": 180,
+          "lvl": 44,
+          "species": "GOREBYSS"
         }
       ]
     },
@@ -13868,9 +13896,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 15,
-          "species": "TENTACOOL"
+          "iv": 180,
+          "lvl": 40,
+          "species": "TENTACRUEL"
+        },
+        {
+          "iv": 180,
+          "lvl": 42,
+          "species": "GYARADOS"
         }
       ]
     },
@@ -13879,9 +13912,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 15,
-          "species": "MARILL"
+          "iv": 180,
+          "lvl": 41,
+          "species": "AZUMARILL"
+        },
+        {
+          "iv": 180,
+          "lvl": 41,
+          "species": "CORSOLA"
         }
       ]
     },
@@ -13890,14 +13928,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 25,
-          "species": "SANDSHREW"
+          "iv": 180,
+          "lvl": 43,
+          "species": "SANDSLASH"
         },
         {
-          "iv": 130,
-          "lvl": 25,
-          "species": "SANDSHREW"
+          "iv": 180,
+          "lvl": 43,
+          "species": "VIBRAVA"
         }
       ]
     },
@@ -13906,14 +13944,19 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 25,
-          "species": "TAILLOW"
+          "iv": 180,
+          "lvl": 42,
+          "species": "SWELLOW"
         },
         {
-          "iv": 130,
-          "lvl": 25,
-          "species": "WINGULL"
+          "iv": 180,
+          "lvl": 43,
+          "species": "PELIPPER"
+        },
+        {
+          "iv": 180,
+          "lvl": 43,
+          "species": "DODRIO"
         }
       ]
     },
@@ -14071,14 +14114,19 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 26,
-          "species": "DODUO"
+          "iv": 180,
+          "lvl": 41,
+          "species": "DODRIO"
         },
         {
-          "iv": 130,
-          "lvl": 26,
-          "species": "DODRIO"
+          "iv": 180,
+          "lvl": 41,
+          "species": "SWELLOW"
+        },
+        {
+          "iv": 180,
+          "lvl": 41,
+          "species": "TROPIUS"
         }
       ]
     },
@@ -14087,14 +14135,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 26,
+          "iv": 180,
+          "lvl": 42,
           "species": "NINJASK"
         },
         {
-          "iv": 130,
-          "lvl": 26,
-          "species": "GULPIN"
+          "iv": 180,
+          "lvl": 42,
+          "species": "SWALOT"
         }
       ]
     },
@@ -14103,14 +14151,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 26,
-          "species": "KADABRA"
+          "iv": 180,
+          "lvl": 42,
+          "species": "ALAKAZAM"
         },
         {
-          "iv": 130,
-          "lvl": 26,
-          "species": "KIRLIA"
+          "iv": 180,
+          "lvl": 42,
+          "species": "GARDEVOIR"
         }
       ]
     },
@@ -14119,14 +14167,14 @@
       "type": "TrainerMonNoItemDefaultMoves",
       "pokemon": [
         {
-          "iv": 130,
-          "lvl": 26,
-          "species": "MEDITITE"
+          "iv": 180,
+          "lvl": 43,
+          "species": "MEDICHAM"
         },
         {
-          "iv": 130,
-          "lvl": 26,
-          "species": "MAKUHITA"
+          "iv": 180,
+          "lvl": 43,
+          "species": "HARIYAMA"
         }
       ]
     },
